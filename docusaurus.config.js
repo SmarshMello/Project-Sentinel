@@ -6,9 +6,9 @@ const config = {
   tagline: 'The complete GTA V Legacy LSPDFR master guide',
   favicon: 'img/favicon.ico',
   url: 'https://smarshmello.github.io',
-  baseUrl: '/Project-Sentinel.github.io/',
+  baseUrl: '/Project-Sentinel/',
   organizationName: 'SmarshMello',
-  projectName: 'Project-Sentinel.github.io',
+  projectName: 'Project-Sentinel',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -20,7 +20,7 @@ const config = {
   presets: [[
     'classic',
     {
-      docs: {sidebarPath: './sidebars.js', routeBasePath: 'guide', editUrl: 'https://github.com/SmarshMello/Project-Sentinel.github.io/edit/main/'},
+      docs: {sidebarPath: './sidebars.js', routeBasePath: 'guide', editUrl: 'https://github.com/SmarshMello/Project-Sentinel/edit/main/'},
       blog: false,
       theme: {customCss: './src/css/custom.css'},
     },
@@ -44,14 +44,14 @@ const config = {
         {to: '/guide/intro', label: 'Guide', position: 'left'},
         {to: '/donate', label: 'Donate', position: 'left'},
         {to: '/help', label: 'Help', position: 'left'},
-        {href: 'https://github.com/SmarshMello/Project-Sentinel.github.io', label: 'GitHub', position: 'right'},
+        {href: 'https://github.com/SmarshMello/Project-Sentinel', label: 'GitHub', position: 'right'},
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {title: 'Guide', items: [{label:'Getting Started',to:'/guide/getting-started/clean-install'},{label:'Troubleshooting',to:'/guide/troubleshooting/index'}]},
-        {title: 'Community', items:[{label:'Help Tickets',to:'/help'},{label:'Suggestions',href:'https://github.com/SmarshMello/Project-Sentinel.github.io/issues/new?template=suggestion.yml'}]},
+        {title: 'Community', items:[{label:'Help Tickets',to:'/help'},{label:'Suggestions',href:'https://github.com/SmarshMello/Project-Sentinel/issues/new?template=suggestion.yml'}]},
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Project Sentinel. Third-party mods belong to their creators.`,
     },

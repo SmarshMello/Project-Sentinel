@@ -1,26 +1,18 @@
+# Project Sentinel Docusaurus Site v1.1
 
-# Project Sentinel Docusaurus Site
+Configured for:
 
-## First deployment
-1. Replace the current repository contents with this project.
-2. In GitHub: **Settings → Pages → Source: GitHub Actions**.
-3. Commit/push to `main`.
-4. Open **Actions** and wait for `Deploy Docusaurus to GitHub Pages` to finish.
+- GitHub owner: `SmarshMello`
+- Repository: `Project-Sentinel`
+- Public site: `https://smarshmello.github.io/Project-Sentinel/`
 
-## Local preview
-```bash
-npm install
-npm start
-```
+## Required GitHub settings
 
-## Production test
-```bash
-npm run build
-npm run serve
-```
+1. The repository must be **Public** for GitHub Pages on GitHub Free.
+2. Under **Settings → Pages**, set **Source** to **GitHub Actions**.
+3. Under **Settings → Actions → General**, allow GitHub Actions and keep workflow permissions at their default read/write settings needed by Pages.
+4. Push to `main`; the included workflow will build and deploy Docusaurus.
 
-## Editing
-Guide pages are Markdown files under `docs/`. Home, Donate, and Help are React pages under `src/pages/`.
+## Upload
 
-## Donation links
-Edit `customFields.paypalUrl` and `customFields.kofiUrl` in `docusaurus.config.js`. Use only public provider-hosted HTTPS URLs. Never commit secrets.
+Replace your current local repository contents with this package, but never delete the hidden `.git` folder. Commit and push with GitHub Desktop.
