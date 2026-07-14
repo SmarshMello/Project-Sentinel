@@ -1,0 +1,28 @@
+name: Installation help
+description: Get help with Project Sentinel
+title: "[Install Help]: "
+labels: [installation-help]
+body:
+  - type: input
+    id: game
+    attributes:
+      label: GTA V Legacy version
+    validations:
+      required: true
+  - type: input
+    id: rph
+    attributes:
+      label: RAGE Plugin Hook version
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and exact error
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Relevant log excerpt
+      description: Remove usernames and private paths before posting.

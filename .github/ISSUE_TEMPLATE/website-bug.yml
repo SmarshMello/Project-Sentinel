@@ -1,0 +1,17 @@
+name: Website bug
+description: Report a broken page, link, search result, or layout
+title: "[Website]: "
+labels: [website]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page URL
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Describe the problem
+    validations:
+      required: true

@@ -1,0 +1,15 @@
+name: Suggestion
+description: Suggest a mod, correction, tutorial, or feature
+title: "[Suggestion]: "
+labels: [suggestion]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Suggestion
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official source link, if applicable
