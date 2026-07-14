@@ -1,0 +1,33 @@
+.badge {
+  --badge-color: #70a9ff;
+  display: inline-flex;
+  align-items: center;
+  gap: .48rem;
+  width: fit-content;
+  padding: .4rem .68rem;
+  border: 1px solid color-mix(in srgb, var(--badge-color) 42%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--badge-color) 11%, transparent);
+  color: var(--badge-color);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.dot {
+  width: .42rem;
+  height: .42rem;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 15%, transparent), 0 0 12px currentColor;
+}
+
+.verified { --badge-color: #5ce6a6; }
+.documented { --badge-color: #70a9ff; }
+.testing { --badge-color: #ffc766; }
+.research { --badge-color: #bb8cff; }
+.deprecated { --badge-color: #ff7285; }
+.compact { padding: .32rem .55rem; font-size: .62rem; }
