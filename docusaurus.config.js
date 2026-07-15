@@ -21,7 +21,7 @@ const config = {
   presets: [[
     'classic',
     {
-      docs: {sidebarPath: './sidebars.js', routeBasePath: 'guide', editUrl: 'https://github.com/SmarshMello/Project-Sentinel/edit/main/'},
+      docs: {sidebarPath: './sidebars.js', routeBasePath: 'guide'},
       blog: false,
       theme: {customCss: './src/css/custom.css'},
     },

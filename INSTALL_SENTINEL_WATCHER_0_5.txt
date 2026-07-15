@@ -1,0 +1,27 @@
+SENTINEL WATCHER 0.5 UPDATE
+
+WHAT THIS UPDATE ADDS
+- What Changed panel comparing each scan with the previous published scan
+- Scan history with health, runtime, and trend for the latest 24 scans
+- Release, status, redirect, and newly tracked source change detection
+- New changes.json artifact for detailed review
+- Watcher and Worker version 0.5.0
+- Removes every Docusaurus “Edit this page” link from the public guide
+
+INSTALL
+1. Close any running local development server.
+2. Copy all files from this update into the root of Project-Sentinel.
+3. Replace files when Windows asks.
+4. In GitHub Desktop commit with:
+   Upgrade Sentinel Watcher to 0.5 and remove public edit links
+5. Push origin.
+6. Wait for GitHub Pages to deploy.
+
+IMPORTANT: REDEPLOY THE CLOUDFLARE WORKER
+The Worker code version was updated. In watcher-control-worker run:
+   npm install
+   npm run deploy
+Your existing GITHUB_TOKEN and WATCHER_ADMIN_KEY secrets remain stored in Cloudflare and do not need to be entered again.
+
+FIRST 0.5 SCAN
+Run a new scan from the website. The first 0.5 scan establishes the improved comparison baseline. Later scans will populate What Changed and build the history list automatically.

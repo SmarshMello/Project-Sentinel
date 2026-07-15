@@ -23,7 +23,7 @@ function githubHeaders(env) {
     accept: 'application/vnd.github+json',
     authorization: `Bearer ${env.GITHUB_TOKEN}`,
     'x-github-api-version': API_VERSION,
-    'user-agent': 'Project-Sentinel-Watcher-Control/0.4',
+    'user-agent': 'Project-Sentinel-Watcher-Control/0.5',
   };
 }
 
@@ -92,7 +92,7 @@ export default {
     const url = new URL(request.url);
     try {
       if (url.pathname === '/health' && request.method === 'GET') {
-        return json({ok: true, service: 'Sentinel Watcher Control', version: '0.4.0'}, 200, env, origin);
+        return json({ok: true, service: 'Sentinel Watcher Control', version: '0.5.0'}, 200, env, origin);
       }
 
       if (url.pathname === '/trigger' && request.method === 'POST') {

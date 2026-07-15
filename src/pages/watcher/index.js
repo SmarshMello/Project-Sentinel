@@ -35,8 +35,10 @@ export default function Watcher() {
   const {siteConfig} = useDocusaurusContext();
   const controlEndpoint = String(siteConfig.customFields?.watcherControlEndpoint || '').replace(/\/$/, '');
   const reportUrl = useBaseUrl('/data/watcher-report.json');
+  const historyUrl = useBaseUrl('/data/watcher-history.json');
   const [report, setReport] = useState(null);
   const [reportError, setReportError] = useState('');
+  const [history, setHistory] = useState({scans: []});
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState('review');
   const [adminKey, setAdminKey] = useState('');
@@ -53,11 +55,15 @@ export default function Watcher() {
       if (!response.ok) throw new Error(`Report returned HTTP ${response.status}`);
       setReport(await response.json());
       setReportError('');
+      try {
+        const historyResponse = await fetch(`${historyUrl}?t=${Date.now()}`, {cache: 'no-store'});
+        if (historyResponse.ok) setHistory(await historyResponse.json());
+      } catch {}
     } catch (error) {
       setReportError(error instanceof Error ? error.message : 'Could not load the report.');
       setReport((current) => current || {counts: {}, items: [], reviewQueue: []});
     }
-  }, [reportUrl]);
+  }, [reportUrl, historyUrl]);
 
   useEffect(() => {
     loadReport();
@@ -150,6 +156,10 @@ export default function Watcher() {
     ['High priority', counts.highPriority], ['Needs review', counts.needsReview],
   ];
   const running = run && run.status !== 'completed';
+  const changes = report?.changes || [];
+  const recentScans = history?.scans || [];
+  const previousScan = recentScans[1] || null;
+  const healthDelta = previousScan ? (report?.averageHealth ?? 0) - (previousScan.averageHealth ?? 0) : null;
 
   return (
     <Layout title="Sentinel Watcher" description="Automated monitoring and review queues for the LSPDFR mod ecosystem.">
@@ -217,6 +227,37 @@ export default function Watcher() {
           </div>
 
           <div className={styles.notice}><b>Review-first automation</b><span>Watcher tracks repeated failures, health scores and possible releases. A timeout or bot block is never treated as proof that a mod is dead.</span></div>
+
+          <div className={styles.operationsGrid}>
+            <article className={styles.changeCard}>
+              <div className={styles.sectionHeading}>
+                <div><span className={styles.panelLabel}>Since the previous scan</span><Heading as="h2">What changed</Heading></div>
+                <strong>{changes.length}</strong>
+              </div>
+              {changes.length ? <div className={styles.changeList}>{changes.slice(0, 6).map((change, index) => (
+                <div key={`${change.id}-${change.type}-${index}`}>
+                  <span className={`${styles.changeType} ${styles[change.priority] || ''}`}>{change.type.replaceAll('-', ' ')}</span>
+                  <div><b>{change.name}</b><small>{change.summary}</small></div>
+                </div>
+              ))}</div> : <div className={styles.quietState}>No meaningful changes were detected. The ecosystem matches the previous published scan.</div>}
+              {changes.length > 6 && <small className={styles.moreChanges}>+{changes.length - 6} more changes are included in the records below.</small>}
+            </article>
+            <article className={styles.historyCard}>
+              <div className={styles.sectionHeading}>
+                <div><span className={styles.panelLabel}>Last {Math.min(recentScans.length, 8)} runs</span><Heading as="h2">Scan history</Heading></div>
+                <strong className={healthDelta > 0 ? styles.deltaUp : healthDelta < 0 ? styles.deltaDown : ''}>{healthDelta === null ? '—' : `${healthDelta > 0 ? '+' : ''}${healthDelta}%`}</strong>
+              </div>
+              <div className={styles.historyList}>{recentScans.slice(0, 8).map((scan, index) => (
+                <div key={scan.checkedAt}>
+                  <span>{index === 0 ? 'Latest' : new Date(scan.checkedAt).toLocaleDateString()}</span>
+                  <div className={styles.healthTrack}><i style={{width: `${scan.averageHealth || 0}%`}} /></div>
+                  <b>{scan.averageHealth ?? '—'}%</b>
+                  <small>{scan.durationSeconds ?? '—'}s</small>
+                </div>
+              ))}</div>
+              {!recentScans.length && <div className={styles.quietState}>History begins after the first Watcher 0.5 scan.</div>}
+            </article>
+          </div>
 
           <div className={styles.metrics}>{metrics.map(([label, value]) => <article key={label}><span>{label}</span><strong>{value ?? '—'}</strong></article>)}</div>
           <div className={styles.legend}>{['healthy','possible-update','metadata-changed','timed-out','blocked','redirected','not-found','archived'].map((status) => <span key={status} className={`${styles.state} ${styles[status] || ''}`}>{STATUS_LABELS[status]}</span>)}</div>

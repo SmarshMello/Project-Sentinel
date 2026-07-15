@@ -43,7 +43,7 @@ jobs:
         run: |
           git config user.name "sentinel-watcher[bot]"
           git config user.email "sentinel-watcher[bot]@users.noreply.github.com"
-          git add static/data/watcher-report.json sentinel-watcher/state.json
+          git add static/data/watcher-report.json static/data/watcher-history.json sentinel-watcher/state.json
           if git diff --cached --quiet; then
             echo "No watcher data changes to publish."
           else
@@ -60,4 +60,5 @@ jobs:
             sentinel-watcher/reports/latest.json
             sentinel-watcher/reports/latest.md
             sentinel-watcher/reports/review-queue.json
+            sentinel-watcher/reports/changes.json
           retention-days: 30

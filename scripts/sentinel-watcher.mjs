@@ -5,12 +5,14 @@ const root = new URL('../', import.meta.url);
 const sources = JSON.parse(await fs.readFile(new URL('sentinel-watcher/sources.json', root), 'utf8')).sources;
 const reportPath = new URL('static/data/watcher-report.json', root);
 const statePath = new URL('sentinel-watcher/state.json', root);
+const historyPath = new URL('static/data/watcher-history.json', root);
 const readJson = async (url, fallback) => { try { return JSON.parse(await fs.readFile(url, 'utf8')); } catch { return fallback; } };
 const previous = await readJson(reportPath, null);
 const state = await readJson(statePath, {items: {}});
+const existingHistory = await readJson(historyPath, {schemaVersion: 1, scans: []});
 const checkedAt = new Date().toISOString();
 const startedAt = Date.now();
-const ua = 'Project-Sentinel-Watcher/0.3 (+https://github.com/SmarshMello/Project-Sentinel)';
+const ua = 'Project-Sentinel-Watcher/0.5 (+https://github.com/SmarshMello/Project-Sentinel)';
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const digest = (value) => crypto.createHash('sha256').update(String(value)).digest('hex').slice(0, 20);
 const cleanVersion = (value) => String(value || '').toLowerCase().replace(/^v(?=\d)/, '').replace(/[^0-9a-z.]+/g, '');
@@ -110,8 +112,8 @@ async function inspect(source, index, total) {
   const detected = result.latestRelease || result.detectedVersion;
   if (result.archived) result.change='archived';
   else if (detected && concreteVersion(source.expectedVersion) && cleanVersion(detected) !== cleanVersion(source.expectedVersion)) { result.status='possible-update'; result.change='possible-update'; result.previousRelease=source.expectedVersion; }
-  else if (previous?.watcherVersion?.startsWith('0.3') && old?.latestRelease && result.latestRelease && cleanVersion(old.latestRelease)!==cleanVersion(result.latestRelease)) { result.status='possible-update'; result.change='possible-update'; result.previousRelease=old.latestRelease; }
-  else if (previous?.watcherVersion?.startsWith('0.3') && old?.fingerprint && result.fingerprint && old.fingerprint!==result.fingerprint && result.status==='healthy') { result.status='metadata-changed'; result.change='metadata-changed'; }
+  else if (old?.latestRelease && result.latestRelease && cleanVersion(old.latestRelease)!==cleanVersion(result.latestRelease)) { result.status='possible-update'; result.change='possible-update'; result.previousRelease=old.latestRelease; }
+  else if (old?.fingerprint && result.fingerprint && old.fingerprint!==result.fingerprint && result.status==='healthy') { result.status='metadata-changed'; result.change='metadata-changed'; }
   else if (result.status!=='healthy') result.change=result.status;
   result.statusStreak = old?.status === result.status ? Number(old.statusStreak||1)+1 : 1;
   review(result);
@@ -130,9 +132,30 @@ const count = (status) => items.filter((item)=>item.status===status).length;
 const counts = {tracked:items.length,healthy:count('healthy'),possibleUpdates:count('possible-update'),metadataChanged:count('metadata-changed'),timedOut:count('timed-out'),blocked:count('blocked'),redirected:count('redirected'),notFound:count('not-found'),rateLimited:count('rate-limited'),serverErrors:count('server-error'),archived:count('archived'),failed:count('failed'),needsReview:items.filter((i)=>i.needsReview).length,highPriority:items.filter((i)=>i.reviewPriority==='high').length};
 const averageHealth = items.length ? Math.round(items.reduce((sum,item)=>sum+item.healthScore,0)/items.length) : 0;
 const reviewQueue = items.filter((i)=>i.needsReview).sort((a,b)=>({high:0,medium:1,low:2}[a.reviewPriority]-({high:0,medium:1,low:2}[b.reviewPriority]))).map((i)=>({id:i.id,name:i.name,status:i.status,priority:i.reviewPriority,reason:i.reviewReason,sourceUrl:i.finalUrl||i.url,expectedVersion:i.expectedVersion,detectedVersion:i.latestRelease||i.detectedVersion,statusStreak:i.statusStreak,healthScore:i.healthScore}));
-const report = {schemaVersion:3,watcherVersion:'0.3.0',checkedAt,durationSeconds:Math.round((Date.now()-startedAt)/1000),averageHealth,counts,reviewQueue,items};
-const nextState = {schemaVersion:1,updatedAt:checkedAt,items:Object.fromEntries(items.map((i)=>[i.id,{status:i.status,statusStreak:i.statusStreak,fingerprint:i.fingerprint||null,latestRelease:i.latestRelease||null,checkedAt:i.checkedAt}]))};
+const previousById = new Map((previous?.items || []).map((item) => [item.id, item]));
+const changes = items.flatMap((item) => {
+  const before = previousById.get(item.id);
+  if (!before) return [{id:item.id,name:item.name,type:'new-source',from:null,to:item.status,summary:'New source added to Watcher.',priority:'medium'}];
+  const detectedBefore = before.latestRelease || before.detectedVersion || null;
+  const detectedNow = item.latestRelease || item.detectedVersion || null;
+  const entries = [];
+  if (before.status !== item.status) entries.push({id:item.id,name:item.name,type:'status-changed',from:before.status,to:item.status,summary:`Status changed from ${before.status} to ${item.status}.`,priority:item.reviewPriority === 'high' ? 'high' : 'medium'});
+  if (detectedBefore !== detectedNow && detectedNow) entries.push({id:item.id,name:item.name,type:'release-changed',from:detectedBefore,to:detectedNow,summary:`Detected release changed${detectedBefore ? ` from ${detectedBefore}` : ''} to ${detectedNow}.`,priority:'high'});
+  if ((before.finalUrl || before.url) !== (item.finalUrl || item.url)) entries.push({id:item.id,name:item.name,type:'source-moved',from:before.finalUrl || before.url,to:item.finalUrl || item.url,summary:'Official source URL changed or redirected.',priority:'medium'});
+  return entries;
+});
+const changeCounts = {
+  total: changes.length,
+  releases: changes.filter((change)=>change.type==='release-changed').length,
+  statuses: changes.filter((change)=>change.type==='status-changed').length,
+  moved: changes.filter((change)=>change.type==='source-moved').length,
+  newSources: changes.filter((change)=>change.type==='new-source').length,
+};
+const report = {schemaVersion:4,watcherVersion:'0.5.0',checkedAt,durationSeconds:Math.round((Date.now()-startedAt)/1000),averageHealth,counts,changeCounts,changes,reviewQueue,items};
+const historyEntry = {checkedAt,durationSeconds:report.durationSeconds,averageHealth,counts,changeCounts};
+const history = {schemaVersion:1,watcherVersion:'0.5.0',scans:[historyEntry,...(existingHistory.scans || []).filter((scan)=>scan.checkedAt!==checkedAt)].slice(0,24)};
+const nextState = {schemaVersion:2,updatedAt:checkedAt,items:Object.fromEntries(items.map((i)=>[i.id,{status:i.status,statusStreak:i.statusStreak,fingerprint:i.fingerprint||null,latestRelease:i.latestRelease||null,detectedVersion:i.detectedVersion||null,finalUrl:i.finalUrl||i.url,checkedAt:i.checkedAt}]))};
 await fs.mkdir(new URL('static/data/',root),{recursive:true}); await fs.mkdir(new URL('sentinel-watcher/reports/',root),{recursive:true});
-await fs.writeFile(reportPath,JSON.stringify(report,null,2)+'\n'); await fs.writeFile(statePath,JSON.stringify(nextState,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/latest.json',root),JSON.stringify(report,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/review-queue.json',root),JSON.stringify(reviewQueue,null,2)+'\n');
-const lines=['# Sentinel Watcher report','',`Generated: ${checkedAt}`,`Runtime: ${report.durationSeconds}s`,`Average source health: ${averageHealth}%`,'','| Metric | Count |','|---|---:|',...Object.entries(counts).map(([k,v])=>`| ${k} | ${v} |`),'','## Review queue','',...(reviewQueue.length?reviewQueue.map((i)=>`- **${i.name}** — ${i.priority}: ${i.reason} (health ${i.healthScore}%, streak ${i.statusStreak}) ([source](${i.sourceUrl}))`):['- None']),'','Timeouts and automation blocks are not treated as dead projects.'];
+await fs.writeFile(reportPath,JSON.stringify(report,null,2)+'\n'); await fs.writeFile(historyPath,JSON.stringify(history,null,2)+'\n'); await fs.writeFile(statePath,JSON.stringify(nextState,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/latest.json',root),JSON.stringify(report,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/review-queue.json',root),JSON.stringify(reviewQueue,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/changes.json',root),JSON.stringify(changes,null,2)+'\n');
+const lines=['# Sentinel Watcher report','',`Generated: ${checkedAt}`,`Runtime: ${report.durationSeconds}s`,`Average source health: ${averageHealth}%`,`Changes detected: ${changes.length}`,'','| Metric | Count |','|---|---:|',...Object.entries(counts).map(([k,v])=>`| ${k} | ${v} |`),'','## Changes since previous scan','',...(changes.length?changes.map((change)=>`- **${change.name}** — ${change.summary}`):['- No meaningful changes detected.']),'','## Review queue','',...(reviewQueue.length?reviewQueue.map((i)=>`- **${i.name}** — ${i.priority}: ${i.reason} (health ${i.healthScore}%, streak ${i.statusStreak}) ([source](${i.sourceUrl}))`):['- None']),'','Timeouts and automation blocks are not treated as dead projects.'];
 await fs.writeFile(new URL('sentinel-watcher/reports/latest.md',root),lines.join('\n')+'\n'); console.log(`Completed in ${report.durationSeconds}s.`);
