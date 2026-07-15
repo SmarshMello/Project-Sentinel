@@ -1,8 +1,31 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-15T23:37:49.081Z",
+  "updatedAt": "2026-07-15T23:44:35.036Z",
   "discoveries": [],
   "requests": [
+    {
+      "id": "expert-1784159065518-ec876a34",
+      "requestId": "expert-1784159065518-ec876a34",
+      "scanId": "research-expert-1784159065518-ec876a34",
+      "query": "Los Santos Alive",
+      "status": "needs-manual-research",
+      "requestedAt": "2026-07-15T23:44:35.036Z",
+      "candidateCount": 1,
+      "credibleCandidateCount": 0,
+      "candidates": [
+        {
+          "name": "Gta-5-los-santos-became-alive",
+          "fullName": "NANODLAPISCINE/Gta-5-los-santos-became-alive",
+          "url": "https://github.com/NANODLAPISCINE/Gta-5-los-santos-became-alive",
+          "description": "",
+          "stars": 0,
+          "updatedAt": "2025-06-22T23:46:05Z",
+          "topics": [],
+          "source": "github",
+          "score": 43
+        }
+      ]
+    },
     {
       "id": "request-los-santos-alive-bf743c9",
       "query": "Los Santos Alive",
