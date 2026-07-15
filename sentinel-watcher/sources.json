@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "lspdfr",
+      "name": "LSPD First Response",
+      "category": "Core & loaders",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/g17media/7792-lspd-first-response/",
+      "expectedVersion": "0.4.9 / 0.4.9572",
+      "currentStatus": "verified",
+      "sentinelPolice": true
+    },
+    {
+      "id": "openiv",
+      "name": "OpenIV",
+      "category": "Core & loaders",
+      "url": "https://openiv.com/",
+      "expectedVersion": "Current official release",
+      "currentStatus": "verified",
+      "sentinelPolice": true
+    },
+    {
+      "id": "scripthookv",
+      "name": "Script Hook V",
+      "category": "Core & loaders",
+      "url": "http://www.dev-c.com/gtav/scripthookv/",
+      "expectedVersion": "Legacy 3788 compatible",
+      "currentStatus": "verified",
+      "sentinelPolice": true
+    },
+    {
+      "id": "ragenativeui",
+      "name": "RAGENativeUI",
+      "category": "Libraries & utilities",
+      "url": "https://github.com/alexguirre/RAGENativeUI/releases",
+      "expectedVersion": "Newest official release",
+      "currentStatus": "verified",
+      "sentinelPolice": true
+    },
+    {
+      "id": "lemonui",
+      "name": "LemonUI",
+      "category": "Libraries & utilities",
+      "url": "https://www.gta5-mods.com/tools/lemonui",
+      "expectedVersion": "Current release",
+      "currentStatus": "community",
+      "sentinelPolice": false
+    },
+    {
+      "id": "scripthookvdotnet",
+      "name": "Community Script Hook V .NET",
+      "category": "Libraries & utilities",
+      "url": "https://www.gta5-mods.com/tools/scripthookv-net",
+      "expectedVersion": "Current release",
+      "currentStatus": "community",
+      "sentinelPolice": false
+    },
+    {
+      "id": "heap-adjuster",
+      "name": "HeapAdjuster Enhanced",
+      "category": "Stability & performance",
+      "url": "https://www.gta5-mods.com/tools/heapadjuster-enhanced",
+      "expectedVersion": "Legacy + Enhanced release",
+      "currentStatus": "community",
+      "sentinelPolice": true
+    },
+    {
+      "id": "packfile-limit-adjuster",
+      "name": "Packfile Limit Adjuster Enhanced",
+      "category": "Stability & performance",
+      "url": "https://www.gta5-mods.com/scripts/packfile-limit-adjuster-enhanced",
+      "expectedVersion": "1.1",
+      "currentStatus": "community",
+      "sentinelPolice": true
+    },
+    {
+      "id": "resource-adjuster",
+      "name": "Resource Adjuster",
+      "category": "Stability & performance",
+      "url": "https://www.gta5-mods.com/tools/resource-adjuster",
+      "expectedVersion": "1.0",
+      "currentStatus": "documented",
+      "sentinelPolice": false
+    },
+    {
+      "id": "weapon-limits-adjuster",
+      "name": "Weapon Limits Adjuster",
+      "category": "Stability & performance",
+      "url": "https://www.gta5-mods.com/tools/cweaponinfoblob-limit-adjuster",
+      "expectedVersion": "2.2",
+      "currentStatus": "documented",
+      "sentinelPolice": false
+    },
+    {
+      "id": "policing-redefined",
+      "name": "Policing Redefined",
+      "category": "Police systems",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/52191-policing-redefined/",
+      "expectedVersion": "1.0.0.5",
+      "currentStatus": "conflict",
+      "sentinelPolice": false
+    },
+    {
+      "id": "lspdfr-enhanced-remastered",
+      "name": "LSPDFR Enhanced: Remastered",
+      "category": "Police systems",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/47267-lspdfr-enhanced-remastered-massive-update/",
+      "expectedVersion": "Current release",
+      "currentStatus": "conflict",
+      "sentinelPolice": false
+    },
+    {
+      "id": "super-callouts",
+      "name": "SuperCallouts",
+      "category": "Callout packs",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/23995-supercallouts/",
+      "expectedVersion": "4.0.1.0",
+      "currentStatus": "community",
+      "sentinelPolice": false
+    },
+    {
+      "id": "regular-callouts",
+      "name": "Regular Callouts",
+      "category": "Callout packs",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/43654-regular-callouts/",
+      "expectedVersion": "1.1.8",
+      "currentStatus": "community",
+      "sentinelPolice": false
+    },
+    {
+      "id": "basic-callouts",
+      "name": "Basic Callouts",
+      "category": "Callout packs",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/36148-basic-callouts/",
+      "expectedVersion": "1.2.0.0",
+      "currentStatus": "community",
+      "sentinelPolice": false
+    },
+    {
+      "id": "typical-callouts",
+      "name": "Typical Callouts",
+      "category": "Callout packs",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/29152-typical-callouts/",
+      "expectedVersion": "Current release",
+      "currentStatus": "community",
+      "sentinelPolice": false
+    },
+    {
+      "id": "west-coast-callouts",
+      "name": "West Coast Callouts",
+      "category": "Callout packs",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/54203-west-coast-callouts/",
+      "expectedVersion": "Active development",
+      "currentStatus": "testing",
+      "sentinelPolice": false
+    },
+    {
+      "id": "real-duty-callouts",
+      "name": "Real Duty Callouts",
+      "category": "Callout packs",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53541-real-duty-callouts/",
+      "expectedVersion": "1.0",
+      "currentStatus": "testing",
+      "sentinelPolice": false
+    },
+    {
+      "id": "interior-callouts",
+      "name": "Interior Callouts",
+      "category": "Callout packs",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/51829-interior-callouts/",
+      "expectedVersion": "Current release",
+      "currentStatus": "community",
+      "sentinelPolice": false
+    },
+    {
+      "id": "jb-callout",
+      "name": "JBCallout",
+      "category": "Callout packs",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53353-%F0%9F%9A%93-jbcallout-dynamic-callout-pack-for-lspdfr/",
+      "expectedVersion": "Active development",
+      "currentStatus": "testing",
+      "sentinelPolice": false
+    },
+    {
+      "id": "eup-menu",
+      "name": "EUP Menu",
+      "category": "Uniforms & EUP",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/13245-eup-menu/",
+      "expectedVersion": "2.3.0",
+      "currentStatus": "verified",
+      "sentinelPolice": true
+    },
+    {
+      "id": "eup-law-order",
+      "name": "EUP Law & Order",
+      "category": "Uniforms & EUP",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/character/8151-emergency-uniforms-pack-law-order/",
+      "expectedVersion": "8.3 in Sentinel Police",
+      "currentStatus": "verified",
+      "sentinelPolice": true
+    },
+    {
+      "id": "eup-serve-rescue",
+      "name": "EUP Serve & Rescue",
+      "category": "Uniforms & EUP",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/character/16256-emergency-uniforms-pack-serve-rescue/",
+      "expectedVersion": "1.5 in Sentinel Police",
+      "currentStatus": "verified",
+      "sentinelPolice": true
+    },
+    {
+      "id": "eup-backup-configs",
+      "name": "EUP Backup Configurations",
+      "category": "Uniforms & EUP",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/misc/28735-eup-backup-configurations-93/",
+      "expectedVersion": "9.3 ecosystem release",
+      "currentStatus": "community",
+      "sentinelPolice": false
+    },
+    {
+      "id": "visualv",
+      "name": "VisualV",
+      "category": "Graphics & lighting",
+      "url": "https://www.gta5-mods.com/misc/visualv",
+      "expectedVersion": "Current Legacy release",
+      "currentStatus": "community",
+      "sentinelPolice": false
+    },
+    {
+      "id": "els",
+      "name": "Emergency Lighting System",
+      "category": "Vehicles & equipment",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/13865-emergency-lighting-system/",
+      "expectedVersion": "1.05",
+      "currentStatus": "community",
+      "sentinelPolice": false
+    }
+  ]
+}
