@@ -11,7 +11,7 @@ Never use a modded Project Sentinel installation in GTA Online.
 
 ## The method
 
-1. Install one layer.
+1. Install one layer
 2. Launch and test its core function.
 3. Read `RagePluginHook.log` if anything fails.
 4. Document keybinds and shared DLL versions.
