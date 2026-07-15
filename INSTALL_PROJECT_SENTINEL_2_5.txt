@@ -1,0 +1,10 @@
+PROJECT SENTINEL 2.5 INSTALL
+
+1. Extract Project-Sentinel-2.5-Update.zip.
+2. Copy everything inside Sentinel-2.5-Update into the root of your existing Project-Sentinel repository.
+3. Replace files when Windows asks.
+4. In GitHub Desktop commit:
+   Improve Sentinel diagnostic accuracy and shared bot reasoning
+5. Push origin and wait for GitHub Pages.
+
+No Cloudflare Worker redeploy is required.

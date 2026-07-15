@@ -3,48 +3,15 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
 import FileDropZone from '@site/src/components/FileDropZone';
-import {diagnosticRules} from '@site/src/data/diagnostics';
+import {analyzeDiagnostics} from '@site/src/utils/diagnosticEngine';
 import styles from './styles.module.css';
-
-const confidenceScore = {high: 5, medium: 3, low: 1};
-const kindOrder = {'root-cause': 0, 'missing-component': 1, configuration: 2, symptom: 3};
-
-function testPattern(pattern, text) {
-  pattern.lastIndex = 0;
-  return pattern.test(text);
-}
-
-function analyze(text) {
-  const normalized = text.toLowerCase();
-  const lines = text.split(/\r?\n/);
-  let matches = diagnosticRules.map((rule) => {
-    const keywordHits = (rule.keywords || []).filter((keyword) => normalized.includes(keyword.toLowerCase()));
-    const patternHits = (rule.logPatterns || []).filter((pattern) => testPattern(pattern, text));
-    const required = rule.requirePatterns || [];
-    const requiredHits = required.filter((pattern) => testPattern(pattern, text));
-    if (required.length && !requiredHits.length) return null;
-    const evidenceLines = lines.filter((line) => [...(rule.logPatterns || []), ...required].some((pattern) => testPattern(pattern, line))).slice(0, 3);
-    const score = keywordHits.length * 2 + patternHits.length * 5 + requiredHits.length * 5 + (confidenceScore[rule.confidence] || 0) + (rule.specificity || 0);
-    return {...rule, keywordHits, patternHits: patternHits.length, evidenceLines, score};
-  }).filter(Boolean).filter((match) => match.keywordHits.length || match.patternHits || match.evidenceLines.length);
-
-  const activeIds = new Set(matches.map((match) => match.id));
-  const suppressed = new Set();
-  matches.forEach((match) => (match.suppresses || []).forEach((id) => {if (activeIds.has(id)) suppressed.add(id);}));
-  matches = matches.filter((match) => !suppressed.has(match.id));
-
-  // Generic crash and performance findings are symptoms. Keep them only when no stronger diagnosis exists.
-  const hasSpecific = matches.some((match) => (match.specificity || 0) >= 3 && !['generic-crash', 'performance'].includes(match.id));
-  if (hasSpecific) matches = matches.filter((match) => !['generic-crash', 'performance'].includes(match.id));
-
-  return matches.sort((a, b) => b.score - a.score || (kindOrder[a.kind] ?? 9) - (kindOrder[b.kind] ?? 9));
-}
 
 export default function DoctorPage() {
   const [text, setText] = useState('');
   const [fileName, setFileName] = useState('');
   const [ran, setRan] = useState(false);
-  const matches = useMemo(() => ran ? analyze(text) : [], [ran, text]);
+  const analysis = useMemo(() => ran ? analyzeDiagnostics(text) : {matches: [], ignoredLineCount: 0}, [ran, text]);
+  const matches = analysis.matches;
   const primary = matches[0];
 
   const readFiles = async (files) => {
@@ -80,11 +47,11 @@ export default function DoctorPage() {
         </div>
 
         {ran && <section className={styles.results}>
-          <div className={styles.resultsHead}><div><span>Step 2</span><Heading as="h2">Diagnostic report</Heading></div><strong>{matches.length ? `${matches.length} ranked finding${matches.length === 1 ? '' : 's'}` : 'No rule matched'}</strong></div>
+          <div className={styles.resultsHead}><div><span>Step 2</span><Heading as="h2">Diagnostic report</Heading></div><strong>{matches.length ? `${matches.length} ranked finding${matches.length === 1 ? '' : 's'}` : 'No rule matched'}{analysis.ignoredLineCount > 0 ? ` · ${analysis.ignoredLineCount} note line${analysis.ignoredLineCount === 1 ? '' : 's'} ignored` : ''}</strong></div>
           {!matches.length ? <div className={styles.empty}><Heading as="h3">No confident match yet</Heading><p>Include the first exception, the lines before it, and the exact symptom.</p><Link to="/troubleshooter">Open Troubleshooting Wizard →</Link></div> : <>
             <article className={styles.primaryResult}><div className={styles.rank}>Most likely root cause</div><div><span>{primary.status} · {primary.confidence} confidence</span><Heading as="h3">{primary.title}</Heading><p>Ranked from contextual log patterns, specific wording, and suppression of redundant symptom rules.</p></div></article>
             <div className={styles.matchGrid}>{matches.slice(0, 5).map((match, index) => <article key={match.id} className={styles.matchCard}>
-              <div className={styles.matchTop}><span>#{index + 1}</span><b>{index === 0 ? 'root cause' : (match.kind || 'supporting issue')}</b></div>
+              <div className={styles.matchTop}><span>#{index + 1}</span><b>{index === 0 ? 'primary root cause' : (match.kind || 'supporting issue')}</b></div>
               <Heading as="h3">{match.title}</Heading>
               {!!match.evidenceLines?.length && <div className={styles.checks}><b>Matched evidence</b>{match.evidenceLines.map((line, i) => <span key={`${line}-${i}`}>“{line.trim().slice(0, 180)}”</span>)}</div>}
               <h4>Recommended repair path</h4><ol>{match.steps.slice(0, 4).map((step) => <li key={step}>{step}</li>)}</ol>

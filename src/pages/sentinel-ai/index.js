@@ -5,6 +5,7 @@ import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
 import {plugins} from '@site/src/data/plugins';
 import {diagnosticRules,conflictRules} from '@site/src/data/diagnostics';
+import {analyzeDiagnostics} from '@site/src/utils/diagnosticEngine';
 import FileDropZone from '@site/src/components/FileDropZone';
 import styles from './styles.module.css';
 
@@ -14,7 +15,6 @@ const CATEGORIES=['Startup / launch','Crash','Plugin not loading','EUP / uniform
 const STARTER=[{role:'assistant',text:'I am the free Sentinel Expert System. Describe what is failing, select the mods you installed, and attach text logs when available. I will compare your report against Sentinel rules, known conflicts, and the current plugin database—without a paid AI service.',confidence:'system',sources:[{label:'Manual troubleshooting',url:'/guide/troubleshooting'}]}];
 
 function readFile(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve({name:file.name,text:String(reader.result||'')});reader.onerror=()=>reject(new Error(`Could not read ${file.name}`));reader.readAsText(file);});}
-function scoreRule(rule,text,logs){let score=0;for(const keyword of rule.keywords||[]){if(text.includes(keyword.toLowerCase()))score+=3;}for(const pattern of rule.logPatterns||[]){if(pattern.test(logs))score+=5;}return score;}
 function formatDiagnosis(result,conflicts,versions){
  const lines=[];
  if(conflicts.length){lines.push('KNOWN CONFLICT DETECTED');for(const c of conflicts)lines.push(`• ${c.title}: ${c.detail}`);lines.push('');}
@@ -55,12 +55,14 @@ function SentinelExpertApp(){
   setError('');setMessages(prev=>[...prev,{role:'user',text:clean}]);
   const text=`${category} ${clean} ${chosenPlugins.map(p=>`${p.name} ${p.note||''}`).join(' ')}`.toLowerCase();
   const logText=logs.map(l=>l.text).join('\n');
-  const ranked=diagnosticRules.map(r=>({rule:r,score:scoreRule(r,text,logText)})).sort((a,b)=>b.score-a.score);
-  let best=ranked[0];if(!best||best.score===0)best={rule:diagnosticRules.find(r=>r.id==='generic-crash'),score:1};
+  const analysis=analyzeDiagnostics(logText,{context:text});
+  const best=analysis.matches[0]||diagnosticRules.find(r=>r.id==='generic-crash');
   const conflicts=conflictRules.filter(c=>c.ids.every(id=>selected.includes(id)));
-  const confidence=conflicts.length||best.score>=8?'high':best.score>=4?'medium':'guided';
-  const answer=formatDiagnosis(best.rule,conflicts,versions);
-  const sources=[{label:'Open recommended guide',url:best.rule.guide},{label:'Compatibility Center',url:'/compatibility'}];
+  const confidence=conflicts.length||(best.score||0)>=35?'high':(best.score||0)>=16?'medium':'guided';
+  let answer=formatDiagnosis(best,conflicts,versions);
+  if(analysis.matches.length>1){answer+='\n\nOther ranked findings:';analysis.matches.slice(1,4).forEach((m,i)=>{answer+=`\n${i+2}. ${m.title}`;});}
+  if(analysis.ignoredLineCount>0)answer+=`\n\nIgnored ${analysis.ignoredLineCount} note/comment line(s) so they did not influence the diagnosis.`;
+  const sources=[{label:'Open recommended guide',url:best.guide},{label:'Compatibility Center',url:'/compatibility'}];
   setMessages(prev=>[...prev,{role:'assistant',text:answer,confidence,sources,checks:conflicts.map(c=>c.title)}]);
   setProblem('');
  }
