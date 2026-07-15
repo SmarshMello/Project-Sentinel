@@ -33,6 +33,26 @@ export const diagnosticRules = [
     guide: '/guide/core/rage-plugin-hook',
   },
   {
+    id: 'scripthookv-version',
+    kind: 'root-cause',
+    specificity: 8,
+    suppresses: ['rph-version','wrong-plugin-folder','generic-crash','ragenativeui'],
+    title: 'ScriptHookV is incompatible with the installed GTA version',
+    confidence: 'high',
+    status: 'Sentinel Verified',
+    keywords: ['scripthookv','unsupported game version','asi loader skipped','scripthookv is unavailable'],
+    requirePatterns: [/scripthookv[\s\S]{0,240}(?:unsupported game version|failed|unavailable)/i,/unsupported game version[\s\S]{0,240}scripthookv/i],
+    logPatterns: [/unsupported game version/i,/asi loader skipped because scripthookv failed/i,/scripthookv is unavailable/i,/supported by current scripthookv/i],
+    steps: [
+      'Close GTA V, RAGE Plugin Hook, and Rockstar Games Launcher completely.',
+      'Compare the installed GTA build with the build supported by the current ScriptHookV release.',
+      'Install the official ScriptHookV release that supports the installed GTA Legacy build, or restore the verified Golden Build backup.',
+      'Launch Story Mode first, then RAGE Plugin Hook, and confirm ASI Loader and LSPDFR initialize before restoring optional plugins.'
+    ],
+    checks: ['Do not replace RAGE Plugin Hook when the log specifically names ScriptHookV.','Stop The Ped and Ultimate Backup not loading are downstream symptoms when LSPDFR never starts.'],
+    guide: '/guide/core/scripthookv',
+  },
+  {
     id: 'plugin-timeout',
     title: 'A plugin is timing out or blocking the game fiber',
     confidence: 'high',

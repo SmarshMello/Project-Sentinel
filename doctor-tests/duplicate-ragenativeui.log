@@ -1,0 +1,31 @@
+============================== RAGE Plugin Hook v1.130.1406.17682 Game:
+GTA V Legacy 1.0.3788.0 LSPDFR: 0.4.9 Build 0.4.9572.22921
+==============================
+
+[18:02:11.004] Loading plugins… [18:02:11.215] Loaded: StopThePed.dll
+v4.9.5.4 [18:02:11.421] Loaded: UltimateBackup.dll v1.9.2 [18:02:11.638]
+Loaded: CompuLite.dll v1.5.1 [18:02:12.044] Loaded: EUPMenu.dll v2.3.0
+[18:02:12.290] WARNING: Duplicate assembly detected: plugins.dll
+plugins.dll
+
+[18:02:12.771] INFO: Using plugins.dll version 1.08.0 [18:02:12.772]
+INFO: Expected verified version 1.11.0+
+
+[18:02:13.114] ERROR: StopThePed failed to register menu.
+System.MissingMethodException: Method not found:
+RAGENativeUI.Elements.UIMenuListScroller…
+
+[18:02:13.915] ERROR: UltimateBackup failed to initialize. Reason:
+Dependency initialization failed.
+
+[18:02:14.221] INFO: HeapAdjuster detected. [18:02:14.332] INFO:
+Packfile Limit Adjuster detected. [18:02:14.661] INFO: Verified
+GameConfig detected.
+
+[18:02:15.018] ERROR: EUP Menu disabled because dependency validation
+failed.
+
+[18:02:17.501] FATAL EXCEPTION
+System.Reflection.TargetInvocationException —>
+System.MissingMethodException at StopThePed.API.Initialize() at
+LSPD_First_Response.Mod.API.Functions.OnOnDutyStateChanged()
