@@ -223,6 +223,16 @@ export default function Watcher() {
           </div>
         </header>
 
+        <nav className={styles.operationsNav}>
+          <div className="container">
+            <Link to="/">Operations center</Link>
+            <Link className={styles.operationsActive} to="/watcher">Live scan</Link>
+            <Link to="/operations/projects">Project profiles</Link>
+            <Link to="/operations/analytics">Analytics</Link>
+            <Link to="/compatibility">Compatibility</Link>
+          </div>
+        </nav>
+
         <section className="container">
           <div className={styles.controlPanel}>
             <div className={styles.controlHeader}>

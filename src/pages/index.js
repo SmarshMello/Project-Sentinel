@@ -1,93 +1,40 @@
-import React from 'react';
-import clsx from 'clsx';
+import React,{useEffect,useMemo,useState} from 'react';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
-import SentinelIcon from '@site/src/components/SentinelIcon';
-import FeatureCard from '@site/src/components/FeatureCard';
-import VersionPanel from '@site/src/components/VersionPanel';
-import SectionHeader from '@site/src/components/SectionHeader';
-import RoadmapTimeline from '@site/src/components/RoadmapTimeline';
-import GoldenBuildCard from '@site/src/components/GoldenBuildCard';
+import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import {plugins} from '@site/src/data/plugins';
 import styles from './index.module.css';
 
-const features = [
-  {icon:'shield', title:'Stable builds', text:'Version-matched combinations designed to launch, load and patrol reliably.', badge:'VERIFIED'},
-  {icon:'book', title:'Exact documentation', text:'Every dependency, folder path, configuration edit and test gate explained.', badge:'DOCUMENTED'},
-  {icon:'wrench', title:'Real troubleshooting', text:'Symptom-first fixes built from actual logs, crashes and installation mistakes.', badge:'FIELD TESTED'},
-  {icon:'gauge', title:'Performance focused', text:'Maximum realism without sacrificing the frame rate and stability a patrol needs.', badge:'OPTIMIZED'},
-  {icon:'flask', title:'Testing laboratory', text:'New plugins enter testing before they ever receive a recommendation.', badge:'CONTROLLED'},
-  {icon:'package', title:'Golden builds', text:'Reproducible snapshots with known versions, settings and rollback points.', badge:'REPEATABLE'},
-];
+const fmt=(v)=>v?new Date(v).toLocaleString():'Awaiting first scan';
+const scoreLabel=(v)=>v>=90?'Excellent':v>=75?'Operational':v>=60?'Review recommended':'Attention required';
 
-const roadmap = [
-  {name:'Foundation', detail:'Core loaders, limits and backups', value:100, state:'Verified'},
-  {name:'Core police', detail:'Stops, backup, MDT and ALPR', value:100, state:'Verified'},
-  {name:'Uniforms', detail:'EUP, agencies and presentation', value:85, state:'In progress'},
-  {name:'Communications', detail:'Dispatch, radio and voice workflow', value:58, state:'Testing'},
-  {name:'Fleet', detail:'Departments and vehicle standards', value:34, state:'Planned'},
-  {name:'AI laboratory', detail:'Conversation and context systems', value:12, state:'Research'},
-];
-
-const statusRows = [
-  ['GTA V Legacy', '1.0.3788.0'],
-  ['RAGE Plugin Hook', '1.130.1406.17682'],
-  ['LSPDFR', '0.4.9 / 0.4.9572'],
-  ['Build channel', 'Legacy'],
-];
-
-export default function Home() {
-  return (
-    <Layout title="LSPDFR Knowledge Base" description="Verified guides for building a stable, realistic GTA V Legacy LSPDFR police simulator.">
-      <main className={styles.page}>
-        <section className={styles.hero}>
-          <div className={styles.heroGridPattern}/>
-          <div className={styles.heroGlow}/>
-          <div className={clsx('container', styles.heroInner)}>
-            <div className={styles.heroCopy}>
-              <div className={styles.kicker}><span className={styles.kickerMark}/><span>PROJECT SENTINEL // OPERATIONS CENTER</span></div>
-              <Heading as="h1" className={styles.heroTitle}>Build the police simulator<br/><span>GTA V was never meant to be.</span></Heading>
-              <p className={styles.heroLead}>The definitive, beginner-first knowledge base for a stable and realistic GTA V Legacy LSPDFR installation—verified one layer at a time.</p>
-              <div className={styles.heroActions}>
-                <Link className={clsx('button button--lg', styles.primaryButton)} to="/sentinel-police">Start building <SentinelIcon name="chevron" className={styles.icon}/></Link>
-                <Link className={clsx('button button--lg', styles.secondaryButton)} to="/plugins">Browse plugins</Link>
-              </div>
-              <div className={styles.trustRow}>
-                <span><SentinelIcon name="check" className={styles.icon}/> Version matched</span>
-                <span><SentinelIcon name="check" className={styles.icon}/> Beginner safe</span>
-                <span><SentinelIcon name="check" className={styles.icon}/> Continuously tested</span>
-              </div>
-            </div>
-            <VersionPanel title="Legacy 3788" rows={statusRows}/>
-          </div>
-          <div className={styles.heroStrip}><div className="container"><span>STATUS // ONLINE</span><span>PLUGIN REGISTRY // LIVE</span><span>CORE BUILD // VERIFIED</span><span>AI SYSTEMS // RESEARCH</span></div></div>
-        </section>
-
-        <section className={styles.section}>
-          <div className="container">
-            <SectionHeader eyebrow="THE SENTINEL STANDARD" title="Everything required. Nothing left to guess." description="Project Sentinel replaces scattered videos and outdated mod lists with one controlled, documented build system."/>
-            <div className={styles.featureGrid}>{features.map((feature,index)=><FeatureCard key={feature.title} {...feature} index={index+1}/>)}</div>
-          </div>
-        </section>
-
-        <section className={clsx(styles.section, styles.roadmapSection)} id="roadmap">
-          <div className="container">
-            <SectionHeader eyebrow="BUILD ROADMAP" title="From clean install to complete simulator." action={<Link className={styles.textLink} to="/guide/intro">Explore the full guide <SentinelIcon name="chevron" className={styles.icon}/></Link>}/>
-            <RoadmapTimeline items={roadmap}/>
-          </div>
-        </section>
-
-        <section className={styles.section}>
-          <div className="container"><GoldenBuildCard stats={[["3788","GTA Legacy"],["1.130","RAGE Plugin Hook"],["0.4.9","LSPDFR"],["100%","Core verified"]]}/></div>
-        </section>
-
-        <section className={clsx(styles.section, styles.ctaSection)}>
-          <div className={clsx('container', styles.ctaInner)}>
-            <div><div className={styles.sectionEyebrow}>READY FOR DUTY?</div><Heading as="h2">Start with a clean foundation.</Heading><p>Follow the controlled installation sequence and test at every gate. No giant mod dump. No mystery crashes.</p></div>
-            <div className={styles.ctaActions}><Link className={clsx('button button--lg', styles.primaryButton)} to="/guide/getting-started/clean-install">Begin clean install <SentinelIcon name="chevron" className={styles.icon}/></Link><Link className={clsx('button button--lg', styles.secondaryButton)} to="/plugins">Open plugin database</Link></div>
-          </div>
-        </section>
-      </main>
-    </Layout>
-  );
+export default function Home(){
+ const reportUrl=useBaseUrl('/data/watcher-report.json');
+ const historyUrl=useBaseUrl('/data/watcher-history.json');
+ const [report,setReport]=useState(null); const [history,setHistory]=useState({scans:[]});
+ useEffect(()=>{let active=true;(async()=>{try{const [r,h]=await Promise.all([fetch(`${reportUrl}?t=${Date.now()}`,{cache:'no-store'}),fetch(`${historyUrl}?t=${Date.now()}`,{cache:'no-store'})]);if(active&&r.ok)setReport(await r.json());if(active&&h.ok)setHistory(await h.json())}catch{}})();return()=>{active=false}},[reportUrl,historyUrl]);
+ const scans=history?.scans||[]; const previous=scans[1];
+ const delta=report&&previous?(report.averageHealth-previous.averageHealth):null;
+ const actions=useMemo(()=>report?.reviewQueue?.slice(0,4)||[],[report]);
+ const watched=report?.counts?.tracked??26; const health=report?.averageHealth??'—';
+ const critical=report?.intelligenceCounts?.highRisk??0; const reviews=report?.counts?.needsReview??'—';
+ const updates=report?.counts?.possibleUpdates??'—'; const runtime=report?.durationSeconds??'—';
+ return <Layout title="Operations Center" description="Project Sentinel operations center for LSPDFR builds, monitoring, compatibility and troubleshooting.">
+  <main className={styles.page}>
+   <section className={styles.hero}><div className={styles.grid}/><div className="container"><div className={styles.kicker}>PROJECT SENTINEL // OPERATIONS CENTER 4.0</div><Heading as="h1">Your LSPDFR command center.</Heading><p>Build, monitor, verify and troubleshoot a stable GTA V Legacy police simulator from one connected platform.</p><div className={styles.actions}><Link className={styles.primary} to="/watcher">Open live operations</Link><Link className={styles.secondary} to="/sentinel-police">Continue Sentinel Police</Link></div></div></section>
+   <section className="container">
+    <div className={styles.statusBanner}><div><span>Overall ecosystem status</span><strong>{report?scoreLabel(report.averageHealth):'Loading live status'}</strong><small>Last published: {fmt(report?.checkedAt)}</small></div><div className={styles.score}><b>{health}{health!=='—'?'%':''}</b><span>{delta===null?'Live intelligence':`${delta>=0?'+':''}${delta}% since prior scan`}</span></div></div>
+    <div className={styles.metrics}>
+     {[['Projects monitored',watched,'Watcher coverage'],['Critical alerts',critical,'Immediate action'],['Possible updates',updates,'Release signals'],['Needs review',reviews,'Human verification'],['Last runtime',`${runtime}s`,'Automated scan'],['Database records',plugins.length,'Sentinel registry']].map(([a,b,c])=><article key={a}><span>{a}</span><strong>{b}</strong><small>{c}</small></article>)}
+    </div>
+    <div className={styles.columns}>
+     <article className={styles.panel}><div className={styles.panelHead}><div><span>Today</span><Heading as="h2">Action center</Heading></div><Link to="/watcher">Open Watcher →</Link></div>{actions.length?<div className={styles.actionsList}>{actions.map(item=><Link key={item.id} to={`/operations/projects?id=${encodeURIComponent(item.id)}`}><b>{item.name}</b><span>{item.reviewReason||item.note||'Manual review recommended'}</span><i>{item.reviewPriority||'review'}</i></Link>)}</div>:<div className={styles.clear}><b>No urgent actions.</b><span>The latest published scan contains no high-priority review items.</span></div>}</article>
+     <article className={styles.panel}><div className={styles.panelHead}><div><span>Connected systems</span><Heading as="h2">Sentinel modules</Heading></div></div><div className={styles.modules}>{[
+      ['/watcher','Watcher','Daily ecosystem intelligence'],['/operations/projects','Project profiles','Live mod health and source data'],['/operations/analytics','Analytics','Trends, category health and history'],['/compatibility','Compatibility Center','Conflicts, dependencies and confidence'],['/planner','Build Planner','Generate a controlled installation plan'],['/doctor','Sentinel Doctor','Guided diagnosis and repair']].map(([to,name,desc])=><Link key={to} to={to}><b>{name}</b><span>{desc}</span><i>→</i></Link>)}</div></article>
+    </div>
+    <div className={styles.categories}><div className={styles.panelHead}><div><span>Live category intelligence</span><Heading as="h2">Ecosystem coverage</Heading></div><Link to="/operations/analytics">View analytics →</Link></div><div className={styles.categoryGrid}>{(report?.categories||[]).slice(0,8).map(c=><article key={c.name}><div><b>{c.name}</b><span>{c.needsReview} review</span></div><div className={styles.track}><i style={{width:`${c.averageHealth}%`}}/></div><strong>{c.averageHealth}%</strong></article>)}</div></div>
+   </section>
+  </main>
+ </Layout>
 }
