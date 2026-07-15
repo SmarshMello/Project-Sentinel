@@ -1,188 +1,240 @@
 {
-  "schemaVersion": 1,
-  "updatedAt": "2026-07-15T05:02:16.928Z",
+  "schemaVersion": 2,
+  "updatedAt": "2026-07-15T05:42:59.382Z",
   "items": {
     "lspdfr": {
       "status": "timed-out",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/g17media/7792-lspd-first-response/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "openiv": {
       "status": "healthy",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": "75f06b3e9daf9f3387bf",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://openiv.com/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "scripthookv": {
       "status": "healthy",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": "11e6ee38fe91283f1954",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.dev-c.com/gtav/scripthookv/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "ragenativeui": {
       "status": "healthy",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": "8d4d0ee52c38270cb514",
       "latestRelease": "1.9.3",
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://github.com/alexguirre/RAGENativeUI",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "lemonui": {
       "status": "healthy",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": "3f4d96418f14dd683469",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.gta5-mods.com/tools/lemonui",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "scripthookvdotnet": {
       "status": "healthy",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": "101e55b537d3ceab3b46",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.gta5-mods.com/tools/scripthookv-net",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "heap-adjuster": {
       "status": "healthy",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": "babd92e05c9219565535",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.gta5-mods.com/tools/heapadjuster-enhanced",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "packfile-limit-adjuster": {
       "status": "healthy",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": "7870c8fa6aab47615e97",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.gta5-mods.com/scripts/packfile-limit-adjuster-enhanced",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "resource-adjuster": {
       "status": "healthy",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": "6c36e2042848babcab68",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.gta5-mods.com/tools/resource-adjuster",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "weapon-limits-adjuster": {
       "status": "healthy",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": "fa399c1f975512fc72f3",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.gta5-mods.com/tools/cweaponinfoblob-limit-adjuster",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "policing-redefined": {
       "status": "timed-out",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/52191-policing-redefined/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "lspdfr-enhanced-remastered": {
       "status": "timed-out",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/47267-lspdfr-enhanced-remastered-massive-update/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "super-callouts": {
       "status": "timed-out",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/23995-supercallouts/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "regular-callouts": {
-      "status": "timed-out",
+      "status": "rate-limited",
       "statusStreak": 1,
-      "fingerprint": null,
+      "fingerprint": "1e09beb1bd67c3be8b90",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/43654-regular-callouts/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "basic-callouts": {
       "status": "rate-limited",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "9f1c29516b0927742e22",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/36148-basic-callouts/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "typical-callouts": {
       "status": "rate-limited",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "f8145232c6a89075a07c",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/29152-typical-callouts/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "west-coast-callouts": {
       "status": "rate-limited",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "a24397d08d762cae9eb5",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/54203-west-coast-callouts/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "real-duty-callouts": {
       "status": "rate-limited",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "b8ef918ad0c6e42a1c80",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53541-real-duty-callouts/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "interior-callouts": {
-      "status": "timed-out",
-      "statusStreak": 2,
-      "fingerprint": null,
+      "status": "rate-limited",
+      "statusStreak": 1,
+      "fingerprint": "b0a37337a18bfec44b8f",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/51829-interior-callouts/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "jb-callout": {
-      "status": "timed-out",
+      "status": "rate-limited",
       "statusStreak": 1,
-      "fingerprint": null,
+      "fingerprint": "cf6ed8027ada9c468ecc",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53353-%F0%9F%9A%93-jbcallout-dynamic-callout-pack-for-lspdfr/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "eup-menu": {
-      "status": "timed-out",
+      "status": "rate-limited",
       "statusStreak": 1,
-      "fingerprint": null,
+      "fingerprint": "cecff72ec032adbae8c9",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/13245-eup-menu/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "eup-law-order": {
-      "status": "timed-out",
+      "status": "rate-limited",
       "statusStreak": 1,
-      "fingerprint": null,
+      "fingerprint": "5fb50986c43a001bc6ed",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/character/8151-emergency-uniforms-pack-law-order/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "eup-serve-rescue": {
       "status": "rate-limited",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "5588b46f354d35c779d7",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/character/16256-emergency-uniforms-pack-serve-rescue/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "eup-backup-configs": {
       "status": "rate-limited",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "7a546206d0ed9f0a4f53",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/misc/28735-eup-backup-configurations-93/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "visualv": {
       "status": "healthy",
-      "statusStreak": 3,
+      "statusStreak": 4,
       "fingerprint": "1a7798a73e2eee246bd2",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.gta5-mods.com/misc/visualv",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     },
     "els": {
-      "status": "timed-out",
-      "statusStreak": 3,
+      "status": "failed",
+      "statusStreak": 1,
       "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T05:02:16.928Z"
+      "detectedVersion": null,
+      "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/13865-emergency-lighting-system/",
+      "checkedAt": "2026-07-15T05:42:59.382Z"
     }
   }
 }
