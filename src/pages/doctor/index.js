@@ -6,6 +6,7 @@ import FileDropZone from '@site/src/components/FileDropZone';
 import {analyzeDiagnostics} from '@site/src/utils/diagnosticEngine';
 import {buildDoctorContext, doctorEnvironmentFields, doctorSymptoms} from '@site/src/data/doctorIntake';
 import {analyzeRegistryContext} from '@site/src/data/doctorRegistry';
+import {validateDoctorEnvironment} from '@site/src/data/doctorEnvironment';
 import styles from './styles.module.css';
 
 export default function DoctorPage() {
@@ -21,6 +22,7 @@ export default function DoctorPage() {
   const analysis = useMemo(() => ran ? analyzeDiagnostics(text, {context}) : {matches: [], ignoredLineCount: 0, ruledOut: [], timeline: [], needsMoreEvidence: []}, [ran, text, context]);
   const matches = analysis.matches;
   const registryAnalysis = useMemo(() => ran ? analyzeRegistryContext({text, symptom, environment}) : {findings: [], conflictPairs: []}, [ran, text, symptom, environment]);
+  const environmentAnalysis = useMemo(() => ran ? validateDoctorEnvironment(environment) : null, [ran, environment]);
   const primary = matches[0];
 
   const readFiles = async (files) => {
@@ -59,6 +61,11 @@ export default function DoctorPage() {
 
         {ran && <section className={styles.results}>
           <div className={styles.resultsHead}><div><span>Step 3</span><Heading as="h2">Diagnostic report</Heading></div><strong>{matches.length ? `${matches.length} ranked finding${matches.length === 1 ? '' : 's'}` : 'No rule matched'}{analysis.ignoredLineCount > 0 ? ` · ${analysis.ignoredLineCount} note line${analysis.ignoredLineCount === 1 ? '' : 's'} ignored` : ''}</strong></div>
+          {environmentAnalysis && <section className={`${styles.environmentReport} ${styles[`environment${environmentAnalysis.priority[0].toUpperCase()}${environmentAnalysis.priority.slice(1)}`]}`}>
+            <div className={styles.environmentReportHead}><div><span>Environment validation</span><Heading as="h3">{environmentAnalysis.summary}</Heading></div><b>{environmentAnalysis.ready ? 'Baseline matched' : `${environmentAnalysis.priority} priority`}</b></div>
+            <div className={styles.environmentCheckGrid}>{environmentAnalysis.checks.map((check)=><article key={`${check.field}-${check.label}`} className={styles.environmentCheck}><div><span>{check.label}</span><b className={styles[`environmentState${check.state[0].toUpperCase()}${check.state.slice(1)}`]}>{check.state}</b></div><small>Entered</small><strong>{check.entered}</strong><small>Sentinel baseline</small><strong>{check.expected}</strong><p>{check.message}</p><em>{check.action}</em></article>)}</div>
+            {!environmentAnalysis.ready && <div className={styles.repairPriority}><b>Repair priority</b><ol>{environmentAnalysis.repairOrder.slice(0, environmentAnalysis.mismatches.length + environmentAnalysis.missing.length).map((step)=><li key={step}>{step}</li>)}</ol></div>}
+          </section>}
           {!!registryAnalysis.conflictPairs.length && <section className={styles.conflictAlert}><div><span>Registry conflict detected</span><Heading as="h3">These projects should not share the same build</Heading></div>{registryAnalysis.conflictPairs.map((pair)=><div className={styles.conflictPair} key={pair.ids.join('-')}><Link to={pair.left.profile}>{pair.left.name}</Link><b>conflicts with</b><Link to={pair.right.profile}>{pair.right.name}</Link></div>)}</section>}
           {!!registryAnalysis.findings.length && <section className={styles.registryPanel}><div className={styles.resultsHead}><div><span>Unified registry</span><Heading as="h2">Project-specific repair intelligence</Heading></div><strong>{registryAnalysis.findings.length} matched project{registryAnalysis.findings.length===1?'':'s'}</strong></div><div className={styles.registryGrid}>{registryAnalysis.findings.map((project)=><article className={styles.registryCard} key={project.id}><div className={styles.registryTop}><span>{project.category}</span><b className={styles[`priority${project.priority[0].toUpperCase()}${project.priority.slice(1)}`]}>{project.priority} priority</b></div><Heading as="h3">{project.name}</Heading><p>{project.note}</p><div className={styles.registryFacts}><span><small>Status</small><b>{project.statusLabel}</b></span><span><small>Sentinel version</small><b>{project.version}</b></span><span><small>Confidence</small><b>{project.confidence}%</b></span></div>{!!project.conflicts.length&&<div className={styles.registryWarning}><b>Known conflicts</b>{project.conflicts.map((item)=><Link key={item.id} to={item.profile}>{item.name}</Link>)}</div>}{!!project.dependencies.length&&<div className={styles.registryDeps}><b>Verify dependencies</b>{project.dependencies.map((item)=>item.profile?<Link key={item.name} to={item.profile}>{item.name}</Link>:<span key={item.name}>{item.name}</span>)}</div>}<ol>{project.actions.map((action)=><li key={action}>{action}</li>)}</ol><Link to={project.guide || project.profile}>Open Sentinel guidance →</Link></article>)}</div></section>}
           {!matches.length ? <div className={styles.empty}><Heading as="h3">No confident match yet</Heading><p>Include the first exception, the lines before it, and the exact symptom.</p><Link to="/troubleshooter">Open Troubleshooting Wizard →</Link></div> : <>
