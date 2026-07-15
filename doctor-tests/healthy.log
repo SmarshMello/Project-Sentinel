@@ -1,0 +1,6 @@
+[10:00:00] INFO: ASI Loader initialized successfully.
+[10:00:01] INFO: HeapAdjuster detected.
+[10:00:02] INFO: Packfile Limit Adjuster detected.
+[10:00:03] INFO: Verified GameConfig detected.
+[10:00:04] INFO: RAGENativeUI version 1.11.0 verified.
+[10:00:05] INFO: LSPD First Response loaded successfully.

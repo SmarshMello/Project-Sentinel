@@ -13,7 +13,7 @@ export default function DoctorPage() {
   const [repairOpen, setRepairOpen] = useState(false);
   const [repairStep, setRepairStep] = useState(0);
   const [completed, setCompleted] = useState([]);
-  const analysis = useMemo(() => ran ? analyzeDiagnostics(text) : {matches: [], ignoredLineCount: 0, ruledOut: []}, [ran, text]);
+  const analysis = useMemo(() => ran ? analyzeDiagnostics(text) : {matches: [], ignoredLineCount: 0, ruledOut: [], timeline: [], needsMoreEvidence: []}, [ran, text]);
   const matches = analysis.matches;
   const primary = matches[0];
 
@@ -51,10 +51,12 @@ export default function DoctorPage() {
           {!matches.length ? <div className={styles.empty}><Heading as="h3">No confident match yet</Heading><p>Include the first exception, the lines before it, and the exact symptom.</p><Link to="/troubleshooter">Open Troubleshooting Wizard →</Link></div> : <>
             <article className={styles.primaryResult}><div className={styles.rank}>Most likely root cause</div><div><span>{primary.status} · {primary.confidencePercent}% confidence</span><Heading as="h3">{primary.title}</Heading><p>Confidence combines specificity, causal continuity, direct exception evidence, and contradictory evidence.</p></div><button className={styles.repairButton} onClick={startRepair}>Start guided repair</button></article>
             {!!primary.causalChain?.length && <article className={styles.chainCard}><div><span>Causal chain</span><Heading as="h3">How the failure progressed</Heading></div><div className={styles.chain}>{primary.causalChain.map((item,i)=><React.Fragment key={item}><div className={styles.chainNode}>{item}</div>{i<primary.causalChain.length-1&&<div className={styles.chainArrow}>↓</div>}</React.Fragment>)}</div></article>}
+            
+            {!!analysis.timeline?.length && <article className={styles.chainCard}><div><span>Evidence timeline</span><Heading as="h3">Where the startup or session first broke</Heading></div><div className={styles.chain}>{analysis.timeline.slice(0,12).map((item)=><div className={styles.chainNode} key={`${item.time}-${item.index}`}><b>{item.time}</b> · {item.state==='failure'?'✕':item.state==='success'?'✓':item.state==='warning'?'!':'•'} {item.text}</div>)}</div></article>}
             {!!analysis.ruledOut?.length && <article className={styles.ruledOut}><div><span>Negative evidence</span><Heading as="h3">Ruled out by this log</Heading></div><div>{analysis.ruledOut.map(x=><span key={x}>✓ {x}</span>)}</div></article>}
             <div className={styles.matchGrid}>{matches.slice(0, 5).map((match, index) => <article key={match.id} className={styles.matchCard}>
               <div className={styles.matchTop}><span>#{index + 1}</span><b>{index === 0 ? 'primary root cause' : (match.kind || 'supporting issue')}</b><em>{match.confidencePercent}%</em></div>
-              <Heading as="h3">{match.title}</Heading>
+              <Heading as="h3">{match.title}</Heading><small>{match.subsystem || 'General diagnostics'}</small>
               {!!match.evidenceLines?.length && <div className={styles.checks}><b>Matched evidence</b>{match.evidenceLines.map((line, i) => <span key={`${line}-${i}`}>“{line.trim().slice(0, 180)}”</span>)}</div>}
               <h4>Recommended repair path</h4><ol>{match.steps.slice(0, 4).map((step) => <li key={step}>{step}</li>)}</ol>
               {!!match.checks?.length && <div className={styles.checks}><b>Verify</b>{match.checks.map((check) => <span key={check}>✓ {check}</span>)}</div>}

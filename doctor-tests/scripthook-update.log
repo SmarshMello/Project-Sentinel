@@ -1,19 +1,6 @@
-============================== RAGE Plugin Hook v1.130.1406.17682 Game:
-GTA V Legacy 1.0.3790.0 ==============================
-
-[17:44:01.101] ScriptHookV initializing… [17:44:01.214] ERROR:
-Unsupported game version detected. [17:44:01.215] Installed GTA build:
-1.0.3790.0 [17:44:01.216] Supported by current ScriptHookV: 1.0.3788.0
-
-[17:44:01.330] ASI Loader skipped because ScriptHookV failed.
-
-[17:44:01.512] INFO: HeapAdjuster detected. [17:44:01.640] INFO:
-Packfile Limit Adjuster detected. [17:44:01.721] INFO: Verified
-GameConfig detected. [17:44:01.860] INFO: RAGENativeUI version 1.11.0
-verified.
-
-[17:44:02.114] WARNING: LSPDFR could not start because ScriptHookV is
-unavailable. [17:44:02.442] WARNING: StopThePed.dll not loaded.
-[17:44:02.700] WARNING: UltimateBackup.dll not loaded.
-
-[17:44:03.009] FATAL: Startup aborted.
+[10:00:00] ERROR: Unsupported game version detected.
+[10:00:01] Installed GTA build: 1.0.3790.0
+[10:00:02] Supported by current ScriptHookV: 1.0.3788.0
+[10:00:03] ASI Loader skipped because ScriptHookV failed.
+[10:00:04] INFO: Verified GameConfig detected.
+[10:00:05] INFO: RAGENativeUI version 1.11.0 verified.

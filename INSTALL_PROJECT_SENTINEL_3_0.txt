@@ -1,0 +1,7 @@
+PROJECT SENTINEL 3.0 INSTALL
+1. Copy all files from this update into the repository root and replace existing files.
+2. Run npm run test:doctor
+3. Run npm run build
+4. Commit: Expand Sentinel diagnostic knowledge engine
+5. Push origin.
+No Cloudflare Worker redeploy is required.
