@@ -1,0 +1,19 @@
+PROJECT SENTINEL 2.3 INSTALLATION
+
+1. Extract the update ZIP.
+2. Copy everything inside the extracted update folder into the root of your Project-Sentinel repository.
+3. Choose Replace the files in the destination.
+4. In GitHub Desktop, review the changed files.
+5. Commit with:
+
+   Add Sentinel Doctor and live Operations Dashboard
+
+6. Push origin.
+7. Wait for the GitHub Pages deployment to complete.
+8. Test:
+
+   https://smarshmello.github.io/Project-Sentinel/dashboard
+   https://smarshmello.github.io/Project-Sentinel/doctor
+
+Cloudflare Worker redeployment is NOT required for this update.
+Your existing Watcher 0.5 Worker and secrets remain unchanged.
