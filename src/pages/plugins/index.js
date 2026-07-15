@@ -1,8 +1,9 @@
-import React, {useMemo, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import PluginStatus from '@site/src/components/PluginStatus';
 import {pluginCategories, plugins, statusMeta} from '@site/src/data/plugins';
 import styles from './styles.module.css';
@@ -26,7 +27,7 @@ function PluginCard({plugin}) {
   return (
     <article className={styles.card}>
       <div className={styles.cardTopline}>
-        <div className={styles.monogram}>{plugin.shortName.slice(0, 3).toUpperCase()}</div>
+        <div className={styles.monogram}>{String(plugin.shortName||plugin.name).slice(0, 3).toUpperCase()}</div>
         <PluginStatus status={plugin.status}/>{plugin.sentinelPolice && <span className={styles.sentinelTag}>Sentinel Police</span>}
       </div>
       <div className={styles.cardHeading}>
@@ -39,7 +40,7 @@ function PluginCard({plugin}) {
         <strong>{plugin.version}</strong>
       </div>
       <div className={styles.tagList}>
-        {plugin.tags.map(tag => <span key={tag}>{tag}</span>)}
+        {(plugin.tags||[]).map(tag => <span key={tag}>{tag}</span>)}
       </div>
       <dl className={styles.quickFacts}>
         <div><dt>Developer</dt><dd>{plugin.developer}</dd></div>
@@ -60,23 +61,26 @@ function PluginCard({plugin}) {
 }
 
 export default function PluginDatabase() {
+  const researchUrl=useBaseUrl('/data/research-results.json');
+  const [allPlugins,setAllPlugins]=useState(plugins);
+  useEffect(()=>{let active=true;fetch(`${researchUrl}?registry=${Date.now()}`,{cache:'no-store'}).then(r=>r.ok?r.json():null).then(data=>{if(!active||!data)return;const known=new Set(plugins.map(x=>x.id));setAllPlugins([...plugins,...(data.discoveries||[]).filter(x=>!known.has(x.id))]);}).catch(()=>{});return()=>{active=false};},[researchUrl]);
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All');
   const [status, setStatus] = useState('all');
 
   const filteredPlugins = useMemo(() => {
     const normalized = query.trim().toLowerCase();
-    return plugins.filter(plugin => {
+    return allPlugins.filter(plugin => {
       const matchesCategory = category === 'All' || plugin.category === category;
       const matchesStatus = status === 'all' || plugin.status === status;
       const haystack = [plugin.name, plugin.shortName, plugin.description, plugin.category, plugin.version, ...plugin.tags].join(' ').toLowerCase();
       return matchesCategory && matchesStatus && (!normalized || haystack.includes(normalized));
     });
-  }, [query, category, status]);
+  }, [query, category, status, allPlugins]);
 
-  const verifiedCount = plugins.filter(plugin => plugin.status === 'verified').length;
-  const testingCount = plugins.filter(plugin => plugin.status === 'testing').length;
-  const sentinelCount = plugins.filter(plugin => plugin.sentinelPolice).length;
+  const verifiedCount = allPlugins.filter(plugin => plugin.status === 'verified').length;
+  const testingCount = allPlugins.filter(plugin => plugin.status === 'testing').length;
+  const sentinelCount = allPlugins.filter(plugin => plugin.sentinelPolice).length;
 
   return (
     <Layout title="Plugin Database" description="Project Sentinel compatibility, verification and installation database for LSPDFR plugins and dependencies.">
@@ -93,7 +97,7 @@ export default function PluginDatabase() {
               <div className={styles.registryPanel}>
                 <div><Icon name="shield"/><span>Verified</span><strong>{verifiedCount}</strong></div>
                 <div><Icon name="pulse"/><span>Testing</span><strong>{testingCount}</strong></div>
-                <div><Icon name="cube"/><span>Total records</span><strong>{plugins.length}</strong></div><div><Icon name="shield"/><span>Sentinel Police</span><strong>{sentinelCount}</strong></div>
+                <div><Icon name="cube"/><span>Total records</span><strong>{allPlugins.length}</strong></div><div><Icon name="shield"/><span>Sentinel Police</span><strong>{sentinelCount}</strong></div>
               </div>
             </div>
           </div>
@@ -128,7 +132,7 @@ export default function PluginDatabase() {
               {statusOrder.map(item => (
                 <button key={item} type="button" className={item === status ? styles.activeTab : ''} onClick={() => setStatus(item)}>
                   {item === 'all' ? 'All records' : statusMeta[item].label}
-                  <span>{item === 'all' ? plugins.length : plugins.filter(plugin => plugin.status === item).length}</span>
+                  <span>{item === 'all' ? allPlugins.length : allPlugins.filter(plugin => plugin.status === item).length}</span>
                 </button>
               ))}
             </div>

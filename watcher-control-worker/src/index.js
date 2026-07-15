@@ -23,7 +23,7 @@ function githubHeaders(env) {
     accept: 'application/vnd.github+json',
     authorization: `Bearer ${env.GITHUB_TOKEN}`,
     'x-github-api-version': API_VERSION,
-    'user-agent': 'Project-Sentinel-Watcher-Control/0.5',
+    'user-agent': 'Project-Sentinel-Watcher-Control/0.6',
   };
 }
 
@@ -92,7 +92,7 @@ export default {
     const url = new URL(request.url);
     try {
       if (url.pathname === '/health' && request.method === 'GET') {
-        return json({ok: true, service: 'Sentinel Watcher Control', version: '0.5.0'}, 200, env, origin);
+        return json({ok: true, service: 'Sentinel Watcher Control', version: '0.6.0'}, 200, env, origin);
       }
 
       if (url.pathname === '/trigger' && request.method === 'POST') {
@@ -108,6 +108,21 @@ export default {
           return json({error: `GitHub rejected the scan request (${response.status}).`, detail}, 502, env, origin);
         }
         return json({ok: true, scanId, status: 'queued'}, 202, env, origin);
+      }
+
+
+      if (url.pathname === '/research' && request.method === 'POST') {
+        if (!requireAdmin(request, env)) return json({error: 'Watcher admin key required to submit research.'}, 401, env, origin);
+        const body = await request.json().catch(() => ({}));
+        const query = String(body.query || '').trim().replace(/\s+/g, ' ');
+        if (query.length < 3 || query.length > 120) return json({error: 'Research query must be 3–120 characters.'}, 400, env, origin);
+        const scanId = `research-${Date.now()}-${crypto.randomUUID().slice(0, 8)}`;
+        const response = await github(env, `/actions/workflows/${env.WORKFLOW_FILE}/dispatches`, {
+          method: 'POST', headers: {'content-type': 'application/json'},
+          body: JSON.stringify({ref: 'main', inputs: {scan_id: scanId, research_query: query}}),
+        });
+        if (!response.ok) return json({error: `GitHub rejected the research request (${response.status}).`, detail: await response.text()}, 502, env, origin);
+        return json({ok: true, scanId, query, status: 'queued'}, 202, env, origin);
       }
 
       if (url.pathname === '/status' && request.method === 'GET') {
