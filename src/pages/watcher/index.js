@@ -160,6 +160,9 @@ export default function Watcher() {
   const recentScans = history?.scans || [];
   const previousScan = recentScans[1] || null;
   const healthDelta = previousScan ? (report?.averageHealth ?? 0) - (previousScan.averageHealth ?? 0) : null;
+  const categories = report?.categories || [];
+  const intelligenceCounts = report?.intelligenceCounts || {};
+  const riskClass = (value) => styles[`risk${String(value || 'medium').replace(/^./, (letter) => letter.toUpperCase())}`] || '';
 
   return (
     <Layout title="Sentinel Watcher" description="Automated monitoring and review queues for the LSPDFR mod ecosystem.">
@@ -226,7 +229,19 @@ export default function Watcher() {
             {runError && <div className={styles.error}>{runError}</div>}
           </div>
 
-          <div className={styles.notice}><b>Review-first automation</b><span>Watcher tracks repeated failures, health scores and possible releases. A timeout or bot block is never treated as proof that a mod is dead.</span></div>
+          <div className={styles.notice}><b>Daily intelligence automation</b><span>Watcher now scans every day, assigns risk and confidence, recommends the next action, and never treats a timeout or bot block as proof that a mod is dead.</span></div>
+
+          <div className={styles.intelligenceGrid}>
+            <article>
+              <div className={styles.sectionHeading}><div><span className={styles.panelLabel}>Watcher 0.7</span><Heading as="h2">Intelligence summary</Heading></div><strong>{intelligenceCounts.highRisk ?? '—'}</strong></div>
+              <div className={styles.riskSummary}><span className={styles.riskHigh}>High risk <b>{intelligenceCounts.highRisk ?? '—'}</b></span><span className={styles.riskMedium}>Medium <b>{intelligenceCounts.mediumRisk ?? '—'}</b></span><span className={styles.riskLow}>Low <b>{intelligenceCounts.lowRisk ?? '—'}</b></span><span>Stable <b>{intelligenceCounts.stable ?? '—'}</b></span></div>
+              <p>Risk is based on source status, repeated failures, release signals and source quality. It is a review aid, not an automatic compatibility verdict.</p>
+            </article>
+            <article>
+              <div className={styles.sectionHeading}><div><span className={styles.panelLabel}>Ecosystem coverage</span><Heading as="h2">Category health</Heading></div><strong>{categories.length || '—'}</strong></div>
+              <div className={styles.categoryList}>{categories.slice(0,6).map((category) => <div key={category.name}><span>{category.name}</span><div className={styles.healthTrack}><i style={{width:`${category.averageHealth || 0}%`}} /></div><b>{category.averageHealth}%</b><small>{category.needsReview} review</small></div>)}</div>
+            </article>
+          </div>
 
           <div className={styles.operationsGrid}>
             <article className={styles.changeCard}>
@@ -275,6 +290,7 @@ export default function Watcher() {
                 {(item.latestRelease || item.detectedVersion) && <small>Detected: <b>{item.latestRelease || item.detectedVersion}</b></small>}
                 {item.note && <small>{item.note}</small>}<small>Health: <b>{item.healthScore ?? '—'}%</b>{item.statusStreak > 1 ? ` · ${item.statusStreak} consecutive scans` : ''}</small>
                 {item.reviewReason && item.needsReview && <small className={styles.reason}>{item.reviewReason}</small>}
+                {item.intelligence && <div className={styles.intelligence}><span className={riskClass(item.intelligence.riskLevel)}>{item.intelligence.riskLevel} risk</span><small><b>{item.intelligence.confidence}% confidence</b> · {item.intelligence.recommendation}</small></div>}
               </div>
               <dl><div><dt>HTTP</dt><dd>{item.httpStatus ?? '—'}</dd></div><div><dt>Attempts</dt><dd>{item.attempts ?? '—'}</dd></div><div><dt>Latest release</dt><dd>{item.latestRelease || 'Not detected'}</dd></div><div><dt>Sentinel Police</dt><dd>{item.sentinelPolice ? 'Yes' : 'No'}</dd></div></dl>
               <a href={item.finalUrl || item.url}>Open official source →</a>

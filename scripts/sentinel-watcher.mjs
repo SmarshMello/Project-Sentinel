@@ -105,6 +105,27 @@ function review(result) {
   return result;
 }
 
+function addIntelligence(result) {
+  const statusRisk = {
+    healthy: 'low', 'metadata-changed': 'low', redirected: 'medium', blocked: 'medium',
+    'rate-limited': 'medium', 'timed-out': result.statusStreak >= 3 ? 'medium' : 'low',
+    'possible-update': 'medium', archived: 'high', 'not-found': 'high',
+    'server-error': 'high', failed: 'high', unknown: 'medium',
+  };
+  const riskLevel = statusRisk[result.status] || 'medium';
+  const confidence = result.sourceType === 'github' ? 95 : result.status === 'blocked' ? 55 : result.status === 'timed-out' ? 45 : result.httpStatus ? 80 : 50;
+  let recommendation = 'No action required. Continue monitoring on the daily schedule.';
+  if (result.status === 'possible-update') recommendation = 'Verify the detected release, dependencies and Legacy compatibility before changing the Sentinel database.';
+  else if (result.status === 'archived') recommendation = 'Mark as legacy or deprecated after confirming whether a maintained successor exists.';
+  else if (result.status === 'not-found') recommendation = result.statusStreak >= 2 ? 'Find a replacement official source and review the project status.' : 'Recheck on the next scan before changing the database.';
+  else if (result.status === 'redirected') recommendation = 'Review the destination and update the official source link if the move is permanent.';
+  else if (['failed','server-error'].includes(result.status)) recommendation = 'Perform a manual source check if this repeats on the next daily scan.';
+  else if (result.status === 'blocked') recommendation = 'Keep the project active; use manual review because the host blocks automated checks.';
+  else if (result.status === 'timed-out') recommendation = 'Retry automatically. Escalate only after repeated daily failures.';
+  result.intelligence = {riskLevel, confidence, recommendation, signal: result.change === 'none' ? 'stable' : result.change};
+  return result;
+}
+
 async function inspect(source, index, total) {
   const old = previous?.items?.find((item) => item.id === source.id) || state.items?.[source.id];
   const result = {...source,checkedAt,reachable:false,httpStatus:null,finalUrl:source.url,sourceType:'website',archived:false,latestRelease:null,detectedVersion:null,status:'unknown',change:'none',note:'',attempts:0};
@@ -118,6 +139,7 @@ async function inspect(source, index, total) {
   else if (result.status!=='healthy') result.change=result.status;
   result.statusStreak = old?.status === result.status ? Number(old.statusStreak||1)+1 : 1;
   review(result);
+  addIntelligence(result);
   console.log(`[${index+1}/${total}] ${result.name}: ${result.status}`);
   return result;
 }
@@ -132,6 +154,22 @@ const items = await concurrent(sources,12);
 const count = (status) => items.filter((item)=>item.status===status).length;
 const counts = {tracked:items.length,healthy:count('healthy'),possibleUpdates:count('possible-update'),metadataChanged:count('metadata-changed'),timedOut:count('timed-out'),blocked:count('blocked'),redirected:count('redirected'),notFound:count('not-found'),rateLimited:count('rate-limited'),serverErrors:count('server-error'),archived:count('archived'),failed:count('failed'),needsReview:items.filter((i)=>i.needsReview).length,highPriority:items.filter((i)=>i.reviewPriority==='high').length};
 const averageHealth = items.length ? Math.round(items.reduce((sum,item)=>sum+item.healthScore,0)/items.length) : 0;
+const categories = Object.values(items.reduce((groups, item) => {
+  const key = item.category || 'Uncategorized';
+  groups[key] ||= {name:key, tracked:0, healthy:0, needsReview:0, highRisk:0, healthTotal:0};
+  groups[key].tracked += 1;
+  groups[key].healthy += item.status === 'healthy' ? 1 : 0;
+  groups[key].needsReview += item.needsReview ? 1 : 0;
+  groups[key].highRisk += item.intelligence?.riskLevel === 'high' ? 1 : 0;
+  groups[key].healthTotal += item.healthScore || 0;
+  return groups;
+}, {})).map((category) => ({...category, averageHealth: Math.round(category.healthTotal / Math.max(category.tracked, 1))})).map(({healthTotal, ...category}) => category).sort((a,b) => a.averageHealth - b.averageHealth || b.needsReview - a.needsReview);
+const intelligenceCounts = {
+  highRisk: items.filter((item) => item.intelligence?.riskLevel === 'high').length,
+  mediumRisk: items.filter((item) => item.intelligence?.riskLevel === 'medium').length,
+  lowRisk: items.filter((item) => item.intelligence?.riskLevel === 'low').length,
+  stable: items.filter((item) => item.intelligence?.signal === 'stable').length,
+};
 const reviewQueue = items.filter((i)=>i.needsReview).sort((a,b)=>({high:0,medium:1,low:2}[a.reviewPriority]-({high:0,medium:1,low:2}[b.reviewPriority]))).map((i)=>({id:i.id,name:i.name,status:i.status,priority:i.reviewPriority,reason:i.reviewReason,sourceUrl:i.finalUrl||i.url,expectedVersion:i.expectedVersion,detectedVersion:i.latestRelease||i.detectedVersion,statusStreak:i.statusStreak,healthScore:i.healthScore}));
 const previousById = new Map((previous?.items || []).map((item) => [item.id, item]));
 const changes = items.flatMap((item) => {
@@ -154,11 +192,11 @@ const changeCounts = {
   moved: changes.filter((change)=>change.type==='source-moved').length,
   newSources: changes.filter((change)=>change.type==='new-source').length,
 };
-const report = {schemaVersion:5,watcherVersion:'0.6.0',checkedAt,durationSeconds:Math.round((Date.now()-startedAt)/1000),averageHealth,counts,changeCounts,scanProfile:{concurrency:12,adaptiveTimeouts:true,transientNoiseSuppression:true},changes,reviewQueue,items};
+const report = {schemaVersion:6,watcherVersion:'0.7.0',checkedAt,durationSeconds:Math.round((Date.now()-startedAt)/1000),averageHealth,counts,changeCounts,scanProfile:{concurrency:12,adaptiveTimeouts:true,transientNoiseSuppression:true,dailyAutomation:true,intelligenceLayer:true},intelligenceCounts,categories,changes,reviewQueue,items};
 const historyEntry = {checkedAt,durationSeconds:report.durationSeconds,averageHealth,counts,changeCounts};
-const history = {schemaVersion:2,watcherVersion:'0.6.0',scans:[historyEntry,...(existingHistory.scans || []).filter((scan)=>scan.checkedAt!==checkedAt)].slice(0,24)};
+const history = {schemaVersion:3,watcherVersion:'0.7.0',scans:[historyEntry,...(existingHistory.scans || []).filter((scan)=>scan.checkedAt!==checkedAt)].slice(0,24)};
 const nextState = {schemaVersion:2,updatedAt:checkedAt,items:Object.fromEntries(items.map((i)=>[i.id,{status:i.status,statusStreak:i.statusStreak,fingerprint:i.fingerprint||null,latestRelease:i.latestRelease||null,detectedVersion:i.detectedVersion||null,finalUrl:i.finalUrl||i.url,checkedAt:i.checkedAt}]))};
 await fs.mkdir(new URL('static/data/',root),{recursive:true}); await fs.mkdir(new URL('sentinel-watcher/reports/',root),{recursive:true});
 await fs.writeFile(reportPath,JSON.stringify(report,null,2)+'\n'); await fs.writeFile(historyPath,JSON.stringify(history,null,2)+'\n'); await fs.writeFile(statePath,JSON.stringify(nextState,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/latest.json',root),JSON.stringify(report,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/review-queue.json',root),JSON.stringify(reviewQueue,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/changes.json',root),JSON.stringify(changes,null,2)+'\n');
-const lines=['# Sentinel Watcher report','',`Generated: ${checkedAt}`,`Runtime: ${report.durationSeconds}s`,`Average source health: ${averageHealth}%`,`Changes detected: ${changes.length}`,'','| Metric | Count |','|---|---:|',...Object.entries(counts).map(([k,v])=>`| ${k} | ${v} |`),'','## Changes since previous scan','',...(changes.length?changes.map((change)=>`- **${change.name}** — ${change.summary}`):['- No meaningful changes detected.']),'','## Review queue','',...(reviewQueue.length?reviewQueue.map((i)=>`- **${i.name}** — ${i.priority}: ${i.reason} (health ${i.healthScore}%, streak ${i.statusStreak}) ([source](${i.sourceUrl}))`):['- None']),'','Timeouts and automation blocks are not treated as dead projects.'];
+const lines=['# Sentinel Watcher report','',`Generated: ${checkedAt}`,`Runtime: ${report.durationSeconds}s`,`Average source health: ${averageHealth}%`,`Changes detected: ${changes.length}`,`High-risk signals: ${intelligenceCounts.highRisk}`,'','| Metric | Count |','|---|---:|',...Object.entries(counts).map(([k,v])=>`| ${k} | ${v} |`),'','## Changes since previous scan','',...(changes.length?changes.map((change)=>`- **${change.name}** — ${change.summary}`):['- No meaningful changes detected.']),'','## Review queue','',...(reviewQueue.length?reviewQueue.map((i)=>`- **${i.name}** — ${i.priority}: ${i.reason} (health ${i.healthScore}%, streak ${i.statusStreak}) ([source](${i.sourceUrl}))`):['- None']),'','Timeouts and automation blocks are not treated as dead projects.'];
 await fs.writeFile(new URL('sentinel-watcher/reports/latest.md',root),lines.join('\n')+'\n'); console.log(`Completed in ${report.durationSeconds}s.`);
