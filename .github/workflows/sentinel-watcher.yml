@@ -8,14 +8,6 @@ on:
         description: Unique scan identifier used by the website dashboard
         required: false
         type: string
-      research_query:
-        description: Unknown mod or plugin name requested by Sentinel Expert
-        required: false
-        type: string
-      research_request_id:
-        description: Unique Sentinel Expert research request identifier
-        required: false
-        type: string
   schedule:
     - cron: '23 9 * * *'
 
@@ -39,14 +31,6 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 22
-      - name: Research unknown project
-        if: ${{ inputs.research_query != '' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SENTINEL_RESEARCH_QUERY: ${{ inputs.research_query }}
-          SENTINEL_RESEARCH_REQUEST_ID: ${{ inputs.research_request_id }}
-          SENTINEL_RESEARCH_SCAN_ID: ${{ inputs.scan_id }}
-        run: node scripts/sentinel-research.mjs
       - name: Fast parallel source scan
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -59,7 +43,7 @@ jobs:
         run: |
           git config user.name "sentinel-watcher[bot]"
           git config user.email "sentinel-watcher[bot]@users.noreply.github.com"
-          git add static/data/watcher-report.json static/data/watcher-history.json static/data/research-results.json sentinel-watcher/state.json
+          git add static/data/watcher-report.json static/data/watcher-history.json sentinel-watcher/state.json
           if git diff --cached --quiet; then
             echo "No watcher data changes to publish."
           else

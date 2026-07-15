@@ -1,0 +1,73 @@
+name: Sentinel Research
+run-name: Sentinel Research — ${{ inputs.research_request_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      research_query:
+        description: Unknown mod or plugin name requested by Sentinel Expert
+        required: true
+        type: string
+      research_request_id:
+        description: Unique Sentinel Expert research request identifier
+        required: true
+        type: string
+      original_question:
+        description: Original Sentinel Expert question
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sentinel-research-${{ inputs.research_request_id }}
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Search GitHub and evaluate candidate sources
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SENTINEL_RESEARCH_QUERY: ${{ inputs.research_query }}
+          SENTINEL_RESEARCH_REQUEST_ID: ${{ inputs.research_request_id }}
+          SENTINEL_RESEARCH_QUESTION: ${{ inputs.original_question }}
+        run: node scripts/sentinel-research.mjs
+      - name: Add research summary
+        if: always()
+        run: |
+          echo "## Sentinel Research" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Query:** ${{ inputs.research_query }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Request:** ${{ inputs.research_request_id }}" >> "$GITHUB_STEP_SUMMARY"
+          node -e "const d=require('./static/data/research-results.json'); const r=(d.requests||[]).find(x=>x.requestId==='${{ inputs.research_request_id }}'); console.log(r ? '\n**Status:** '+r.status+'\n\n**Candidates:** '+r.candidateCount+'\n\n**Credible:** '+r.credibleCandidateCount : '\nNo published request record found.')" >> "$GITHUB_STEP_SUMMARY"
+      - name: Publish research findings
+        if: success()
+        run: |
+          git config user.name "sentinel-research[bot]"
+          git config user.email "sentinel-research[bot]@users.noreply.github.com"
+          git add static/data/research-results.json
+          if git diff --cached --quiet; then
+            echo "No research data changes to publish."
+          else
+            git commit -m "chore(research): publish ${{ inputs.research_query }} findings"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Upload research result
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: sentinel-research-${{ inputs.research_request_id }}
+          path: static/data/research-results.json
+          retention-days: 30

@@ -17,17 +17,17 @@ function ResearchProgress({state}){
  if(!state||state.phase==='idle')return null;
  const complete=['found','not-found','failed','key-needed'].includes(state.phase);
  const title={
-  queued:'Watcher research queued',running:'Watcher is researching this project',publishing:'Research finished — publishing findings',
-  found:'Watcher found a candidate project', 'not-found':'Watcher research complete',failed:'Watcher research failed','key-needed':'Watcher key required'
+  queued:'Sentinel Research queued',running:'Research Engine is researching this project',publishing:'Research finished — publishing findings',
+  found:'Research Engine found a candidate project', 'not-found':'Research Engine complete',failed:'Research Engine failed','key-needed':'Research key required'
  }[state.phase]||'Watcher research';
  return <section className={`${styles.researchProgress} ${complete?styles.researchComplete:''}`}>
-  <div className={styles.researchProgressHead}><div><small>Live Watcher research</small><h2>{title}</h2><p>{state.message}</p></div><strong>{Math.max(0,Math.min(100,state.percent||0))}%</strong></div>
+  <div className={styles.researchProgressHead}><div><small>Live Sentinel Research</small><h2>{title}</h2><p>{state.message}</p></div><strong>{Math.max(0,Math.min(100,state.percent||0))}%</strong></div>
   <div className={styles.researchTrack}><span style={{width:`${Math.max(2,Math.min(100,state.percent||0))}%`}}/></div>
   {state.activeStep&&<div className={styles.researchStep}>{state.activeStep}</div>}
-  {state.runUrl&&<a href={state.runUrl} target="_blank" rel="noreferrer">Open Watcher research run →</a>}
+  {state.runUrl&&<a href={state.runUrl} target="_blank" rel="noreferrer">Open Sentinel Research run →</a>}
  </section>;
 }
-function Result({r,onDoctor,onExport,onSave,saved,researchState,onResearch}){if(!r)return <div className={styles.empty}><b>SE</b><Heading as="h2">Grounded answers, not guesses.</Heading><p>Ask about a version, dependency, install order, compatibility combination, category, or troubleshooting symptom.</p></div>;return <div className={styles.result}><section className={`${styles.verdict} ${styles[r.tone]||''}`}><small>Sentinel verdict</small><Heading as="h2">{r.verdict}</Heading><p>{r.summary}</p></section><Reasoning data={r.reasoning}/><WatcherPanel w={r.watcher}/>{r.type==='unknown'&&<section className={styles.researchBox}><div><small>Unknown project research</small><h2>{r.unknownProject}</h2><p>Sentinel will not guess. Watcher can search for credible official sources, then Sentinel will automatically re-run this question after the findings are published.</p></div><button onClick={onResearch} disabled={['queued','running','publishing'].includes(researchState?.phase)}>{['queued','running','publishing'].includes(researchState?.phase)?'Watcher searching…':'Search with Watcher'}</button></section>}<ResearchProgress state={researchState}/>{r.warnings?.length>0&&<section className={styles.alert}><h2>Why Sentinel flagged it</h2><ul>{r.warnings.map(x=><li key={x}>{x}</li>)}</ul></section>}{r.installPlan?.length>0&&<section><h2 className={styles.sectionTitle}>Recommended install order</h2><ol className={styles.installPlan}>{r.installPlan.map((step,i)=><li key={step.project.id}><span>{i+1}</span><div><Link to={step.project.profile}>{step.project.name}</Link><small>{step.reason} · {step.project.version||'Version not locked'}</small></div></li>)}</ol>{r.installWarnings?.length>0&&<div className={styles.planWarnings}><strong>Manual dependency checks</strong>{r.installWarnings.map(x=><p key={`${x.project}-${x.dependency}`}>{x.project}: {x.dependency}</p>)}</div>}</section>}{r.validationChecklist?.length>0&&<section><h2 className={styles.sectionTitle}>Validation checkpoints</h2><ul className={styles.checklist}>{r.validationChecklist.map(x=><li key={x}>{x}</li>)}</ul></section>}{r.projects?.length>0&&<section><h2 className={styles.sectionTitle}>{r.type==='search'?'Registry matches':'Project intelligence'}</h2><div className={styles.cards}>{r.projects.map(p=><Card key={p.id} p={p}/>)}</div></section>}{r.dependencies?.some(x=>x.items.length)&&<section><h2 className={styles.sectionTitle}>Dependencies</h2><div className={styles.deps}>{r.dependencies.filter(x=>x.items.length).map(x=><article key={x.plugin.id}><strong>{x.plugin.name}</strong><ul>{x.items.map(d=><li key={d.name}>{d.project?<Link to={d.project.profile}>{d.name}</Link>:d.name}</li>)}</ul></article>)}</div></section>}{r.type==='doctor'&&<section className={styles.doctor}><div><small>Next best action</small><h2>Continue in Sentinel Doctor</h2><p>Add versions, symptoms, logs, and repair rules.</p></div><button className="button button--primary" onClick={onDoctor}>Open Doctor with context →</button></section>}{r&&<section className={styles.answerActions}><button onClick={onSave}>{saved?'Context saved':'Save build context'}</button><button onClick={onExport}>Download summary</button><button onClick={onDoctor}>Send to Doctor</button></section>}<div className={styles.source}>Sources: Sentinel Unified Registry + latest published Watcher report · Local browser engine · No external AI API</div></div>}
+function Result({r,onDoctor,onExport,onSave,saved,researchState,onResearch}){if(!r)return <div className={styles.empty}><b>SE</b><Heading as="h2">Grounded answers, not guesses.</Heading><p>Ask about a version, dependency, install order, compatibility combination, category, or troubleshooting symptom.</p></div>;return <div className={styles.result}><section className={`${styles.verdict} ${styles[r.tone]||''}`}><small>Sentinel verdict</small><Heading as="h2">{r.verdict}</Heading><p>{r.summary}</p></section><Reasoning data={r.reasoning}/><WatcherPanel w={r.watcher}/>{r.type==='unknown'&&<section className={styles.researchBox}><div><small>Unknown project research</small><h2>{r.unknownProject}</h2><p>Sentinel will not guess. Sentinel Research can search for credible official sources, then Sentinel will automatically re-run this question after the findings are published.</p></div><button onClick={onResearch} disabled={['queued','running','publishing'].includes(researchState?.phase)}>{['queued','running','publishing'].includes(researchState?.phase)?'Researching…':'Research this project'}</button></section>}<ResearchProgress state={researchState}/>{r.warnings?.length>0&&<section className={styles.alert}><h2>Why Sentinel flagged it</h2><ul>{r.warnings.map(x=><li key={x}>{x}</li>)}</ul></section>}{r.installPlan?.length>0&&<section><h2 className={styles.sectionTitle}>Recommended install order</h2><ol className={styles.installPlan}>{r.installPlan.map((step,i)=><li key={step.project.id}><span>{i+1}</span><div><Link to={step.project.profile}>{step.project.name}</Link><small>{step.reason} · {step.project.version||'Version not locked'}</small></div></li>)}</ol>{r.installWarnings?.length>0&&<div className={styles.planWarnings}><strong>Manual dependency checks</strong>{r.installWarnings.map(x=><p key={`${x.project}-${x.dependency}`}>{x.project}: {x.dependency}</p>)}</div>}</section>}{r.validationChecklist?.length>0&&<section><h2 className={styles.sectionTitle}>Validation checkpoints</h2><ul className={styles.checklist}>{r.validationChecklist.map(x=><li key={x}>{x}</li>)}</ul></section>}{r.projects?.length>0&&<section><h2 className={styles.sectionTitle}>{r.type==='search'?'Registry matches':'Project intelligence'}</h2><div className={styles.cards}>{r.projects.map(p=><Card key={p.id} p={p}/>)}</div></section>}{r.dependencies?.some(x=>x.items.length)&&<section><h2 className={styles.sectionTitle}>Dependencies</h2><div className={styles.deps}>{r.dependencies.filter(x=>x.items.length).map(x=><article key={x.plugin.id}><strong>{x.plugin.name}</strong><ul>{x.items.map(d=><li key={d.name}>{d.project?<Link to={d.project.profile}>{d.name}</Link>:d.name}</li>)}</ul></article>)}</div></section>}{r.type==='doctor'&&<section className={styles.doctor}><div><small>Next best action</small><h2>Continue in Sentinel Doctor</h2><p>Add versions, symptoms, logs, and repair rules.</p></div><button className="button button--primary" onClick={onDoctor}>Open Doctor with context →</button></section>}{r&&<section className={styles.answerActions}><button onClick={onSave}>{saved?'Context saved':'Save build context'}</button><button onClick={onExport}>Download summary</button><button onClick={onDoctor}>Send to Doctor</button></section>}<div className={styles.source}>Sources: Sentinel Unified Registry + latest published Watcher report · Local browser engine · No external AI API</div></div>}
 function App(){
   const {siteConfig}=useDocusaurusContext();
   const controlEndpoint=String(siteConfig.customFields?.watcherControlEndpoint||'').replace(/\/$/,'');
@@ -51,7 +51,7 @@ function App(){
     const normalized=normalizeResearchQuery(query);
     for(let attempt=0;attempt<36;attempt+=1){
       if(token!==pollToken.current)return null;
-      setResearchState(s=>({...s,phase:'publishing',percent:96,message:`Watcher finished. Waiting for GitHub Pages to publish the findings… (${attempt*5}s)`,activeStep:'Publishing research-results.json'}));
+      setResearchState(s=>({...s,phase:'publishing',percent:96,message:`Research Engine finished. Waiting for GitHub Pages to publish the findings… (${attempt*5}s)`,activeStep:'Publishing research-results.json'}));
       try{
         const response=await fetch(`${researchUrl}?research=${Date.now()}`,{cache:'no-store'});
         if(response.ok){
@@ -75,7 +75,7 @@ function App(){
         const status=await response.json();
         runUrl=status.runUrl||runUrl;
         const finished=status.status==='completed';
-        setResearchState({phase:finished?'publishing':status.found?'running':'queued',percent:finished?94:Math.max(3,status.percent||3),message:finished?'Watcher completed the internet research. Waiting for the new findings to publish…':status.found?'Watcher is searching sources and evaluating candidates.':'Waiting for GitHub Actions to start the research run.',activeStep:status.activeStep||'Waiting for runner',runUrl});
+        setResearchState({phase:finished?'publishing':status.found?'running':'queued',percent:finished?94:Math.max(3,status.percent||3),message:finished?'Sentinel Research completed the source research. Waiting for the new findings to publish…':status.found?'Sentinel Research is searching sources and evaluating candidates.':'Waiting for GitHub Actions to start the research run.',activeStep:status.activeStep||'Waiting for runner',runUrl});
         if(finished){
           if(status.conclusion!=='success')throw new Error('run-failed');
           const published=await loadPublishedResearch(query,requestId,requestedAt,token);
@@ -89,22 +89,22 @@ function App(){
             setResearchState({phase:'found',percent:100,message:`Watcher found ${published.request.credibleCandidateCount||1} credible candidate source${published.request.credibleCandidateCount===1?'':'s'}. Sentinel re-evaluated your original question using the new Research record.`,activeStep:'Question automatically re-submitted with published findings',runUrl});
           }else{
             activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
-            setResearchState({phase:'not-found',percent:100,message:'Watcher completed the search but did not find a candidate strong enough to add automatically. The request remains queued for manual review, and Sentinel will continue treating the project as unknown.',activeStep:'No verified or credible automatic match found',runUrl});
+            setResearchState({phase:'not-found',percent:100,message:'Sentinel Research completed the search but did not find a candidate strong enough to add automatically. The request remains queued for manual review, and Sentinel will continue treating the project as unknown.',activeStep:'No verified or credible automatic match found',runUrl});
           }
           return;
         }
       }catch(error){
         if(String(error?.message)==='status'){await sleep(3000);continue;}
         activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
-        setResearchState({phase:'failed',percent:100,message:'The Watcher research run could not be completed or its published result could not be confirmed. Open the run for details and try again.',activeStep:'Research stopped',runUrl});return;
+        setResearchState({phase:'failed',percent:100,message:'The Sentinel Research run could not be completed or its published result could not be confirmed. Open the run for details and try again.',activeStep:'Research stopped',runUrl});return;
       }
       await sleep(3000);
     }
     activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
-    setResearchState({phase:'failed',percent:100,message:'Watcher research exceeded the ten-minute monitoring window. The GitHub run may still finish in the background.',activeStep:'Monitoring timed out',runUrl});
+    setResearchState({phase:'failed',percent:100,message:'Sentinel Research exceeded the ten-minute monitoring window. The GitHub run may still finish in the background.',activeStep:'Monitoring timed out',runUrl});
   }
   async function submitResearch(projectName=r?.unknownProject,question=q){
-    if(!projectName||!controlEndpoint)return setResearchState({phase:'failed',percent:100,message:'Watcher control endpoint is unavailable.',activeStep:'Research not started',runUrl:null});
+    if(!projectName||!controlEndpoint)return setResearchState({phase:'failed',percent:100,message:'Sentinel control endpoint is unavailable.',activeStep:'Research not started',runUrl:null});
     const key=window.sessionStorage.getItem('sentinel-watcher-admin-key')||'';
     if(!key)return setResearchState({phase:'key-needed',percent:0,message:'Open Watcher once and enter the private admin key, then return and search again.',activeStep:'Admin key required',runUrl:null});
     const normalized=normalizeResearchQuery(projectName);
@@ -113,7 +113,7 @@ function App(){
     const token=++pollToken.current;
     if(existing?.scanId){
       activeResearch.current=existing;
-      setResearchState({phase:'queued',percent:3,message:`Watcher is already researching “${projectName}”. Reconnecting to the existing run instead of starting a duplicate.`,activeStep:'Reusing active research request',runUrl:existing.runUrl||null});
+      setResearchState({phase:'queued',percent:3,message:`Sentinel Research is already researching “${projectName}”. Reconnecting to the existing run instead of starting a duplicate.`,activeStep:'Reusing active research request',runUrl:existing.runUrl||null});
       await monitorResearch(existing.scanId,existing.requestId,projectName,question,existing.requestedAt,token,key);
       return;
     }
@@ -122,14 +122,14 @@ function App(){
     const pending={requestId,query:projectName,normalized,question,requestedAt,scanId:null,runUrl:null};
     activeResearch.current=pending;
     window.sessionStorage.setItem(researchStorageKey,JSON.stringify(pending));
-    setResearchState({phase:'queued',percent:2,message:`Sending “${projectName}” to Watcher research…`,activeStep:'Submitting one uniquely identified research request',runUrl:null});
+    setResearchState({phase:'queued',percent:2,message:`Sending “${projectName}” to Sentinel Research…`,activeStep:'Submitting one uniquely identified research request',runUrl:null});
     try{
       const response=await fetch(`${controlEndpoint}/research`,{method:'POST',headers:{'content-type':'application/json','x-watcher-key':key},body:JSON.stringify({query:projectName,question,requestId})});
       if(!response.ok)throw new Error('research');
       const payload=await response.json();
       const active={...pending,requestId:payload.requestId||requestId,scanId:payload.scanId};
       activeResearch.current=active;window.sessionStorage.setItem(researchStorageKey,JSON.stringify(active));
-      setResearchState({phase:'queued',percent:3,message:payload.reused?'An identical Watcher request is already active. Reconnecting without launching another run.':'Research request accepted. Waiting for GitHub Actions to start.',activeStep:payload.reused?'Duplicate prevented — using existing run':'Watcher research queued',runUrl:null});
+      setResearchState({phase:'queued',percent:3,message:payload.reused?'An identical Watcher request is already active. Reconnecting without launching another run.':'Research request accepted. Waiting for GitHub Actions to start.',activeStep:payload.reused?'Duplicate prevented — using existing run':'Sentinel Research queued',runUrl:null});
       await monitorResearch(active.scanId,active.requestId,projectName,question,requestedAt,token,key);
     }catch{
       activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);

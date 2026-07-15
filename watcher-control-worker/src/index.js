@@ -43,8 +43,8 @@ function requireAdmin(request, env) {
   return Boolean(env.WATCHER_ADMIN_KEY) && supplied === env.WATCHER_ADMIN_KEY;
 }
 
-async function findRun(env, scanId) {
-  const response = await github(env, `/actions/workflows/${env.WORKFLOW_FILE}/runs?event=workflow_dispatch&per_page=20`);
+async function findRun(env, workflowFile, scanId) {
+  const response = await github(env, `/actions/workflows/${workflowFile}/runs?event=workflow_dispatch&per_page=30`);
   if (!response.ok) throw new Error(`GitHub runs API returned ${response.status}`);
   const runs = (await response.json()).workflow_runs || [];
   return runs.find((run) => String(run.display_title || '').includes(scanId)) || null;
@@ -72,7 +72,7 @@ async function statusForRun(env, run) {
   return {
     found: true,
     runId: run.id,
-    scanId: String(run.display_title || '').replace(/^Sentinel Watcher\s*—\s*/, ''),
+    scanId: String(run.display_title || '').replace(/^Sentinel (?:Watcher|Research)\s*—\s*/, ''),
     status: run.status,
     conclusion: run.conclusion,
     createdAt: run.created_at,
@@ -92,7 +92,7 @@ export default {
     const url = new URL(request.url);
     try {
       if (url.pathname === '/health' && request.method === 'GET') {
-        return json({ok: true, service: 'Sentinel Watcher Control', version: '0.7.0'}, 200, env, origin);
+        return json({ok: true, service: 'Sentinel Watcher Control', version: '1.0.0', researchService: true}, 200, env, origin);
       }
 
       if (url.pathname === '/trigger' && request.method === 'POST') {
@@ -121,13 +121,14 @@ export default {
           ? suppliedRequestId
           : `expert-${Date.now()}-${crypto.randomUUID().slice(0, 8)}`;
         const scanId = `research-${requestId}`.slice(0, 120);
-        const existing = await findRun(env, scanId);
+        const researchWorkflow = env.RESEARCH_WORKFLOW_FILE || 'sentinel-research.yml';
+        const existing = await findRun(env, researchWorkflow, requestId);
         if (existing && existing.status !== 'completed') {
           return json({ok: true, reused: true, requestId, scanId, query, status: existing.status, runId: existing.id, runUrl: existing.html_url}, 200, env, origin);
         }
-        const response = await github(env, `/actions/workflows/${env.WORKFLOW_FILE}/dispatches`, {
+        const response = await github(env, `/actions/workflows/${researchWorkflow}/dispatches`, {
           method: 'POST', headers: {'content-type': 'application/json'},
-          body: JSON.stringify({ref: 'main', inputs: {scan_id: scanId, research_query: query, research_request_id: requestId}}),
+          body: JSON.stringify({ref: 'main', inputs: {research_query: query, research_request_id: requestId, original_question: String(body.question || '').slice(0, 500)}}),
         });
         if (!response.ok) return json({error: `GitHub rejected the research request (${response.status}).`, detail: await response.text()}, 502, env, origin);
         return json({ok: true, reused: false, requestId, scanId, query, status: 'queued'}, 202, env, origin);
@@ -142,7 +143,9 @@ export default {
           const response = await github(env, `/actions/runs/${encodeURIComponent(runId)}`);
           if (response.ok) run = await response.json();
         } else if (scanId) {
-          run = await findRun(env, scanId);
+          const workflowFile = scanId && scanId.startsWith('research-') ? (env.RESEARCH_WORKFLOW_FILE || 'sentinel-research.yml') : env.WORKFLOW_FILE;
+          const lookupId = scanId && scanId.startsWith('research-') ? scanId.replace(/^research-/, '') : scanId;
+          run = await findRun(env, workflowFile, lookupId);
         }
         if (!run) return json({found: false, status: 'queued', activeStep: 'Waiting for GitHub to create the run', percent: 2}, 200, env, origin);
         return json(await statusForRun(env, run), 200, env, origin);
