@@ -1,188 +1,188 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-15T04:50:08.290Z",
+  "updatedAt": "2026-07-15T05:02:16.928Z",
   "items": {
     "lspdfr": {
       "status": "timed-out",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "openiv": {
       "status": "healthy",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "75f06b3e9daf9f3387bf",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "scripthookv": {
       "status": "healthy",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "11e6ee38fe91283f1954",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "ragenativeui": {
       "status": "healthy",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "8d4d0ee52c38270cb514",
       "latestRelease": "1.9.3",
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "lemonui": {
       "status": "healthy",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "3f4d96418f14dd683469",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "scripthookvdotnet": {
       "status": "healthy",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "101e55b537d3ceab3b46",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "heap-adjuster": {
       "status": "healthy",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "babd92e05c9219565535",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "packfile-limit-adjuster": {
       "status": "healthy",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "7870c8fa6aab47615e97",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "resource-adjuster": {
       "status": "healthy",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "6c36e2042848babcab68",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "weapon-limits-adjuster": {
       "status": "healthy",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "fa399c1f975512fc72f3",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "policing-redefined": {
       "status": "timed-out",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "lspdfr-enhanced-remastered": {
       "status": "timed-out",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "super-callouts": {
       "status": "timed-out",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "regular-callouts": {
-      "status": "rate-limited",
+      "status": "timed-out",
       "statusStreak": 1,
-      "fingerprint": "1e09beb1bd67c3be8b90",
+      "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "basic-callouts": {
       "status": "rate-limited",
-      "statusStreak": 1,
+      "statusStreak": 2,
       "fingerprint": "9f1c29516b0927742e22",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "typical-callouts": {
       "status": "rate-limited",
-      "statusStreak": 1,
+      "statusStreak": 2,
       "fingerprint": "f8145232c6a89075a07c",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "west-coast-callouts": {
       "status": "rate-limited",
-      "statusStreak": 1,
+      "statusStreak": 2,
       "fingerprint": "a24397d08d762cae9eb5",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "real-duty-callouts": {
       "status": "rate-limited",
-      "statusStreak": 1,
+      "statusStreak": 2,
       "fingerprint": "b8ef918ad0c6e42a1c80",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "interior-callouts": {
       "status": "timed-out",
+      "statusStreak": 2,
+      "fingerprint": null,
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T05:02:16.928Z"
+    },
+    "jb-callout": {
+      "status": "timed-out",
       "statusStreak": 1,
       "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
-    },
-    "jb-callout": {
-      "status": "rate-limited",
-      "statusStreak": 1,
-      "fingerprint": "cf6ed8027ada9c468ecc",
-      "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "eup-menu": {
-      "status": "rate-limited",
+      "status": "timed-out",
       "statusStreak": 1,
-      "fingerprint": "cecff72ec032adbae8c9",
+      "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "eup-law-order": {
-      "status": "rate-limited",
+      "status": "timed-out",
       "statusStreak": 1,
-      "fingerprint": "5fb50986c43a001bc6ed",
+      "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "eup-serve-rescue": {
       "status": "rate-limited",
-      "statusStreak": 1,
+      "statusStreak": 2,
       "fingerprint": "5588b46f354d35c779d7",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "eup-backup-configs": {
       "status": "rate-limited",
-      "statusStreak": 1,
+      "statusStreak": 2,
       "fingerprint": "7a546206d0ed9f0a4f53",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "visualv": {
       "status": "healthy",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": "1a7798a73e2eee246bd2",
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     },
     "els": {
       "status": "timed-out",
-      "statusStreak": 2,
+      "statusStreak": 3,
       "fingerprint": null,
       "latestRelease": null,
-      "checkedAt": "2026-07-15T04:50:08.290Z"
+      "checkedAt": "2026-07-15T05:02:16.928Z"
     }
   }
 }
