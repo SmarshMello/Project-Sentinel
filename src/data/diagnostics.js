@@ -125,7 +125,7 @@ export const diagnosticRules = [
     id: 'gameconfig-packfiles',
     kind: 'configuration',
     specificity: 3,
-    title: 'GameConfig or archive limits are being exceeded',
+    title: 'Incorrect or unverified GameConfig installed',
     confidence: 'high',
     status: 'Sentinel Verified',
     keywords: ['gameconfig','packfile','dlc pack','after adding vehicles','vehicle pack crash','err_fil_pack_1','out of game memory'],
@@ -133,8 +133,8 @@ export const diagnosticRules = [
     steps: [
       'Verify GameConfig is installed at mods\\update\\update.rpf\\common\\data\\gameconfig.xml.',
       'Confirm Heap Adjuster and Packfile Limit Adjuster are in the GTA V root folder.',
-      'Remove the most recently added DLC pack entry and retest.',
-      'Avoid stacking limit-adjuster files from multiple mod packages.'
+      'Replace the current GameConfig with the verified version for your exact GTA V Legacy build.',
+      'Only investigate archive limits or recent DLC-pack additions if the correct GameConfig still fails.'
     ],
     checks: ['A Packfile Limit Adjuster does not replace a proper GameConfig.'],
     guide: '/guide/core/limits-gameconfig',
