@@ -51,7 +51,8 @@ function PluginCard({plugin}) {
       </div>
       <p className={styles.note}>{plugin.note}</p>
       <div className={styles.cardActions}>
-        <Link className={styles.guideButton} to={plugin.guide}>Open guide <Icon name="arrow"/></Link>
+        <Link className={styles.guideButton} to={`/plugins/${plugin.id}`}>Plugin profile <Icon name="arrow"/></Link>
+        <Link className={styles.iconButton} to={plugin.guide} aria-label={`Open installation guide for ${plugin.name}`}>G</Link>
         {plugin.download && <a className={styles.iconButton} href={plugin.download} target="_blank" rel="noreferrer" aria-label={`Open official download for ${plugin.name}`}><Icon name="external"/></a>}
       </div>
     </article>

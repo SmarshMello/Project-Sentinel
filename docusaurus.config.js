@@ -45,6 +45,12 @@ const config = {
         {to: '/plugins', label: 'Plugin Database', position: 'left'},
         {to: '/builds', label: 'Golden Builds', position: 'left'},
         {to: '/compatibility', label: 'Compatibility', position: 'left'},
+        {to: '/planner', label: 'Build Planner', position: 'left'},
+        {label: 'Tools', position: 'left', items: [
+          {to: '/dashboard', label: 'Operations Dashboard'},
+          {to: '/troubleshooter', label: 'Troubleshooting Wizard'},
+          {to: '/checklist', label: 'Installation Checklist'},
+        ]},
         {to: '/donate', label: 'Donate', position: 'left'},
         {to: '/help', label: 'Help', position: 'left'},
         {href: 'https://github.com/SmarshMello/Project-Sentinel', label: 'GitHub', position: 'right'},
@@ -53,7 +59,7 @@ const config = {
     footer: {
       style: 'dark',
       links: [
-        {title: 'Guide', items: [{label:'Getting Started',to:'/guide/getting-started/clean-install'},{label:'Plugin Database',to:'/plugins'},{label:'Golden Builds',to:'/builds'},{label:'Compatibility',to:'/compatibility'},{label:'Troubleshooting',to: '/guide/troubleshooting'}]},
+        {title: 'Guide', items: [{label:'Getting Started',to:'/guide/getting-started/clean-install'},{label:'Plugin Database',to:'/plugins'},{label:'Golden Builds',to:'/builds'},{label:'Compatibility',to:'/compatibility'},{label:'Build Planner',to:'/planner'},{label:'Dashboard',to:'/dashboard'},{label:'Troubleshooting Wizard',to:'/troubleshooter'},{label:'Installation Checklist',to:'/checklist'},{label:'Troubleshooting',to: '/guide/troubleshooting'}]},
         {title: 'Community', items:[{label:'Help Tickets',to:'/help'},{label:'Suggestions',href:'https://github.com/SmarshMello/Project-Sentinel/issues/new?template=suggestion.yml'}]},
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Project Sentinel. Third-party mods belong to their creators.`,
