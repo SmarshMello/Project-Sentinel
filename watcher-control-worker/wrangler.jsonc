@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "project-sentinel-watcher-control",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-01",
+  "vars": {
+    "GITHUB_OWNER": "SmarshMello",
+    "GITHUB_REPO": "Project-Sentinel",
+    "WORKFLOW_FILE": "sentinel-watcher.yml",
+    "ALLOWED_ORIGIN": "https://smarshmello.github.io"
+  },
+  "secrets": {
+    "required": ["GITHUB_TOKEN", "WATCHER_ADMIN_KEY"]
+  }
+}

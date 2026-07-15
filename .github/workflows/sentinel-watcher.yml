@@ -1,7 +1,13 @@
 name: Sentinel Watcher
+run-name: Sentinel Watcher — ${{ inputs.scan_id || 'scheduled' }}
 
 on:
   workflow_dispatch:
+    inputs:
+      scan_id:
+        description: Unique scan identifier used by the website dashboard
+        required: false
+        type: string
   schedule:
     - cron: '23 9 * * 1'
 
@@ -37,7 +43,7 @@ jobs:
         run: |
           git config user.name "sentinel-watcher[bot]"
           git config user.email "sentinel-watcher[bot]@users.noreply.github.com"
-          git add public/data/watcher-report.json sentinel-watcher/state.json
+          git add static/data/watcher-report.json sentinel-watcher/state.json
           if git diff --cached --quiet; then
             echo "No watcher data changes to publish."
           else

@@ -3,7 +3,7 @@ import crypto from 'node:crypto';
 
 const root = new URL('../', import.meta.url);
 const sources = JSON.parse(await fs.readFile(new URL('sentinel-watcher/sources.json', root), 'utf8')).sources;
-const reportPath = new URL('public/data/watcher-report.json', root);
+const reportPath = new URL('static/data/watcher-report.json', root);
 const statePath = new URL('sentinel-watcher/state.json', root);
 const readJson = async (url, fallback) => { try { return JSON.parse(await fs.readFile(url, 'utf8')); } catch { return fallback; } };
 const previous = await readJson(reportPath, null);
@@ -132,7 +132,7 @@ const averageHealth = items.length ? Math.round(items.reduce((sum,item)=>sum+ite
 const reviewQueue = items.filter((i)=>i.needsReview).sort((a,b)=>({high:0,medium:1,low:2}[a.reviewPriority]-({high:0,medium:1,low:2}[b.reviewPriority]))).map((i)=>({id:i.id,name:i.name,status:i.status,priority:i.reviewPriority,reason:i.reviewReason,sourceUrl:i.finalUrl||i.url,expectedVersion:i.expectedVersion,detectedVersion:i.latestRelease||i.detectedVersion,statusStreak:i.statusStreak,healthScore:i.healthScore}));
 const report = {schemaVersion:3,watcherVersion:'0.3.0',checkedAt,durationSeconds:Math.round((Date.now()-startedAt)/1000),averageHealth,counts,reviewQueue,items};
 const nextState = {schemaVersion:1,updatedAt:checkedAt,items:Object.fromEntries(items.map((i)=>[i.id,{status:i.status,statusStreak:i.statusStreak,fingerprint:i.fingerprint||null,latestRelease:i.latestRelease||null,checkedAt:i.checkedAt}]))};
-await fs.mkdir(new URL('public/data/',root),{recursive:true}); await fs.mkdir(new URL('sentinel-watcher/reports/',root),{recursive:true});
+await fs.mkdir(new URL('static/data/',root),{recursive:true}); await fs.mkdir(new URL('sentinel-watcher/reports/',root),{recursive:true});
 await fs.writeFile(reportPath,JSON.stringify(report,null,2)+'\n'); await fs.writeFile(statePath,JSON.stringify(nextState,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/latest.json',root),JSON.stringify(report,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/review-queue.json',root),JSON.stringify(reviewQueue,null,2)+'\n');
 const lines=['# Sentinel Watcher report','',`Generated: ${checkedAt}`,`Runtime: ${report.durationSeconds}s`,`Average source health: ${averageHealth}%`,'','| Metric | Count |','|---|---:|',...Object.entries(counts).map(([k,v])=>`| ${k} | ${v} |`),'','## Review queue','',...(reviewQueue.length?reviewQueue.map((i)=>`- **${i.name}** — ${i.priority}: ${i.reason} (health ${i.healthScore}%, streak ${i.statusStreak}) ([source](${i.sourceUrl}))`):['- None']),'','Timeouts and automation blocks are not treated as dead projects.'];
 await fs.writeFile(new URL('sentinel-watcher/reports/latest.md',root),lines.join('\n')+'\n'); console.log(`Completed in ${report.durationSeconds}s.`);

@@ -1,0 +1,9 @@
+SENTINEL WATCHER 0.4
+
+1. Copy all files in this update into the root of Project-Sentinel.
+2. Replace matching files.
+3. Commit: Add Watcher website controls and live progress
+4. Push origin.
+5. Follow WATCHER_CONTROL_SETUP.md to deploy and connect the free Cloudflare Worker.
+
+This update fixes the blank dashboard by publishing watcher-report.json from Docusaurus's static directory.

@@ -16,6 +16,7 @@ const config = {
   customFields: {
     paypalUrl: '',
     kofiUrl: '',
+    watcherControlEndpoint: '',
   },
   presets: [[
     'classic',
