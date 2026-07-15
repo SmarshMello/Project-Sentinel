@@ -21,7 +21,7 @@ export function useSentinelData() {
     Promise.all([
       fetch(`${REPORT_URL}?v=${Date.now()}`, {cache:'no-store'}).then(r => {if(!r.ok) throw new Error(`Report ${r.status}`); return r.json();}),
       fetch(`${HISTORY_URL}?v=${Date.now()}`, {cache:'no-store'}).then(r => r.ok ? r.json() : []).catch(() => []),
-    ]).then(([report, history]) => active && setState({loading:false, report, history:Array.isArray(history) ? history : history?.runs || [], error:null}))
+    ]).then(([report, history]) => active && setState({loading:false, report, history:Array.isArray(history) ? history : history?.scans || history?.runs || [], error:null}))
       .catch(error => active && setState({loading:false, report:null, history:[], error:error.message}));
     return () => {active = false;};
   }, []);

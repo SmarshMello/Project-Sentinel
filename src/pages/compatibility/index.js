@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import StatusPill from '@site/src/components/StatusPill';
 import {compatibilityCategories, compatibilityRows, compatibilityStatuses} from '@site/src/data/compatibility';
+import {plugins} from '@site/src/data/plugins';
 import styles from './styles.module.css';
 
 const Icon = ({name}) => {
@@ -110,6 +111,13 @@ export default function CompatibilityPage() {
             </article>)}</div>
 
             {filtered.length === 0 && <div className={styles.empty}><Icon name="search"/><Heading as="h2">No components found</Heading><p>Clear your filters or try a broader search.</p><button onClick={() => {setQuery(''); setCategory('All'); setStatus('all'); setGoldenOnly(false);}}>Reset matrix</button></div>}
+          </div>
+        </section>
+
+        <section className={styles.dependencySection}>
+          <div className="container">
+            <div className={styles.dependencyHead}><div><div className={styles.eyebrow}><span/>Relationship map</div><Heading as="h2">Dependency intelligence</Heading><p>Core relationships pulled from Sentinel's unified plugin registry. Open any connected component to inspect its verified guide.</p></div><Link to="/operations/projects">Browse all profiles →</Link></div>
+            <div className={styles.dependencyGrid}>{plugins.filter((item)=>item.dependencies?.length).slice(0,12).map((item)=><article className={styles.dependencyCard} key={item.id}><span>{item.category}</span><Heading as="h3">{item.name}</Heading><div className={styles.dependencyList}>{item.dependencies.map((dependency)=>{const match=plugins.find((candidate)=>candidate.name.toLowerCase()===dependency.toLowerCase()||candidate.shortName?.toLowerCase()===dependency.toLowerCase());return match?<Link key={dependency} to={`/plugins/${match.id}`}>{dependency}</Link>:<i key={dependency}>{dependency}</i>})}</div></article>)}</div>
           </div>
         </section>
       </main>
