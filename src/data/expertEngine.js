@@ -15,7 +15,28 @@ const conflicts=[
 ];
 export const expertExamples=['Can I install Grammar Police, Stop The Ped, Ultimate Backup and CompuLite together?','Can I install Policing Redefined with Stop The Ped?','What version of RAGENativeUI should I use?','What does Ultimate Backup require?','Show me callout packs in testing.','Why is EUP Menu not working?'];
 function combinedRegistry(discoveries=[]){const out=new Map(registry.map(p=>[p.id,p]));for(const item of discoveries||[]){if(!item?.id||out.has(item.id))continue;out.set(item.id,{...item,status:item.status||'research',compatibilityStatus:'research',profile:item.profile||'/plugins',watcherTracked:false,researchDiscovered:true});}return [...out.values()];}
-export function findProjects(q,discoveries=[]){const t=norm(q),all=combinedRegistry(discoveries),out=new Map();Object.entries(alias).forEach(([a,id])=>{if(t.includes(norm(a))){const p=all.find(x=>x.id===id);if(p)out.set(p.id,p);}});all.forEach(p=>{const names=[p.name,p.shortName,p.id,...(p.aliases||[])].filter(Boolean).map(norm);if(names.some(n=>n.length>2&&t.includes(n)))out.set(p.id,p);});return [...out.values()];}
+function phraseMatch(text, phrase){
+ const target=norm(phrase);
+ if(!target)return false;
+ const escaped=target.replace(/[-/\\^$*+?.()|[\]{}]/g,'\\$&').replace(/ /g,'\\s+');
+ return new RegExp(`(^|\\b)${escaped}(?=\\b|$)`,'i').test(text);
+}
+function standaloneTokenMatch(text, token){
+ const target=norm(token);
+ if(!target||target.length<2)return false;
+ return text.split(' ').includes(target);
+}
+export function findProjects(q,discoveries=[]){
+ const t=norm(q),all=combinedRegistry(discoveries),out=new Map();
+ Object.entries(alias).forEach(([a,id])=>{if(phraseMatch(t,a)){const p=all.find(x=>x.id===id);if(p)out.set(p.id,p);}});
+ all.forEach(p=>{
+  const names=[p.name,...(p.aliases||[]),String(p.id||'').replaceAll('-',' ')].filter(Boolean);
+  if(names.some(n=>phraseMatch(t,n)))out.set(p.id,p);
+  // Short names such as SUP, UB, or RPH are accepted only as complete tokens.
+  if(p.shortName&&standaloneTokenMatch(t,p.shortName))out.set(p.id,p);
+ });
+ return [...out.values()];
+}
 function cleanCandidate(value){return String(value||'').replace(/^(can i|could i|should i|does|do|is|are|what is|tell me about|will)\s+/i,'').replace(/\b(work|working|compatible|together|install|use|mod|plugin|require|requires|need|version|latest|update)\b/gi,' ').replace(/[?.,!]/g,' ').replace(/\s+/g,' ').trim();}
 function unknownCandidate(q,projects,discoveries=[]){const parts=String(q||'').split(/\s+(?:and|with|plus|alongside)\s+|,/i).map(cleanCandidate).filter(x=>x.length>=3);for(const part of parts){if(!findProjects(part,discoveries).length)return part;}if(projects.length)return null;const raw=cleanCandidate(q);return raw.length>=3&&raw.length<=120?raw:null;}
 function intent(q,projects){const t=norm(q);if(/crash|freez|stutter|not load|not work|error|broken|issue/.test(t))return'doctor';if(/install order|order should|what first|before installing|how do i install/.test(t))return'install';if(/compatible|work with|together|conflict|install .* with|use .* with/.test(t)||projects.length>1)return'compatibility';if(/depend|require|need before|prerequisite/.test(t))return'dependencies';if(/version|update|latest|which release/.test(t))return'project';if(/show|list|find|what mods|which mods/.test(t))return'search';return projects.length?'project':'help';}
