@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "project-sentinel-ai",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-01",
+  "observability": {"enabled": true},
+  "vars": {
+    "OPENAI_MODEL": "gpt-5-mini",
+    "ALLOWED_ORIGINS": "https://smarshmello.github.io,http://localhost:3000",
+    "REQUIRE_TURNSTILE": "false"
+  }
+}

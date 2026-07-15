@@ -16,6 +16,8 @@ const config = {
   customFields: {
     paypalUrl: '',
     kofiUrl: '',
+    sentinelAiEndpoint: '',
+    turnstileSiteKey: '',
   },
   presets: [[
     'classic',
@@ -61,6 +63,7 @@ const config = {
           {to: '/plugins?category=Vehicles%20%26%20equipment', label: 'Vehicles & Equipment'},
           {to: '/compatibility', label: 'Compatibility Center'},
         ]},
+        {to: '/sentinel-ai', label: 'Sentinel AI', position: 'left'},
         {label: 'Tools', position: 'left', items: [
           {to: '/dashboard', label: 'Operations Dashboard'},
           {to: '/planner', label: 'Build Planner'},
@@ -75,7 +78,7 @@ const config = {
       style: 'dark',
       links: [
         {title: 'Sentinel Police', items: [{label:'Overview',to:'/sentinel-police'},{label:'Build Guide',to:'/guide/intro'},{label:'Working Build',to:'/builds'},{label:'Checklist',to:'/checklist'}]},
-        {title: 'Database & Tools', items: [{label:'Getting Started',to:'/guide/getting-started/clean-install'},{label:'Plugin Database',to:'/plugins'},{label:'Golden Builds',to:'/builds'},{label:'Compatibility',to:'/compatibility'},{label:'Build Planner',to:'/planner'},{label:'Dashboard',to:'/dashboard'},{label:'Troubleshooting Wizard',to:'/troubleshooter'},{label:'Installation Checklist',to:'/checklist'},{label:'Troubleshooting',to: '/guide/troubleshooting'}]},
+        {title: 'Database & Tools', items: [{label:'Getting Started',to:'/guide/getting-started/clean-install'},{label:'Plugin Database',to:'/plugins'},{label:'Golden Builds',to:'/builds'},{label:'Compatibility',to:'/compatibility'},{label:'Build Planner',to:'/planner'},{label:'Dashboard',to:'/dashboard'},{label:'Sentinel AI',to:'/sentinel-ai'},{label:'Troubleshooting Wizard',to:'/troubleshooter'},{label:'Installation Checklist',to:'/checklist'},{label:'Troubleshooting',to: '/guide/troubleshooting'}]},
         {title: 'Community', items:[{label:'Help Tickets',to:'/help'},{label:'Suggestions',href:'https://github.com/SmarshMello/Project-Sentinel/issues/new?template=suggestion.yml'}]},
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Project Sentinel. Third-party mods belong to their creators.`,
