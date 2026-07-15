@@ -49,7 +49,7 @@ export default function Home() {
               <Heading as="h1" className={styles.heroTitle}>Build the police simulator<br/><span>GTA V was never meant to be.</span></Heading>
               <p className={styles.heroLead}>The definitive, beginner-first knowledge base for a stable and realistic GTA V Legacy LSPDFR installation—verified one layer at a time.</p>
               <div className={styles.heroActions}>
-                <Link className={clsx('button button--lg', styles.primaryButton)} to="/guide/intro">Start building <SentinelIcon name="chevron" className={styles.icon}/></Link>
+                <Link className={clsx('button button--lg', styles.primaryButton)} to="/sentinel-police">Start building <SentinelIcon name="chevron" className={styles.icon}/></Link>
                 <Link className={clsx('button button--lg', styles.secondaryButton)} to="/plugins">Browse plugins</Link>
               </div>
               <div className={styles.trustRow}>

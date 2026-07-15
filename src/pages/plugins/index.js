@@ -20,14 +20,14 @@ const Icon = ({name}) => {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name]}</svg>;
 };
 
-const statusOrder = ['all', 'verified', 'documented', 'testing', 'research'];
+const statusOrder = ['all', 'verified', 'community', 'documented', 'testing', 'conflict', 'legacy', 'research'];
 
 function PluginCard({plugin}) {
   return (
     <article className={styles.card}>
       <div className={styles.cardTopline}>
         <div className={styles.monogram}>{plugin.shortName.slice(0, 3).toUpperCase()}</div>
-        <PluginStatus status={plugin.status}/>
+        <PluginStatus status={plugin.status}/>{plugin.sentinelPolice && <span className={styles.sentinelTag}>Sentinel Police</span>}
       </div>
       <div className={styles.cardHeading}>
         <span>{plugin.category}</span>
@@ -52,7 +52,7 @@ function PluginCard({plugin}) {
       <p className={styles.note}>{plugin.note}</p>
       <div className={styles.cardActions}>
         <Link className={styles.guideButton} to={`/plugins/${plugin.id}`}>Plugin profile <Icon name="arrow"/></Link>
-        <Link className={styles.iconButton} to={plugin.guide} aria-label={`Open installation guide for ${plugin.name}`}>G</Link>
+        {plugin.guide && <Link className={styles.iconButton} to={plugin.guide} aria-label={`Open installation guide for ${plugin.name}`}>G</Link>}
         {plugin.download && <a className={styles.iconButton} href={plugin.download} target="_blank" rel="noreferrer" aria-label={`Open official download for ${plugin.name}`}><Icon name="external"/></a>}
       </div>
     </article>
@@ -76,6 +76,7 @@ export default function PluginDatabase() {
 
   const verifiedCount = plugins.filter(plugin => plugin.status === 'verified').length;
   const testingCount = plugins.filter(plugin => plugin.status === 'testing').length;
+  const sentinelCount = plugins.filter(plugin => plugin.sentinelPolice).length;
 
   return (
     <Layout title="Plugin Database" description="Project Sentinel compatibility, verification and installation database for LSPDFR plugins and dependencies.">
@@ -83,16 +84,16 @@ export default function PluginDatabase() {
         <header className={styles.hero}>
           <div className={styles.grid}/>
           <div className="container">
-            <div className={styles.eyebrow}><span/> SENTINEL REGISTRY // VERSION 2.1</div>
+            <div className={styles.eyebrow}><span/> SENTINEL ECOSYSTEM REGISTRY</div>
             <div className={styles.heroLayout}>
               <div>
                 <Heading as="h1">The LSPDFR plugin database.</Heading>
-                <p>One controlled registry for compatibility status, tested versions, dependencies, performance impact and installation guides.</p>
+                <p>A broad, curated catalog of LSPDFR plugins, callouts, frameworks, uniforms, graphics, audio and utilities—with Sentinel Police membership kept separate from community status.</p>
               </div>
               <div className={styles.registryPanel}>
                 <div><Icon name="shield"/><span>Verified</span><strong>{verifiedCount}</strong></div>
                 <div><Icon name="pulse"/><span>Testing</span><strong>{testingCount}</strong></div>
-                <div><Icon name="cube"/><span>Total records</span><strong>{plugins.length}</strong></div>
+                <div><Icon name="cube"/><span>Total records</span><strong>{plugins.length}</strong></div><div><Icon name="shield"/><span>Sentinel Police</span><strong>{sentinelCount}</strong></div>
               </div>
             </div>
           </div>
@@ -100,7 +101,7 @@ export default function PluginDatabase() {
 
         <section className={styles.legendSection}>
           <div className={clsx('container', styles.legend)}>
-            {Object.entries(statusMeta).filter(([key]) => key !== 'deprecated').map(([key, meta]) => (
+            {Object.entries(statusMeta).map(([key, meta]) => (
               <div key={key}><PluginStatus status={key} compact/><span>{meta.description}</span></div>
             ))}
           </div>

@@ -1,18 +1,28 @@
-PROJECT SENTINEL — GOLDEN BUILDS UPDATE
+PROJECT SENTINEL — SENTINEL POLICE + ECOSYSTEM UPDATE
 
-1. Open GitHub Desktop and select Project-Sentinel.
-2. Click Repository > Show in Explorer.
-3. Copy everything inside this update folder into the repository folder.
-4. Choose Replace when Windows asks.
-5. In GitHub Desktop, confirm these files changed:
-   - docusaurus.config.js
-   - src/data/builds.js
-   - src/pages/builds/index.js
-   - src/pages/builds/styles.module.css
-6. Commit message: Add Golden Builds archive
+1. Extract this ZIP.
+2. In GitHub Desktop select Project-Sentinel.
+3. Repository > Show in Explorer.
+4. Copy docusaurus.config.js and the src folder from this update into the repository root.
+5. Choose Replace the files in the destination.
+6. Commit summary: Add Sentinel Police and expand ecosystem database
 7. Push origin.
 
-New page:
-https://smarshmello.github.io/Project-Sentinel/builds
+Validated locally with:
+  npm ci --no-audit --no-fund
+  npm run build
 
-Production build result before delivery: SUCCESS.
+Production build result:
+  Server compiled successfully
+  Client compiled successfully
+  Static files generated successfully
+  Broken-link check passed
+
+What this update adds:
+- Dedicated /sentinel-police section and sub-navigation
+- Reorganized top navigation for Sentinel Police, Database, and Tools
+- 59 total catalog records across core loaders, police systems, callouts,
+  EUP, graphics, vehicles, audio, stability utilities, and experimental work
+- Separate Sentinel Police membership from wider community status
+- New Community Proven, Conflict Risk, and Legacy status badges
+- Individual profile pages for every new catalog record

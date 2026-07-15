@@ -26,8 +26,11 @@
 }
 
 .verified { --badge-color: #5ce6a6; }
+.community { --badge-color: #55d6d1; }
 .documented { --badge-color: #70a9ff; }
 .testing { --badge-color: #ffc766; }
+.conflict { --badge-color: #ff9f5c; }
+.legacy { --badge-color: #a5adbd; }
 .research { --badge-color: #bb8cff; }
 .deprecated { --badge-color: #ff7285; }
 .compact { padding: .32rem .55rem; font-size: .62rem; }
