@@ -44,6 +44,7 @@ const config = {
         {to: '/guide/intro', label: 'Guide', position: 'left'},
         {to: '/plugins', label: 'Plugin Database', position: 'left'},
         {to: '/builds', label: 'Golden Builds', position: 'left'},
+        {to: '/compatibility', label: 'Compatibility', position: 'left'},
         {to: '/donate', label: 'Donate', position: 'left'},
         {to: '/help', label: 'Help', position: 'left'},
         {href: 'https://github.com/SmarshMello/Project-Sentinel', label: 'GitHub', position: 'right'},
@@ -52,7 +53,7 @@ const config = {
     footer: {
       style: 'dark',
       links: [
-        {title: 'Guide', items: [{label:'Getting Started',to:'/guide/getting-started/clean-install'},{label:'Plugin Database',to:'/plugins'},{label:'Golden Builds',to:'/builds'},{label:'Troubleshooting',to: '/guide/troubleshooting'}]},
+        {title: 'Guide', items: [{label:'Getting Started',to:'/guide/getting-started/clean-install'},{label:'Plugin Database',to:'/plugins'},{label:'Golden Builds',to:'/builds'},{label:'Compatibility',to:'/compatibility'},{label:'Troubleshooting',to: '/guide/troubleshooting'}]},
         {title: 'Community', items:[{label:'Help Tickets',to:'/help'},{label:'Suggestions',href:'https://github.com/SmarshMello/Project-Sentinel/issues/new?template=suggestion.yml'}]},
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Project Sentinel. Third-party mods belong to their creators.`,
