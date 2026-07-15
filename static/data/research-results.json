@@ -1,13 +1,13 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-07-15T23:33:21.502Z",
+  "updatedAt": "2026-07-15T23:37:49.081Z",
   "discoveries": [],
   "requests": [
     {
       "id": "request-los-santos-alive-bf743c9",
       "query": "Los Santos Alive",
       "status": "needs-manual-research",
-      "requestedAt": "2026-07-15T23:33:21.502Z",
+      "requestedAt": "2026-07-15T23:37:49.081Z",
       "candidateCount": 1,
       "credibleCandidateCount": 0,
       "candidates": [
