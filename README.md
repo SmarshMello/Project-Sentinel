@@ -1,4 +1,4 @@
-# Project Sentinel Docusaurus Site v1.1
+# Project Sentinel Site v1.1
 
 Configured for:
 
