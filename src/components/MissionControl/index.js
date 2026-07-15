@@ -5,6 +5,19 @@ import styles from './styles.module.css';
 const REPORT_URL = '/Project-Sentinel/data/watcher-report.json';
 const HISTORY_URL = '/Project-Sentinel/data/watcher-history.json';
 
+const readTime = (run) => {
+  const value = run?.checkedAt || run?.generatedAt || run?.timestamp || run?.date;
+  const time = value ? new Date(value).getTime() : NaN;
+  return Number.isFinite(time) ? time : 0;
+};
+const readHealth = (run) => run?.averageHealth ?? run?.health;
+const readRuntime = (run) => run?.durationSeconds ?? run?.runtimeSeconds;
+const isValidRun = (run) => Number.isFinite(readTime(run)) && typeof readHealth(run) === 'number' && readHealth(run) > 0;
+export const normalizeHistory = (history) => (Array.isArray(history) ? history : [])
+  .filter(isValidRun)
+  .slice()
+  .sort((a, b) => readTime(a) - readTime(b));
+
 const toneForHealth = (value) => value >= 90 ? 'good' : value >= 75 ? 'watch' : 'risk';
 const statusText = (report) => {
   const critical = report?.intelligenceCounts?.highRisk || 0;
@@ -21,28 +34,32 @@ export function useSentinelData() {
     Promise.all([
       fetch(`${REPORT_URL}?v=${Date.now()}`, {cache:'no-store'}).then(r => {if(!r.ok) throw new Error(`Report ${r.status}`); return r.json();}),
       fetch(`${HISTORY_URL}?v=${Date.now()}`, {cache:'no-store'}).then(r => r.ok ? r.json() : []).catch(() => []),
-    ]).then(([report, history]) => active && setState({loading:false, report, history:Array.isArray(history) ? history : history?.scans || history?.runs || [], error:null}))
-      .catch(error => active && setState({loading:false, report:null, history:[], error:error.message}));
+    ]).then(([report, history]) => {
+      const rawHistory = Array.isArray(history) ? history : history?.scans || history?.runs || [];
+      if (active) setState({loading:false, report, history:normalizeHistory(rawHistory), error:null});
+    }).catch(error => active && setState({loading:false, report:null, history:[], error:error.message}));
     return () => {active = false;};
   }, []);
   return state;
 }
 
-function Metric({label, value, detail, tone='neutral'}) {
-  return <div className={`${styles.metric} ${styles[tone]}`}><span>{label}</span><strong>{value}</strong>{detail && <small>{detail}</small>}</div>;
+function Metric({label, value, detail, tone='neutral', trend}) {
+  return <div className={`${styles.metric} ${styles[tone]}`}><span>{label}</span><div className={styles.metricValue}><strong>{value}</strong>{trend && <b className={styles.trend}>{trend}</b>}</div>{detail && <small>{detail}</small>}</div>;
 }
 
 export default function MissionControl({compact=false}) {
   const {loading, report, history, error} = useSentinelData();
   const status = statusText(report);
-  const actions = useMemo(() => (report?.reviewQueue || []).slice(0, 4), [report]);
+  const actions = useMemo(() => (report?.reviewQueue || []).slice(0, compact ? 4 : 6), [report, compact]);
   const medium = report?.intelligenceCounts?.mediumRisk || 0;
   const low = report?.intelligenceCounts?.lowRisk || 0;
   const categories = (report?.categories || []).slice().sort((a,b)=>(a.health ?? a.averageHealth ?? 0)-(b.health ?? b.averageHealth ?? 0)).slice(0, compact ? 4 : 8);
   const health = report?.averageHealth ?? 0;
-  const last = Array.isArray(history) && history.length > 1 ? history[history.length - 2] : null;
-  const previousHealth = last?.averageHealth ?? last?.health;
+  const previous = history.length > 1 ? history[history.length - 2] : null;
+  const previousHealth = readHealth(previous);
+  const previousRuntime = readRuntime(previous);
   const trend = typeof previousHealth === 'number' ? health - previousHealth : 0;
+  const runtimeTrend = typeof previousRuntime === 'number' ? (report?.durationSeconds ?? 0) - previousRuntime : 0;
 
   if (loading) return <div className={styles.loading}>Connecting to Sentinel intelligence…</div>;
   if (error) return <div className={styles.error}>Mission Control could not load live Watcher data: {error}</div>;
@@ -54,16 +71,16 @@ export default function MissionControl({compact=false}) {
         <h2>{status[0]}</h2>
         <p>Last intelligence scan {new Date(report.checkedAt).toLocaleString()} · Watcher {report.watcherVersion}</p>
       </div>
-      <div className={`${styles.score} ${styles[toneForHealth(health)]}`}><strong>{health}%</strong><span>Ecosystem health</span><small>{trend === 0 ? 'No change' : `${trend > 0 ? '+' : ''}${trend}% from prior scan`}</small></div>
+      <div className={`${styles.score} ${styles[toneForHealth(health)]}`}><strong>{health}%</strong><span>Ecosystem health</span><small>{trend === 0 ? 'No change' : `${trend > 0 ? '▲ +' : '▼ '}${trend}% from prior scan`}</small></div>
     </section>
 
     <section className={styles.metrics}>
       <Metric label="Projects monitored" value={report.counts?.tracked ?? 0} detail="Across the LSPDFR ecosystem" />
       <Metric label="Critical" value={report.intelligenceCounts?.highRisk ?? 0} detail="Immediate attention" tone={(report.intelligenceCounts?.highRisk || 0) ? 'risk':'good'} />
-      <Metric label="Needs review" value={report.counts?.needsReview ?? 0} detail={`${medium} medium-risk signals`} tone={(report.counts?.needsReview || 0) ? 'watch':'good'} />
+      <Metric label="Needs review" value={report.counts?.needsReview ?? 0} detail={`${medium} medium-priority signals`} tone={(report.counts?.needsReview || 0) ? 'watch':'good'} />
       <Metric label="Possible updates" value={report.counts?.possibleUpdates ?? 0} detail="Release signals detected" tone={(report.counts?.possibleUpdates || 0) ? 'watch':'good'} />
-      <Metric label="Healthy sources" value={report.counts?.healthy ?? 0} detail={`${low} low-risk records`} tone="good" />
-      <Metric label="Latest runtime" value={`${report.durationSeconds ?? 0}s`} detail="Daily automated scan" />
+      <Metric label="Healthy sources" value={report.counts?.healthy ?? 0} detail={`${low} low-priority records`} tone="good" />
+      <Metric label="Latest runtime" value={`${report.durationSeconds ?? 0}s`} trend={runtimeTrend === 0 ? '→' : runtimeTrend < 0 ? `▼ ${Math.abs(runtimeTrend)}s` : `▲ ${runtimeTrend}s`} detail="Daily automated scan" />
     </section>
 
     <section className={styles.grid}>

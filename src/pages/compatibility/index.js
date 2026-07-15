@@ -116,8 +116,17 @@ export default function CompatibilityPage() {
 
         <section className={styles.dependencySection}>
           <div className="container">
-            <div className={styles.dependencyHead}><div><div className={styles.eyebrow}><span/>Relationship map</div><Heading as="h2">Dependency intelligence</Heading><p>Core relationships pulled from Sentinel's unified plugin registry. Open any connected component to inspect its verified guide.</p></div><Link to="/operations/projects">Browse all profiles →</Link></div>
-            <div className={styles.dependencyGrid}>{plugins.filter((item)=>item.dependencies?.length).slice(0,12).map((item)=><article className={styles.dependencyCard} key={item.id}><span>{item.category}</span><Heading as="h3">{item.name}</Heading><div className={styles.dependencyList}>{item.dependencies.map((dependency)=>{const match=plugins.find((candidate)=>candidate.name.toLowerCase()===dependency.toLowerCase()||candidate.shortName?.toLowerCase()===dependency.toLowerCase());return match?<Link key={dependency} to={`/plugins/${match.id}`}>{dependency}</Link>:<i key={dependency}>{dependency}</i>})}</div></article>)}</div>
+            <div className={styles.dependencyHead}><div><div className={styles.eyebrow}><span/>Relationship map</div><Heading as="h2">Dependency intelligence</Heading><p>Core relationships pulled from Sentinel's unified plugin registry. Select any connected component to inspect its verified guide.</p></div><Link to="/operations/projects">Browse all profiles →</Link></div>
+            <div className={styles.graphShell}>
+              <div className={styles.graphLevel}><div className={styles.graphNode}><span>Game baseline</span><strong>GTA V Legacy 3788</strong></div></div>
+              <div className={styles.graphConnector}/>
+              <div className={styles.graphLevel}><Link className={styles.graphNode} to="/plugins/rage-plugin-hook"><span>Runtime</span><strong>RAGE Plugin Hook</strong></Link><Link className={styles.graphNode} to="/plugins/openiv"><span>Archive platform</span><strong>OpenIV</strong></Link><Link className={styles.graphNode} to="/plugins/scripthookv"><span>ASI runtime</span><strong>Script Hook V</strong></Link></div>
+              <div className={styles.graphConnector}/>
+              <div className={styles.graphLevel}><Link className={styles.graphNode} to="/plugins/lspdfr"><span>Police framework</span><strong>LSPDFR</strong></Link><Link className={styles.graphNode} to="/plugins/ragenativeui"><span>UI library</span><strong>RAGENativeUI</strong></Link><Link className={styles.graphNode} to="/plugins/scripthookvdotnet"><span>Managed scripts</span><strong>ScriptHookV.NET</strong></Link></div>
+              <div className={styles.graphConnector}/>
+              <div className={styles.graphLevel}><Link className={styles.graphNode} to="/plugins/stop-the-ped"><span>Police system</span><strong>Stop The Ped</strong></Link><Link className={styles.graphNode} to="/plugins/ultimate-backup"><span>Police system</span><strong>Ultimate Backup</strong></Link><Link className={styles.graphNode} to="/plugins/compulite"><span>Police system</span><strong>CompuLite</strong></Link><Link className={styles.graphNode} to="/plugins/eup-menu"><span>Uniform system</span><strong>EUP Menu</strong></Link></div>
+            </div>
+            <div className={styles.dependencyGrid}>{plugins.filter((item)=>item.dependencies?.length).slice(0,12).map((item)=><article className={styles.dependencyCard} key={item.id}><span>{item.category}</span><h3><Link to={`/plugins/${item.id}`}>{item.name}</Link></h3><div className={styles.dependencyList}>{item.dependencies.map((dependency)=>{const match=plugins.find((candidate)=>candidate.name===dependency||candidate.shortName===dependency);return match?<Link key={dependency} to={`/plugins/${match.id}`}>{dependency}</Link>:<i key={dependency}>{dependency}</i>})}</div></article>)}</div>
           </div>
         </section>
       </main>
