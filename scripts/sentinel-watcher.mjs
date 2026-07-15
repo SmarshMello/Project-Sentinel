@@ -12,7 +12,7 @@ const state = await readJson(statePath, {items: {}});
 const existingHistory = await readJson(historyPath, {schemaVersion: 1, scans: []});
 const checkedAt = new Date().toISOString();
 const startedAt = Date.now();
-const ua = 'Project-Sentinel-Watcher/0.5 (+https://github.com/SmarshMello/Project-Sentinel)';
+const ua = 'Project-Sentinel-Watcher/0.6 (+https://github.com/SmarshMello/Project-Sentinel)';
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const digest = (value) => crypto.createHash('sha256').update(String(value)).digest('hex').slice(0, 20);
 const cleanVersion = (value) => String(value || '').toLowerCase().replace(/^v(?=\d)/, '').replace(/[^0-9a-z.]+/g, '');
@@ -21,9 +21,10 @@ const repoFrom = (url) => { const m = String(url).match(/^https?:\/\/github\.com
 
 function profile(url) {
   const host = new URL(url).hostname.toLowerCase();
-  if (host.includes('github.com')) return {timeout: 9000, attempts: 2};
-  if (host.includes('lcpdfr.com')) return {timeout: 14000, attempts: 2};
-  return {timeout: 11000, attempts: 2};
+  if (host.includes('github.com')) return {timeout: 6500, attempts: 2};
+  if (host.includes('lcpdfr.com')) return {timeout: 6500, attempts: 1};
+  if (host.includes('gta5-mods.com')) return {timeout: 6500, attempts: 1};
+  return {timeout: 7000, attempts: 1};
 }
 
 async function fetchRetry(url, options = {}) {
@@ -48,7 +49,7 @@ async function fetchRetry(url, options = {}) {
     } catch (error) {
       clearTimeout(timer);
       last = error;
-      if (attempt < config.attempts) await wait(500 * attempt);
+      if (attempt < config.attempts) await wait(250 * attempt);
     }
   }
   throw Object.assign(last || new Error('Request failed'), {attempts: config.attempts});
@@ -127,7 +128,7 @@ async function concurrent(values, limit) {
   await Promise.all(Array.from({length:Math.min(limit,values.length)},worker)); return output;
 }
 
-const items = await concurrent(sources,6);
+const items = await concurrent(sources,12);
 const count = (status) => items.filter((item)=>item.status===status).length;
 const counts = {tracked:items.length,healthy:count('healthy'),possibleUpdates:count('possible-update'),metadataChanged:count('metadata-changed'),timedOut:count('timed-out'),blocked:count('blocked'),redirected:count('redirected'),notFound:count('not-found'),rateLimited:count('rate-limited'),serverErrors:count('server-error'),archived:count('archived'),failed:count('failed'),needsReview:items.filter((i)=>i.needsReview).length,highPriority:items.filter((i)=>i.reviewPriority==='high').length};
 const averageHealth = items.length ? Math.round(items.reduce((sum,item)=>sum+item.healthScore,0)/items.length) : 0;
@@ -139,7 +140,9 @@ const changes = items.flatMap((item) => {
   const detectedBefore = before.latestRelease || before.detectedVersion || null;
   const detectedNow = item.latestRelease || item.detectedVersion || null;
   const entries = [];
-  if (before.status !== item.status) entries.push({id:item.id,name:item.name,type:'status-changed',from:before.status,to:item.status,summary:`Status changed from ${before.status} to ${item.status}.`,priority:item.reviewPriority === 'high' ? 'high' : 'medium'});
+  const transient = new Set(['timed-out','rate-limited','blocked','server-error','failed']);
+  const transientShuffle = transient.has(before.status) && transient.has(item.status);
+  if (before.status !== item.status && (!transientShuffle || item.statusStreak >= 2)) entries.push({id:item.id,name:item.name,type:'status-changed',from:before.status,to:item.status,summary:`Status changed from ${before.status} to ${item.status}.`,priority:item.reviewPriority === 'high' ? 'high' : 'medium'});
   if (detectedBefore !== detectedNow && detectedNow) entries.push({id:item.id,name:item.name,type:'release-changed',from:detectedBefore,to:detectedNow,summary:`Detected release changed${detectedBefore ? ` from ${detectedBefore}` : ''} to ${detectedNow}.`,priority:'high'});
   if ((before.finalUrl || before.url) !== (item.finalUrl || item.url)) entries.push({id:item.id,name:item.name,type:'source-moved',from:before.finalUrl || before.url,to:item.finalUrl || item.url,summary:'Official source URL changed or redirected.',priority:'medium'});
   return entries;
@@ -151,9 +154,9 @@ const changeCounts = {
   moved: changes.filter((change)=>change.type==='source-moved').length,
   newSources: changes.filter((change)=>change.type==='new-source').length,
 };
-const report = {schemaVersion:4,watcherVersion:'0.5.0',checkedAt,durationSeconds:Math.round((Date.now()-startedAt)/1000),averageHealth,counts,changeCounts,changes,reviewQueue,items};
+const report = {schemaVersion:5,watcherVersion:'0.6.0',checkedAt,durationSeconds:Math.round((Date.now()-startedAt)/1000),averageHealth,counts,changeCounts,scanProfile:{concurrency:12,adaptiveTimeouts:true,transientNoiseSuppression:true},changes,reviewQueue,items};
 const historyEntry = {checkedAt,durationSeconds:report.durationSeconds,averageHealth,counts,changeCounts};
-const history = {schemaVersion:1,watcherVersion:'0.5.0',scans:[historyEntry,...(existingHistory.scans || []).filter((scan)=>scan.checkedAt!==checkedAt)].slice(0,24)};
+const history = {schemaVersion:2,watcherVersion:'0.6.0',scans:[historyEntry,...(existingHistory.scans || []).filter((scan)=>scan.checkedAt!==checkedAt)].slice(0,24)};
 const nextState = {schemaVersion:2,updatedAt:checkedAt,items:Object.fromEntries(items.map((i)=>[i.id,{status:i.status,statusStreak:i.statusStreak,fingerprint:i.fingerprint||null,latestRelease:i.latestRelease||null,detectedVersion:i.detectedVersion||null,finalUrl:i.finalUrl||i.url,checkedAt:i.checkedAt}]))};
 await fs.mkdir(new URL('static/data/',root),{recursive:true}); await fs.mkdir(new URL('sentinel-watcher/reports/',root),{recursive:true});
 await fs.writeFile(reportPath,JSON.stringify(report,null,2)+'\n'); await fs.writeFile(historyPath,JSON.stringify(history,null,2)+'\n'); await fs.writeFile(statePath,JSON.stringify(nextState,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/latest.json',root),JSON.stringify(report,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/review-queue.json',root),JSON.stringify(reviewQueue,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/changes.json',root),JSON.stringify(changes,null,2)+'\n');

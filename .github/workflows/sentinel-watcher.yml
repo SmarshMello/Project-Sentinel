@@ -31,7 +31,7 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 22
-      - name: Scan tracked sources
+      - name: Fast parallel source scan
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/sentinel-watcher.mjs

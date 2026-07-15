@@ -1,0 +1,15 @@
+PROJECT SENTINEL 2.4 INSTALLATION
+
+1. Extract Project-Sentinel-2.4-Update.zip.
+2. Copy everything inside Sentinel-2.4-Update into the root of your Project-Sentinel repository.
+3. Replace files when Windows asks.
+4. In GitHub Desktop, commit:
+   Improve Sentinel Doctor, drag-and-drop, and Watcher speed
+5. Push origin.
+
+No Cloudflare Worker redeploy is required. The GitHub Actions workflow and website files update through the normal repository deployment.
+
+After Pages deploys:
+- Test /Project-Sentinel/doctor with the fake log.
+- Test drag-and-drop in Doctor and Sentinel Expert System.
+- Run Watcher once and compare runtime. Network conditions can still affect the final duration.

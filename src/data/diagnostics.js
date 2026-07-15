@@ -20,7 +20,8 @@ export const diagnosticRules = [
     title: 'RAGE Plugin Hook or GTA version mismatch',
     confidence: 'high',
     status: 'Sentinel Verified',
-    keywords: ['unsupported game version','version mismatch','rage plugin hook not supported','rph version','hook does not support'],
+    keywords: ['unsupported game version','rage plugin hook not supported','rph version','hook does not support'],
+    requirePatterns: [/unsupported game version/i,/rage plugin hook.*not support/i,/game version.*not supported/i,/gta.*version.*mismatch/i],
     logPatterns: [/unsupported game version/i,/not support(ed)? (this|the) game version/i,/game version.*not supported/i],
     steps: [
       'Check GTA5.exe Properties → Details and record the exact file version.',
@@ -49,6 +50,9 @@ export const diagnosticRules = [
   },
   {
     id: 'ragenativeui',
+    kind: 'root-cause',
+    specificity: 4,
+    suppresses: ['missing-dependency'],
     title: 'Duplicate or outdated RAGENativeUI dependency',
     confidence: 'high',
     status: 'Sentinel Verified',
@@ -65,6 +69,9 @@ export const diagnosticRules = [
   },
   {
     id: 'missing-dependency',
+    kind: 'root-cause',
+    specificity: 3,
+    requirePatterns: [/could not load file or assembly/i,/filenotfoundexception/i,/dependency.*missing/i,/assembly.*not found/i],
     title: 'A required dependency or assembly is missing',
     confidence: 'high',
     status: 'Sentinel Verified',
@@ -96,7 +103,28 @@ export const diagnosticRules = [
     guide: '/guide/troubleshooting/plugin-attribute',
   },
   {
+    id: 'heap-adjuster-missing',
+    kind: 'missing-component',
+    specificity: 5,
+    title: 'Heap Adjuster is missing or not loading',
+    confidence: 'high',
+    status: 'Sentinel Verified',
+    keywords: ['heapadjuster not detected','heap adjuster not detected','heapadjuster missing','heap adjuster missing'],
+    requirePatterns: [/heap\s*adjuster.*(?:not detected|missing|not found)/i,/heapadjuster.*(?:not detected|missing|not found)/i],
+    logPatterns: [/heap\s*adjuster.*(?:not detected|missing|not found)/i,/heapadjuster.*(?:not detected|missing|not found)/i],
+    steps: [
+      'Install the verified Heap Adjuster files in the GTA V Legacy root folder beside GTA5.exe.',
+      'Remove duplicate or older Heap Adjuster packages before copying the verified files.',
+      'Confirm Windows did not quarantine or block the DLL/ASI files.',
+      'Launch again and verify the warning no longer appears in the log.'
+    ],
+    checks: ['Heap Adjuster is separate from GameConfig and Packfile Limit Adjuster.'],
+    guide: '/plugins/heap-adjuster',
+  },
+  {
     id: 'gameconfig-packfiles',
+    kind: 'configuration',
+    specificity: 3,
     title: 'GameConfig or archive limits are being exceeded',
     confidence: 'high',
     status: 'Sentinel Verified',
