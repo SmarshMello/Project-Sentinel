@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
@@ -7,6 +7,7 @@ import {analyzeDiagnostics} from '@site/src/utils/diagnosticEngine';
 import {buildDoctorContext, doctorEnvironmentFields, doctorSymptoms} from '@site/src/data/doctorIntake';
 import {analyzeRegistryContext} from '@site/src/data/doctorRegistry';
 import {validateDoctorEnvironment} from '@site/src/data/doctorEnvironment';
+import {clearExpertContext, loadExpertContext} from '@site/src/data/expertHandoff';
 import styles from './styles.module.css';
 
 export default function DoctorPage() {
@@ -24,6 +25,16 @@ export default function DoctorPage() {
   const registryAnalysis = useMemo(() => ran ? analyzeRegistryContext({text, symptom, environment}) : {findings: [], conflictPairs: []}, [ran, text, symptom, environment]);
   const environmentAnalysis = useMemo(() => ran ? validateDoctorEnvironment(environment) : null, [ran, environment]);
   const primary = matches[0];
+  const [expertContext, setExpertContext] = useState(null);
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('from') !== 'expert') return;
+    const saved = loadExpertContext();
+    if (!saved) return;
+    setExpertContext(saved);
+    setSymptom('plugin');
+    setEnvironment((current) => ({...current, lastChange: saved.projects?.map((project) => project.name).join(', ') || saved.question || ''}));
+  }, []);
 
   const readFiles = async (files) => {
     const file = files?.[0];
@@ -43,7 +54,7 @@ export default function DoctorPage() {
     <main className={styles.page}>
       <header className={styles.hero}><div className="container"><span>Local diagnostic workstation</span><Heading as="h1">Sentinel Doctor</Heading><p>Drop in a crash log or paste the evidence. Doctor builds a causal chain, uses positive and negative evidence, and turns the diagnosis into a guided repair plan.</p></div></header>
       <section className={styles.body}><div className="container">
-        <div className={styles.privacy}><b>Private by design</b><span>Files are read locally. Sentinel Doctor does not upload or modify them.</span></div>
+        {expertContext && <section className={styles.expertHandoff}><div><span>Sentinel Expert handoff</span><Heading as="h2">{expertContext.verdict}</Heading><p>{expertContext.summary}</p><small>{expertContext.projects?.length||0} project{expertContext.projects?.length===1?'':'s'} transferred · {expertContext.confidence!=null?`${expertContext.confidence}% confidence`:'confidence not scored'}</small></div><button type="button" onClick={()=>{clearExpertContext();setExpertContext(null);}}>Dismiss</button></section>}<div className={styles.privacy}><b>Private by design</b><span>Files are read locally. Sentinel Doctor does not upload or modify them.</span></div>
         <section className={styles.intakeCard}>
           <div className={styles.cardHead}><div><span>Step 1</span><Heading as="h2">Describe the failure</Heading></div><small>This context improves ranking before Doctor reads the log.</small></div>
           <div className={styles.symptomGrid}>{doctorSymptoms.map((item)=><button type="button" key={item.id} className={symptom===item.id?styles.selectedSymptom:''} onClick={()=>{setSymptom(item.id);setRan(false);}}><b>{item.label}</b><span>{item.hint}</span></button>)}</div>
