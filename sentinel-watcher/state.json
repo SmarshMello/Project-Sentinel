@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-15T03:44:32.504Z",
+  "items": {
+    "lspdfr": {
+      "status": "timed-out",
+      "statusStreak": 2,
+      "fingerprint": null,
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "openiv": {
+      "status": "healthy",
+      "statusStreak": 2,
+      "fingerprint": "75f06b3e9daf9f3387bf",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "scripthookv": {
+      "status": "healthy",
+      "statusStreak": 2,
+      "fingerprint": "11e6ee38fe91283f1954",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "ragenativeui": {
+      "status": "healthy",
+      "statusStreak": 2,
+      "fingerprint": "8d4d0ee52c38270cb514",
+      "latestRelease": "1.9.3",
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "lemonui": {
+      "status": "healthy",
+      "statusStreak": 2,
+      "fingerprint": "3f4d96418f14dd683469",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "scripthookvdotnet": {
+      "status": "healthy",
+      "statusStreak": 2,
+      "fingerprint": "101e55b537d3ceab3b46",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "heap-adjuster": {
+      "status": "healthy",
+      "statusStreak": 2,
+      "fingerprint": "babd92e05c9219565535",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "packfile-limit-adjuster": {
+      "status": "healthy",
+      "statusStreak": 2,
+      "fingerprint": "7870c8fa6aab47615e97",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "resource-adjuster": {
+      "status": "healthy",
+      "statusStreak": 2,
+      "fingerprint": "6c36e2042848babcab68",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "weapon-limits-adjuster": {
+      "status": "healthy",
+      "statusStreak": 2,
+      "fingerprint": "fa399c1f975512fc72f3",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "policing-redefined": {
+      "status": "timed-out",
+      "statusStreak": 2,
+      "fingerprint": null,
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "lspdfr-enhanced-remastered": {
+      "status": "timed-out",
+      "statusStreak": 2,
+      "fingerprint": null,
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "super-callouts": {
+      "status": "timed-out",
+      "statusStreak": 2,
+      "fingerprint": null,
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "regular-callouts": {
+      "status": "timed-out",
+      "statusStreak": 2,
+      "fingerprint": null,
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "basic-callouts": {
+      "status": "timed-out",
+      "statusStreak": 2,
+      "fingerprint": null,
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "typical-callouts": {
+      "status": "rate-limited",
+      "statusStreak": 1,
+      "fingerprint": "f8145232c6a89075a07c",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "west-coast-callouts": {
+      "status": "timed-out",
+      "statusStreak": 2,
+      "fingerprint": null,
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "real-duty-callouts": {
+      "status": "timed-out",
+      "statusStreak": 2,
+      "fingerprint": null,
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "interior-callouts": {
+      "status": "rate-limited",
+      "statusStreak": 1,
+      "fingerprint": "b0a37337a18bfec44b8f",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "jb-callout": {
+      "status": "timed-out",
+      "statusStreak": 2,
+      "fingerprint": null,
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "eup-menu": {
+      "status": "rate-limited",
+      "statusStreak": 1,
+      "fingerprint": "cecff72ec032adbae8c9",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "eup-law-order": {
+      "status": "rate-limited",
+      "statusStreak": 1,
+      "fingerprint": "5fb50986c43a001bc6ed",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "eup-serve-rescue": {
+      "status": "rate-limited",
+      "statusStreak": 1,
+      "fingerprint": "5588b46f354d35c779d7",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "eup-backup-configs": {
+      "status": "rate-limited",
+      "statusStreak": 1,
+      "fingerprint": "7a546206d0ed9f0a4f53",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "visualv": {
+      "status": "healthy",
+      "statusStreak": 2,
+      "fingerprint": "1a7798a73e2eee246bd2",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    },
+    "els": {
+      "status": "rate-limited",
+      "statusStreak": 1,
+      "fingerprint": "38874206ec5d15a70930",
+      "latestRelease": null,
+      "checkedAt": "2026-07-15T03:44:32.504Z"
+    }
+  }
+}
