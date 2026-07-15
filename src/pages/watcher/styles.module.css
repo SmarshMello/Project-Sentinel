@@ -45,3 +45,5 @@
 @media(max-width:1150px){.metrics{grid-template-columns:repeat(4,1fr)}.list>article{grid-template-columns:1fr}.list>article>a{justify-self:start}}
 @media(max-width:700px){.hero{padding:4rem 0 3rem}.metrics{grid-template-columns:repeat(2,1fr)}.toolbar{grid-template-columns:1fr}.list dl{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){.actions a,.list>article{transition:none}.actions a:hover,.list>article:hover{transform:none}}
+.possible-update{color:#7048c5!important;background:rgba(139,92,246,.13)!important;border-color:rgba(139,92,246,.36)!important}
+.metadata-changed{color:#087d83!important;background:rgba(20,184,166,.12)!important;border-color:rgba(20,184,166,.35)!important}

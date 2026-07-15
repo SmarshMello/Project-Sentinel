@@ -7,8 +7,8 @@ import styles from './styles.module.css';
 
 const STATUS_LABELS = {
   healthy: 'Healthy',
-  'version-changed': 'Version changed',
-  'page-changed': 'Page changed',
+  'possible-update': 'Possible update',
+  'metadata-changed': 'Metadata changed',
   'timed-out': 'Timed out',
   blocked: 'Automation blocked',
   redirected: 'Redirected',
@@ -20,7 +20,7 @@ const STATUS_LABELS = {
   unknown: 'Unknown',
 };
 
-const FILTERS = ['review', 'all', 'changed', 'healthy', 'timed-out', 'blocked', 'not-found', 'archived'];
+const FILTERS = ['review', 'all', 'possible-update', 'healthy', 'metadata-changed', 'timed-out', 'blocked', 'not-found', 'archived'];
 
 export default function Watcher() {
   const reportUrl = useBaseUrl('/data/watcher-report.json');
@@ -44,7 +44,6 @@ export default function Watcher() {
       const matchesFilter =
         filter === 'all' ||
         (filter === 'review' && item.needsReview) ||
-        (filter === 'changed' && ['version-changed', 'page-changed'].includes(item.status)) ||
         item.status === filter;
       return matchesQuery && matchesFilter;
     });
@@ -54,11 +53,11 @@ export default function Watcher() {
   const metrics = [
     ['Tracked', counts.tracked],
     ['Healthy', counts.healthy],
-    ['Changed', counts.changed],
+    ['Possible updates', counts.possibleUpdates],
     ['Timed out', counts.timedOut],
     ['Blocked', counts.blocked],
     ['Not found', counts.notFound],
-    ['Archived', counts.archived],
+    ['High priority', counts.highPriority],
     ['Needs review', counts.needsReview],
   ];
 
@@ -84,8 +83,7 @@ export default function Watcher() {
           <div className={styles.notice}>
             <b>Review-first automation</b>
             <span>
-              Watcher 0.2 retries failed requests and separates timeouts, bot blocks, redirects,
-              404s and real version changes. A timeout never means a mod is dead.
+              Watcher 0.3 tracks repeated failures, health scores and possible releases. One timeout, one 404 or one metadata change does not become a major alert.
             </span>
           </div>
 
@@ -99,7 +97,7 @@ export default function Watcher() {
           </div>
 
           <div className={styles.legend}>
-            {['healthy', 'version-changed', 'page-changed', 'timed-out', 'blocked', 'redirected', 'not-found', 'archived'].map((status) => (
+            {['healthy', 'possible-update', 'metadata-changed', 'timed-out', 'blocked', 'redirected', 'not-found', 'archived'].map((status) => (
               <span key={status} className={`${styles.state} ${styles[status] || ''}`}>{STATUS_LABELS[status]}</span>
             ))}
           </div>
@@ -107,12 +105,12 @@ export default function Watcher() {
           <div className={styles.toolbar}>
             <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search monitored projects…" />
             <select value={filter} onChange={(event) => setFilter(event.target.value)}>
-              {FILTERS.map((value) => <option key={value} value={value}>{value === 'review' ? 'Needs review' : value === 'all' ? 'All tracked' : value === 'changed' ? 'Changed' : STATUS_LABELS[value]}</option>)}
+              {FILTERS.map((value) => <option key={value} value={value}>{value === 'review' ? 'Needs review' : value === 'all' ? 'All tracked' : STATUS_LABELS[value]}</option>)}
             </select>
           </div>
 
           <div className={styles.meta}>
-            Last committed scan: {report?.checkedAt ? new Date(report.checkedAt).toLocaleString() : 'Loading…'} · Showing {items.length} records · Watcher {report?.watcherVersion || '—'}
+            Latest published scan: {report?.checkedAt ? new Date(report.checkedAt).toLocaleString() : 'Loading…'} · Showing {items.length} records · Watcher {report?.watcherVersion || '—'} · Average health {report?.averageHealth ?? '—'}% · Runtime {report?.durationSeconds ?? '—'}s
           </div>
 
           <div className={styles.list}>
@@ -125,7 +123,9 @@ export default function Watcher() {
                   </div>
                   <Heading as="h2">{item.name}</Heading>
                   <p>{item.category} · Expected: {item.expectedVersion}</p>
+                  {(item.latestRelease || item.detectedVersion) && <small>Detected: <b>{item.latestRelease || item.detectedVersion}</b></small>}
                   {item.note && <small>{item.note}</small>}
+                  <small>Health: <b>{item.healthScore ?? '—'}%</b>{item.statusStreak > 1 ? ` · ${item.statusStreak} consecutive scans` : ''}</small>
                   {item.reviewReason && item.needsReview && <small className={styles.reason}>{item.reviewReason}</small>}
                 </div>
                 <dl>

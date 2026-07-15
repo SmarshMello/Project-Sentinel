@@ -2,319 +2,137 @@ import fs from 'node:fs/promises';
 import crypto from 'node:crypto';
 
 const root = new URL('../', import.meta.url);
-const registry = JSON.parse(await fs.readFile(new URL('sentinel-watcher/sources.json', root), 'utf8'));
-const previousPath = new URL('public/data/watcher-report.json', root);
-let previous = null;
-try { previous = JSON.parse(await fs.readFile(previousPath, 'utf8')); } catch {}
-
+const sources = JSON.parse(await fs.readFile(new URL('sentinel-watcher/sources.json', root), 'utf8')).sources;
+const reportPath = new URL('public/data/watcher-report.json', root);
+const statePath = new URL('sentinel-watcher/state.json', root);
+const readJson = async (url, fallback) => { try { return JSON.parse(await fs.readFile(url, 'utf8')); } catch { return fallback; } };
+const previous = await readJson(reportPath, null);
+const state = await readJson(statePath, {items: {}});
 const checkedAt = new Date().toISOString();
-const userAgent = 'Project-Sentinel-Watcher/0.2 (+https://github.com/SmarshMello/Project-Sentinel)';
-const maxAttempts = 3;
-const timeoutMs = 18000;
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const startedAt = Date.now();
+const ua = 'Project-Sentinel-Watcher/0.3 (+https://github.com/SmarshMello/Project-Sentinel)';
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const digest = (value) => crypto.createHash('sha256').update(String(value)).digest('hex').slice(0, 20);
+const cleanVersion = (value) => String(value || '').toLowerCase().replace(/^v(?=\d)/, '').replace(/[^0-9a-z.]+/g, '');
+const concreteVersion = (value) => /\d/.test(cleanVersion(value)) && !/(current|latest|unknown|various|research)/i.test(String(value || ''));
+const repoFrom = (url) => { const m = String(url).match(/^https?:\/\/github\.com\/([^/]+)\/([^/#?]+)/i); return m ? {owner:m[1], repo:m[2].replace(/\.git$/i,'')} : null; };
 
-function hash(value) {
-  return crypto.createHash('sha256').update(value).digest('hex').slice(0, 20);
+function profile(url) {
+  const host = new URL(url).hostname.toLowerCase();
+  if (host.includes('github.com')) return {timeout: 9000, attempts: 2};
+  if (host.includes('lcpdfr.com')) return {timeout: 14000, attempts: 2};
+  return {timeout: 11000, attempts: 2};
 }
 
-function githubRepo(url) {
-  const match = url.match(/^https?:\/\/github\.com\/([^/]+)\/([^/#?]+)/i);
-  return match ? { owner: match[1], repo: match[2].replace(/\.git$/i, '') } : null;
-}
-
-function classifyHttp(status) {
-  if (status >= 200 && status < 400) return 'healthy';
-  if ([401, 403].includes(status)) return 'blocked';
-  if (status === 404 || status === 410) return 'not-found';
-  if (status === 429) return 'rate-limited';
-  if (status >= 500) return 'server-error';
-  return 'failed';
-}
-
-function reviewFor(status, result) {
-  const mapping = {
-    'version-changed': ['high', 'A new release was detected and compatibility should be reviewed.'],
-    archived: ['high', 'The GitHub repository is archived. Confirm whether the mod should be marked legacy or deprecated.'],
-    'not-found': ['high', 'The official source returned 404/410. Confirm whether the project moved or was removed.'],
-    'page-changed': ['medium', 'The source metadata changed. Review the page for a new version, dependencies, or compatibility notes.'],
-    redirected: ['medium', 'The source redirected to a different URL. Confirm and update the official link if appropriate.'],
-    'server-error': ['medium', 'The source returned a server error after retries. Recheck manually later.'],
-    'rate-limited': ['low', 'The source rate-limited the automated check. Manual review is optional.'],
-    blocked: ['low', 'The source blocks automated checks. Do not treat this as a dead mod.'],
-    'timed-out': ['low', 'The source timed out after retries. Do not treat this as a dead mod.'],
-    failed: ['medium', 'The automated check failed unexpectedly. Review the error details.'],
-  };
-  const [priority, reason] = mapping[status] || ['none', 'No review required.'];
-  return { needsReview: priority !== 'none', reviewPriority: priority, reviewReason: reason, ...result };
-}
-
-async function fetchWithRetry(url, options = {}) {
-  let lastError = null;
-  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+async function fetchRetry(url, options = {}) {
+  const config = profile(url);
+  let last;
+  for (let attempt = 1; attempt <= config.attempts; attempt += 1) {
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    const timer = setTimeout(() => controller.abort(), config.timeout);
     try {
       const response = await fetch(url, {
+        ...options,
         redirect: 'follow',
         signal: controller.signal,
         headers: {
-          'user-agent': userAgent,
+          'user-agent': ua,
           accept: 'text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8',
-          'accept-language': 'en-US,en;q=0.8',
           ...(options.headers || {}),
         },
-        ...options,
       });
       clearTimeout(timer);
-      return { response, attempts: attempt };
+      return {response, attempts: attempt};
     } catch (error) {
       clearTimeout(timer);
-      lastError = error;
-      if (attempt < maxAttempts) await delay(1200 * attempt);
+      last = error;
+      if (attempt < config.attempts) await wait(500 * attempt);
     }
   }
-  throw Object.assign(lastError || new Error('Request failed'), { attempts: maxAttempts });
+  throw Object.assign(last || new Error('Request failed'), {attempts: config.attempts});
 }
 
-async function inspectGitHub(source, result, repoInfo) {
-  const headers = { accept: 'application/vnd.github+json' };
+const classify = (status) => status >= 200 && status < 400 ? 'healthy' : [401,403].includes(status) ? 'blocked' : status === 429 ? 'rate-limited' : [404,410].includes(status) ? 'not-found' : status >= 500 ? 'server-error' : 'failed';
+const textMatch = (html, patterns) => { for (const pattern of patterns) { const m = html.match(pattern); if (m?.[1]) return m[1].replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim().slice(0,240); } return null; };
+
+async function inspectGitHub(source, result, repo) {
+  const headers = {accept:'application/vnd.github+json','x-github-api-version':'2022-11-28'};
   if (process.env.GITHUB_TOKEN) headers.authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
-
-  const { response: repoRes, attempts } = await fetchWithRetry(
-    `https://api.github.com/repos/${repoInfo.owner}/${repoInfo.repo}`,
-    { headers },
-  );
-  result.attempts = attempts;
-  result.httpStatus = repoRes.status;
-  result.status = classifyHttp(repoRes.status);
-
-  if (!repoRes.ok) {
-    result.note = `GitHub API returned HTTP ${repoRes.status}.`;
-    return result;
-  }
-
-  const repo = await repoRes.json();
-  result.reachable = true;
-  result.archived = Boolean(repo.archived);
-  result.finalUrl = repo.html_url;
-  result.lastActivity = repo.pushed_at;
-  result.defaultBranch = repo.default_branch;
-  result.status = result.archived ? 'archived' : 'healthy';
-
-  const { response: releaseRes } = await fetchWithRetry(
-    `https://api.github.com/repos/${repoInfo.owner}/${repoInfo.repo}/releases/latest`,
-    { headers },
-  );
-  if (releaseRes.ok) {
-    const release = await releaseRes.json();
-    result.latestRelease = release.tag_name || release.name || null;
-    result.releasePublishedAt = release.published_at || null;
-    result.releaseUrl = release.html_url || null;
-  } else if (releaseRes.status === 404) {
-    const { response: tagsRes } = await fetchWithRetry(
-      `https://api.github.com/repos/${repoInfo.owner}/${repoInfo.repo}/tags?per_page=1`,
-      { headers },
-    );
-    if (tagsRes.ok) {
-      const tags = await tagsRes.json();
-      result.latestRelease = tags?.[0]?.name || null;
-      result.releaseUrl = tags?.[0]?.zipball_url || null;
-    }
-  }
-
-  result.fingerprint = hash([
-    result.httpStatus,
-    result.finalUrl,
-    result.archived,
-    result.latestRelease,
-    result.lastActivity,
-  ].join('|'));
-  return result;
+  const {response, attempts} = await fetchRetry(`https://api.github.com/repos/${repo.owner}/${repo.repo}`, {headers});
+  result.attempts = attempts; result.httpStatus = response.status; result.status = classify(response.status);
+  if (!response.ok) { result.note = `GitHub API returned HTTP ${response.status}.`; return; }
+  const data = await response.json();
+  result.reachable = true; result.archived = Boolean(data.archived); result.finalUrl = data.html_url; result.lastActivity = data.pushed_at; result.status = result.archived ? 'archived' : 'healthy';
+  const latest = await fetchRetry(`https://api.github.com/repos/${repo.owner}/${repo.repo}/releases/latest`, {headers});
+  if (latest.response.ok) { const release = await latest.response.json(); result.latestRelease = release.tag_name || release.name || null; result.releaseUrl = release.html_url || null; }
+  else if (latest.response.status === 404) { const tags = await fetchRetry(`https://api.github.com/repos/${repo.owner}/${repo.repo}/tags?per_page=1`, {headers}); if (tags.response.ok) result.latestRelease = (await tags.response.json())?.[0]?.name || null; }
+  result.fingerprint = digest([result.finalUrl,result.archived,result.latestRelease,result.lastActivity].join('|'));
 }
 
 async function inspectWebsite(source, result) {
-  const original = new URL(source.url);
-  const { response, attempts } = await fetchWithRetry(source.url);
-  result.attempts = attempts;
-  result.httpStatus = response.status;
-  result.finalUrl = response.url || source.url;
-  result.reachable = response.ok || [401, 403, 429].includes(response.status);
-  result.status = classifyHttp(response.status);
+  const {response, attempts} = await fetchRetry(source.url);
+  result.attempts = attempts; result.httpStatus = response.status; result.finalUrl = response.url || source.url; result.status = classify(response.status); result.reachable = response.ok || [401,403,429].includes(response.status);
+  let html = '';
+  const length = Number(response.headers.get('content-length') || 0);
+  if (length < 2000000) { try { html = (await response.text()).slice(0,1500000); } catch {} }
+  const title = textMatch(html,[/<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)/i,/<title[^>]*>([\s\S]*?)<\/title>/i]);
+  const detected = textMatch(html, [/["']softwareVersion["']\s*:\s*["']([^"']+)/i, /\bversion\s*[:\-]\s*(v?\d+(?:\.\d+){1,4})/i]);
+  result.pageTitle = title; result.detectedVersion = detected;
+  if (/just a moment|cf-chl-|cloudflare ray id/i.test(html)) { result.status = 'blocked'; result.note = 'The source returned an anti-bot challenge; the page may still be healthy.'; }
+  const original = new URL(source.url); const final = new URL(result.finalUrl);
+  if (result.status === 'healthy' && (original.hostname !== final.hostname || original.pathname !== final.pathname)) { result.status = 'redirected'; result.note = `Source redirected to ${result.finalUrl}.`; }
+  if (result.status === 'blocked' && !result.note) result.note = 'Source blocks automated checks; this is not evidence the mod is dead.';
+  if (result.status === 'rate-limited') result.note = 'Source rate-limited the scan; retry next run.';
+  if (!response.ok && !result.note) result.note = `Source returned HTTP ${response.status}.`;
+  result.fingerprint = digest([response.status,result.finalUrl,title,detected,response.headers.get('last-modified')].join('|'));
+}
 
-  const final = new URL(result.finalUrl);
-  const redirected = result.finalUrl !== source.url && (final.hostname !== original.hostname || final.pathname !== original.pathname);
-  if (redirected && result.status === 'healthy') result.status = 'redirected';
-
-  if (result.status === 'blocked') {
-    result.note = 'Source blocks automated checks; this does not mean the mod is unavailable.';
-  } else if (result.status === 'rate-limited') {
-    result.note = 'Source rate-limited the scan; retry on the next scheduled run.';
-  } else if (!response.ok) {
-    result.note = `Source returned HTTP ${response.status}.`;
-  } else if (redirected) {
-    result.note = `Source redirected to ${result.finalUrl}.`;
-  }
-
-  const metadata = [
-    response.headers.get('etag'),
-    response.headers.get('last-modified'),
-    response.headers.get('content-length'),
-    response.headers.get('content-type'),
-  ].join('|');
-  result.fingerprint = hash(`${response.status}|${result.finalUrl}|${metadata}`);
+function review(result) {
+  let priority = 'none'; let reason = 'No review required.';
+  if (result.status === 'possible-update') { priority='high'; reason='A newer release may be available. Review compatibility before updating the database.'; }
+  else if (result.status === 'archived') { priority='high'; reason='Repository is archived. Decide whether this should be marked legacy or deprecated.'; }
+  else if (result.status === 'not-found') { priority=result.statusStreak >= 2 ? 'high' : 'medium'; reason=result.statusStreak >= 2 ? 'The source returned 404/410 on consecutive scans.' : 'The source returned 404/410 once; recheck before changing its status.'; }
+  else if (result.status === 'redirected') { priority='medium'; reason='Confirm whether the official database link should be updated.'; }
+  else if (['failed','server-error'].includes(result.status)) { priority=result.statusStreak >= 2 ? 'medium' : 'low'; reason='Review only if this failure persists.'; }
+  else if (result.status === 'timed-out' && result.statusStreak >= 3) { priority='low'; reason='Repeated timeouts deserve a manual check but do not imply the mod is dead.'; }
+  else if (result.status === 'metadata-changed' && result.statusStreak >= 2) { priority='low'; reason='Stable metadata changed across repeated scans.'; }
+  result.needsReview = priority !== 'none'; result.reviewPriority = priority; result.reviewReason = reason;
+  const base = {healthy:100,'possible-update':88,'metadata-changed':92,redirected:82,blocked:76,'rate-limited':74,'timed-out':68,'server-error':48,failed:42,'not-found':20,archived:35}[result.status] ?? 60;
+  result.healthScore = Math.max(0, base - (['timed-out','server-error','failed','not-found'].includes(result.status) ? Math.min(20,(result.statusStreak-1)*5) : 0));
   return result;
 }
 
-async function inspect(source) {
-  const result = {
-    ...source,
-    checkedAt,
-    reachable: false,
-    httpStatus: null,
-    finalUrl: source.url,
-    sourceType: 'website',
-    archived: false,
-    latestRelease: null,
-    lastActivity: null,
-    status: 'unknown',
-    change: 'none',
-    note: '',
-    attempts: 0,
-  };
-
-  try {
-    const repoInfo = githubRepo(source.url);
-    if (repoInfo) {
-      result.sourceType = 'github';
-      await inspectGitHub(source, result, repoInfo);
-    } else {
-      await inspectWebsite(source, result);
-    }
-  } catch (error) {
-    result.attempts = error.attempts || maxAttempts;
-    if (error.name === 'AbortError') {
-      result.status = 'timed-out';
-      result.note = `Timed out after ${result.attempts} attempts.`;
-    } else {
-      result.status = 'failed';
-      result.note = `Check failed after ${result.attempts} attempts: ${error.message}`;
-    }
-  }
-
-  const old = previous?.items?.find((item) => item.id === source.id);
-  if (result.archived) {
-    result.change = 'archived';
-  } else if (old?.latestRelease && result.latestRelease && old.latestRelease !== result.latestRelease) {
-    result.change = 'version-changed';
-    result.status = 'version-changed';
-    result.previousRelease = old.latestRelease;
-  } else if (old?.fingerprint && result.fingerprint && old.fingerprint !== result.fingerprint) {
-    result.change = 'page-changed';
-    if (result.status === 'healthy') result.status = 'page-changed';
-  } else if (['not-found', 'server-error', 'rate-limited', 'blocked', 'timed-out', 'failed', 'redirected'].includes(result.status)) {
-    result.change = result.status;
-  }
-
-  return reviewFor(result.status, result);
+async function inspect(source, index, total) {
+  const old = previous?.items?.find((item) => item.id === source.id) || state.items?.[source.id];
+  const result = {...source,checkedAt,reachable:false,httpStatus:null,finalUrl:source.url,sourceType:'website',archived:false,latestRelease:null,detectedVersion:null,status:'unknown',change:'none',note:'',attempts:0};
+  try { const repo = repoFrom(source.url); if (repo) { result.sourceType='github'; await inspectGitHub(source,result,repo); } else await inspectWebsite(source,result); }
+  catch (error) { result.attempts=error.attempts||2; result.status=error.name==='AbortError'?'timed-out':'failed'; result.note=error.name==='AbortError'?`Timed out after ${result.attempts} attempts.`:`Check failed: ${error.message}`; }
+  const detected = result.latestRelease || result.detectedVersion;
+  if (result.archived) result.change='archived';
+  else if (detected && concreteVersion(source.expectedVersion) && cleanVersion(detected) !== cleanVersion(source.expectedVersion)) { result.status='possible-update'; result.change='possible-update'; result.previousRelease=source.expectedVersion; }
+  else if (previous?.watcherVersion?.startsWith('0.3') && old?.latestRelease && result.latestRelease && cleanVersion(old.latestRelease)!==cleanVersion(result.latestRelease)) { result.status='possible-update'; result.change='possible-update'; result.previousRelease=old.latestRelease; }
+  else if (previous?.watcherVersion?.startsWith('0.3') && old?.fingerprint && result.fingerprint && old.fingerprint!==result.fingerprint && result.status==='healthy') { result.status='metadata-changed'; result.change='metadata-changed'; }
+  else if (result.status!=='healthy') result.change=result.status;
+  result.statusStreak = old?.status === result.status ? Number(old.statusStreak||1)+1 : 1;
+  review(result);
+  console.log(`[${index+1}/${total}] ${result.name}: ${result.status}`);
+  return result;
 }
 
-const items = [];
-const concurrency = 3;
-for (let index = 0; index < registry.sources.length; index += concurrency) {
-  const batch = registry.sources.slice(index, index + concurrency);
-  items.push(...await Promise.all(batch.map(inspect)));
-  process.stdout.write('.');
-  await delay(350);
+async function concurrent(values, limit) {
+  const output = new Array(values.length); let cursor=0;
+  async function worker(){ while(cursor<values.length){ const i=cursor++; output[i]=await inspect(values[i],i,values.length); } }
+  await Promise.all(Array.from({length:Math.min(limit,values.length)},worker)); return output;
 }
-console.log('');
 
-const statusCount = (status) => items.filter((item) => item.status === status).length;
-const counts = {
-  tracked: items.length,
-  healthy: statusCount('healthy'),
-  changed: items.filter((item) => ['version-changed', 'page-changed'].includes(item.status)).length,
-  timedOut: statusCount('timed-out'),
-  blocked: statusCount('blocked'),
-  redirected: statusCount('redirected'),
-  notFound: statusCount('not-found'),
-  rateLimited: statusCount('rate-limited'),
-  serverErrors: statusCount('server-error'),
-  archived: statusCount('archived'),
-  failed: statusCount('failed'),
-  needsReview: items.filter((item) => item.needsReview).length,
-};
-
-const reviewQueue = items
-  .filter((item) => item.needsReview)
-  .sort((a, b) => {
-    const order = { high: 0, medium: 1, low: 2, none: 3 };
-    return order[a.reviewPriority] - order[b.reviewPriority] || a.name.localeCompare(b.name);
-  })
-  .map((item) => ({
-    id: item.id,
-    name: item.name,
-    category: item.category,
-    status: item.status,
-    priority: item.reviewPriority,
-    reason: item.reviewReason,
-    note: item.note,
-    sourceUrl: item.finalUrl || item.url,
-    expectedVersion: item.expectedVersion,
-    latestRelease: item.latestRelease,
-    previousRelease: item.previousRelease || null,
-    sentinelPolice: item.sentinelPolice,
-  }));
-
-const report = {
-  schemaVersion: 2,
-  watcherVersion: '0.2.0',
-  checkedAt,
-  counts,
-  reviewQueue,
-  items,
-};
-
-await fs.mkdir(new URL('public/data/', root), { recursive: true });
-await fs.writeFile(previousPath, `${JSON.stringify(report, null, 2)}\n`);
-await fs.mkdir(new URL('sentinel-watcher/reports/', root), { recursive: true });
-await fs.writeFile(new URL('sentinel-watcher/reports/latest.json', root), `${JSON.stringify(report, null, 2)}\n`);
-await fs.writeFile(new URL('sentinel-watcher/reports/review-queue.json', root), `${JSON.stringify(reviewQueue, null, 2)}\n`);
-
-const statusLabels = {
-  healthy: 'Healthy',
-  'version-changed': 'Version changed',
-  'page-changed': 'Page changed',
-  'timed-out': 'Timed out',
-  blocked: 'Automation blocked',
-  redirected: 'Redirected',
-  'not-found': 'Not found',
-  'rate-limited': 'Rate limited',
-  'server-error': 'Server error',
-  archived: 'Archived',
-  failed: 'Failed',
-};
-
-const reportLines = [
-  '# Sentinel Watcher report',
-  '',
-  `Generated: ${checkedAt}`,
-  '',
-  '| Metric | Count |',
-  '|---|---:|',
-  ...Object.entries(counts).map(([key, value]) => `| ${key} | ${value} |`),
-  '',
-  '## High-priority review',
-  '',
-  ...reviewQueue.filter((item) => item.priority === 'high').map((item) => `- **${item.name}** — ${statusLabels[item.status] || item.status}: ${item.reason} ([source](${item.sourceUrl}))`),
-  '',
-  '## Medium-priority review',
-  '',
-  ...reviewQueue.filter((item) => item.priority === 'medium').map((item) => `- **${item.name}** — ${statusLabels[item.status] || item.status}: ${item.reason} ([source](${item.sourceUrl}))`),
-  '',
-  '## Low-priority / informational',
-  '',
-  ...reviewQueue.filter((item) => item.priority === 'low').map((item) => `- **${item.name}** — ${statusLabels[item.status] || item.status}: ${item.note || item.reason} ([source](${item.sourceUrl}))`),
-];
-
-await fs.writeFile(new URL('sentinel-watcher/reports/latest.md', root), `${reportLines.join('\n')}\n`);
-console.log(JSON.stringify(counts));
+const items = await concurrent(sources,6);
+const count = (status) => items.filter((item)=>item.status===status).length;
+const counts = {tracked:items.length,healthy:count('healthy'),possibleUpdates:count('possible-update'),metadataChanged:count('metadata-changed'),timedOut:count('timed-out'),blocked:count('blocked'),redirected:count('redirected'),notFound:count('not-found'),rateLimited:count('rate-limited'),serverErrors:count('server-error'),archived:count('archived'),failed:count('failed'),needsReview:items.filter((i)=>i.needsReview).length,highPriority:items.filter((i)=>i.reviewPriority==='high').length};
+const averageHealth = items.length ? Math.round(items.reduce((sum,item)=>sum+item.healthScore,0)/items.length) : 0;
+const reviewQueue = items.filter((i)=>i.needsReview).sort((a,b)=>({high:0,medium:1,low:2}[a.reviewPriority]-({high:0,medium:1,low:2}[b.reviewPriority]))).map((i)=>({id:i.id,name:i.name,status:i.status,priority:i.reviewPriority,reason:i.reviewReason,sourceUrl:i.finalUrl||i.url,expectedVersion:i.expectedVersion,detectedVersion:i.latestRelease||i.detectedVersion,statusStreak:i.statusStreak,healthScore:i.healthScore}));
+const report = {schemaVersion:3,watcherVersion:'0.3.0',checkedAt,durationSeconds:Math.round((Date.now()-startedAt)/1000),averageHealth,counts,reviewQueue,items};
+const nextState = {schemaVersion:1,updatedAt:checkedAt,items:Object.fromEntries(items.map((i)=>[i.id,{status:i.status,statusStreak:i.statusStreak,fingerprint:i.fingerprint||null,latestRelease:i.latestRelease||null,checkedAt:i.checkedAt}]))};
+await fs.mkdir(new URL('public/data/',root),{recursive:true}); await fs.mkdir(new URL('sentinel-watcher/reports/',root),{recursive:true});
+await fs.writeFile(reportPath,JSON.stringify(report,null,2)+'\n'); await fs.writeFile(statePath,JSON.stringify(nextState,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/latest.json',root),JSON.stringify(report,null,2)+'\n'); await fs.writeFile(new URL('sentinel-watcher/reports/review-queue.json',root),JSON.stringify(reviewQueue,null,2)+'\n');
+const lines=['# Sentinel Watcher report','',`Generated: ${checkedAt}`,`Runtime: ${report.durationSeconds}s`,`Average source health: ${averageHealth}%`,'','| Metric | Count |','|---|---:|',...Object.entries(counts).map(([k,v])=>`| ${k} | ${v} |`),'','## Review queue','',...(reviewQueue.length?reviewQueue.map((i)=>`- **${i.name}** — ${i.priority}: ${i.reason} (health ${i.healthScore}%, streak ${i.statusStreak}) ([source](${i.sourceUrl}))`):['- None']),'','Timeouts and automation blocks are not treated as dead projects.'];
+await fs.writeFile(new URL('sentinel-watcher/reports/latest.md',root),lines.join('\n')+'\n'); console.log(`Completed in ${report.durationSeconds}s.`);

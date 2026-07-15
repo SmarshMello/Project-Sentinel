@@ -6,7 +6,7 @@ on:
     - cron: '23 9 * * 1'
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: sentinel-watcher
@@ -15,26 +15,36 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-
+    timeout-minutes: 15
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
-
+        with:
+          fetch-depth: 0
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
           node-version: 22
-
       - name: Scan tracked sources
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/sentinel-watcher.mjs
-
       - name: Add report to run summary
         if: always()
         run: cat sentinel-watcher/reports/latest.md >> "$GITHUB_STEP_SUMMARY"
-
+      - name: Publish latest dashboard data
+        if: success()
+        run: |
+          git config user.name "sentinel-watcher[bot]"
+          git config user.email "sentinel-watcher[bot]@users.noreply.github.com"
+          git add public/data/watcher-report.json sentinel-watcher/state.json
+          if git diff --cached --quiet; then
+            echo "No watcher data changes to publish."
+          else
+            git commit -m "chore(watcher): refresh monitoring data"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
       - name: Upload watcher report
         if: always()
         uses: actions/upload-artifact@v6

@@ -1,0 +1,9 @@
+1. Extract this ZIP.
+2. Copy all files and folders into the root of your Project-Sentinel repository.
+3. Replace files when Windows asks.
+4. Commit in GitHub Desktop with: Improve Sentinel Watcher confidence and live reporting
+5. Push origin.
+6. Open GitHub > Actions > Sentinel Watcher > Run workflow.
+
+IMPORTANT:
+The workflow now commits only public/data/watcher-report.json and sentinel-watcher/state.json after a successful scan. This triggers the normal Docusaurus deployment so /watcher shows the newest scan automatically. It does not modify the plugin database.
