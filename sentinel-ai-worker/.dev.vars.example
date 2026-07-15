@@ -1,0 +1,4 @@
+# Copy this file to .dev.vars only for local Worker development.
+# Never commit .dev.vars.
+OPENAI_API_KEY=replace_with_a_local_test_key
+TURNSTILE_SECRET_KEY=replace_only_when_testing_turnstile_locally
