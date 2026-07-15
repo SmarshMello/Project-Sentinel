@@ -46,24 +46,49 @@ export default function Watcher() {
   const [runError, setRunError] = useState('');
   const [starting, setStarting] = useState(false);
   const [elapsed, setElapsed] = useState(0);
+  const [publishStatus, setPublishStatus] = useState('');
   const pollRef = useRef(null);
   const timerRef = useRef(null);
+  const publishPollRef = useRef(null);
+  const preScanReportRef = useRef(null);
 
   const loadReport = useCallback(async () => {
     try {
       const response = await fetch(`${reportUrl}?t=${Date.now()}`, {cache: 'no-store'});
       if (!response.ok) throw new Error(`Report returned HTTP ${response.status}`);
-      setReport(await response.json());
+      const nextReport = await response.json();
+      setReport(nextReport);
       setReportError('');
       try {
         const historyResponse = await fetch(`${historyUrl}?t=${Date.now()}`, {cache: 'no-store'});
         if (historyResponse.ok) setHistory(await historyResponse.json());
       } catch {}
+      return nextReport;
     } catch (error) {
       setReportError(error instanceof Error ? error.message : 'Could not load the report.');
       setReport((current) => current || {counts: {}, items: [], reviewQueue: []});
+      return null;
     }
   }, [reportUrl, historyUrl]);
+
+  const waitForPublishedReport = useCallback((previousCheckedAt, attempt = 0) => {
+    const maxAttempts = 36;
+    setPublishStatus(attempt === 0 ? 'GitHub Pages is publishing the new report…' : `Waiting for GitHub Pages… ${attempt * 5}s`);
+    publishPollRef.current = window.setTimeout(async () => {
+      const nextReport = await loadReport();
+      const isNewReport = nextReport?.checkedAt && nextReport.checkedAt !== previousCheckedAt;
+      const hasIntelligence = Number(nextReport?.schemaVersion || 0) >= 6 && nextReport?.intelligenceCounts && Array.isArray(nextReport?.categories);
+      if (isNewReport && hasIntelligence) {
+        setPublishStatus('New Watcher 0.7 intelligence report is live.');
+        return;
+      }
+      if (attempt + 1 >= maxAttempts) {
+        setPublishStatus('The scan finished, but GitHub Pages is still publishing. Refresh this page in a minute.');
+        return;
+      }
+      waitForPublishedReport(previousCheckedAt, attempt + 1);
+    }, attempt === 0 ? 5000 : 5000);
+  }, [loadReport]);
 
   useEffect(() => {
     loadReport();
@@ -73,6 +98,7 @@ export default function Watcher() {
   useEffect(() => () => {
     if (pollRef.current) clearTimeout(pollRef.current);
     if (timerRef.current) clearInterval(timerRef.current);
+    if (publishPollRef.current) clearTimeout(publishPollRef.current);
   }, []);
 
   const pollStatus = useCallback(async (scanId, runId, key) => {
@@ -88,14 +114,14 @@ export default function Watcher() {
       setRunError('');
       if (payload.status === 'completed') {
         if (pollRef.current) clearTimeout(pollRef.current);
-        window.setTimeout(loadReport, 12000);
+        waitForPublishedReport(preScanReportRef.current, 0);
         return;
       }
       pollRef.current = window.setTimeout(() => pollStatus(scanId, payload.runId || runId, key), POLL_MS);
     } catch (error) {
       setRunError(error instanceof Error ? error.message : 'Could not read scan progress.');
     }
-  }, [controlEndpoint, loadReport]);
+  }, [controlEndpoint, waitForPublishedReport]);
 
   const startScan = async () => {
     if (!controlEndpoint) {
@@ -110,6 +136,8 @@ export default function Watcher() {
     setRunError('');
     setRun({status: 'queued', percent: 1, activeStep: 'Sending scan request…', steps: []});
     setElapsed(0);
+    setPublishStatus('');
+    preScanReportRef.current = report?.checkedAt || null;
     if (typeof window !== 'undefined') window.sessionStorage.setItem('sentinel-watcher-admin-key', adminKey.trim());
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = window.setInterval(() => setElapsed((value) => value + 1), 1000);
@@ -160,8 +188,24 @@ export default function Watcher() {
   const recentScans = history?.scans || [];
   const previousScan = recentScans[1] || null;
   const healthDelta = previousScan ? (report?.averageHealth ?? 0) - (previousScan.averageHealth ?? 0) : null;
-  const categories = report?.categories || [];
-  const intelligenceCounts = report?.intelligenceCounts || {};
+  const intelligenceItems = report?.items || [];
+  const intelligenceCounts = report?.intelligenceCounts || intelligenceItems.reduce((totals, item) => {
+    const level = item.intelligence?.riskLevel;
+    if (level === 'high') totals.highRisk += 1;
+    if (level === 'medium') totals.mediumRisk += 1;
+    if (level === 'low') totals.lowRisk += 1;
+    if (item.status === 'healthy') totals.stable += 1;
+    return totals;
+  }, {highRisk: 0, mediumRisk: 0, lowRisk: 0, stable: 0});
+  const categories = report?.categories || Object.values(intelligenceItems.reduce((groups, item) => {
+    const name = item.category || 'Other';
+    const group = groups[name] || {name, tracked: 0, healthTotal: 0, needsReview: 0};
+    group.tracked += 1;
+    group.healthTotal += Number(item.healthScore || 0);
+    group.needsReview += item.needsReview ? 1 : 0;
+    groups[name] = group;
+    return groups;
+  }, {})).map((group) => ({...group, averageHealth: group.tracked ? Math.round(group.healthTotal / group.tracked) : 0})).sort((a, b) => a.averageHealth - b.averageHealth || b.needsReview - a.needsReview);
   const riskClass = (value) => styles[`risk${String(value || 'medium').replace(/^./, (letter) => letter.toUpperCase())}`] || '';
 
   return (
@@ -223,7 +267,7 @@ export default function Watcher() {
                     ))}
                   </div>
                 )}
-                {run.status === 'completed' && run.conclusion === 'success' && <div className={styles.success}>Scan complete. The report will refresh after GitHub Pages publishes the new data.</div>}
+                {run.status === 'completed' && run.conclusion === 'success' && <div className={styles.success}>{publishStatus || 'Scan complete. Waiting for GitHub Pages to publish the new data…'}</div>}
               </div>
             )}
             {runError && <div className={styles.error}>{runError}</div>}
