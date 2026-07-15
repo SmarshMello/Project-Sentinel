@@ -16,7 +16,7 @@ const config = {
   customFields: {
     paypalUrl: '',
     kofiUrl: '',
-    watcherControlEndpoint: '',
+    watcherControlEndpoint: 'https://project-sentinel-watcher-control.sentinelwatcher.workers.dev',
   },
   presets: [[
     'classic',
