@@ -1,86 +1,113 @@
 {
-  "schemaVersion": 4,
-  "watcherVersion": "0.5.0",
-  "checkedAt": "2026-07-15T06:00:23.724Z",
-  "durationSeconds": 34,
-  "averageHealth": 81,
+  "schemaVersion": 6,
+  "watcherVersion": "0.7.0",
+  "checkedAt": "2026-07-15T20:22:17.869Z",
+  "durationSeconds": 8,
+  "averageHealth": 80,
   "counts": {
     "tracked": 26,
     "healthy": 10,
     "possibleUpdates": 0,
     "metadataChanged": 0,
-    "timedOut": 4,
+    "timedOut": 8,
     "blocked": 0,
     "redirected": 0,
     "notFound": 0,
-    "rateLimited": 12,
+    "rateLimited": 8,
     "serverErrors": 0,
     "archived": 0,
     "failed": 0,
-    "needsReview": 3,
+    "needsReview": 2,
     "highPriority": 0
   },
   "changeCounts": {
-    "total": 3,
+    "total": 0,
     "releases": 0,
-    "statuses": 3,
+    "statuses": 0,
     "moved": 0,
     "newSources": 0
   },
-  "changes": [
+  "scanProfile": {
+    "concurrency": 12,
+    "adaptiveTimeouts": true,
+    "transientNoiseSuppression": true,
+    "dailyAutomation": true,
+    "intelligenceLayer": true
+  },
+  "intelligenceCounts": {
+    "highRisk": 0,
+    "mediumRisk": 10,
+    "lowRisk": 16,
+    "stable": 10
+  },
+  "categories": [
     {
-      "id": "super-callouts",
-      "name": "SuperCallouts",
-      "type": "status-changed",
-      "from": "timed-out",
-      "to": "rate-limited",
-      "summary": "Status changed from timed-out to rate-limited.",
-      "priority": "medium"
+      "name": "Police systems",
+      "tracked": 2,
+      "healthy": 0,
+      "needsReview": 1,
+      "highRisk": 0,
+      "averageHealth": 58
     },
     {
-      "id": "basic-callouts",
-      "name": "Basic Callouts",
-      "type": "status-changed",
-      "from": "rate-limited",
-      "to": "timed-out",
-      "summary": "Status changed from rate-limited to timed-out.",
-      "priority": "medium"
+      "name": "Callout packs",
+      "tracked": 8,
+      "healthy": 0,
+      "needsReview": 1,
+      "highRisk": 0,
+      "averageHealth": 65
     },
     {
-      "id": "els",
-      "name": "Emergency Lighting System",
-      "type": "status-changed",
-      "from": "failed",
-      "to": "rate-limited",
-      "summary": "Status changed from failed to rate-limited.",
-      "priority": "medium"
+      "name": "Uniforms & EUP",
+      "tracked": 4,
+      "healthy": 0,
+      "needsReview": 0,
+      "highRisk": 0,
+      "averageHealth": 74
+    },
+    {
+      "name": "Vehicles & equipment",
+      "tracked": 1,
+      "healthy": 0,
+      "needsReview": 0,
+      "highRisk": 0,
+      "averageHealth": 74
+    },
+    {
+      "name": "Core & loaders",
+      "tracked": 3,
+      "healthy": 2,
+      "needsReview": 0,
+      "highRisk": 0,
+      "averageHealth": 91
+    },
+    {
+      "name": "Libraries & utilities",
+      "tracked": 3,
+      "healthy": 3,
+      "needsReview": 0,
+      "highRisk": 0,
+      "averageHealth": 100
+    },
+    {
+      "name": "Stability & performance",
+      "tracked": 4,
+      "healthy": 4,
+      "needsReview": 0,
+      "highRisk": 0,
+      "averageHealth": 100
+    },
+    {
+      "name": "Graphics & lighting",
+      "tracked": 1,
+      "healthy": 1,
+      "needsReview": 0,
+      "highRisk": 0,
+      "averageHealth": 100
     }
   ],
+  "changes": [],
   "reviewQueue": [
-    {
-      "id": "lspdfr",
-      "name": "LSPD First Response",
-      "status": "timed-out",
-      "priority": "low",
-      "reason": "Repeated timeouts deserve a manual check but do not imply the mod is dead.",
-      "sourceUrl": "https://www.lcpdfr.com/downloads/gta5mods/g17media/7792-lspd-first-response/",
-      "expectedVersion": "0.4.9 / 0.4.9572",
-      "detectedVersion": null,
-      "statusStreak": 5,
-      "healthScore": 48
-    },
-    {
-      "id": "policing-redefined",
-      "name": "Policing Redefined",
-      "status": "timed-out",
-      "priority": "low",
-      "reason": "Repeated timeouts deserve a manual check but do not imply the mod is dead.",
-      "sourceUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/52191-policing-redefined/",
-      "expectedVersion": "1.0.0.5",
-      "detectedVersion": null,
-      "statusStreak": 5,
-      "healthScore": 48
-    },
     {
       "id": "lspdfr-enhanced-remastered",
       "name": "LSPDFR Enhanced: Remastered",
@@ -90,8 +117,20 @@
       "sourceUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/47267-lspdfr-enhanced-remastered-massive-update/",
       "expectedVersion": "Current release",
       "detectedVersion": null,
-      "statusStreak": 5,
+      "statusStreak": 7,
       "healthScore": 48
+    },
+    {
+      "id": "basic-callouts",
+      "name": "Basic Callouts",
+      "status": "timed-out",
+      "priority": "low",
+      "reason": "Repeated timeouts deserve a manual check but do not imply the mod is dead.",
+      "sourceUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/36148-basic-callouts/",
+      "expectedVersion": "1.2.0.0",
+      "detectedVersion": null,
+      "statusStreak": 3,
+      "healthScore": 58
     }
   ],
   "items": [
@@ -103,23 +142,31 @@
       "expectedVersion": "0.4.9 / 0.4.9572",
       "currentStatus": "verified",
       "sentinelPolice": true,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
-      "reachable": false,
-      "httpStatus": null,
+      "checkedAt": "2026-07-15T20:22:17.869Z",
+      "reachable": true,
+      "httpStatus": 429,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/g17media/7792-lspd-first-response/",
       "sourceType": "website",
       "archived": false,
       "latestRelease": null,
       "detectedVersion": null,
-      "status": "timed-out",
-      "change": "timed-out",
-      "note": "Timed out after 2 attempts.",
-      "attempts": 2,
-      "statusStreak": 5,
-      "needsReview": true,
-      "reviewPriority": "low",
-      "reviewReason": "Repeated timeouts deserve a manual check but do not imply the mod is dead.",
-      "healthScore": 48
+      "status": "rate-limited",
+      "change": "rate-limited",
+      "note": "Source rate-limited the scan; retry next run.",
+      "attempts": 1,
+      "pageTitle": "429 Too Many Requests",
+      "fingerprint": "49b19dbc5f4c325ea992",
+      "statusStreak": 2,
+      "needsReview": false,
+      "reviewPriority": "none",
+      "reviewReason": "No review required.",
+      "healthScore": 74,
+      "intelligence": {
+        "riskLevel": "medium",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "rate-limited"
+      }
     },
     {
       "id": "openiv",
@@ -129,7 +176,7 @@
       "expectedVersion": "Current official release",
       "currentStatus": "verified",
       "sentinelPolice": true,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 200,
       "finalUrl": "https://openiv.com/",
@@ -143,11 +190,17 @@
       "attempts": 1,
       "pageTitle": "OpenIV - The ultimate modding tool for GTA V, GTA IV and Max Payne 3",
       "fingerprint": "75f06b3e9daf9f3387bf",
-      "statusStreak": 5,
+      "statusStreak": 7,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 100
+      "healthScore": 100,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "stable"
+      }
     },
     {
       "id": "scripthookv",
@@ -157,7 +210,7 @@
       "expectedVersion": "Legacy 3788 compatible",
       "currentStatus": "verified",
       "sentinelPolice": true,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 200,
       "finalUrl": "https://www.dev-c.com/gtav/scripthookv/",
@@ -171,11 +224,17 @@
       "attempts": 1,
       "pageTitle": "Script Hook V - AB Software Development",
       "fingerprint": "11e6ee38fe91283f1954",
-      "statusStreak": 5,
+      "statusStreak": 7,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 100
+      "healthScore": 100,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "stable"
+      }
     },
     {
       "id": "ragenativeui",
@@ -185,7 +244,7 @@
       "expectedVersion": "Newest official release",
       "currentStatus": "verified",
       "sentinelPolice": true,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 200,
       "finalUrl": "https://github.com/alexguirre/RAGENativeUI",
@@ -200,11 +259,17 @@
       "lastActivity": "2024-12-12T14:28:50Z",
       "releaseUrl": "https://github.com/alexguirre/RAGENativeUI/releases/tag/1.9.3",
       "fingerprint": "8d4d0ee52c38270cb514",
-      "statusStreak": 5,
+      "statusStreak": 7,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 100
+      "healthScore": 100,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 95,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "stable"
+      }
     },
     {
       "id": "lemonui",
@@ -214,7 +279,7 @@
       "expectedVersion": "Current release",
       "currentStatus": "community",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 200,
       "finalUrl": "https://www.gta5-mods.com/tools/lemonui",
@@ -228,11 +293,17 @@
       "attempts": 1,
       "pageTitle": "LemonUI: Open Source UI Library",
       "fingerprint": "3f4d96418f14dd683469",
-      "statusStreak": 5,
+      "statusStreak": 7,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 100
+      "healthScore": 100,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "stable"
+      }
     },
     {
       "id": "scripthookvdotnet",
@@ -242,7 +313,7 @@
       "expectedVersion": "Current release",
       "currentStatus": "community",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 200,
       "finalUrl": "https://www.gta5-mods.com/tools/scripthookv-net",
@@ -256,11 +327,17 @@
       "attempts": 1,
       "pageTitle": "Community Script Hook V .NET",
       "fingerprint": "101e55b537d3ceab3b46",
-      "statusStreak": 5,
+      "statusStreak": 7,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 100
+      "healthScore": 100,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "stable"
+      }
     },
     {
       "id": "heap-adjuster",
@@ -270,7 +347,7 @@
       "expectedVersion": "Legacy + Enhanced release",
       "currentStatus": "community",
       "sentinelPolice": true,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 200,
       "finalUrl": "https://www.gta5-mods.com/tools/heapadjuster-enhanced",
@@ -284,11 +361,17 @@
       "attempts": 1,
       "pageTitle": "HeapAdjuster Enhanced [Legacy + Enhanced]",
       "fingerprint": "babd92e05c9219565535",
-      "statusStreak": 5,
+      "statusStreak": 7,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 100
+      "healthScore": 100,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "stable"
+      }
     },
     {
       "id": "packfile-limit-adjuster",
@@ -298,7 +381,7 @@
       "expectedVersion": "1.1",
       "currentStatus": "community",
       "sentinelPolice": true,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 200,
       "finalUrl": "https://www.gta5-mods.com/scripts/packfile-limit-adjuster-enhanced",
@@ -312,11 +395,17 @@
       "attempts": 1,
       "pageTitle": "Packfile Limit Adjuster Enhanced [Legacy + Enhanced]",
       "fingerprint": "7870c8fa6aab47615e97",
-      "statusStreak": 5,
+      "statusStreak": 7,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 100
+      "healthScore": 100,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "stable"
+      }
     },
     {
       "id": "resource-adjuster",
@@ -326,7 +415,7 @@
       "expectedVersion": "1.0",
       "currentStatus": "documented",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 200,
       "finalUrl": "https://www.gta5-mods.com/tools/resource-adjuster",
@@ -340,11 +429,17 @@
       "attempts": 1,
       "pageTitle": "Resource Adjuster",
       "fingerprint": "6c36e2042848babcab68",
-      "statusStreak": 5,
+      "statusStreak": 7,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 100
+      "healthScore": 100,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "stable"
+      }
     },
     {
       "id": "weapon-limits-adjuster",
@@ -354,7 +449,7 @@
       "expectedVersion": "2.2",
       "currentStatus": "documented",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 200,
       "finalUrl": "https://www.gta5-mods.com/tools/cweaponinfoblob-limit-adjuster",
@@ -368,11 +463,17 @@
       "attempts": 1,
       "pageTitle": "Weapon Limits Adjuster",
       "fingerprint": "fa399c1f975512fc72f3",
-      "statusStreak": 5,
+      "statusStreak": 7,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 100
+      "healthScore": 100,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "stable"
+      }
     },
     {
       "id": "policing-redefined",
@@ -382,7 +483,7 @@
       "expectedVersion": "1.0.0.5",
       "currentStatus": "conflict",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": false,
       "httpStatus": null,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/52191-policing-redefined/",
@@ -392,13 +493,19 @@
       "detectedVersion": null,
       "status": "timed-out",
       "change": "timed-out",
-      "note": "Timed out after 2 attempts.",
-      "attempts": 2,
-      "statusStreak": 5,
-      "needsReview": true,
-      "reviewPriority": "low",
-      "reviewReason": "Repeated timeouts deserve a manual check but do not imply the mod is dead.",
-      "healthScore": 48
+      "note": "Timed out after 1 attempts.",
+      "attempts": 1,
+      "statusStreak": 1,
+      "needsReview": false,
+      "reviewPriority": "none",
+      "reviewReason": "No review required.",
+      "healthScore": 68,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 45,
+        "recommendation": "Retry automatically. Escalate only after repeated daily failures.",
+        "signal": "timed-out"
+      }
     },
     {
       "id": "lspdfr-enhanced-remastered",
@@ -408,7 +515,7 @@
       "expectedVersion": "Current release",
       "currentStatus": "conflict",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": false,
       "httpStatus": null,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/47267-lspdfr-enhanced-remastered-massive-update/",
@@ -418,13 +525,19 @@
       "detectedVersion": null,
       "status": "timed-out",
       "change": "timed-out",
-      "note": "Timed out after 2 attempts.",
-      "attempts": 2,
-      "statusStreak": 5,
+      "note": "Timed out after 1 attempts.",
+      "attempts": 1,
+      "statusStreak": 7,
       "needsReview": true,
       "reviewPriority": "low",
       "reviewReason": "Repeated timeouts deserve a manual check but do not imply the mod is dead.",
-      "healthScore": 48
+      "healthScore": 48,
+      "intelligence": {
+        "riskLevel": "medium",
+        "confidence": 45,
+        "recommendation": "Retry automatically. Escalate only after repeated daily failures.",
+        "signal": "timed-out"
+      }
     },
     {
       "id": "super-callouts",
@@ -434,25 +547,29 @@
       "expectedVersion": "4.0.1.0",
       "currentStatus": "community",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
-      "reachable": true,
-      "httpStatus": 429,
+      "checkedAt": "2026-07-15T20:22:17.869Z",
+      "reachable": false,
+      "httpStatus": null,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/23995-supercallouts/",
       "sourceType": "website",
       "archived": false,
       "latestRelease": null,
       "detectedVersion": null,
-      "status": "rate-limited",
-      "change": "rate-limited",
-      "note": "Source rate-limited the scan; retry next run.",
-      "attempts": 2,
-      "pageTitle": "429 Too Many Requests",
-      "fingerprint": "a998ec646c08ac0e5b46",
-      "statusStreak": 1,
+      "status": "timed-out",
+      "change": "timed-out",
+      "note": "Timed out after 1 attempts.",
+      "attempts": 1,
+      "statusStreak": 2,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 74
+      "healthScore": 63,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 45,
+        "recommendation": "Retry automatically. Escalate only after repeated daily failures.",
+        "signal": "timed-out"
+      }
     },
     {
       "id": "regular-callouts",
@@ -462,25 +579,29 @@
       "expectedVersion": "1.1.8",
       "currentStatus": "community",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
-      "reachable": true,
-      "httpStatus": 429,
+      "checkedAt": "2026-07-15T20:22:17.869Z",
+      "reachable": false,
+      "httpStatus": null,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/43654-regular-callouts/",
       "sourceType": "website",
       "archived": false,
       "latestRelease": null,
       "detectedVersion": null,
-      "status": "rate-limited",
-      "change": "rate-limited",
-      "note": "Source rate-limited the scan; retry next run.",
-      "attempts": 2,
-      "pageTitle": "429 Too Many Requests",
-      "fingerprint": "1e09beb1bd67c3be8b90",
+      "status": "timed-out",
+      "change": "timed-out",
+      "note": "Timed out after 1 attempts.",
+      "attempts": 1,
       "statusStreak": 2,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 74
+      "healthScore": 63,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 45,
+        "recommendation": "Retry automatically. Escalate only after repeated daily failures.",
+        "signal": "timed-out"
+      }
     },
     {
       "id": "basic-callouts",
@@ -490,7 +611,7 @@
       "expectedVersion": "1.2.0.0",
       "currentStatus": "community",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": false,
       "httpStatus": null,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/36148-basic-callouts/",
@@ -500,13 +621,19 @@
       "detectedVersion": null,
       "status": "timed-out",
       "change": "timed-out",
-      "note": "Timed out after 2 attempts.",
-      "attempts": 2,
-      "statusStreak": 1,
-      "needsReview": false,
-      "reviewPriority": "none",
-      "reviewReason": "No review required.",
-      "healthScore": 68
+      "note": "Timed out after 1 attempts.",
+      "attempts": 1,
+      "statusStreak": 3,
+      "needsReview": true,
+      "reviewPriority": "low",
+      "reviewReason": "Repeated timeouts deserve a manual check but do not imply the mod is dead.",
+      "healthScore": 58,
+      "intelligence": {
+        "riskLevel": "medium",
+        "confidence": 45,
+        "recommendation": "Retry automatically. Escalate only after repeated daily failures.",
+        "signal": "timed-out"
+      }
     },
     {
       "id": "typical-callouts",
@@ -516,25 +643,29 @@
       "expectedVersion": "Current release",
       "currentStatus": "community",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
-      "reachable": true,
-      "httpStatus": 429,
+      "checkedAt": "2026-07-15T20:22:17.869Z",
+      "reachable": false,
+      "httpStatus": null,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/29152-typical-callouts/",
       "sourceType": "website",
       "archived": false,
       "latestRelease": null,
       "detectedVersion": null,
-      "status": "rate-limited",
-      "change": "rate-limited",
-      "note": "Source rate-limited the scan; retry next run.",
+      "status": "timed-out",
+      "change": "timed-out",
+      "note": "Timed out after 1 attempts.",
       "attempts": 1,
-      "pageTitle": "429 Too Many Requests",
-      "fingerprint": "f8145232c6a89075a07c",
-      "statusStreak": 4,
+      "statusStreak": 2,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 74
+      "healthScore": 63,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 45,
+        "recommendation": "Retry automatically. Escalate only after repeated daily failures.",
+        "signal": "timed-out"
+      }
     },
     {
       "id": "west-coast-callouts",
@@ -544,25 +675,29 @@
       "expectedVersion": "Active development",
       "currentStatus": "testing",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
-      "reachable": true,
-      "httpStatus": 429,
+      "checkedAt": "2026-07-15T20:22:17.869Z",
+      "reachable": false,
+      "httpStatus": null,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/54203-west-coast-callouts/",
       "sourceType": "website",
       "archived": false,
       "latestRelease": null,
       "detectedVersion": null,
-      "status": "rate-limited",
-      "change": "rate-limited",
-      "note": "Source rate-limited the scan; retry next run.",
+      "status": "timed-out",
+      "change": "timed-out",
+      "note": "Timed out after 1 attempts.",
       "attempts": 1,
-      "pageTitle": "429 Too Many Requests",
-      "fingerprint": "a24397d08d762cae9eb5",
-      "statusStreak": 4,
+      "statusStreak": 2,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 74
+      "healthScore": 63,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 45,
+        "recommendation": "Retry automatically. Escalate only after repeated daily failures.",
+        "signal": "timed-out"
+      }
     },
     {
       "id": "real-duty-callouts",
@@ -572,25 +707,29 @@
       "expectedVersion": "1.0",
       "currentStatus": "testing",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
-      "reachable": true,
-      "httpStatus": 429,
+      "checkedAt": "2026-07-15T20:22:17.869Z",
+      "reachable": false,
+      "httpStatus": null,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53541-real-duty-callouts/",
       "sourceType": "website",
       "archived": false,
       "latestRelease": null,
       "detectedVersion": null,
-      "status": "rate-limited",
-      "change": "rate-limited",
-      "note": "Source rate-limited the scan; retry next run.",
+      "status": "timed-out",
+      "change": "timed-out",
+      "note": "Timed out after 1 attempts.",
       "attempts": 1,
-      "pageTitle": "429 Too Many Requests",
-      "fingerprint": "b8ef918ad0c6e42a1c80",
-      "statusStreak": 4,
+      "statusStreak": 2,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 74
+      "healthScore": 63,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 45,
+        "recommendation": "Retry automatically. Escalate only after repeated daily failures.",
+        "signal": "timed-out"
+      }
     },
     {
       "id": "interior-callouts",
@@ -600,7 +739,7 @@
       "expectedVersion": "Current release",
       "currentStatus": "community",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 429,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/51829-interior-callouts/",
@@ -614,11 +753,17 @@
       "attempts": 1,
       "pageTitle": "429 Too Many Requests",
       "fingerprint": "b0a37337a18bfec44b8f",
-      "statusStreak": 2,
+      "statusStreak": 1,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 74
+      "healthScore": 74,
+      "intelligence": {
+        "riskLevel": "medium",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "rate-limited"
+      }
     },
     {
       "id": "jb-callout",
@@ -628,7 +773,7 @@
       "expectedVersion": "Active development",
       "currentStatus": "testing",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 429,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53353-%F0%9F%9A%93-jbcallout-dynamic-callout-pack-for-lspdfr/",
@@ -642,11 +787,17 @@
       "attempts": 1,
       "pageTitle": "429 Too Many Requests",
       "fingerprint": "cf6ed8027ada9c468ecc",
-      "statusStreak": 2,
+      "statusStreak": 1,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 74
+      "healthScore": 74,
+      "intelligence": {
+        "riskLevel": "medium",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "rate-limited"
+      }
     },
     {
       "id": "eup-menu",
@@ -656,7 +807,7 @@
       "expectedVersion": "2.3.0",
       "currentStatus": "verified",
       "sentinelPolice": true,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 429,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/13245-eup-menu/",
@@ -670,11 +821,17 @@
       "attempts": 1,
       "pageTitle": "429 Too Many Requests",
       "fingerprint": "cecff72ec032adbae8c9",
-      "statusStreak": 2,
+      "statusStreak": 4,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 74
+      "healthScore": 74,
+      "intelligence": {
+        "riskLevel": "medium",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "rate-limited"
+      }
     },
     {
       "id": "eup-law-order",
@@ -684,7 +841,7 @@
       "expectedVersion": "8.3 in Sentinel Police",
       "currentStatus": "verified",
       "sentinelPolice": true,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 429,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/character/8151-emergency-uniforms-pack-law-order/",
@@ -698,11 +855,17 @@
       "attempts": 1,
       "pageTitle": "429 Too Many Requests",
       "fingerprint": "5fb50986c43a001bc6ed",
-      "statusStreak": 2,
+      "statusStreak": 1,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 74
+      "healthScore": 74,
+      "intelligence": {
+        "riskLevel": "medium",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "rate-limited"
+      }
     },
     {
       "id": "eup-serve-rescue",
@@ -712,7 +875,7 @@
       "expectedVersion": "1.5 in Sentinel Police",
       "currentStatus": "verified",
       "sentinelPolice": true,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 429,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/character/16256-emergency-uniforms-pack-serve-rescue/",
@@ -726,11 +889,17 @@
       "attempts": 1,
       "pageTitle": "429 Too Many Requests",
       "fingerprint": "5588b46f354d35c779d7",
-      "statusStreak": 4,
+      "statusStreak": 6,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 74
+      "healthScore": 74,
+      "intelligence": {
+        "riskLevel": "medium",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "rate-limited"
+      }
     },
     {
       "id": "eup-backup-configs",
@@ -740,7 +909,7 @@
       "expectedVersion": "9.3 ecosystem release",
       "currentStatus": "community",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 429,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/misc/28735-eup-backup-configurations-93/",
@@ -754,11 +923,17 @@
       "attempts": 1,
       "pageTitle": "429 Too Many Requests",
       "fingerprint": "7a546206d0ed9f0a4f53",
-      "statusStreak": 4,
+      "statusStreak": 6,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 74
+      "healthScore": 74,
+      "intelligence": {
+        "riskLevel": "medium",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "rate-limited"
+      }
     },
     {
       "id": "visualv",
@@ -768,7 +943,7 @@
       "expectedVersion": "Current Legacy release",
       "currentStatus": "community",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 200,
       "finalUrl": "https://www.gta5-mods.com/misc/visualv",
@@ -782,11 +957,17 @@
       "attempts": 1,
       "pageTitle": "VisualV",
       "fingerprint": "1a7798a73e2eee246bd2",
-      "statusStreak": 5,
+      "statusStreak": 7,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 100
+      "healthScore": 100,
+      "intelligence": {
+        "riskLevel": "low",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "stable"
+      }
     },
     {
       "id": "els",
@@ -796,7 +977,7 @@
       "expectedVersion": "1.05",
       "currentStatus": "community",
       "sentinelPolice": false,
-      "checkedAt": "2026-07-15T06:00:23.724Z",
+      "checkedAt": "2026-07-15T20:22:17.869Z",
       "reachable": true,
       "httpStatus": 429,
       "finalUrl": "https://www.lcpdfr.com/downloads/gta5mods/scripts/13865-emergency-lighting-system/",
@@ -810,11 +991,17 @@
       "attempts": 1,
       "pageTitle": "429 Too Many Requests",
       "fingerprint": "38874206ec5d15a70930",
-      "statusStreak": 1,
+      "statusStreak": 3,
       "needsReview": false,
       "reviewPriority": "none",
       "reviewReason": "No review required.",
-      "healthScore": 74
+      "healthScore": 74,
+      "intelligence": {
+        "riskLevel": "medium",
+        "confidence": 80,
+        "recommendation": "No action required. Continue monitoring on the daily schedule.",
+        "signal": "rate-limited"
+      }
     }
   ]
 }
