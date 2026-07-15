@@ -36,6 +36,9 @@ function App(){
   const doctorUrl=useBaseUrl('/doctor');
   const[q,setQ]=useState(''),[r,setR]=useState(null),[history,setHistory]=useState([]),[saved,setSaved]=useState(false),[report,setReport]=useState(null),[discoveries,setDiscoveries]=useState([]),[liveState,setLiveState]=useState('loading'),[researchState,setResearchState]=useState({phase:'idle',percent:0,message:'',activeStep:null,runUrl:null});
   const pollToken=useRef(0);
+  const activeResearch=useRef(null);
+  const normalizeResearchQuery=(value='')=>String(value).toLowerCase().replace(/[^a-z0-9]+/g,' ').replace(/\s+/g,' ').trim();
+  const researchStorageKey='sentinel-active-research-v1';
   useEffect(()=>{let active=true;Promise.allSettled([fetch(`${reportUrl}?expert=${Date.now()}`,{cache:'no-store'}),fetch(`${researchUrl}?expert=${Date.now()}`,{cache:'no-store'})]).then(async results=>{if(!active)return;const [reportResult,researchResult]=results;if(reportResult.status==='fulfilled'&&reportResult.value.ok){setReport(await reportResult.value.json());setLiveState('ready');}else setLiveState('offline');if(researchResult.status==='fulfilled'&&researchResult.value.ok){const data=await researchResult.value.json();setDiscoveries(data.discoveries||[]);}});return()=>{active=false;pollToken.current+=1};},[reportUrl,researchUrl]);
   const related=useMemo(()=>r?.mentions?.length?[`What version of ${r.mentions[0].name} should I use?`,`What does ${r.mentions[0].name} require?`,`What is the install order for ${r.mentions[0].name}?`]:expertExamples.slice(0,3),[r]);
   function context(){return r?createExpertContext(q,r):null;}
@@ -44,8 +47,8 @@ function App(){
   function openDoctor(){const c=context();if(c)saveExpertContext(c);window.location.href=`${doctorUrl}?from=expert`;}
   function evaluate(clean,discoveryData=discoveries){const ans=answerExpertQuestion(clean,report,discoveryData);setR(ans);setQ(clean);setSaved(false);setHistory(h=>[{q:clean,v:ans.verdict},...h.filter(x=>x.q!==clean)].slice(0,6));return ans;}
   const sleep=(ms)=>new Promise(resolve=>window.setTimeout(resolve,ms));
-  async function loadPublishedResearch(query,requestedAt,token){
-    const normalized=String(query||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+  async function loadPublishedResearch(query,requestId,requestedAt,token){
+    const normalized=normalizeResearchQuery(query);
     for(let attempt=0;attempt<36;attempt+=1){
       if(token!==pollToken.current)return null;
       setResearchState(s=>({...s,phase:'publishing',percent:96,message:`Watcher finished. Waiting for GitHub Pages to publish the findings… (${attempt*5}s)`,activeStep:'Publishing research-results.json'}));
@@ -54,7 +57,7 @@ function App(){
         if(response.ok){
           const data=await response.json();
           const requests=data.requests||[];
-          const request=requests.find(item=>String(item.query||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()===normalized&&Date.parse(item.requestedAt||0)>=requestedAt-5000);
+          const request=requests.find(item=>(requestId&&item.requestId===requestId)||(normalizeResearchQuery(item.query)===normalized&&Date.parse(item.requestedAt||0)>=requestedAt-5000));
           if(request){return {data,request};}
         }
       }catch{}
@@ -62,7 +65,7 @@ function App(){
     }
     return null;
   }
-  async function monitorResearch(scanId,query,question,requestedAt,token,key){
+  async function monitorResearch(scanId,requestId,query,question,requestedAt,token,key){
     let runUrl=null;
     for(let attempt=0;attempt<90;attempt+=1){
       if(token!==pollToken.current)return;
@@ -75,40 +78,61 @@ function App(){
         setResearchState({phase:finished?'publishing':status.found?'running':'queued',percent:finished?94:Math.max(3,status.percent||3),message:finished?'Watcher completed the internet research. Waiting for the new findings to publish…':status.found?'Watcher is searching sources and evaluating candidates.':'Waiting for GitHub Actions to start the research run.',activeStep:status.activeStep||'Waiting for runner',runUrl});
         if(finished){
           if(status.conclusion!=='success')throw new Error('run-failed');
-          const published=await loadPublishedResearch(query,requestedAt,token);
+          const published=await loadPublishedResearch(query,requestId,requestedAt,token);
           if(!published)throw new Error('publish-timeout');
           const nextDiscoveries=published.data.discoveries||[];
           setDiscoveries(nextDiscoveries);
           if(published.request.status==='resolved'){
             const answer=answerExpertQuestion(question,report,nextDiscoveries);
             setR(answer);setHistory(h=>[{q:question,v:answer.verdict},...h.filter(x=>x.q!==question)].slice(0,6));
+            activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
             setResearchState({phase:'found',percent:100,message:`Watcher found ${published.request.credibleCandidateCount||1} credible candidate source${published.request.credibleCandidateCount===1?'':'s'}. Sentinel re-evaluated your original question using the new Research record.`,activeStep:'Question automatically re-submitted with published findings',runUrl});
           }else{
+            activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
             setResearchState({phase:'not-found',percent:100,message:'Watcher completed the search but did not find a candidate strong enough to add automatically. The request remains queued for manual review, and Sentinel will continue treating the project as unknown.',activeStep:'No verified or credible automatic match found',runUrl});
           }
           return;
         }
       }catch(error){
         if(String(error?.message)==='status'){await sleep(3000);continue;}
+        activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
         setResearchState({phase:'failed',percent:100,message:'The Watcher research run could not be completed or its published result could not be confirmed. Open the run for details and try again.',activeStep:'Research stopped',runUrl});return;
       }
       await sleep(3000);
     }
+    activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
     setResearchState({phase:'failed',percent:100,message:'Watcher research exceeded the ten-minute monitoring window. The GitHub run may still finish in the background.',activeStep:'Monitoring timed out',runUrl});
   }
   async function submitResearch(projectName=r?.unknownProject,question=q){
     if(!projectName||!controlEndpoint)return setResearchState({phase:'failed',percent:100,message:'Watcher control endpoint is unavailable.',activeStep:'Research not started',runUrl:null});
     const key=window.sessionStorage.getItem('sentinel-watcher-admin-key')||'';
     if(!key)return setResearchState({phase:'key-needed',percent:0,message:'Open Watcher once and enter the private admin key, then return and search again.',activeStep:'Admin key required',runUrl:null});
-    const requestedAt=Date.now();const token=++pollToken.current;
-    setResearchState({phase:'queued',percent:2,message:`Sending “${projectName}” to Watcher research…`,activeStep:'Submitting GitHub Actions research request',runUrl:null});
+    const normalized=normalizeResearchQuery(projectName);
+    let stored=null;try{stored=JSON.parse(window.sessionStorage.getItem(researchStorageKey)||'null');}catch{}
+    const existing=activeResearch.current||(stored&&stored.normalized===normalized&&Date.now()-stored.requestedAt<15*60*1000?stored:null);
+    const token=++pollToken.current;
+    if(existing?.scanId){
+      activeResearch.current=existing;
+      setResearchState({phase:'queued',percent:3,message:`Watcher is already researching “${projectName}”. Reconnecting to the existing run instead of starting a duplicate.`,activeStep:'Reusing active research request',runUrl:existing.runUrl||null});
+      await monitorResearch(existing.scanId,existing.requestId,projectName,question,existing.requestedAt,token,key);
+      return;
+    }
+    const requestedAt=Date.now();
+    const requestId=`expert-${requestedAt}-${crypto.randomUUID().slice(0,8)}`;
+    const pending={requestId,query:projectName,normalized,question,requestedAt,scanId:null,runUrl:null};
+    activeResearch.current=pending;
+    window.sessionStorage.setItem(researchStorageKey,JSON.stringify(pending));
+    setResearchState({phase:'queued',percent:2,message:`Sending “${projectName}” to Watcher research…`,activeStep:'Submitting one uniquely identified research request',runUrl:null});
     try{
-      const response=await fetch(`${controlEndpoint}/research`,{method:'POST',headers:{'content-type':'application/json','x-watcher-key':key},body:JSON.stringify({query:projectName,question})});
+      const response=await fetch(`${controlEndpoint}/research`,{method:'POST',headers:{'content-type':'application/json','x-watcher-key':key},body:JSON.stringify({query:projectName,question,requestId})});
       if(!response.ok)throw new Error('research');
       const payload=await response.json();
-      setResearchState({phase:'queued',percent:3,message:'Research request accepted. Waiting for GitHub Actions to start.',activeStep:'Watcher research queued',runUrl:null});
-      await monitorResearch(payload.scanId,projectName,question,requestedAt,token,key);
+      const active={...pending,requestId:payload.requestId||requestId,scanId:payload.scanId};
+      activeResearch.current=active;window.sessionStorage.setItem(researchStorageKey,JSON.stringify(active));
+      setResearchState({phase:'queued',percent:3,message:payload.reused?'An identical Watcher request is already active. Reconnecting without launching another run.':'Research request accepted. Waiting for GitHub Actions to start.',activeStep:payload.reused?'Duplicate prevented — using existing run':'Watcher research queued',runUrl:null});
+      await monitorResearch(active.scanId,active.requestId,projectName,question,requestedAt,token,key);
     }catch{
+      activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
       setResearchState({phase:'failed',percent:100,message:'The research request could not be queued. Verify the Worker deployment and Watcher key.',activeStep:'Submission failed',runUrl:null});
     }
   }

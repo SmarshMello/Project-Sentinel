@@ -3,6 +3,8 @@ import crypto from 'node:crypto';
 
 const root=new URL('../',import.meta.url);
 const query=String(process.env.SENTINEL_RESEARCH_QUERY||'').trim().replace(/\s+/g,' ');
+const suppliedRequestId=String(process.env.SENTINEL_RESEARCH_REQUEST_ID||'').trim();
+const scanId=String(process.env.SENTINEL_RESEARCH_SCAN_ID||'').trim();
 if(!query){console.log('No research query supplied.');process.exit(0);}
 
 const dataPath=new URL('static/data/research-results.json',root);
@@ -41,9 +43,9 @@ const candidates=[...repos.values()].map(repo=>({
 const credible=candidates.filter(x=>x.score>=58);
 const current=await read();
 const now=new Date().toISOString();
-const requestId=`request-${slug(query)}-${crypto.createHash('sha1').update(query.toLowerCase()).digest('hex').slice(0,7)}`;
+const requestId=/^[a-zA-Z0-9_-]{8,100}$/.test(suppliedRequestId)?suppliedRequestId:`request-${slug(query)}-${crypto.createHash('sha1').update(query.toLowerCase()).digest('hex').slice(0,7)}`;
 const requests=[{
- id:requestId,query,status:credible.length?'resolved':'needs-manual-research',requestedAt:now,
+ id:requestId,requestId,scanId:scanId||null,query,status:credible.length?'resolved':'needs-manual-research',requestedAt:now,
  candidateCount:candidates.length,credibleCandidateCount:credible.length,candidates
 },...(current.requests||[]).filter(x=>x.id!==requestId)].slice(0,200);
 let discoveries=current.discoveries||[];

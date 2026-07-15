@@ -12,6 +12,10 @@ on:
         description: Unknown mod or plugin name requested by Sentinel Expert
         required: false
         type: string
+      research_request_id:
+        description: Unique Sentinel Expert research request identifier
+        required: false
+        type: string
   schedule:
     - cron: '23 9 * * *'
 
@@ -40,6 +44,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SENTINEL_RESEARCH_QUERY: ${{ inputs.research_query }}
+          SENTINEL_RESEARCH_REQUEST_ID: ${{ inputs.research_request_id }}
+          SENTINEL_RESEARCH_SCAN_ID: ${{ inputs.scan_id }}
         run: node scripts/sentinel-research.mjs
       - name: Fast parallel source scan
         env:

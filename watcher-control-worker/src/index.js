@@ -92,7 +92,7 @@ export default {
     const url = new URL(request.url);
     try {
       if (url.pathname === '/health' && request.method === 'GET') {
-        return json({ok: true, service: 'Sentinel Watcher Control', version: '0.6.0'}, 200, env, origin);
+        return json({ok: true, service: 'Sentinel Watcher Control', version: '0.7.0'}, 200, env, origin);
       }
 
       if (url.pathname === '/trigger' && request.method === 'POST') {
@@ -116,13 +116,21 @@ export default {
         const body = await request.json().catch(() => ({}));
         const query = String(body.query || '').trim().replace(/\s+/g, ' ');
         if (query.length < 3 || query.length > 120) return json({error: 'Research query must be 3–120 characters.'}, 400, env, origin);
-        const scanId = `research-${Date.now()}-${crypto.randomUUID().slice(0, 8)}`;
+        const suppliedRequestId = String(body.requestId || '').trim();
+        const requestId = /^[a-zA-Z0-9_-]{8,100}$/.test(suppliedRequestId)
+          ? suppliedRequestId
+          : `expert-${Date.now()}-${crypto.randomUUID().slice(0, 8)}`;
+        const scanId = `research-${requestId}`.slice(0, 120);
+        const existing = await findRun(env, scanId);
+        if (existing && existing.status !== 'completed') {
+          return json({ok: true, reused: true, requestId, scanId, query, status: existing.status, runId: existing.id, runUrl: existing.html_url}, 200, env, origin);
+        }
         const response = await github(env, `/actions/workflows/${env.WORKFLOW_FILE}/dispatches`, {
           method: 'POST', headers: {'content-type': 'application/json'},
-          body: JSON.stringify({ref: 'main', inputs: {scan_id: scanId, research_query: query}}),
+          body: JSON.stringify({ref: 'main', inputs: {scan_id: scanId, research_query: query, research_request_id: requestId}}),
         });
         if (!response.ok) return json({error: `GitHub rejected the research request (${response.status}).`, detail: await response.text()}, 502, env, origin);
-        return json({ok: true, scanId, query, status: 'queued'}, 202, env, origin);
+        return json({ok: true, reused: false, requestId, scanId, query, status: 'queued'}, 202, env, origin);
       }
 
       if (url.pathname === '/status' && request.method === 'GET') {
