@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import StatusPill from '@site/src/components/StatusPill';
 import {compatibilityCategories, compatibilityRows, compatibilityStatuses} from '@site/src/data/compatibility';
-import {plugins} from '@site/src/data/plugins';
+import {registry, resolveDependency} from '@site/src/data/registry';
 import styles from './styles.module.css';
 
 const Icon = ({name}) => {
@@ -20,7 +20,7 @@ const Icon = ({name}) => {
   return <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{paths[name]}</svg>;
 };
 
-const toneMap = {verified:'green', compatible:'blue', testing:'yellow', research:'purple', deprecated:'red'};
+const toneMap = {verified:'green', compatible:'blue', testing:'yellow', conflict:'red', legacy:'yellow', research:'purple', deprecated:'red'};
 
 export default function CompatibilityPage() {
   const [query, setQuery] = useState('');
@@ -35,7 +35,7 @@ export default function CompatibilityPage() {
       .filter((row) => status === 'all' || row.status === status)
       .filter((row) => !goldenOnly || row.goldenBuild)
       .filter((row) => !term || [row.component, row.version, row.category, row.note, row.impact].join(' ').toLowerCase().includes(term))
-      .sort((a, b) => compatibilityStatuses[a.status].rank - compatibilityStatuses[b.status].rank || b.confidence - a.confidence);
+      .sort((a, b) => (compatibilityStatuses[a.status]?.rank ?? 99) - (compatibilityStatuses[b.status]?.rank ?? 99) || b.confidence - a.confidence);
   }, [query, category, status, goldenOnly]);
 
   const counts = useMemo(() => compatibilityRows.reduce((acc, row) => ({...acc, [row.status]:(acc[row.status] || 0) + 1}), {}), []);
@@ -126,7 +126,7 @@ export default function CompatibilityPage() {
               <div className={styles.graphConnector}/>
               <div className={styles.graphLevel}><Link className={styles.graphNode} to="/plugins/stop-the-ped"><span>Police system</span><strong>Stop The Ped</strong></Link><Link className={styles.graphNode} to="/plugins/ultimate-backup"><span>Police system</span><strong>Ultimate Backup</strong></Link><Link className={styles.graphNode} to="/plugins/compulite"><span>Police system</span><strong>CompuLite</strong></Link><Link className={styles.graphNode} to="/plugins/eup-menu"><span>Uniform system</span><strong>EUP Menu</strong></Link></div>
             </div>
-            <div className={styles.dependencyGrid}>{plugins.filter((item)=>item.dependencies?.length).slice(0,12).map((item)=><article className={styles.dependencyCard} key={item.id}><span>{item.category}</span><h3><Link to={`/plugins/${item.id}`}>{item.name}</Link></h3><div className={styles.dependencyList}>{item.dependencies.map((dependency)=>{const match=plugins.find((candidate)=>candidate.name===dependency||candidate.shortName===dependency);return match?<Link key={dependency} to={`/plugins/${match.id}`}>{dependency}</Link>:<i key={dependency}>{dependency}</i>})}</div></article>)}</div>
+            <div className={styles.dependencyGrid}>{registry.filter((item)=>item.dependencies?.length).map((item)=><article className={styles.dependencyCard} key={item.id}><span>{item.category}</span><h3><Link to={`/plugins/${item.id}`}>{item.name}</Link></h3><div className={styles.dependencyList}>{item.dependencies.map((dependency)=>{const match=resolveDependency(dependency);return match?<Link key={dependency} to={`/plugins/${match.id}`}>{dependency}</Link>:<i key={dependency}>{dependency}</i>})}</div></article>)}</div>
           </div>
         </section>
       </main>
