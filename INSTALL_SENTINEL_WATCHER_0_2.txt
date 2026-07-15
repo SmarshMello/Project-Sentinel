@@ -1,0 +1,13 @@
+PROJECT SENTINEL — SENTINEL WATCHER 0.2
+
+1. Extract this ZIP.
+2. In GitHub Desktop, choose Project-Sentinel.
+3. Click Repository > Show in Explorer.
+4. Copy everything inside this extracted folder into the repository root.
+5. Choose Replace files in the destination.
+6. Commit with: Improve Sentinel Watcher reliability and review queue
+7. Push origin.
+8. After deployment, open GitHub > Actions > Sentinel Watcher > Run workflow.
+9. Download the sentinel-watcher-report artifact after the scan.
+
+The artifact now includes latest.md, latest.json, and review-queue.json.

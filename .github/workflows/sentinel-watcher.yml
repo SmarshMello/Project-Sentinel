@@ -8,27 +8,40 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: sentinel-watcher
+  cancel-in-progress: false
+
 jobs:
   scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
+
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
           node-version: 22
+
       - name: Scan tracked sources
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/sentinel-watcher.mjs
+
       - name: Add report to run summary
+        if: always()
         run: cat sentinel-watcher/reports/latest.md >> "$GITHUB_STEP_SUMMARY"
+
       - name: Upload watcher report
+        if: always()
         uses: actions/upload-artifact@v6
         with:
           name: sentinel-watcher-report
           path: |
             sentinel-watcher/reports/latest.json
             sentinel-watcher/reports/latest.md
+            sentinel-watcher/reports/review-queue.json
           retention-days: 30

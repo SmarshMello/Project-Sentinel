@@ -1,14 +1,147 @@
-import React,{useEffect,useMemo,useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
-export default function Watcher(){
- const reportUrl=useBaseUrl('/data/watcher-report.json'); const [report,setReport]=useState(null); const [query,setQuery]=useState(''); const [filter,setFilter]=useState('review');
- useEffect(()=>{fetch(reportUrl).then(r=>r.json()).then(setReport).catch(()=>setReport({counts:{tracked:0,reachable:0,updated:0,unreachable:0,archived:0,needsReview:0},items:[]}));},[reportUrl]);
- const items=useMemo(()=>{const all=report?.items||[];return all.filter(x=>{const text=`${x.name} ${x.category} ${x.note}`.toLowerCase();const q=text.includes(query.toLowerCase());const f=filter==='all'||(filter==='review'&&(x.change!=='none'||x.note))||(filter==='updated'&&['updated','page-changed'].includes(x.change))||(filter==='unreachable'&&x.change==='unreachable')||(filter==='archived'&&x.archived);return q&&f;});},[report,query,filter]);
- const c=report?.counts||{};
- return <Layout title="Sentinel Watcher" description="Automated monitoring reports for the LSPDFR mod ecosystem."><main className={styles.page}><header className={styles.hero}><div className="container"><span>Project Sentinel maintenance system</span><Heading as="h1">Sentinel Watcher</Heading><p>Scheduled checks for tracked mod pages, GitHub releases, broken links, archived repositories and changes that need human review.</p><div className={styles.actions}><a href="https://github.com/SmarshMello/Project-Sentinel/actions/workflows/sentinel-watcher.yml">Open workflow</a><Link to="/plugins">Browse database</Link></div></div></header><section className="container"><div className={styles.notice}><b>Review-first automation</b><span>Watcher 0.1 never edits or publishes database records automatically. It produces a report artifact for you to inspect.</span></div><div className={styles.metrics}>{[['Tracked',c.tracked],['Reachable',c.reachable],['Changed',c.updated],['Unreachable',c.unreachable],['Archived',c.archived],['Needs review',c.needsReview]].map(([l,v])=><article key={l}><span>{l}</span><strong>{v??'—'}</strong></article>)}</div><div className={styles.toolbar}><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search monitored projects…"/><select value={filter} onChange={e=>setFilter(e.target.value)}><option value="review">Needs review</option><option value="all">All tracked</option><option value="updated">Changed</option><option value="unreachable">Unreachable</option><option value="archived">Archived</option></select></div><div className={styles.meta}>Last committed scan: {report?.checkedAt?new Date(report.checkedAt).toLocaleString():'Loading…'} · Showing {items.length} records</div><div className={styles.list}>{items.map(item=><article key={item.id}><div><span className={`${styles.state} ${styles[item.change]||''}`}>{item.change==='none'?'monitored':item.change}</span><Heading as="h2">{item.name}</Heading><p>{item.category} · Expected: {item.expectedVersion}</p>{item.note&&<small>{item.note}</small>}</div><dl><div><dt>HTTP</dt><dd>{item.httpStatus??'—'}</dd></div><div><dt>Latest release</dt><dd>{item.latestRelease||'Not detected'}</dd></div><div><dt>Sentinel Police</dt><dd>{item.sentinelPolice?'Yes':'No'}</dd></div></dl><a href={item.finalUrl||item.url}>Open official source →</a></article>)}</div>{!items.length&&<div className={styles.empty}>No records match this view. Run the workflow manually to generate a fresh report.</div>}</section></main></Layout>
+const STATUS_LABELS = {
+  healthy: 'Healthy',
+  'version-changed': 'Version changed',
+  'page-changed': 'Page changed',
+  'timed-out': 'Timed out',
+  blocked: 'Automation blocked',
+  redirected: 'Redirected',
+  'not-found': 'Not found',
+  'rate-limited': 'Rate limited',
+  'server-error': 'Server error',
+  archived: 'Archived',
+  failed: 'Failed',
+  unknown: 'Unknown',
+};
+
+const FILTERS = ['review', 'all', 'changed', 'healthy', 'timed-out', 'blocked', 'not-found', 'archived'];
+
+export default function Watcher() {
+  const reportUrl = useBaseUrl('/data/watcher-report.json');
+  const [report, setReport] = useState(null);
+  const [query, setQuery] = useState('');
+  const [filter, setFilter] = useState('review');
+
+  useEffect(() => {
+    fetch(reportUrl)
+      .then((response) => response.json())
+      .then(setReport)
+      .catch(() => setReport({counts: {}, items: [], reviewQueue: []}));
+  }, [reportUrl]);
+
+  const items = useMemo(() => {
+    const all = report?.items || [];
+    const normalizedQuery = query.trim().toLowerCase();
+    return all.filter((item) => {
+      const text = `${item.name} ${item.category} ${item.status} ${item.note} ${item.reviewReason}`.toLowerCase();
+      const matchesQuery = !normalizedQuery || text.includes(normalizedQuery);
+      const matchesFilter =
+        filter === 'all' ||
+        (filter === 'review' && item.needsReview) ||
+        (filter === 'changed' && ['version-changed', 'page-changed'].includes(item.status)) ||
+        item.status === filter;
+      return matchesQuery && matchesFilter;
+    });
+  }, [report, query, filter]);
+
+  const counts = report?.counts || {};
+  const metrics = [
+    ['Tracked', counts.tracked],
+    ['Healthy', counts.healthy],
+    ['Changed', counts.changed],
+    ['Timed out', counts.timedOut],
+    ['Blocked', counts.blocked],
+    ['Not found', counts.notFound],
+    ['Archived', counts.archived],
+    ['Needs review', counts.needsReview],
+  ];
+
+  return (
+    <Layout title="Sentinel Watcher" description="Automated monitoring and review queues for the LSPDFR mod ecosystem.">
+      <main className={styles.page}>
+        <header className={styles.hero}>
+          <div className="container">
+            <span className={styles.eyebrow}>Project Sentinel maintenance system</span>
+            <Heading as="h1">Sentinel Watcher</Heading>
+            <p>
+              Smarter scheduled checks for mod pages, GitHub releases, redirects, broken links,
+              archived repositories, timeouts and changes that need human review.
+            </p>
+            <div className={styles.actions}>
+              <a href="https://github.com/SmarshMello/Project-Sentinel/actions/workflows/sentinel-watcher.yml">Open workflow</a>
+              <Link to="/plugins">Browse database</Link>
+            </div>
+          </div>
+        </header>
+
+        <section className="container">
+          <div className={styles.notice}>
+            <b>Review-first automation</b>
+            <span>
+              Watcher 0.2 retries failed requests and separates timeouts, bot blocks, redirects,
+              404s and real version changes. A timeout never means a mod is dead.
+            </span>
+          </div>
+
+          <div className={styles.metrics}>
+            {metrics.map(([label, value]) => (
+              <article key={label}>
+                <span>{label}</span>
+                <strong>{value ?? '—'}</strong>
+              </article>
+            ))}
+          </div>
+
+          <div className={styles.legend}>
+            {['healthy', 'version-changed', 'page-changed', 'timed-out', 'blocked', 'redirected', 'not-found', 'archived'].map((status) => (
+              <span key={status} className={`${styles.state} ${styles[status] || ''}`}>{STATUS_LABELS[status]}</span>
+            ))}
+          </div>
+
+          <div className={styles.toolbar}>
+            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search monitored projects…" />
+            <select value={filter} onChange={(event) => setFilter(event.target.value)}>
+              {FILTERS.map((value) => <option key={value} value={value}>{value === 'review' ? 'Needs review' : value === 'all' ? 'All tracked' : value === 'changed' ? 'Changed' : STATUS_LABELS[value]}</option>)}
+            </select>
+          </div>
+
+          <div className={styles.meta}>
+            Last committed scan: {report?.checkedAt ? new Date(report.checkedAt).toLocaleString() : 'Loading…'} · Showing {items.length} records · Watcher {report?.watcherVersion || '—'}
+          </div>
+
+          <div className={styles.list}>
+            {items.map((item) => (
+              <article key={item.id}>
+                <div className={styles.mainInfo}>
+                  <div className={styles.badges}>
+                    <span className={`${styles.state} ${styles[item.status] || ''}`}>{STATUS_LABELS[item.status] || item.status}</span>
+                    {item.reviewPriority && item.reviewPriority !== 'none' && <span className={`${styles.priority} ${styles[item.reviewPriority]}`}>{item.reviewPriority} priority</span>}
+                  </div>
+                  <Heading as="h2">{item.name}</Heading>
+                  <p>{item.category} · Expected: {item.expectedVersion}</p>
+                  {item.note && <small>{item.note}</small>}
+                  {item.reviewReason && item.needsReview && <small className={styles.reason}>{item.reviewReason}</small>}
+                </div>
+                <dl>
+                  <div><dt>HTTP</dt><dd>{item.httpStatus ?? '—'}</dd></div>
+                  <div><dt>Attempts</dt><dd>{item.attempts ?? '—'}</dd></div>
+                  <div><dt>Latest release</dt><dd>{item.latestRelease || 'Not detected'}</dd></div>
+                  <div><dt>Sentinel Police</dt><dd>{item.sentinelPolice ? 'Yes' : 'No'}</dd></div>
+                </dl>
+                <a href={item.finalUrl || item.url}>Open official source →</a>
+              </article>
+            ))}
+          </div>
+
+          {!items.length && <div className={styles.empty}>No records match this view. Run the workflow manually to generate a fresh report.</div>}
+        </section>
+      </main>
+    </Layout>
+  );
 }
