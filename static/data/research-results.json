@@ -1,7 +1,416 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:08:59.539Z",
+  "updatedAt": "2026-07-16T06:09:39.274Z",
   "discoveries": [
+    {
+      "id": "research-vehicle-persistence",
+      "name": "Vehicle Persistence",
+      "shortName": null,
+      "aliases": [
+        "Vehicle Persistence",
+        "Persistence V4 - Vehicle Persistence",
+        "Advanced Vehicle Persistence (1.3 OVERHAUL) - LCPDFR.com",
+        "Improved Vehicle Persistence at Cyberpunk 2077 Nexus - Nexus Mods",
+        "Advanced Vehicle Persistence at Grand Theft Auto IV Nexus - Mods and ...",
+        "Persistence II",
+        "GitHub - Ezio121/Fivem-Vehicle-Persistence: A  simple standalone Vehicle Persistence script that saves the vehicle and location you are in when you press the \"L\" key and when you reconnect to the server it will respawn you into that vehicle in that location, keeping the vehicles health, fuel, heading etc the same.",
+        "[FREE] [Framework Independent] Vehicle Persistence through sessions",
+        "Mod & Skin · VEHICLE PERSISTENCE",
+        "Vehicles Persistence"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "NexusVoid",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 94,
+      "documentationConfidence": 95,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "Persistence V4 - Vehicle PersistenceThe spiritual successor to Persistence II by ImNotMentaL, now fully compatible with both GTA V Legacy and Enhanced editions.OverviewPersistence V4 is a complete rewrite of the classic vehicle persistence system. After countless sleepless nights, this labor of love is finally finished. It saves your customized vehicles exactly where you left them, with all modifications intact, across game sessions.Whether yo...",
+      "dependencies": [
+        "Script Hook V"
+      ],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.gta5-mods.com/scripts/persistence-v4-vehicle-persistence-mod",
+      "note": "Research Engine found 12 credible sources across 6 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-vehicle-persistence",
+      "requestedAt": "2026-07-16T06:09:39.274Z",
+      "sources": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/persistence-v4-vehicle-persistence-mod",
+          "domain": "gta5-mods.com",
+          "title": "Persistence V4 - Vehicle Persistence",
+          "description": "Persistence V4 - Vehicle PersistenceThe spiritual successor to Persistence II by ImNotMentaL, now fully compatible with both GTA V Legacy and Enhanced editions.OverviewPersistence V4 is a complete rewrite of the classic vehicle persistence system. After countless sleepless nights, this labor of love is finally finished. It saves your customized vehicles exactly where you left them, with all modifications intact, across game sessions.Whether yo...",
+          "snippet": "",
+          "author": "NexusVoid",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53957-advanced-vehicle-persistence-13-overhaul/",
+          "domain": "lcpdfr.com",
+          "title": "Advanced Vehicle Persistence (1.3 OVERHAUL) - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/cyberpunk2077/mods/12812",
+          "domain": "nexusmods.com",
+          "title": "Improved Vehicle Persistence at Cyberpunk 2077 Nexus - Nexus Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/gta4/mods/853",
+          "domain": "nexusmods.com",
+          "title": "Advanced Vehicle Persistence at Grand Theft Auto IV Nexus - Mods and ...",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/i-m-not-mental-s-persistance-mod",
+          "domain": "gta5-mods.com",
+          "title": "Persistence II",
+          "description": "Features:This mod let you save your vehicle anywhere on the map.Work with any vehicles, including add-on vehicles.- Support latest game version- Can save trailer/towed vehiclesCompatible Mods:- Nitro for all Vehicles- Benny's Original Motor Works in SP- MTL Flatbed Tow Truck v5.0 and above Requirements:- Latest ScriptHookV- Latest Community Script Hook V .NET-  Visual C++ Redistributable Packages x64 2015- Minimum Microsoft .NET Framework 4.5....",
+          "snippet": "",
+          "author": "ImNotMentaL",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Ezio121/Fivem-Vehicle-Persistence",
+          "domain": "github.com",
+          "title": "GitHub - Ezio121/Fivem-Vehicle-Persistence: A  simple standalone Vehicle Persistence script that saves the vehicle and location you are in when you press the \"L\" key and when you reconnect to the server it will respawn you into that vehicle in that location, keeping the vehicles health, fuel, heading etc the same.",
+          "description": "A  simple standalone Vehicle Persistence script that saves the vehicle and location you are in when you press the \"L\" key and when you reconnect to the server it will respawn you into that vehicle in that location, keeping the vehicles health, fuel, heading etc the same. - Ezio121/Fivem-Vehicle-Persistence",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://forum.cfx.re/t/free-framework-independent-vehicle-persistence-through-sessions/5194521",
+          "domain": "forum.cfx.re",
+          "title": "[FREE] [Framework Independent] Vehicle Persistence through sessions",
+          "description": "Hi guys, I saw there were not a lot of Vehicle Persistence scripts out there so I made one, It is pretty simple as long as the player has a vehicle saved it’ll spawn the player in the vehicle upon reconnect. \nVehicle Hea&hellip;",
+          "snippet": "",
+          "author": "Discourse",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://mod-skin-store.tebex.io/package/7091909",
+          "domain": "mod-skin-store.tebex.io",
+          "title": "Mod & Skin · VEHICLE PERSISTENCE",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/vehicleskeeperv",
+          "domain": "gta5-mods.com",
+          "title": "Vehicles Persistence",
+          "description": "Version 2.0 is on the making... stay tunned ! Version 1.3=========Changelog in Version 1.3:-------------------------- fix for non-saved trailer attached to saved truck- trailer attachement and detachement monitoring algorithm upgrade- bugs related to character switch fixed.Installation Instructions-------------------------IMPORTANT:----------### IF YOU ALREADY HAVE THE VERSION 1.2 INSTALLED, JUST COPY THE \"GTA5_VEHICLES_PERSISTENCE 1.3.dll\" pr...",
+          "snippet": "",
+          "author": "pressing the change view button",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 89
+        },
+        {
+          "url": "https://www.nexusmods.com/gta5enhanced/mods/913",
+          "domain": "nexusmods.com",
+          "title": "Persistence Pro - Personal Vehicles at Grand Theft Auto V Enhanced ...",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 85
+        },
+        {
+          "url": "https://github.com/brandonsagas98/bebecito_policetape",
+          "domain": "github.com",
+          "title": "bebecito_policetape",
+          "description": "Standalone realistic police tape system for FiveM with persistence, vehicle anchors and NPC traffic blocking.",
+          "snippet": "Standalone realistic police tape system for FiveM with persistence, vehicle anchors and NPC traffic blocking.",
+          "author": "brandonsagas98",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-14T23:04:04Z",
+          "score": 78
+        },
+        {
+          "url": "https://github.com/overextended/ox_core",
+          "domain": "github.com",
+          "title": "ox_core",
+          "description": "Player and vehicle management and persistence for FiveM.",
+          "snippet": "Player and vehicle management and persistence for FiveM.",
+          "author": "overextended",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 167,
+          "updatedAt": "2026-07-10T14:19:31Z",
+          "score": 78
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/persistence-v4-vehicle-persistence-mod",
+          "domain": "gta5-mods.com",
+          "title": "Persistence V4 - Vehicle Persistence",
+          "description": "Persistence V4 - Vehicle PersistenceThe spiritual successor to Persistence II by ImNotMentaL, now fully compatible with both GTA V Legacy and Enhanced editions.OverviewPersistence V4 is a complete rewrite of the classic vehicle persistence system. After countless sleepless nights, this labor of love is finally finished. It saves your customized vehicles exactly where you left them, with all modifications intact, across game sessions.Whether yo...",
+          "snippet": "",
+          "author": "NexusVoid",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53957-advanced-vehicle-persistence-13-overhaul/",
+          "domain": "lcpdfr.com",
+          "title": "Advanced Vehicle Persistence (1.3 OVERHAUL) - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/cyberpunk2077/mods/12812",
+          "domain": "nexusmods.com",
+          "title": "Improved Vehicle Persistence at Cyberpunk 2077 Nexus - Nexus Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/gta4/mods/853",
+          "domain": "nexusmods.com",
+          "title": "Advanced Vehicle Persistence at Grand Theft Auto IV Nexus - Mods and ...",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/i-m-not-mental-s-persistance-mod",
+          "domain": "gta5-mods.com",
+          "title": "Persistence II",
+          "description": "Features:This mod let you save your vehicle anywhere on the map.Work with any vehicles, including add-on vehicles.- Support latest game version- Can save trailer/towed vehiclesCompatible Mods:- Nitro for all Vehicles- Benny's Original Motor Works in SP- MTL Flatbed Tow Truck v5.0 and above Requirements:- Latest ScriptHookV- Latest Community Script Hook V .NET-  Visual C++ Redistributable Packages x64 2015- Minimum Microsoft .NET Framework 4.5....",
+          "snippet": "",
+          "author": "ImNotMentaL",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Ezio121/Fivem-Vehicle-Persistence",
+          "domain": "github.com",
+          "title": "GitHub - Ezio121/Fivem-Vehicle-Persistence: A  simple standalone Vehicle Persistence script that saves the vehicle and location you are in when you press the \"L\" key and when you reconnect to the server it will respawn you into that vehicle in that location, keeping the vehicles health, fuel, heading etc the same.",
+          "description": "A  simple standalone Vehicle Persistence script that saves the vehicle and location you are in when you press the \"L\" key and when you reconnect to the server it will respawn you into that vehicle in that location, keeping the vehicles health, fuel, heading etc the same. - Ezio121/Fivem-Vehicle-Persistence",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://forum.cfx.re/t/free-framework-independent-vehicle-persistence-through-sessions/5194521",
+          "domain": "forum.cfx.re",
+          "title": "[FREE] [Framework Independent] Vehicle Persistence through sessions",
+          "description": "Hi guys, I saw there were not a lot of Vehicle Persistence scripts out there so I made one, It is pretty simple as long as the player has a vehicle saved it’ll spawn the player in the vehicle upon reconnect. \nVehicle Hea&hellip;",
+          "snippet": "",
+          "author": "Discourse",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://mod-skin-store.tebex.io/package/7091909",
+          "domain": "mod-skin-store.tebex.io",
+          "title": "Mod & Skin · VEHICLE PERSISTENCE",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/vehicleskeeperv",
+          "domain": "gta5-mods.com",
+          "title": "Vehicles Persistence",
+          "description": "Version 2.0 is on the making... stay tunned ! Version 1.3=========Changelog in Version 1.3:-------------------------- fix for non-saved trailer attached to saved truck- trailer attachement and detachement monitoring algorithm upgrade- bugs related to character switch fixed.Installation Instructions-------------------------IMPORTANT:----------### IF YOU ALREADY HAVE THE VERSION 1.2 INSTALLED, JUST COPY THE \"GTA5_VEHICLES_PERSISTENCE 1.3.dll\" pr...",
+          "snippet": "",
+          "author": "pressing the change view button",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 89
+        },
+        {
+          "url": "https://www.nexusmods.com/gta5enhanced/mods/913",
+          "domain": "nexusmods.com",
+          "title": "Persistence Pro - Personal Vehicles at Grand Theft Auto V Enhanced ...",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 85
+        },
+        {
+          "url": "https://github.com/brandonsagas98/bebecito_policetape",
+          "domain": "github.com",
+          "title": "bebecito_policetape",
+          "description": "Standalone realistic police tape system for FiveM with persistence, vehicle anchors and NPC traffic blocking.",
+          "snippet": "Standalone realistic police tape system for FiveM with persistence, vehicle anchors and NPC traffic blocking.",
+          "author": "brandonsagas98",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-14T23:04:04Z",
+          "score": 78
+        },
+        {
+          "url": "https://github.com/overextended/ox_core",
+          "domain": "github.com",
+          "title": "ox_core",
+          "description": "Player and vehicle management and persistence for FiveM.",
+          "snippet": "Player and vehicle management and persistence for FiveM.",
+          "author": "overextended",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 167,
+          "updatedAt": "2026-07-10T14:19:31Z",
+          "score": 78
+        }
+      ]
+    },
     {
       "id": "research-pull-me-over",
       "name": "Pull Me Over",
@@ -3484,6 +3893,203 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182147772-f9a92b0f",
+      "requestId": "expert-1784182147772-f9a92b0f",
+      "query": "Vehicle Persistence",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:09:39.274Z",
+      "completedAt": "2026-07-16T06:09:39.274Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 12,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/persistence-v4-vehicle-persistence-mod",
+          "domain": "gta5-mods.com",
+          "title": "Persistence V4 - Vehicle Persistence",
+          "description": "Persistence V4 - Vehicle PersistenceThe spiritual successor to Persistence II by ImNotMentaL, now fully compatible with both GTA V Legacy and Enhanced editions.OverviewPersistence V4 is a complete rewrite of the classic vehicle persistence system. After countless sleepless nights, this labor of love is finally finished. It saves your customized vehicles exactly where you left them, with all modifications intact, across game sessions.Whether yo...",
+          "snippet": "",
+          "author": "NexusVoid",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53957-advanced-vehicle-persistence-13-overhaul/",
+          "domain": "lcpdfr.com",
+          "title": "Advanced Vehicle Persistence (1.3 OVERHAUL) - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/cyberpunk2077/mods/12812",
+          "domain": "nexusmods.com",
+          "title": "Improved Vehicle Persistence at Cyberpunk 2077 Nexus - Nexus Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/gta4/mods/853",
+          "domain": "nexusmods.com",
+          "title": "Advanced Vehicle Persistence at Grand Theft Auto IV Nexus - Mods and ...",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/i-m-not-mental-s-persistance-mod",
+          "domain": "gta5-mods.com",
+          "title": "Persistence II",
+          "description": "Features:This mod let you save your vehicle anywhere on the map.Work with any vehicles, including add-on vehicles.- Support latest game version- Can save trailer/towed vehiclesCompatible Mods:- Nitro for all Vehicles- Benny's Original Motor Works in SP- MTL Flatbed Tow Truck v5.0 and above Requirements:- Latest ScriptHookV- Latest Community Script Hook V .NET-  Visual C++ Redistributable Packages x64 2015- Minimum Microsoft .NET Framework 4.5....",
+          "snippet": "",
+          "author": "ImNotMentaL",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Ezio121/Fivem-Vehicle-Persistence",
+          "domain": "github.com",
+          "title": "GitHub - Ezio121/Fivem-Vehicle-Persistence: A  simple standalone Vehicle Persistence script that saves the vehicle and location you are in when you press the \"L\" key and when you reconnect to the server it will respawn you into that vehicle in that location, keeping the vehicles health, fuel, heading etc the same.",
+          "description": "A  simple standalone Vehicle Persistence script that saves the vehicle and location you are in when you press the \"L\" key and when you reconnect to the server it will respawn you into that vehicle in that location, keeping the vehicles health, fuel, heading etc the same. - Ezio121/Fivem-Vehicle-Persistence",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://forum.cfx.re/t/free-framework-independent-vehicle-persistence-through-sessions/5194521",
+          "domain": "forum.cfx.re",
+          "title": "[FREE] [Framework Independent] Vehicle Persistence through sessions",
+          "description": "Hi guys, I saw there were not a lot of Vehicle Persistence scripts out there so I made one, It is pretty simple as long as the player has a vehicle saved it’ll spawn the player in the vehicle upon reconnect. \nVehicle Hea&hellip;",
+          "snippet": "",
+          "author": "Discourse",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://mod-skin-store.tebex.io/package/7091909",
+          "domain": "mod-skin-store.tebex.io",
+          "title": "Mod & Skin · VEHICLE PERSISTENCE",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/vehicleskeeperv",
+          "domain": "gta5-mods.com",
+          "title": "Vehicles Persistence",
+          "description": "Version 2.0 is on the making... stay tunned ! Version 1.3=========Changelog in Version 1.3:-------------------------- fix for non-saved trailer attached to saved truck- trailer attachement and detachement monitoring algorithm upgrade- bugs related to character switch fixed.Installation Instructions-------------------------IMPORTANT:----------### IF YOU ALREADY HAVE THE VERSION 1.2 INSTALLED, JUST COPY THE \"GTA5_VEHICLES_PERSISTENCE 1.3.dll\" pr...",
+          "snippet": "",
+          "author": "pressing the change view button",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 89
+        },
+        {
+          "url": "https://www.nexusmods.com/gta5enhanced/mods/913",
+          "domain": "nexusmods.com",
+          "title": "Persistence Pro - Personal Vehicles at Grand Theft Auto V Enhanced ...",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 85
+        },
+        {
+          "url": "https://github.com/brandonsagas98/bebecito_policetape",
+          "domain": "github.com",
+          "title": "bebecito_policetape",
+          "description": "Standalone realistic police tape system for FiveM with persistence, vehicle anchors and NPC traffic blocking.",
+          "snippet": "Standalone realistic police tape system for FiveM with persistence, vehicle anchors and NPC traffic blocking.",
+          "author": "brandonsagas98",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-14T23:04:04Z",
+          "score": 78
+        },
+        {
+          "url": "https://github.com/overextended/ox_core",
+          "domain": "github.com",
+          "title": "ox_core",
+          "description": "Player and vehicle management and persistence for FiveM.",
+          "snippet": "Player and vehicle management and persistence for FiveM.",
+          "author": "overextended",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 167,
+          "updatedAt": "2026-07-10T14:19:31Z",
+          "score": 78
+        }
+      ]
+    },
     {
       "id": "expert-1784182117632-1d467251",
       "requestId": "expert-1784182117632-1d467251",
