@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:11:50.581Z",
+  "updatedAt": "2026-07-16T06:12:24.878Z",
   "discoveries": [
     {
       "id": "research-police-helper",
@@ -4753,6 +4753,173 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182318234-f12800dc",
+      "requestId": "expert-1784182318234-f12800dc",
+      "query": "Traffic Camera System",
+      "status": "needs-manual-research",
+      "requestedAt": "2026-07-16T06:12:24.878Z",
+      "completedAt": "2026-07-16T06:12:24.878Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 10,
+      "credibleCandidateCount": 0,
+      "candidates": [
+        {
+          "url": "https://github.com/lance232/TrafficPerformanceManagement",
+          "domain": "github.com",
+          "title": "TrafficPerformanceManagement",
+          "description": "Automated traffic performance monitoring system for the SM Seaside merging T-intersection, Cebu City. Uses a solar-powered 4G CCTV camera, OBS Studio, and OpenCV/Camlytics to schedule peak/off-peak recordings, compute vehicle counts and level-of-service (LOS) metrics, and publish live video and traffic data to a web dashboard.",
+          "snippet": "Automated traffic performance monitoring system for the SM Seaside merging T-intersection, Cebu City. Uses a solar-powered 4G CCTV camera, OBS Studio, and OpenCV/Camlytics to schedule peak/off-peak recordings, compute vehicle counts and level-of-service (LOS) metrics, and publish live video and traffic data to a web dashboard.",
+          "author": "lance232",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T12:51:37Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/longnguyen274/ai-camera-traffic-monitoring",
+          "domain": "github.com",
+          "title": "ai-camera-traffic-monitoring",
+          "description": "Computer Vision system for AI Camera: vehicle detection, license plate recognition, fallen object detection, smoke/fire detection, and Jetson Edge AI deployment.",
+          "snippet": "Computer Vision system for AI Camera: vehicle detection, license plate recognition, fallen object detection, smoke/fire detection, and Jetson Edge AI deployment.",
+          "author": "longnguyen274",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-14T12:30:52Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/ShankarBG100/traffic-camera-sensor-system",
+          "domain": "github.com",
+          "title": "traffic-camera-sensor-system",
+          "description": "",
+          "snippet": "",
+          "author": "ShankarBG100",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-14T08:13:39Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/basavarajuym22ec-stack/Autonomous-Driving-Assistance-System-Decentralized-Control-for-Automotive-Vehicles-",
+          "domain": "github.com",
+          "title": "Autonomous-Driving-Assistance-System-Decentralized-Control-for-Automotive-Vehicles-",
+          "description": "Autonomous driving prototype using Python, camera, and ultrasonic sensors. Detects potholes, humps, and obstacles via CNN/YOLO, tracks lanes, recognizes traffic signs, and controls DC motors accordingly. Streams live video to a companion Android app for real-time monitoring. Built to make road-safety tech accessible using affordable hardware.",
+          "snippet": "Autonomous driving prototype using Python, camera, and ultrasonic sensors. Detects potholes, humps, and obstacles via CNN/YOLO, tracks lanes, recognizes traffic signs, and controls DC motors accordingly. Streams live video to a companion Android app for real-time monitoring. Built to make road-safety tech accessible using affordable hardware.",
+          "author": "basavarajuym22ec-stack",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-08T09:34:26Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/mtintti/cctv-anomaly-detection",
+          "domain": "github.com",
+          "title": "cctv-anomaly-detection",
+          "description": "Computer vision–based Full-Stack Finnish road anomaly detection and ticketing system. Processes Fintraffic traffic camera feeds to detect potholes, generate labeled incident tickets with geolocation data, and provide a monitoring and review interface for automated road maintenance workflows.",
+          "snippet": "Computer vision–based Full-Stack Finnish road anomaly detection and ticketing system. Processes Fintraffic traffic camera feeds to detect potholes, generate labeled incident tickets with geolocation data, and provide a monitoring and review interface for automated road maintenance workflows.",
+          "author": "mtintti",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-08T06:09:14Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/Lucky136-code/MultiObjTracking",
+          "domain": "github.com",
+          "title": "MultiObjTracking",
+          "description": "Vehicle Detection, Classification & Speed Estimation Real-time computer vision system that detects moving vehicles (cars, trucks, buses, motorcycles) from live/recorded traffic camera feeds, classifies their type, and estimates their speed — built for smart traffic monitoring and surveillance use cases.",
+          "snippet": "Vehicle Detection, Classification & Speed Estimation Real-time computer vision system that detects moving vehicles (cars, trucks, buses, motorcycles) from live/recorded traffic camera feeds, classifies their type, and estimates their speed — built for smart traffic monitoring and surveillance use cases.",
+          "author": "Lucky136-code",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-12T01:40:12Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/ILMIHA-Labs/Road-User-Intelligence-Platform",
+          "domain": "github.com",
+          "title": "Road-User-Intelligence-Platform",
+          "description": "The Road User Intelligence Platform(RUIP) is an AI-powered traffic analytics system designed to monitor, analyse, and understand road user behaviour in real time.  The platform combines computer vision, IoT, and data engineering to detect and track road users such as motorcycles, pedestrians, and vehicles from edge cameras and RTSP network streams.",
+          "snippet": "The Road User Intelligence Platform(RUIP) is an AI-powered traffic analytics system designed to monitor, analyse, and understand road user behaviour in real time.  The platform combines computer vision, IoT, and data engineering to detect and track road users such as motorcycles, pedestrians, and vehicles from edge cameras and RTSP network streams.",
+          "author": "ILMIHA-Labs",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-16T01:06:45Z",
+          "score": 44
+        },
+        {
+          "url": "https://github.com/Muhammad-Muneeb-Ai/smart_city_traffic_hackathon",
+          "domain": "github.com",
+          "title": "smart_city_traffic_hackathon",
+          "description": "The system uses cameras and AI algorithms to detect vehicles, read license plates, and process this data for traffic flow optimization, security, and tolling",
+          "snippet": "The system uses cameras and AI algorithms to detect vehicles, read license plates, and process this data for traffic flow optimization, security, and tolling",
+          "author": "Muhammad-Muneeb-Ai",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2026-07-15T21:16:13Z",
+          "score": 44
+        },
+        {
+          "url": "https://github.com/dcfrancisco/sentinel-program",
+          "domain": "github.com",
+          "title": "sentinel-program",
+          "description": "Sentinel  An open, modular AI surveillance platform for building intelligent vision applications.  Sentinel is an open platform for developing AI-powered surveillance systems. It provides the core infrastructure for video streaming, edge processing, computer vision, AI integration, event management, and developer APIs, enabling applications that monitor and understand the physical world in real time.  The platform is designed around a simple principle: surveillance is a platform capability; security is one application of that capability. By separating the platform from domain-specific products, Sentinel can power a wide range of intelligent vision solutions, from residential security and commercial surveillance to traffic monitoring, industrial safety, and future edge AI applications.  Platform Capabilities  * High-performance video streaming * Edge video processing and caching * AI model integration * Event detection and monitoring * Camera and device management * REST APIs and SDKs * Real-time notifications and telemetry  Products  Sentinel serves as the foundation for multiple products, including:  * Sentinel Home — AI-powered residential surveillance and home security. * Sentinel Traffic (planned) — Intelligent traffic monitoring and analytics. * Additional surveillance products built on the same platform architecture.  The Sentinel platform is built with a modular architecture that scales from a single Raspberry Pi deployment to enterprise edge servers and clustered surveillance environments.",
+          "snippet": "Sentinel  An open, modular AI surveillance platform for building intelligent vision applications.  Sentinel is an open platform for developing AI-powered surveillance systems. It provides the core infrastructure for video streaming, edge processing, computer vision, AI integration, event management, and developer APIs, enabling applications that monitor and understand the physical world in real time.  The platform is designed around a simple principle: surveillance is a platform capability; security is one application of that capability. By separating the platform from domain-specific products, Sentinel can power a wide range of intelligent vision solutions, from residential security and commercial surveillance to traffic monitoring, industrial safety, and future edge AI applications.  Platform Capabilities  * High-performance video streaming * Edge video processing and caching * AI model integration * Event detection and monitoring * Camera and device management * REST APIs and SDKs * Real-time notifications and telemetry  Products  Sentinel serves as the foundation for multiple products, including:  * Sentinel Home — AI-powered residential surveillance and home security. * Sentinel Traffic (planned) — Intelligent traffic monitoring and analytics. * Additional surveillance products built on the same platform architecture.  The Sentinel platform is built with a modular architecture that scales from a single Raspberry Pi deployment to enterprise edge servers and clustered surveillance environments.",
+          "author": "dcfrancisco",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-14T00:48:23Z",
+          "score": 44
+        },
+        {
+          "url": "https://github.com/sriyukthesh/SAEDERS-Smart-City",
+          "domain": "github.com",
+          "title": "SAEDERS-Smart-City",
+          "description": "SAEDERS: Smart Accident Detection & Emergency Response System (HackVerse 2026)  An automated AI pipeline using YOLOv8 to detect crashes on live traffic cameras, instantly fetch GPS locations, and alert an Ambulance Dashboard. It clears paths via automated Green Corridors, bypassing manual emergency call delays to save lives.",
+          "snippet": "SAEDERS: Smart Accident Detection & Emergency Response System (HackVerse 2026)  An automated AI pipeline using YOLOv8 to detect crashes on live traffic cameras, instantly fetch GPS locations, and alert an Ambulance Dashboard. It clears paths via automated Green Corridors, bypassing manual emergency call delays to save lives.",
+          "author": "sriyukthesh",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-11T13:50:33Z",
+          "score": 44
+        }
+      ]
+    },
     {
       "id": "expert-1784182291379-09742b1e",
       "requestId": "expert-1784182291379-09742b1e",
