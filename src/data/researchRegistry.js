@@ -2,17 +2,26 @@ const normalize = (value = '') => String(value).toLowerCase().replace(/[’']/g,
 const slug = (value = '') => normalize(value).replace(/\s+/g, '-').replace(/^-|-$/g, '') || 'unknown-project';
 const clamp = (value, min = 0, max = 100) => Math.max(min, Math.min(max, Math.round(Number(value) || 0)));
 
-export function researchProfileUrl(project) {
-  const id = project?.id || `research-${slug(project?.name)}`;
-  return `/plugins/research?project=${encodeURIComponent(id)}`;
+export function canonicalResearchId(project) {
+  return `research-${slug(project?.name || project?.id)}`;
 }
+
+export function researchProfileUrl(project) {
+  const id = canonicalResearchId(project);
+  const name = project?.name ? `&name=${encodeURIComponent(project.name)}` : '';
+  return `/plugins/research?project=${encodeURIComponent(id)}${name}`;
+}
+
 
 function normalizeDiscovery(item) {
   if (!item?.name) return null;
-  const id = item.id || `research-${slug(item.name)}`;
+  const sourceId = item.id || null;
+  const id = canonicalResearchId(item);
   return {
     ...item,
     id,
+    sourceId,
+    legacyIds: [...new Set([...(item.legacyIds || []), sourceId].filter(Boolean))],
     name: item.name,
     category: item.category || 'Research discoveries',
     status: 'research',
@@ -27,7 +36,7 @@ function normalizeDiscovery(item) {
     sentinelPolice: false,
     researchDiscovered: true,
     researchStatus: item.researchStatus || 'pending-review',
-    profile: researchProfileUrl({id}),
+    profile: researchProfileUrl({id, name: item.name}),
   };
 }
 
@@ -40,7 +49,7 @@ function synthesizeFromRequest(request) {
   // A discovered candidate may enter the registry as an explicitly unverified lead.
   // This does not assert compatibility or official status.
   if (score < 45 && request.status !== 'resolved') return null;
-  const id = `research-${slug(request.query)}`;
+  const id = canonicalResearchId({name: request.query});
   const credibleCount = request.credibleCandidateCount || 0;
   return normalizeDiscovery({
     id,
@@ -84,5 +93,13 @@ export function collectResearchProjects(data) {
 
 export function findResearchProject(data, idOrName) {
   const target = decodeURIComponent(String(idOrName || ''));
-  return collectResearchProjects(data).find(item => item.id === target || normalize(item.name) === normalize(target)) || null;
+  const normalizedTarget = normalize(target.replace(/^research[- ]?/, ''));
+  return collectResearchProjects(data).find(item =>
+    item.id === target
+    || item.sourceId === target
+    || item.legacyIds?.includes(target)
+    || normalize(item.name) === normalize(target)
+    || normalize(item.name) === normalizedTarget
+    || (target.startsWith(`${item.id}-`))
+  ) || null;
 }

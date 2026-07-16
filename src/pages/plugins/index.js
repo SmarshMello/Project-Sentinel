@@ -7,6 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import PluginStatus from '@site/src/components/PluginStatus';
 import {pluginCategories, plugins, statusMeta} from '@site/src/data/plugins';
 import {collectResearchProjects, researchProfileUrl} from '@site/src/data/researchRegistry';
+import {loadResearchData} from '@site/src/data/researchData';
 import styles from './styles.module.css';
 
 const Icon = ({name}) => {
@@ -64,7 +65,7 @@ function PluginCard({plugin}) {
 export default function PluginDatabase() {
   const researchUrl=useBaseUrl('/data/research-results.json');
   const [allPlugins,setAllPlugins]=useState(plugins);
-  useEffect(()=>{let active=true;fetch(`${researchUrl}?registry=${Date.now()}`,{cache:'no-store'}).then(r=>r.ok?r.json():null).then(data=>{if(!active||!data)return;const known=new Set(plugins.map(x=>x.id));setAllPlugins([...plugins,...collectResearchProjects(data).filter(x=>!known.has(x.id))]);}).catch(()=>{});return()=>{active=false};},[researchUrl]);
+  useEffect(()=>{let active=true;loadResearchData(researchUrl).then(data=>{if(!active)return;const knownNames=new Set(plugins.map(x=>x.name.toLowerCase()));const research=collectResearchProjects(data).filter(x=>!knownNames.has(x.name.toLowerCase()));setAllPlugins([...plugins,...research]);}).catch(()=>{});return()=>{active=false};},[researchUrl]);
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All');
   const [status, setStatus] = useState('all');

@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {useLocation} from '@docusaurus/router';
 import {findResearchProject} from '@site/src/data/researchRegistry';
+import {loadResearchData} from '@site/src/data/researchData';
 import {researchDimensions} from '@site/src/data/researchAssessment';
 import styles from './styles.module.css';
 
@@ -15,22 +16,23 @@ function Meter({label, value}) {
 export default function ResearchProfile() {
   const location = useLocation();
   const dataUrl = useBaseUrl('/data/research-results.json');
-  const projectId = useMemo(() => new URLSearchParams(location.search).get('project'), [location.search]);
+  const params = useMemo(() => new URLSearchParams(location.search), [location.search]);
+  const projectId = params.get('project');
+  const projectName = params.get('name');
   const [project, setProject] = useState(null);
   const [state, setState] = useState('loading');
 
   useEffect(() => {
     let active = true;
-    fetch(`${dataUrl}?profile=${Date.now()}`, {cache: 'no-store'})
-      .then(response => response.ok ? response.json() : Promise.reject(new Error('Research data unavailable')))
+    loadResearchData(dataUrl)
       .then(data => {
         if (!active) return;
-        setProject(findResearchProject(data, projectId));
+        setProject(findResearchProject(data, projectId) || findResearchProject(data, projectName));
         setState('ready');
       })
       .catch(() => active && setState('error'));
     return () => { active = false; };
-  }, [dataUrl, projectId]);
+  }, [dataUrl, projectId, projectName]);
 
   const dimensions = researchDimensions(project);
   return <Layout title={project?.name || 'Research Profile'} description="Sentinel Research project profile">

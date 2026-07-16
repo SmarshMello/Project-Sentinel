@@ -303,7 +303,7 @@ if (credible.length) {
   const identityConfidence = Math.min(98, Math.round((best.score || 0) + Math.min(12, credible.length * 2)));
   const sourceCredibility = Math.min(98, Math.round(credible.reduce((sum, item) => sum + (item.score || 0), 0) / credible.length));
   const documentationConfidence = Math.min(95, (best.description?.length > 140 ? 32 : 18) + (best.author ? 18 : 0) + (dependencies.length ? 18 : 0) + Math.min(27, credible.length * 5));
-  const id = `research-${slug(query)}-${crypto.createHash('sha1').update((best.url || query).toLowerCase()).digest('hex').slice(0, 7)}`;
+  const id = `research-${slug(query)}`;
   const record = {
     id,
     name: query,
