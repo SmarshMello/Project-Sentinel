@@ -1,7 +1,324 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:11:23.035Z",
+  "updatedAt": "2026-07-16T06:11:50.581Z",
   "discoveries": [
+    {
+      "id": "research-police-helper",
+      "name": "Police Helper",
+      "shortName": null,
+      "aliases": [
+        "Police Helper",
+        "Simple Police Helper",
+        "Simple-Police-Helper/README.md at master · sEbi3/Simple-Police-Helper",
+        "Simple-Police-Helper",
+        "Simple Police Helper Menu 1.2.1.1 - GTA 5 Mod Download",
+        "serpicoproject"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "sEbi3",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 97,
+      "documentationConfidence": 95,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "Simple Police Helper is a lightweight menu for LSPDFR. It provides a clean, easy-to-use interface with multiple categories and useful features that players can access quickly during patrol, helping streamline gameplay and making everyday police duties more efficient and convenient.You can also find Simple Police Helper on the official LSPDFR Page. Take a look on GitHub or the LSPDFR Page for general solutions.How to Install1) Copy the contents...",
+      "dependencies": [
+        "LSPDFR"
+      ],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.gta5-mods.com/scripts/simplepolicehelper-sebi3",
+      "note": "Research Engine found 8 credible sources across 3 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-police-helper",
+      "requestedAt": "2026-07-16T06:11:50.581Z",
+      "sources": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/simplepolicehelper-sebi3",
+          "domain": "gta5-mods.com",
+          "title": "Simple Police Helper",
+          "description": "Simple Police Helper is a lightweight menu for LSPDFR. It provides a clean, easy-to-use interface with multiple categories and useful features that players can access quickly during patrol, helping streamline gameplay and making everyday police duties more efficient and convenient.You can also find Simple Police Helper on the official LSPDFR Page. Take a look on GitHub or the LSPDFR Page for general solutions.How to Install1) Copy the contents...",
+          "snippet": "",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/ms/scripts/simplepolicehelper-sebi3",
+          "domain": "gta5-mods.com",
+          "title": "Simple Police Helper",
+          "description": "Simple Police Helper is a lightweight menu for LSPDFR. It provides a clean, easy-to-use interface with multiple categories and useful features that players can access quickly during patrol, helping streamline gameplay and making everyday police duties more efficient and convenient.You can also find Simple Police Helper on the official LSPDFR Page. Take a look on GitHub or the LSPDFR Page for general solutions.How to Install1) Copy the contents...",
+          "snippet": "",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/uk/scripts/simplepolicehelper-sebi3",
+          "domain": "gta5-mods.com",
+          "title": "Simple Police Helper",
+          "description": "Simple Police Helper is a lightweight menu for LSPDFR. It provides a clean, easy-to-use interface with multiple categories and useful features that players can access quickly during patrol, helping streamline gameplay and making everyday police duties more efficient and convenient.You can also find Simple Police Helper on the official LSPDFR Page. Take a look on GitHub or the LSPDFR Page for general solutions.How to Install1) Copy the contents...",
+          "snippet": "",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/sl/scripts/simplepolicehelper-sebi3",
+          "domain": "gta5-mods.com",
+          "title": "Simple Police Helper",
+          "description": "Simple Police Helper is a lightweight menu for LSPDFR. It provides a clean, easy-to-use interface with multiple categories and useful features that players can access quickly during patrol, helping streamline gameplay and making everyday police duties more efficient and convenient.You can also find Simple Police Helper on the official LSPDFR Page. Take a look on GitHub or the LSPDFR Page for general solutions.How to Install1) Copy the contents...",
+          "snippet": "",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/sEbi3/Simple-Police-Helper/blob/master/README.md",
+          "domain": "github.com",
+          "title": "Simple-Police-Helper/README.md at master · sEbi3/Simple-Police-Helper",
+          "description": "A simple menu to make the patrols in LSPDFR easier. - Simple-Police-Helper/README.md at master · sEbi3/Simple-Police-Helper",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/sEbi3/Simple-Police-Helper",
+          "domain": "github.com",
+          "title": "Simple-Police-Helper",
+          "description": "A simple menu to make the patrols in LSPDFR easier.",
+          "snippet": "A simple menu to make the patrols in LSPDFR easier.",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 2,
+          "updatedAt": "2026-03-10T00:49:56Z",
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/simple-police-helper-menu-1-2-1-1/",
+          "domain": "gta5modhub.com",
+          "title": "Simple Police Helper Menu 1.2.1.1 - GTA 5 Mod Download",
+          "description": "SimplePoliceHelper V.1.2.1.1 The SimplePoliceHelper (SPH) is a simple menu with features to make the patrols easier. The menu is adding some options (see below). I&#8217;ll work on the menu and add new stuff and&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "default.",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/FloatLikeABee/serpicoproject",
+          "domain": "github.com",
+          "title": "serpicoproject",
+          "description": "Serpico is an AI Agent assistant helper application designed for police forces on patrol or in office use, as well as for civilians to check nearby safety status with AI assistance.",
+          "snippet": "Serpico is an AI Agent assistant helper application designed for police forces on patrol or in office use, as well as for civilians to check nearby safety status with AI assistance.",
+          "author": "FloatLikeABee",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-12T09:08:11Z",
+          "score": 76
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/simplepolicehelper-sebi3",
+          "domain": "gta5-mods.com",
+          "title": "Simple Police Helper",
+          "description": "Simple Police Helper is a lightweight menu for LSPDFR. It provides a clean, easy-to-use interface with multiple categories and useful features that players can access quickly during patrol, helping streamline gameplay and making everyday police duties more efficient and convenient.You can also find Simple Police Helper on the official LSPDFR Page. Take a look on GitHub or the LSPDFR Page for general solutions.How to Install1) Copy the contents...",
+          "snippet": "",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/ms/scripts/simplepolicehelper-sebi3",
+          "domain": "gta5-mods.com",
+          "title": "Simple Police Helper",
+          "description": "Simple Police Helper is a lightweight menu for LSPDFR. It provides a clean, easy-to-use interface with multiple categories and useful features that players can access quickly during patrol, helping streamline gameplay and making everyday police duties more efficient and convenient.You can also find Simple Police Helper on the official LSPDFR Page. Take a look on GitHub or the LSPDFR Page for general solutions.How to Install1) Copy the contents...",
+          "snippet": "",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/uk/scripts/simplepolicehelper-sebi3",
+          "domain": "gta5-mods.com",
+          "title": "Simple Police Helper",
+          "description": "Simple Police Helper is a lightweight menu for LSPDFR. It provides a clean, easy-to-use interface with multiple categories and useful features that players can access quickly during patrol, helping streamline gameplay and making everyday police duties more efficient and convenient.You can also find Simple Police Helper on the official LSPDFR Page. Take a look on GitHub or the LSPDFR Page for general solutions.How to Install1) Copy the contents...",
+          "snippet": "",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/sl/scripts/simplepolicehelper-sebi3",
+          "domain": "gta5-mods.com",
+          "title": "Simple Police Helper",
+          "description": "Simple Police Helper is a lightweight menu for LSPDFR. It provides a clean, easy-to-use interface with multiple categories and useful features that players can access quickly during patrol, helping streamline gameplay and making everyday police duties more efficient and convenient.You can also find Simple Police Helper on the official LSPDFR Page. Take a look on GitHub or the LSPDFR Page for general solutions.How to Install1) Copy the contents...",
+          "snippet": "",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/sEbi3/Simple-Police-Helper/blob/master/README.md",
+          "domain": "github.com",
+          "title": "Simple-Police-Helper/README.md at master · sEbi3/Simple-Police-Helper",
+          "description": "A simple menu to make the patrols in LSPDFR easier. - Simple-Police-Helper/README.md at master · sEbi3/Simple-Police-Helper",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/sEbi3/Simple-Police-Helper",
+          "domain": "github.com",
+          "title": "Simple-Police-Helper",
+          "description": "A simple menu to make the patrols in LSPDFR easier.",
+          "snippet": "A simple menu to make the patrols in LSPDFR easier.",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 2,
+          "updatedAt": "2026-03-10T00:49:56Z",
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/simple-police-helper-menu-1-2-1-1/",
+          "domain": "gta5modhub.com",
+          "title": "Simple Police Helper Menu 1.2.1.1 - GTA 5 Mod Download",
+          "description": "SimplePoliceHelper V.1.2.1.1 The SimplePoliceHelper (SPH) is a simple menu with features to make the patrols easier. The menu is adding some options (see below). I&#8217;ll work on the menu and add new stuff and&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "default.",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/FloatLikeABee/serpicoproject",
+          "domain": "github.com",
+          "title": "serpicoproject",
+          "description": "Serpico is an AI Agent assistant helper application designed for police forces on patrol or in office use, as well as for civilians to check nearby safety status with AI assistance.",
+          "snippet": "Serpico is an AI Agent assistant helper application designed for police forces on patrol or in office use, as well as for civilians to check nearby safety status with AI assistance.",
+          "author": "FloatLikeABee",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-12T09:08:11Z",
+          "score": 76
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "copyright statute that might otherwise b",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "Simon Cowell But Wait To See What Happen",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        }
+      ]
+    },
     {
       "id": "research-immersive-traffic-stops",
       "name": "Immersive Traffic Stops",
@@ -4436,6 +4753,174 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182291379-09742b1e",
+      "requestId": "expert-1784182291379-09742b1e",
+      "query": "Police Helper",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:11:50.581Z",
+      "completedAt": "2026-07-16T06:11:50.581Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 10,
+      "credibleCandidateCount": 8,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/simplepolicehelper-sebi3",
+          "domain": "gta5-mods.com",
+          "title": "Simple Police Helper",
+          "description": "Simple Police Helper is a lightweight menu for LSPDFR. It provides a clean, easy-to-use interface with multiple categories and useful features that players can access quickly during patrol, helping streamline gameplay and making everyday police duties more efficient and convenient.You can also find Simple Police Helper on the official LSPDFR Page. Take a look on GitHub or the LSPDFR Page for general solutions.How to Install1) Copy the contents...",
+          "snippet": "",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/ms/scripts/simplepolicehelper-sebi3",
+          "domain": "gta5-mods.com",
+          "title": "Simple Police Helper",
+          "description": "Simple Police Helper is a lightweight menu for LSPDFR. It provides a clean, easy-to-use interface with multiple categories and useful features that players can access quickly during patrol, helping streamline gameplay and making everyday police duties more efficient and convenient.You can also find Simple Police Helper on the official LSPDFR Page. Take a look on GitHub or the LSPDFR Page for general solutions.How to Install1) Copy the contents...",
+          "snippet": "",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/uk/scripts/simplepolicehelper-sebi3",
+          "domain": "gta5-mods.com",
+          "title": "Simple Police Helper",
+          "description": "Simple Police Helper is a lightweight menu for LSPDFR. It provides a clean, easy-to-use interface with multiple categories and useful features that players can access quickly during patrol, helping streamline gameplay and making everyday police duties more efficient and convenient.You can also find Simple Police Helper on the official LSPDFR Page. Take a look on GitHub or the LSPDFR Page for general solutions.How to Install1) Copy the contents...",
+          "snippet": "",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/sl/scripts/simplepolicehelper-sebi3",
+          "domain": "gta5-mods.com",
+          "title": "Simple Police Helper",
+          "description": "Simple Police Helper is a lightweight menu for LSPDFR. It provides a clean, easy-to-use interface with multiple categories and useful features that players can access quickly during patrol, helping streamline gameplay and making everyday police duties more efficient and convenient.You can also find Simple Police Helper on the official LSPDFR Page. Take a look on GitHub or the LSPDFR Page for general solutions.How to Install1) Copy the contents...",
+          "snippet": "",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/sEbi3/Simple-Police-Helper/blob/master/README.md",
+          "domain": "github.com",
+          "title": "Simple-Police-Helper/README.md at master · sEbi3/Simple-Police-Helper",
+          "description": "A simple menu to make the patrols in LSPDFR easier. - Simple-Police-Helper/README.md at master · sEbi3/Simple-Police-Helper",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/sEbi3/Simple-Police-Helper",
+          "domain": "github.com",
+          "title": "Simple-Police-Helper",
+          "description": "A simple menu to make the patrols in LSPDFR easier.",
+          "snippet": "A simple menu to make the patrols in LSPDFR easier.",
+          "author": "sEbi3",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 2,
+          "updatedAt": "2026-03-10T00:49:56Z",
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/simple-police-helper-menu-1-2-1-1/",
+          "domain": "gta5modhub.com",
+          "title": "Simple Police Helper Menu 1.2.1.1 - GTA 5 Mod Download",
+          "description": "SimplePoliceHelper V.1.2.1.1 The SimplePoliceHelper (SPH) is a simple menu with features to make the patrols easier. The menu is adding some options (see below). I&#8217;ll work on the menu and add new stuff and&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "default.",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/FloatLikeABee/serpicoproject",
+          "domain": "github.com",
+          "title": "serpicoproject",
+          "description": "Serpico is an AI Agent assistant helper application designed for police forces on patrol or in office use, as well as for civilians to check nearby safety status with AI assistance.",
+          "snippet": "Serpico is an AI Agent assistant helper application designed for police forces on patrol or in office use, as well as for civilians to check nearby safety status with AI assistance.",
+          "author": "FloatLikeABee",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-12T09:08:11Z",
+          "score": 76
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "copyright statute that might otherwise b",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "Simon Cowell But Wait To See What Happen",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        }
+      ]
+    },
     {
       "id": "expert-1784182268958-84d79a3f",
       "requestId": "expert-1784182268958-84d79a3f",
