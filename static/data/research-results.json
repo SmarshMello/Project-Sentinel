@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:16:23.084Z",
+  "updatedAt": "2026-07-16T06:17:57.949Z",
   "discoveries": [
     {
       "id": "research-air-support-plus",
@@ -6781,6 +6781,203 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182658879-66c28868",
+      "requestId": "expert-1784182658879-66c28868",
+      "query": "Smart Pursuits",
+      "status": "needs-manual-research",
+      "requestedAt": "2026-07-16T06:17:57.949Z",
+      "completedAt": "2026-07-16T06:17:57.949Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 0,
+      "candidates": [
+        {
+          "url": "https://github.com/Treasuredong/okx-smart-money-alpha-hunter",
+          "domain": "github.com",
+          "title": "okx-smart-money-alpha-hunter",
+          "description": "This is a smart money trading skill with onchainOS as its core infrastructure, designed for real-world on-chain execution. Its key features are not aggressiveness, but rather \"selectivity in hot topics, discipline in execution, and a balance between profit pursuit and exit quality.\"",
+          "snippet": "This is a smart money trading skill with onchainOS as its core infrastructure, designed for real-world on-chain execution. Its key features are not aggressiveness, but rather \"selectivity in hot topics, discipline in execution, and a balance between profit pursuit and exit quality.\"",
+          "author": "Treasuredong",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-05-21T06:05:11Z",
+          "score": 39
+        },
+        {
+          "url": "https://github.com/yakhsita/AURA-TRACK",
+          "domain": "github.com",
+          "title": "AURA-TRACK",
+          "description": "An autonomous follow-me drone using YOLO 🎯 for real-time human detection + smart tracking. Integrated with Mission Planner 🛰️ for waypoint missions, telemetry & tuning. Vision + flight control = smooth, stable pursuit. From bounding boxes 📦 to GPS paths 🌍 — it locks on, adapts mid-air, and flies smart 🚀.",
+          "snippet": "An autonomous follow-me drone using YOLO 🎯 for real-time human detection + smart tracking. Integrated with Mission Planner 🛰️ for waypoint missions, telemetry & tuning. Vision + flight control = smooth, stable pursuit. From bounding boxes 📦 to GPS paths 🌍 — it locks on, adapts mid-air, and flies smart 🚀.",
+          "author": "yakhsita",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-03-15T16:13:20Z",
+          "score": 39
+        },
+        {
+          "url": "https://github.com/bassehprince-star/vigilant-winner",
+          "domain": "github.com",
+          "title": "vigilant-winner",
+          "description": "Vigilant Winner celebrates the relentless achievers — those who stay alert, stay strong, and rise to the top through dedication and smart strategy. It’s not just about winning once, but about staying vigilant and consistent in every pursuit.",
+          "snippet": "Vigilant Winner celebrates the relentless achievers — those who stay alert, stay strong, and rise to the top through dedication and smart strategy. It’s not just about winning once, but about staying vigilant and consistent in every pursuit.",
+          "author": "bassehprince-star",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-11-10T10:33:26Z",
+          "score": 39
+        },
+        {
+          "url": "https://github.com/ucheisiakpon/xoeorbital-momentum-vault",
+          "domain": "github.com",
+          "title": "xoeorbital-momentum-vault",
+          "description": "A Clarity smart contract enabling decentralized tracking, prioritization, temporal management, and delegation of individual pursuit objectives with real-time status updates and collaborative accountability.",
+          "snippet": "A Clarity smart contract enabling decentralized tracking, prioritization, temporal management, and delegation of individual pursuit objectives with real-time status updates and collaborative accountability.",
+          "author": "ucheisiakpon",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-07-19T17:23:22Z",
+          "score": 39
+        },
+        {
+          "url": "https://github.com/ademolamodupe/solaris-quests-protocol",
+          "domain": "github.com",
+          "title": "solaris-quests-protocol",
+          "description": "A Clarity-based smart contract protocol for managing blockchain-verified pursuit records with cryptographic identity, deadline tracking, priority classification, and secure modification and transfer functionality.",
+          "snippet": "A Clarity-based smart contract protocol for managing blockchain-verified pursuit records with cryptographic identity, deadline tracking, priority classification, and secure modification and transfer functionality.",
+          "author": "ademolamodupe",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-07-10T06:18:10Z",
+          "score": 39
+        },
+        {
+          "url": "https://github.com/Alisafi66/Smart-Robot-Moves",
+          "domain": "github.com",
+          "title": "Smart-Robot-Moves",
+          "description": " Creating autonomous systems that can navigate and interact with their environment has  been a long-standing pursuit in the field of robotics.",
+          "snippet": " Creating autonomous systems that can navigate and interact with their environment has  been a long-standing pursuit in the field of robotics.",
+          "author": "Alisafi66",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2024-05-03T18:34:28Z",
+          "score": 39
+        },
+        {
+          "url": "https://github.com/notwhoithinkiam/cs50",
+          "domain": "github.com",
+          "title": "cs50",
+          "description": "I am self-teaching programming/computer science & cybersecurity (with a web2/web3 concentration). My ultimate goal is to work as an independent smart contract auditor.  CS50 is my first step in this pursuit.  I will be completing all courses (X, P, AI, SQL, W, SEC, G) after which I will complete Full Stack Open to make sure I am up-to-date!",
+          "snippet": "I am self-teaching programming/computer science & cybersecurity (with a web2/web3 concentration). My ultimate goal is to work as an independent smart contract auditor.  CS50 is my first step in this pursuit.  I will be completing all courses (X, P, AI, SQL, W, SEC, G) after which I will complete Full Stack Open to make sure I am up-to-date!",
+          "author": "notwhoithinkiam",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2024-01-21T20:21:33Z",
+          "score": 39
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/SMART_criteria",
+          "domain": "en.wikipedia.org",
+          "title": "SMART criteria - Wikipedia",
+          "description": "SMART is a mnemonic acronym used to establish criteria for goals and objectives that are specific, measurable, assignable, realistic, …",
+          "snippet": "SMART is a mnemonic acronym used to establish criteria for goals and objectives that are specific, measurable, assignable, realistic, … SMART is a mnemonic acronym used to establish criteria for goals and objectives that are specific, measurable, assignable, realistic, and time-bound. This framework is commonly applied in fields …",
+          "author": "Wikidata",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 19
+        },
+        {
+          "url": "https://www.snhu.edu/about-us/newsroom/education/what-are-smart-goals",
+          "domain": "snhu.edu",
+          "title": "What Are SMART Goals? A Breakdown With Examples",
+          "description": "A helpful technique to set your goals is making them SMART. But what are SMART goals? How do you write them? Discover examples at work, school and beyond.",
+          "snippet": "Mar 5, 2026 &nbsp;&#0183;&#32;The “SMART” in SMART goal is an acronym that stands for specific, measurable, achievable, relevant and time-bound. … Mar 5, 2026 &nbsp;&#0183;&#32;The “SMART” in SMART goal is an acronym that stands for specific, measurable, achievable, relevant and time-bound. Those are the 5 boxes you need to check when you're making …",
+          "author": "Location",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 13
+        },
+        {
+          "url": "https://www.forbes.com/advisor/business/smart-goals-1/",
+          "domain": "forbes.com",
+          "title": "The Ultimate Guide to S.M.A.R.T . Goals – Forbes Advisor",
+          "description": "Jun 12, 2026 &nbsp;&#0183;&#32;Fortunately, S.M.A.R.T. (specific, measurable, achievable, relevant and time-bound) goals can help all project …",
+          "snippet": "Jun 12, 2026 &nbsp;&#0183;&#32;Fortunately, S.M.A.R.T. (specific, measurable, achievable, relevant and time-bound) goals can help all project … Jun 12, 2026 &nbsp;&#0183;&#32;Fortunately, S.M.A.R.T. (specific, measurable, achievable, relevant and time-bound) goals can help all project managers create clearly defined mission objectives that can help ensure …",
+          "author": "",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 13
+        },
+        {
+          "url": "https://corporatefinanceinstitute.com/resources/management/smart-goal/",
+          "domain": "corporatefinanceinstitute.com",
+          "title": "SMART Goals",
+          "description": "A SMART goal is used to help guide goal setting. SMART is an acronym that stands for Specific, Measurable, Achievable, Realistic, and Timely.",
+          "snippet": "Jun 16, 2020 &nbsp;&#0183;&#32;A SMART goal is used to help guide goal setting. SMART is an acronym that stands for Specific, Measurable, … Jun 16, 2020 &nbsp;&#0183;&#32;A SMART goal is used to help guide goal setting. SMART is an acronym that stands for Specific, Measurable, Achievable, Realistic, and Timely.",
+          "author": "Schema Pro --",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 13
+        },
+        {
+          "url": "https://asana.com/resources/smart-goals",
+          "domain": "asana.com",
+          "title": "Set—and achieve—SMART-er goals [2026]",
+          "description": "Discover the potential of SMART goals to transform your life and business. Get actionable SMART goals examples and templates for a successful path.",
+          "snippet": "Jan 5, 2026 &nbsp;&#0183;&#32;SMART is an acronym for specific, measurable, achievable, realistic, and time-bound. In this article, we'll dive into why … Jan 5, 2026 &nbsp;&#0183;&#32;SMART is an acronym for specific, measurable, achievable, realistic, and time-bound. In this article, we'll dive into why each element of the SMART goals acronym is essential and how to …",
+          "author": "making them SMART. SMART stands for spec",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 13
+        }
+      ]
+    },
     {
       "id": "expert-1784182563521-52bc98b1",
       "requestId": "expert-1784182563521-52bc98b1",
