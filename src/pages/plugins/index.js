@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import PluginStatus from '@site/src/components/PluginStatus';
 import {pluginCategories, plugins, statusMeta} from '@site/src/data/plugins';
+import {collectResearchProjects, researchProfileUrl} from '@site/src/data/researchRegistry';
 import styles from './styles.module.css';
 
 const Icon = ({name}) => {
@@ -52,7 +53,7 @@ function PluginCard({plugin}) {
       </div>
       <p className={styles.note}>{plugin.note}</p>
       <div className={styles.cardActions}>
-        <Link className={styles.guideButton} to={`/plugins/${plugin.id}`}>Plugin profile <Icon name="arrow"/></Link>
+        <Link className={styles.guideButton} to={plugin.researchDiscovered ? researchProfileUrl(plugin) : `/plugins/${plugin.id}`}>Plugin profile <Icon name="arrow"/></Link>
         {plugin.guide && <Link className={styles.iconButton} to={plugin.guide} aria-label={`Open installation guide for ${plugin.name}`}>G</Link>}
         {plugin.download && <a className={styles.iconButton} href={plugin.download} target="_blank" rel="noreferrer" aria-label={`Open official download for ${plugin.name}`}><Icon name="external"/></a>}
       </div>
@@ -63,7 +64,7 @@ function PluginCard({plugin}) {
 export default function PluginDatabase() {
   const researchUrl=useBaseUrl('/data/research-results.json');
   const [allPlugins,setAllPlugins]=useState(plugins);
-  useEffect(()=>{let active=true;fetch(`${researchUrl}?registry=${Date.now()}`,{cache:'no-store'}).then(r=>r.ok?r.json():null).then(data=>{if(!active||!data)return;const known=new Set(plugins.map(x=>x.id));setAllPlugins([...plugins,...(data.discoveries||[]).filter(x=>!known.has(x.id))]);}).catch(()=>{});return()=>{active=false};},[researchUrl]);
+  useEffect(()=>{let active=true;fetch(`${researchUrl}?registry=${Date.now()}`,{cache:'no-store'}).then(r=>r.ok?r.json():null).then(data=>{if(!active||!data)return;const known=new Set(plugins.map(x=>x.id));setAllPlugins([...plugins,...collectResearchProjects(data).filter(x=>!known.has(x.id))]);}).catch(()=>{});return()=>{active=false};},[researchUrl]);
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All');
   const [status, setStatus] = useState('all');

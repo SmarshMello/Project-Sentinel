@@ -8,6 +8,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {answerExpertQuestion,expertExamples,statusMeta} from '@site/src/data/expertEngine';
 import {createExpertContext,downloadExpertContext,saveExpertContext} from '@site/src/data/expertHandoff';
 import {researchDimensions} from '@site/src/data/researchAssessment';
+import {collectResearchProjects} from '@site/src/data/researchRegistry';
 import styles from './styles.module.css';
 
 function WatcherBadge({p}){if(!p.watcherTracked)return <span className={styles.untracked}>Not monitored</span>;const w=p.watcher;return <span className={w.status==='healthy'?styles.liveGood:styles.liveWarn}>{w.status==='healthy'?'Live healthy':String(w.status||'unknown').replaceAll('-',' ')}</span>}
@@ -44,7 +45,7 @@ function App(){
   const activeResearch=useRef(null);
   const normalizeResearchQuery=(value='')=>String(value).toLowerCase().replace(/[^a-z0-9]+/g,' ').replace(/\s+/g,' ').trim();
   const researchStorageKey='sentinel-active-research-v1';
-  useEffect(()=>{let active=true;Promise.allSettled([fetch(`${reportUrl}?expert=${Date.now()}`,{cache:'no-store'}),fetch(`${researchUrl}?expert=${Date.now()}`,{cache:'no-store'})]).then(async results=>{if(!active)return;const [reportResult,researchResult]=results;if(reportResult.status==='fulfilled'&&reportResult.value.ok){setReport(await reportResult.value.json());setLiveState('ready');}else setLiveState('offline');if(researchResult.status==='fulfilled'&&researchResult.value.ok){const data=await researchResult.value.json();setDiscoveries(data.discoveries||[]);}});return()=>{active=false;pollToken.current+=1};},[reportUrl,researchUrl]);
+  useEffect(()=>{let active=true;Promise.allSettled([fetch(`${reportUrl}?expert=${Date.now()}`,{cache:'no-store'}),fetch(`${researchUrl}?expert=${Date.now()}`,{cache:'no-store'})]).then(async results=>{if(!active)return;const [reportResult,researchResult]=results;if(reportResult.status==='fulfilled'&&reportResult.value.ok){setReport(await reportResult.value.json());setLiveState('ready');}else setLiveState('offline');if(researchResult.status==='fulfilled'&&researchResult.value.ok){const data=await researchResult.value.json();setDiscoveries(collectResearchProjects(data));}});return()=>{active=false;pollToken.current+=1};},[reportUrl,researchUrl]);
   const related=useMemo(()=>r?.mentions?.length?[`What version of ${r.mentions[0].name} should I use?`,`What does ${r.mentions[0].name} require?`,`What is the install order for ${r.mentions[0].name}?`]:expertExamples.slice(0,3),[r]);
   function context(){return r?createExpertContext(q,r):null;}
   function save(){const c=context();if(c&&saveExpertContext(c)){setSaved(true);window.setTimeout(()=>setSaved(false),1800);}}
@@ -92,7 +93,7 @@ function App(){
           if(status.conclusion!=='success')throw new Error('run-failed');
           const published=await loadPublishedResearch(query,requestId,requestedAt,token,key);
           if(!published)throw new Error('publish-timeout');
-          const nextDiscoveries=published.data.discoveries||[];
+          const nextDiscoveries=collectResearchProjects(published.data);
           setDiscoveries(nextDiscoveries);
           if(published.request.status==='resolved'){
             const answer=answerExpertQuestion(question,report,nextDiscoveries);

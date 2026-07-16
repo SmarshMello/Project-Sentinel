@@ -2,6 +2,7 @@ import {registry, resolveDependency, statusMeta} from './registry';
 import {createInstallPlan} from './installPlanner';
 import {buildValidationChecklist, evaluateProjects} from './expertReasoning';
 import {compatibilityAssessment} from './researchAssessment';
+import {researchProfileUrl} from './researchRegistry';
 
 const norm=(v='')=>String(v).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9.+# -]/g,' ').replace(/\s+/g,' ').trim();
 const alias={
@@ -15,7 +16,7 @@ const conflicts=[
  {ids:['policing-redefined','compulite'],reason:'The registry documents CompuLite as incompatible with the Policing Redefined branch.'}
 ];
 export const expertExamples=['Can I install Grammar Police, Stop The Ped, Ultimate Backup and CompuLite together?','Can I install Policing Redefined with Stop The Ped?','What version of RAGENativeUI should I use?','What does Ultimate Backup require?','Show me callout packs in testing.','Why is EUP Menu not working?'];
-function combinedRegistry(discoveries=[]){const out=new Map(registry.map(p=>[p.id,p]));for(const item of discoveries||[]){if(!item?.id||out.has(item.id))continue;out.set(item.id,{...item,status:item.status||'research',compatibilityStatus:'research',profile:item.profile||'/plugins',watcherTracked:false,researchDiscovered:true});}return [...out.values()];}
+function combinedRegistry(discoveries=[]){const out=new Map(registry.map(p=>[p.id,p]));for(const item of discoveries||[]){if(!item?.id||out.has(item.id))continue;out.set(item.id,{...item,status:item.status||'research',compatibilityStatus:'research',profile:item.profile||researchProfileUrl(item),watcherTracked:false,researchDiscovered:true});}return [...out.values()];}
 function phraseMatch(text, phrase){
  const target=norm(phrase);
  if(!target)return false;
@@ -53,6 +54,6 @@ export function answerExpertQuestion(q,report=null,discoveries=[]){const basePro
  if(type==='project'&&projects.length)result={...result,reasoning:evaluateProjects(projects,[])};
  if(type==='doctor')result={...result,tone:'warning',verdict:'Continue in Sentinel Doctor',summary:projects.length?`Recognized ${projects.map(p=>p.name).join(', ')}. Doctor can combine these projects with versions, symptoms, logs, and repair rules.`:'Troubleshooting needs environment details and preferably a log. Sentinel Doctor is built for that workflow.'};
  if(type==='help')result={...result,tone:'neutral',verdict:'Ask about a project or stack',summary:'Expert answers versions, dependencies, install order, compatibility, live Watcher status, registry searches, and troubleshooting handoffs.'};
- const unknown=unknownCandidate(q,projects,discoveries);if(unknown){result={...result,type:'unknown',tone:'warning',verdict:'Project not yet known',summary:`Sentinel could not match “${unknown}” to the unified registry or published research results. A Watcher research request can collect candidate official sources, dependencies, and compatibility clues for review.`,unknownProject:unknown};}
+ const unknown=unknownCandidate(q,projects,discoveries);if(unknown){result={...result,type:'unknown',tone:'warning',verdict:'Project not yet known',summary:`Sentinel could not match “${unknown}” to the unified registry or published research results. Sentinel Research must investigate it before a compatibility conclusion is possible.`,unknownProject:unknown,reasoning:null,researchAssessment:null,confidence:null,recommendation:'Research required',warnings:[],installPlan:[],validationChecklist:[]};}
  result.dependencies=projects.map(plugin=>({plugin,items:(plugin.dependencies||[]).map(name=>({name,project:resolveDependency(name)}))}));return result;}
 export {statusMeta};

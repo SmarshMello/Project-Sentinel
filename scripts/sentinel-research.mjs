@@ -329,6 +329,7 @@ if (credible.length) {
     sentinelPolice: false,
     researchDiscovered: true,
     researchStatus: 'pending-review',
+    profile: `/plugins/research?project=${encodeURIComponent(id)}`,
     requestedAt: now,
     sources: credible,
     candidates,
