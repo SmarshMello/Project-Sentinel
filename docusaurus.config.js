@@ -44,6 +44,7 @@ const config = {
         {to: '/', label: 'Mission Control', position: 'left'},
         {label: 'Operations', position: 'left', items: [
           {to: '/operations', label: 'Operations Center'},
+          {to: '/intelligence', label: 'Sentinel Intelligence'},
           {to: '/watcher', label: 'Live Watcher'},
           {to: '/operations/projects', label: 'Project Profiles'},
           {to: '/operations/analytics', label: 'Watcher Analytics'},
@@ -72,6 +73,7 @@ const config = {
         ]},
         {label: 'Tools', position: 'left', items: [
           {to: '/sentinel-ai', label: 'Sentinel Expert System'},
+          {to: '/intelligence', label: 'Sentinel Intelligence'},
           {to: '/dashboard', label: 'Operations Dashboard'},
           {to: '/watcher', label: 'Sentinel Watcher'},
           {to: '/planner', label: 'Build Planner'},
