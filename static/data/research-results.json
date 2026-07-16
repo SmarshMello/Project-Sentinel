@@ -1,7 +1,414 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:13:14.935Z",
+  "updatedAt": "2026-07-16T06:14:03.654Z",
   "discoveries": [
+    {
+      "id": "research-vehicle-impound",
+      "name": "Vehicle Impound",
+      "shortName": null,
+      "aliases": [
+        "Vehicle Impound",
+        "vehicle-impound",
+        "pulsar-tow",
+        "vehicle_impoundment",
+        "JRaxion Advanced Impound Script",
+        "Los Santos Impound MLO | FiveM Maps",
+        "Impound MLO FiveM | Los Santos Vehicle Impound Interior",
+        "Vehicle Impound Report Generator — FiveM RP | Northbayjoe",
+        "StreetSweeper Impound - Script Modifications & Plugins - LCPDFR.com",
+        "pulsar-vehicles"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "chrisverdad",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 90,
+      "documentationConfidence": 63,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "Sentinel Research found credible public sources for Vehicle Impound. Compatibility remains unverified until review.",
+      "dependencies": [],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://github.com/chrisverdad/vehicle-impound",
+      "note": "Research Engine found 12 credible sources across 6 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-vehicle-impound",
+      "requestedAt": "2026-07-16T06:14:03.654Z",
+      "sources": [
+        {
+          "url": "https://github.com/chrisverdad/vehicle-impound",
+          "domain": "github.com",
+          "title": "vehicle-impound",
+          "description": "",
+          "snippet": "",
+          "author": "chrisverdad",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-04-17T16:59:01Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/PulsarFW/pulsar-tow",
+          "domain": "github.com",
+          "title": "pulsar-tow",
+          "description": "Tow truck job for vehicle impounding and recovery in FiveM for Pulsar Framework",
+          "snippet": "Tow truck job for vehicle impounding and recovery in FiveM for Pulsar Framework",
+          "author": "PulsarFW",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-05-07T00:39:56Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/WenEryel/vehicle_impoundment",
+          "domain": "github.com",
+          "title": "vehicle_impoundment",
+          "description": "",
+          "snippet": "",
+          "author": "WenEryel",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-12-14T01:09:04Z",
+          "score": 100
+        },
+        {
+          "url": "https://forum.cfx.re/t/jraxion-advanced-impound-script/5353674",
+          "domain": "forum.cfx.re",
+          "title": "JRaxion Advanced Impound Script",
+          "description": "JRaxion Advanced Impound Script \nProfessional vehicle impound system with evidence photos, search filters, and complete audit logging for FiveM servers. \n:sparkles: Key Features of Advanced Impound Script\n:bullseye: Core&hellip;",
+          "snippet": "",
+          "author": "Discourse",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://fivem.gg/product/los-santos-impound-mlo",
+          "domain": "fivem.gg",
+          "title": "Los Santos Impound MLO | FiveM Maps",
+          "description": "Download Los Santos Impound MLO for FiveM – a realistic vehicle impound lot and police garage designed for law enforcement RP. Compatible with ESX, QB-Core, and",
+          "snippet": "",
+          "author": "Site Kit --",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://fivem-mlo.com/products/impound-mlo-fivem",
+          "domain": "fivem-mlo.com",
+          "title": "Impound MLO FiveM | Los Santos Vehicle Impound Interior",
+          "description": "Meta Description Impound MLO FiveM is a detailed Los Santos vehicle impound facility with reception, offices, storage, and secure exterior.",
+          "snippet": "",
+          "author": "FiveM Mod",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 98
+        },
+        {
+          "url": "https://northbayjoe.stream/impound-generator.php",
+          "domain": "northbayjoe.stream",
+          "title": "Vehicle Impound Report Generator — FiveM RP | Northbayjoe",
+          "description": "Generate detailed FiveM RP vehicle impound reports — registration, condition, towing details, and chain-of-custody, in seconds.",
+          "snippet": "",
+          "author": "Northbayjoe",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 98
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53140-streetsweeper-impound/",
+          "domain": "lcpdfr.com",
+          "title": "StreetSweeper Impound - Script Modifications & Plugins - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 89
+        },
+        {
+          "url": "https://github.com/PulsarFW/pulsar-vehicles",
+          "domain": "github.com",
+          "title": "pulsar-vehicles",
+          "description": "Vehicle management with storage, impound, sirens, and pursuit modes in FiveM for Pulsar Framework",
+          "snippet": "Vehicle management with storage, impound, sirens, and pursuit modes in FiveM for Pulsar Framework",
+          "author": "PulsarFW",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-23T06:26:41Z",
+          "score": 78
+        },
+        {
+          "url": "https://github.com/ghostcorefivem-byte/gc-valet",
+          "domain": "github.com",
+          "title": "gc-valet",
+          "description": "GC-Valet solves common garage and vehicle issues by allowing players to call their vehicles reliably, even when phone systems fail. Includes a full admin impound system to keep your city clean and optimized.  Designed to be efficient, secure, and fully controlled server-side.",
+          "snippet": "GC-Valet solves common garage and vehicle issues by allowing players to call their vehicles reliably, even when phone systems fail. Includes a full admin impound system to keep your city clean and optimized.  Designed to be efficient, secure, and fully controlled server-side.",
+          "author": "ghostcorefivem-byte",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-04-16T20:54:11Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/vmRyn/ryn-garages",
+          "domain": "github.com",
+          "title": "ryn-garages",
+          "description": "Cinematic FiveM garage system for ESX / QB / QBox — tablet vehicle bay UI, public/private/job/gang/boat/air/impound, sharing, transfers, and auto-sync from player_vehicles.",
+          "snippet": "Cinematic FiveM garage system for ESX / QB / QBox — tablet vehicle bay UI, public/private/job/gang/boat/air/impound, sharing, transfers, and auto-sync from player_vehicles.",
+          "author": "vmRyn",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-12T10:08:57Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/sairamkishan300/Advanced-Vehicles-System-Vehicle-Repair-Shop-for-Roleplay",
+          "domain": "github.com",
+          "title": "Advanced-Vehicles-System-Vehicle-Repair-Shop-for-Roleplay",
+          "description": "This repository contains **two standalone but compatible MTA:SA resources**: - **`Vehicles`** – full vehicle ownership system with garage, impound, car shop, speedometer/mechanics, car panel, and vehicle documents. - **`vehiclerepair`** – mechanic shop with HTML UI for **repairs, upgrades, handling tuning, storage upgrades, paintjobs and colours**.",
+          "snippet": "This repository contains **two standalone but compatible MTA:SA resources**: - **`Vehicles`** – full vehicle ownership system with garage, impound, car shop, speedometer/mechanics, car panel, and vehicle documents. - **`vehiclerepair`** – mechanic shop with HTML UI for **repairs, upgrades, handling tuning, storage upgrades, paintjobs and colours**.",
+          "author": "sairamkishan300",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 2,
+          "updatedAt": "2026-05-13T01:45:10Z",
+          "score": 72
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://github.com/chrisverdad/vehicle-impound",
+          "domain": "github.com",
+          "title": "vehicle-impound",
+          "description": "",
+          "snippet": "",
+          "author": "chrisverdad",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-04-17T16:59:01Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/PulsarFW/pulsar-tow",
+          "domain": "github.com",
+          "title": "pulsar-tow",
+          "description": "Tow truck job for vehicle impounding and recovery in FiveM for Pulsar Framework",
+          "snippet": "Tow truck job for vehicle impounding and recovery in FiveM for Pulsar Framework",
+          "author": "PulsarFW",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-05-07T00:39:56Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/WenEryel/vehicle_impoundment",
+          "domain": "github.com",
+          "title": "vehicle_impoundment",
+          "description": "",
+          "snippet": "",
+          "author": "WenEryel",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-12-14T01:09:04Z",
+          "score": 100
+        },
+        {
+          "url": "https://forum.cfx.re/t/jraxion-advanced-impound-script/5353674",
+          "domain": "forum.cfx.re",
+          "title": "JRaxion Advanced Impound Script",
+          "description": "JRaxion Advanced Impound Script \nProfessional vehicle impound system with evidence photos, search filters, and complete audit logging for FiveM servers. \n:sparkles: Key Features of Advanced Impound Script\n:bullseye: Core&hellip;",
+          "snippet": "",
+          "author": "Discourse",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://fivem.gg/product/los-santos-impound-mlo",
+          "domain": "fivem.gg",
+          "title": "Los Santos Impound MLO | FiveM Maps",
+          "description": "Download Los Santos Impound MLO for FiveM – a realistic vehicle impound lot and police garage designed for law enforcement RP. Compatible with ESX, QB-Core, and",
+          "snippet": "",
+          "author": "Site Kit --",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://fivem-mlo.com/products/impound-mlo-fivem",
+          "domain": "fivem-mlo.com",
+          "title": "Impound MLO FiveM | Los Santos Vehicle Impound Interior",
+          "description": "Meta Description Impound MLO FiveM is a detailed Los Santos vehicle impound facility with reception, offices, storage, and secure exterior.",
+          "snippet": "",
+          "author": "FiveM Mod",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 98
+        },
+        {
+          "url": "https://northbayjoe.stream/impound-generator.php",
+          "domain": "northbayjoe.stream",
+          "title": "Vehicle Impound Report Generator — FiveM RP | Northbayjoe",
+          "description": "Generate detailed FiveM RP vehicle impound reports — registration, condition, towing details, and chain-of-custody, in seconds.",
+          "snippet": "",
+          "author": "Northbayjoe",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 98
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53140-streetsweeper-impound/",
+          "domain": "lcpdfr.com",
+          "title": "StreetSweeper Impound - Script Modifications & Plugins - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 89
+        },
+        {
+          "url": "https://github.com/PulsarFW/pulsar-vehicles",
+          "domain": "github.com",
+          "title": "pulsar-vehicles",
+          "description": "Vehicle management with storage, impound, sirens, and pursuit modes in FiveM for Pulsar Framework",
+          "snippet": "Vehicle management with storage, impound, sirens, and pursuit modes in FiveM for Pulsar Framework",
+          "author": "PulsarFW",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-23T06:26:41Z",
+          "score": 78
+        },
+        {
+          "url": "https://github.com/ghostcorefivem-byte/gc-valet",
+          "domain": "github.com",
+          "title": "gc-valet",
+          "description": "GC-Valet solves common garage and vehicle issues by allowing players to call their vehicles reliably, even when phone systems fail. Includes a full admin impound system to keep your city clean and optimized.  Designed to be efficient, secure, and fully controlled server-side.",
+          "snippet": "GC-Valet solves common garage and vehicle issues by allowing players to call their vehicles reliably, even when phone systems fail. Includes a full admin impound system to keep your city clean and optimized.  Designed to be efficient, secure, and fully controlled server-side.",
+          "author": "ghostcorefivem-byte",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-04-16T20:54:11Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/vmRyn/ryn-garages",
+          "domain": "github.com",
+          "title": "ryn-garages",
+          "description": "Cinematic FiveM garage system for ESX / QB / QBox — tablet vehicle bay UI, public/private/job/gang/boat/air/impound, sharing, transfers, and auto-sync from player_vehicles.",
+          "snippet": "Cinematic FiveM garage system for ESX / QB / QBox — tablet vehicle bay UI, public/private/job/gang/boat/air/impound, sharing, transfers, and auto-sync from player_vehicles.",
+          "author": "vmRyn",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-12T10:08:57Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/sairamkishan300/Advanced-Vehicles-System-Vehicle-Repair-Shop-for-Roleplay",
+          "domain": "github.com",
+          "title": "Advanced-Vehicles-System-Vehicle-Repair-Shop-for-Roleplay",
+          "description": "This repository contains **two standalone but compatible MTA:SA resources**: - **`Vehicles`** – full vehicle ownership system with garage, impound, car shop, speedometer/mechanics, car panel, and vehicle documents. - **`vehiclerepair`** – mechanic shop with HTML UI for **repairs, upgrades, handling tuning, storage upgrades, paintjobs and colours**.",
+          "snippet": "This repository contains **two standalone but compatible MTA:SA resources**: - **`Vehicles`** – full vehicle ownership system with garage, impound, car shop, speedometer/mechanics, car panel, and vehicle documents. - **`vehiclerepair`** – mechanic shop with HTML UI for **repairs, upgrades, handling tuning, storage upgrades, paintjobs and colours**.",
+          "author": "sairamkishan300",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 2,
+          "updatedAt": "2026-05-13T01:45:10Z",
+          "score": 72
+        }
+      ]
+    },
     {
       "id": "research-roadside-assistance",
       "name": "Roadside Assistance",
@@ -5160,6 +5567,203 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182408537-4a311df8",
+      "requestId": "expert-1784182408537-4a311df8",
+      "query": "Vehicle Impound",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:14:03.654Z",
+      "completedAt": "2026-07-16T06:14:03.654Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 12,
+      "candidates": [
+        {
+          "url": "https://github.com/chrisverdad/vehicle-impound",
+          "domain": "github.com",
+          "title": "vehicle-impound",
+          "description": "",
+          "snippet": "",
+          "author": "chrisverdad",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-04-17T16:59:01Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/PulsarFW/pulsar-tow",
+          "domain": "github.com",
+          "title": "pulsar-tow",
+          "description": "Tow truck job for vehicle impounding and recovery in FiveM for Pulsar Framework",
+          "snippet": "Tow truck job for vehicle impounding and recovery in FiveM for Pulsar Framework",
+          "author": "PulsarFW",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-05-07T00:39:56Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/WenEryel/vehicle_impoundment",
+          "domain": "github.com",
+          "title": "vehicle_impoundment",
+          "description": "",
+          "snippet": "",
+          "author": "WenEryel",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-12-14T01:09:04Z",
+          "score": 100
+        },
+        {
+          "url": "https://forum.cfx.re/t/jraxion-advanced-impound-script/5353674",
+          "domain": "forum.cfx.re",
+          "title": "JRaxion Advanced Impound Script",
+          "description": "JRaxion Advanced Impound Script \nProfessional vehicle impound system with evidence photos, search filters, and complete audit logging for FiveM servers. \n:sparkles: Key Features of Advanced Impound Script\n:bullseye: Core&hellip;",
+          "snippet": "",
+          "author": "Discourse",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://fivem.gg/product/los-santos-impound-mlo",
+          "domain": "fivem.gg",
+          "title": "Los Santos Impound MLO | FiveM Maps",
+          "description": "Download Los Santos Impound MLO for FiveM – a realistic vehicle impound lot and police garage designed for law enforcement RP. Compatible with ESX, QB-Core, and",
+          "snippet": "",
+          "author": "Site Kit --",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://fivem-mlo.com/products/impound-mlo-fivem",
+          "domain": "fivem-mlo.com",
+          "title": "Impound MLO FiveM | Los Santos Vehicle Impound Interior",
+          "description": "Meta Description Impound MLO FiveM is a detailed Los Santos vehicle impound facility with reception, offices, storage, and secure exterior.",
+          "snippet": "",
+          "author": "FiveM Mod",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 98
+        },
+        {
+          "url": "https://northbayjoe.stream/impound-generator.php",
+          "domain": "northbayjoe.stream",
+          "title": "Vehicle Impound Report Generator — FiveM RP | Northbayjoe",
+          "description": "Generate detailed FiveM RP vehicle impound reports — registration, condition, towing details, and chain-of-custody, in seconds.",
+          "snippet": "",
+          "author": "Northbayjoe",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 98
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53140-streetsweeper-impound/",
+          "domain": "lcpdfr.com",
+          "title": "StreetSweeper Impound - Script Modifications & Plugins - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 89
+        },
+        {
+          "url": "https://github.com/PulsarFW/pulsar-vehicles",
+          "domain": "github.com",
+          "title": "pulsar-vehicles",
+          "description": "Vehicle management with storage, impound, sirens, and pursuit modes in FiveM for Pulsar Framework",
+          "snippet": "Vehicle management with storage, impound, sirens, and pursuit modes in FiveM for Pulsar Framework",
+          "author": "PulsarFW",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-23T06:26:41Z",
+          "score": 78
+        },
+        {
+          "url": "https://github.com/ghostcorefivem-byte/gc-valet",
+          "domain": "github.com",
+          "title": "gc-valet",
+          "description": "GC-Valet solves common garage and vehicle issues by allowing players to call their vehicles reliably, even when phone systems fail. Includes a full admin impound system to keep your city clean and optimized.  Designed to be efficient, secure, and fully controlled server-side.",
+          "snippet": "GC-Valet solves common garage and vehicle issues by allowing players to call their vehicles reliably, even when phone systems fail. Includes a full admin impound system to keep your city clean and optimized.  Designed to be efficient, secure, and fully controlled server-side.",
+          "author": "ghostcorefivem-byte",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-04-16T20:54:11Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/vmRyn/ryn-garages",
+          "domain": "github.com",
+          "title": "ryn-garages",
+          "description": "Cinematic FiveM garage system for ESX / QB / QBox — tablet vehicle bay UI, public/private/job/gang/boat/air/impound, sharing, transfers, and auto-sync from player_vehicles.",
+          "snippet": "Cinematic FiveM garage system for ESX / QB / QBox — tablet vehicle bay UI, public/private/job/gang/boat/air/impound, sharing, transfers, and auto-sync from player_vehicles.",
+          "author": "vmRyn",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-12T10:08:57Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/sairamkishan300/Advanced-Vehicles-System-Vehicle-Repair-Shop-for-Roleplay",
+          "domain": "github.com",
+          "title": "Advanced-Vehicles-System-Vehicle-Repair-Shop-for-Roleplay",
+          "description": "This repository contains **two standalone but compatible MTA:SA resources**: - **`Vehicles`** – full vehicle ownership system with garage, impound, car shop, speedometer/mechanics, car panel, and vehicle documents. - **`vehiclerepair`** – mechanic shop with HTML UI for **repairs, upgrades, handling tuning, storage upgrades, paintjobs and colours**.",
+          "snippet": "This repository contains **two standalone but compatible MTA:SA resources**: - **`Vehicles`** – full vehicle ownership system with garage, impound, car shop, speedometer/mechanics, car panel, and vehicle documents. - **`vehiclerepair`** – mechanic shop with HTML UI for **repairs, upgrades, handling tuning, storage upgrades, paintjobs and colours**.",
+          "author": "sairamkishan300",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 2,
+          "updatedAt": "2026-05-13T01:45:10Z",
+          "score": 72
+        }
+      ]
+    },
     {
       "id": "expert-1784182353682-8f547f85",
       "requestId": "expert-1784182353682-8f547f85",
