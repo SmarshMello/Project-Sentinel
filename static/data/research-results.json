@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:11:02.613Z",
+  "updatedAt": "2026-07-16T06:11:23.035Z",
   "discoveries": [
     {
       "id": "research-immersive-traffic-stops",
@@ -4436,6 +4436,38 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182268958-84d79a3f",
+      "requestId": "expert-1784182268958-84d79a3f",
+      "query": "Officer Backup Plus",
+      "status": "needs-manual-research",
+      "requestedAt": "2026-07-16T06:11:23.035Z",
+      "completedAt": "2026-07-16T06:11:23.035Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 1,
+      "credibleCandidateCount": 0,
+      "candidates": [
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "GTA V PNP LSPDFR",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        }
+      ]
+    },
     {
       "id": "expert-1784182238607-6bdb779e",
       "requestId": "expert-1784182238607-6bdb779e",
