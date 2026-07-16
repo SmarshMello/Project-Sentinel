@@ -2,7 +2,23 @@ import fs from 'node:fs/promises';
 import crypto from 'node:crypto';
 
 const root = new URL('../', import.meta.url);
-const sources = JSON.parse(await fs.readFile(new URL('sentinel-watcher/sources.json', root), 'utf8')).sources;
+const configuredSources = JSON.parse(await fs.readFile(new URL('sentinel-watcher/sources.json', root), 'utf8')).sources;
+const researchData = await (async()=>{try{return JSON.parse(await fs.readFile(new URL('static/data/research-results.json', root),'utf8'));}catch{return {discoveries:[]};}})();
+const researchSources = (researchData.discoveries||[])
+  .filter((item)=>item?.download && item?.researchStatus==='pending-review')
+  .map((item)=>({
+    id:item.id,
+    name:item.name,
+    category:item.category||'Research discoveries',
+    url:item.download,
+    expectedVersion:item.version||'Research discovery',
+    currentStatus:'research',
+    sentinelPolice:false,
+    researchDiscovered:true,
+  }));
+const sourceMap = new Map(configuredSources.map((item)=>[item.id,item]));
+for(const item of researchSources)if(!sourceMap.has(item.id))sourceMap.set(item.id,item);
+const sources=[...sourceMap.values()];
 const reportPath = new URL('static/data/watcher-report.json', root);
 const statePath = new URL('sentinel-watcher/state.json', root);
 const historyPath = new URL('static/data/watcher-history.json', root);

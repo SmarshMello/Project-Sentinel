@@ -4,6 +4,7 @@ import crypto from 'node:crypto';
 const root = new URL('../', import.meta.url);
 const query = String(process.env.SENTINEL_RESEARCH_QUERY || '').trim().replace(/\s+/g, ' ');
 const suppliedRequestId = String(process.env.SENTINEL_RESEARCH_REQUEST_ID || '').trim();
+const originalQuestion = String(process.env.SENTINEL_RESEARCH_QUESTION || '').trim().replace(/\s+/g, ' ');
 if (!query) {
   console.log('No research query supplied.');
   process.exit(0);
@@ -169,12 +170,16 @@ function extractDependencies(text) {
   return checks.filter(([, regex]) => regex.test(text)).map(([name]) => name);
 }
 
+const comparisonTerms = [...new Set((originalQuestion.match(/(?:with|and|plus|alongside)\s+([A-Za-z0-9 .'+_-]{2,60})/gi) || [])
+  .map((value) => value.replace(/^(?:with|and|plus|alongside)\s+/i, '').replace(/[?.,!].*$/, '').trim())
+  .filter((value) => value && norm(value) !== exactQuery))].slice(0, 4);
 const searchQueries = [
   `"${query}" GTA V mod`,
   `"${query}" LSPDFR`,
   `"${query}" download`,
   `${query} GTA 5 plugin`,
   `${query} mod`,
+  ...comparisonTerms.flatMap((term) => [`"${query}" "${term}" compatibility`, `"${query}" "${term}" conflict`, `"${query}" "${term}" install`]),
 ];
 const rawResults = [];
 for (const searchQuery of searchQueries) {
@@ -284,6 +289,20 @@ if (credible.length) {
   const best = credible[0];
   const combinedText = credible.map((item) => `${item.title} ${item.description} ${item.snippet}`).join(' ');
   const dependencies = extractDependencies(combinedText);
+  const compatibilityEvidence = comparisonTerms.map((term) => {
+    const matching = credible.filter((item) => {
+      const text = norm(`${item.title} ${item.description} ${item.snippet} ${item.url}`);
+      return text.includes(norm(term)) && text.includes(exactQuery);
+    });
+    const negative = matching.filter((item) => /incompatib|conflict|does not work|not compatible|crash/i.test(`${item.title} ${item.description} ${item.snippet}`));
+    const positive = matching.filter((item) => /compatib|works with|support|requires|integration/i.test(`${item.title} ${item.description} ${item.snippet}`) && !negative.includes(item));
+    const confidence = Math.min(90, matching.length * 16 + Math.max(...matching.map((item) => item.score || 0), 0) * 0.35);
+    return {project: term, sourceCount: matching.length, positiveCount: positive.length, negativeCount: negative.length, confidence: Math.round(confidence), sources: matching.slice(0, 5)};
+  });
+  const compatibilityConfidence = compatibilityEvidence.length ? Math.max(...compatibilityEvidence.map((item) => item.confidence), 0) : 0;
+  const identityConfidence = Math.min(98, Math.round((best.score || 0) + Math.min(12, credible.length * 2)));
+  const sourceCredibility = Math.min(98, Math.round(credible.reduce((sum, item) => sum + (item.score || 0), 0) / credible.length));
+  const documentationConfidence = Math.min(95, (best.description?.length > 140 ? 32 : 18) + (best.author ? 18 : 0) + (dependencies.length ? 18 : 0) + Math.min(27, credible.length * 5));
   const id = `research-${slug(query)}-${crypto.createHash('sha1').update((best.url || query).toLowerCase()).digest('hex').slice(0, 7)}`;
   const record = {
     id,
@@ -295,7 +314,12 @@ if (credible.length) {
     version: 'Not verified',
     developer: best.author || 'Unknown',
     impact: 'Unknown',
-    confidence: Math.min(82, Math.max(45, best.score)),
+    confidence: identityConfidence,
+    identityConfidence,
+    sourceCredibility,
+    documentationConfidence,
+    compatibilityConfidence,
+    compatibilityEvidence,
     description: best.description || `Sentinel Research found credible public sources for ${query}. Compatibility remains unverified until review.`,
     dependencies,
     tags: ['Internet research', 'Pending review', 'Automatic discovery'],
@@ -318,4 +342,4 @@ if (credible.length) {
 }
 
 await fs.mkdir(new URL('static/data/', root), {recursive: true});
-await fs.writeFile(dataPath, JSON.stringify({schemaVersion: 3, updatedAt: now, discoveries, requests}, null, 2) + '\n');
+await fs.writeFile(dataPath, JSON.stringify({schemaVersion: 4, updatedAt: now, discoveries, requests}, null, 2) + '\n');
