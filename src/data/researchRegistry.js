@@ -48,7 +48,7 @@ function synthesizeFromRequest(request) {
   const score = clamp(best.score || 0);
   // A discovered candidate may enter the registry as an explicitly unverified lead.
   // This does not assert compatibility or official status.
-  if (score < 45 && request.status !== 'resolved') return null;
+  if (score < 25 && request.status !== 'resolved') return null;
   const id = canonicalResearchId({name: request.query});
   const credibleCount = request.credibleCandidateCount || 0;
   return normalizeDiscovery({
@@ -57,8 +57,8 @@ function synthesizeFromRequest(request) {
     aliases: [request.query, best.title, best.name].filter(Boolean),
     description: best.description || best.snippet || `Sentinel Research found a public candidate source for ${request.query}. The identity and compatibility still require review.`,
     developer: best.author || 'Unknown',
-    confidence: request.status === 'resolved' ? Math.max(65, score) : Math.max(45, score),
-    identityConfidence: request.status === 'resolved' ? Math.max(65, score) : Math.max(45, score),
+    confidence: request.status === 'resolved' ? Math.max(65, score) : Math.max(25, score),
+    identityConfidence: request.status === 'resolved' ? Math.max(65, score) : Math.max(25, score),
     sourceCredibility: score,
     documentationConfidence: best.description ? 55 : 30,
     compatibilityConfidence: 0,

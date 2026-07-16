@@ -5,7 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
   workflow_run:
-    workflows: ["Sentinel Watcher"]
+    workflows: ["Sentinel Watcher", "Sentinel Research"]
     types: [completed]
 
 permissions:

@@ -4,8 +4,9 @@ import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import {useLocation} from '@docusaurus/router';
 import PluginStatus from '@site/src/components/PluginStatus';
-import {pluginCategories, plugins, statusMeta} from '@site/src/data/plugins';
+import {plugins, statusMeta} from '@site/src/data/plugins';
 import {collectResearchProjects, researchProfileUrl} from '@site/src/data/researchRegistry';
 import {loadResearchData} from '@site/src/data/researchData';
 import styles from './styles.module.css';
@@ -64,11 +65,24 @@ function PluginCard({plugin}) {
 
 export default function PluginDatabase() {
   const researchUrl=useBaseUrl('/data/research-results.json');
+  const location=useLocation();
   const [allPlugins,setAllPlugins]=useState(plugins);
   useEffect(()=>{let active=true;loadResearchData(researchUrl).then(data=>{if(!active)return;const knownNames=new Set(plugins.map(x=>x.name.toLowerCase()));const research=collectResearchProjects(data).filter(x=>!knownNames.has(x.name.toLowerCase()));setAllPlugins([...plugins,...research]);}).catch(()=>{});return()=>{active=false};},[researchUrl]);
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All');
   const [status, setStatus] = useState('all');
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const requestedCategory = params.get('category');
+    const requestedStatus = params.get('status');
+    const requestedQuery = params.get('q');
+    setCategory(requestedCategory || 'All');
+    setStatus(statusOrder.includes(requestedStatus) ? requestedStatus : 'all');
+    setQuery(requestedQuery || '');
+  }, [location.search]);
+
+  const availableCategories = useMemo(() => ['All', ...new Set(allPlugins.map(plugin => plugin.category).filter(Boolean))], [allPlugins]);
 
   const filteredPlugins = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -125,7 +139,7 @@ export default function PluginDatabase() {
               <div className={styles.filterGroup}>
                 <Icon name="filter"/>
                 <select value={category} onChange={event => setCategory(event.target.value)} aria-label="Filter by category">
-                  {pluginCategories.map(item => <option key={item}>{item}</option>)}
+                  {availableCategories.map(item => <option key={item}>{item}</option>)}
                 </select>
               </div>
             </div>

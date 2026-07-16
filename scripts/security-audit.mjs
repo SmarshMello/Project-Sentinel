@@ -12,9 +12,12 @@ const patterns = [
   /\bsk-[A-Za-z0-9]{20,}\b/,
 ];
 const findings = [];
+const forbiddenText = [/packages\.applied-caas-gateway/i, /internal\.api\.openai\.org/i];
+const forbiddenNames = new Set(['.env', '.dev.vars']);
 function walk(dir) {
   for (const entry of fs.readdirSync(dir, {withFileTypes: true})) {
     if (ignored.has(entry.name)) continue;
+    if (forbiddenNames.has(entry.name)) findings.push(path.relative(root, path.join(dir, entry.name)));
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) walk(full);
     else {
@@ -22,6 +25,7 @@ function walk(dir) {
       if (stat.size > 2_000_000) continue;
       let text; try { text = fs.readFileSync(full, 'utf8'); } catch { continue; }
       for (const pattern of patterns) if (pattern.test(text)) findings.push(path.relative(root, full));
+      for (const pattern of forbiddenText) if (pattern.test(text)) findings.push(path.relative(root, full));
     }
   }
 }

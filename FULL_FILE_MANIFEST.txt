@@ -12,7 +12,9 @@
 CONTRIBUTING.md
 COPYRIGHT.md
 FINAL_CLEANUP_REPORT.md
+FULL_FILE_MANIFEST.txt
 FULL_REPLACEMENT_INSTRUCTIONS.txt
+PROJECT_SENTINEL_FINAL_STABILITY_RELEASE_HANDOFF.md
 PUBLIC_RELEASE_CHECKLIST.md
 README.md
 SECURITY.md
@@ -150,6 +152,7 @@ intelligence-tests/run-tests.mjs
 package-lock.json
 package.json
 public/data/watcher-report.json
+research-tests/run-tests.mjs
 scripts/security-audit.mjs
 scripts/sentinel-research.mjs
 scripts/sentinel-watcher.mjs
@@ -355,5 +358,3 @@ watcher-control-worker/package-lock.json
 watcher-control-worker/package.json
 watcher-control-worker/src/index.js
 watcher-control-worker/wrangler.jsonc
-
-Total files: 358
