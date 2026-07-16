@@ -37,7 +37,7 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 22
-      - name: Search GitHub and evaluate candidate sources
+      - name: Search the public web and evaluate candidate sources
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SENTINEL_RESEARCH_QUERY: ${{ inputs.research_query }}

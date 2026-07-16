@@ -134,6 +134,22 @@ export default {
         return json({ok: true, reused: false, requestId, scanId, query, status: 'queued'}, 202, env, origin);
       }
 
+
+      if (url.pathname === '/research-result' && request.method === 'GET') {
+        if (!requireAdmin(request, env)) return json({error: 'Watcher admin key required.'}, 401, env, origin);
+        const requestId = String(url.searchParams.get('requestId') || '').trim();
+        if (!requestId) return json({error: 'requestId is required.'}, 400, env, origin);
+        const response = await github(env, '/contents/static/data/research-results.json?ref=main');
+        if (!response.ok) return json({error: `Research data is not available yet (${response.status}).`}, response.status === 404 ? 404 : 502, env, origin);
+        const payload = await response.json();
+        const content = String(payload.content || '').replace(/\n/g, '');
+        let data;
+        try { data = JSON.parse(atob(content)); } catch { return json({error: 'Published research data could not be decoded.'}, 502, env, origin); }
+        const requestRecord = (data.requests || []).find((item) => item.requestId === requestId || item.id === requestId);
+        if (!requestRecord) return json({found: false, requestId}, 404, env, origin);
+        return json({found: true, request: requestRecord, discoveries: data.discoveries || [], data}, 200, env, origin);
+      }
+
       if (url.pathname === '/status' && request.method === 'GET') {
         if (!requireAdmin(request, env)) return json({error: 'Invalid Watcher admin key.'}, 401, env, origin);
         const runId = url.searchParams.get('runId');
