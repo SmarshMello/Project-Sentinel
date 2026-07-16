@@ -1,7 +1,359 @@
 {
-  "schemaVersion": 3,
-  "updatedAt": "2026-07-16T00:25:06.364Z",
+  "schemaVersion": 4,
+  "updatedAt": "2026-07-16T00:39:59.739Z",
   "discoveries": [
+    {
+      "id": "research-improved-combat-ai-5852140",
+      "name": "Improved Combat & AI",
+      "shortName": null,
+      "aliases": [
+        "Improved Combat & AI",
+        "Improved Combat AI",
+        "Improved Combat and AI at Grand Theft Auto V Legacy Nexus - Nexus Mods",
+        "Improved Combat AI at Starfield Nexus - Mods and Community",
+        "Improved Combat & AI V1.0.1 - GTA 5 mod",
+        "Improved Combat & AI V1.0.1 Grand Theft Auto V Mod - ModsHost",
+        "Improved Combat AI | Starfield Mod Download"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "Venator",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 98,
+      "documentationConfidence": 77,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [
+        {
+          "project": "EUP",
+          "sourceCount": 0,
+          "positiveCount": 0,
+          "negativeCount": 0,
+          "confidence": 0,
+          "sources": []
+        }
+      ],
+      "description": "Hey!You wanna have the AI in GTA 5 to be more spicy, tactical &amp; realistic? You are not interested in constant gun and run that insults your intelligence and are but more likely to actually fight your way through enemies?  In a life where interactions and combat feal like they mean something? This mods overhauls ingame Combat and AI Balance. Combat will now feel and be more immersive, punishing, tactical and intense!The decision between tak...",
+      "dependencies": [],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.gta5-mods.com/misc/ai-combat-improvements-mod",
+      "note": "Research Engine found 9 credible sources across 5 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "requestedAt": "2026-07-16T00:39:59.739Z",
+      "sources": [
+        {
+          "url": "https://www.gta5-mods.com/misc/ai-combat-improvements-mod",
+          "domain": "gta5-mods.com",
+          "title": "Improved Combat & AI",
+          "description": "Hey!You wanna have the AI in GTA 5 to be more spicy, tactical &amp; realistic? You are not interested in constant gun and run that insults your intelligence and are but more likely to actually fight your way through enemies?  In a life where interactions and combat feal like they mean something? This mods overhauls ingame Combat and AI Balance. Combat will now feel and be more immersive, punishing, tactical and intense!The decision between tak...",
+          "snippet": "",
+          "author": "Venator",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/ca/misc/ai-combat-improvements-mod",
+          "domain": "gta5-mods.com",
+          "title": "Improved Combat & AI",
+          "description": "Hey!You wanna have the AI in GTA 5 to be more spicy, tactical &amp; realistic? You are not interested in constant gun and run that insults your intelligence and are but more likely to actually fight your way through enemies?  In a life where interactions and combat feal like they mean something? This mods overhauls ingame Combat and AI Balance. Combat will now feel and be more immersive, punishing, tactical and intense!The decision between tak...",
+          "snippet": "",
+          "author": "Venator",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/misc/improved-combat-ai-in-gta-5",
+          "domain": "gta5-mods.com",
+          "title": "Improved Combat AI",
+          "description": "So if you're viewing this right now you know why, AI in singleplayer doesn't offer a sufficient challenge when it comes to fights. This mod focuses on improving AI. The mod changes pre-existing code in the game files so you don't need to mess around with issues on scripts. Detailed Improvements listed below.Universal Changes: Restrictions for peds to charge your position have been laxed. Peds can now charge you in groups maximum of 3, they wil...",
+          "snippet": "",
+          "author": "POLICEBRUALITY",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/vi/misc/ai-combat-improvements-mod",
+          "domain": "gta5-mods.com",
+          "title": "Improved Combat & AI",
+          "description": "Hey!You wanna have the AI in GTA 5 to be more spicy, tactical &amp; realistic? You are not interested in constant gun and run that insults your intelligence and are but more likely to actually fight your way through enemies?  In a life where interactions and combat feal like they mean something? This mods overhauls ingame Combat and AI Balance. Combat will now feel and be more immersive, punishing, tactical and intense!The decision between tak...",
+          "snippet": "",
+          "author": "Venator",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/gta5/mods/1579",
+          "domain": "nexusmods.com",
+          "title": "Improved Combat and AI at Grand Theft Auto V Legacy Nexus - Nexus Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/starfield/mods/1392",
+          "domain": "nexusmods.com",
+          "title": "Improved Combat AI at Starfield Nexus - Mods and Community",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/misc/improved-combat-ai-v1-0-1/",
+          "domain": "gta5mod.net",
+          "title": "Improved Combat & AI V1.0.1 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://modshost.co/gta5/other/improved-combat-ai/",
+          "domain": "modshost.co",
+          "title": "Improved Combat & AI V1.0.1 Grand Theft Auto V Mod - ModsHost",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.starfieldmodhub.com/improved-combat-ai/",
+          "domain": "starfieldmodhub.com",
+          "title": "Improved Combat AI | Starfield Mod Download",
+          "description": "Starfield NPCs oftentimes just stand around contemplating their next move. With this mod, NPCs will be more active and will act more intelligently. This may disable achievements. (Use this mod to avoid that) Compatible&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "website visitors. If you notice any mist",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/misc/ai-combat-improvements-mod",
+          "domain": "gta5-mods.com",
+          "title": "Improved Combat & AI",
+          "description": "Hey!You wanna have the AI in GTA 5 to be more spicy, tactical &amp; realistic? You are not interested in constant gun and run that insults your intelligence and are but more likely to actually fight your way through enemies?  In a life where interactions and combat feal like they mean something? This mods overhauls ingame Combat and AI Balance. Combat will now feel and be more immersive, punishing, tactical and intense!The decision between tak...",
+          "snippet": "",
+          "author": "Venator",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/ca/misc/ai-combat-improvements-mod",
+          "domain": "gta5-mods.com",
+          "title": "Improved Combat & AI",
+          "description": "Hey!You wanna have the AI in GTA 5 to be more spicy, tactical &amp; realistic? You are not interested in constant gun and run that insults your intelligence and are but more likely to actually fight your way through enemies?  In a life where interactions and combat feal like they mean something? This mods overhauls ingame Combat and AI Balance. Combat will now feel and be more immersive, punishing, tactical and intense!The decision between tak...",
+          "snippet": "",
+          "author": "Venator",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/misc/improved-combat-ai-in-gta-5",
+          "domain": "gta5-mods.com",
+          "title": "Improved Combat AI",
+          "description": "So if you're viewing this right now you know why, AI in singleplayer doesn't offer a sufficient challenge when it comes to fights. This mod focuses on improving AI. The mod changes pre-existing code in the game files so you don't need to mess around with issues on scripts. Detailed Improvements listed below.Universal Changes: Restrictions for peds to charge your position have been laxed. Peds can now charge you in groups maximum of 3, they wil...",
+          "snippet": "",
+          "author": "POLICEBRUALITY",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/vi/misc/ai-combat-improvements-mod",
+          "domain": "gta5-mods.com",
+          "title": "Improved Combat & AI",
+          "description": "Hey!You wanna have the AI in GTA 5 to be more spicy, tactical &amp; realistic? You are not interested in constant gun and run that insults your intelligence and are but more likely to actually fight your way through enemies?  In a life where interactions and combat feal like they mean something? This mods overhauls ingame Combat and AI Balance. Combat will now feel and be more immersive, punishing, tactical and intense!The decision between tak...",
+          "snippet": "",
+          "author": "Venator",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/gta5/mods/1579",
+          "domain": "nexusmods.com",
+          "title": "Improved Combat and AI at Grand Theft Auto V Legacy Nexus - Nexus Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/starfield/mods/1392",
+          "domain": "nexusmods.com",
+          "title": "Improved Combat AI at Starfield Nexus - Mods and Community",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/misc/improved-combat-ai-v1-0-1/",
+          "domain": "gta5mod.net",
+          "title": "Improved Combat & AI V1.0.1 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://modshost.co/gta5/other/improved-combat-ai/",
+          "domain": "modshost.co",
+          "title": "Improved Combat & AI V1.0.1 Grand Theft Auto V Mod - ModsHost",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.starfieldmodhub.com/improved-combat-ai/",
+          "domain": "starfieldmodhub.com",
+          "title": "Improved Combat AI | Starfield Mod Download",
+          "description": "Starfield NPCs oftentimes just stand around contemplating their next move. With this mod, NPCs will be more active and will act more intelligently. This may disable achievements. (Use this mod to avoid that) Compatible&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "website visitors. If you notice any mist",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/misc/ai-combat-improvements-mod-v1-0/",
+          "domain": "gta5mod.net",
+          "title": "AI & Combat Improvements Mod V1.0 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 52
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "CP",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        }
+      ]
+    },
     {
       "id": "research-los-santos-alive-18d5a84",
       "name": "Los Santos Alive",
@@ -402,6 +754,188 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784162377551-0ae67080",
+      "requestId": "expert-1784162377551-0ae67080",
+      "query": "Improved Combat & AI",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T00:39:59.739Z",
+      "completedAt": "2026-07-16T00:39:59.739Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 11,
+      "credibleCandidateCount": 9,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/misc/ai-combat-improvements-mod",
+          "domain": "gta5-mods.com",
+          "title": "Improved Combat & AI",
+          "description": "Hey!You wanna have the AI in GTA 5 to be more spicy, tactical &amp; realistic? You are not interested in constant gun and run that insults your intelligence and are but more likely to actually fight your way through enemies?  In a life where interactions and combat feal like they mean something? This mods overhauls ingame Combat and AI Balance. Combat will now feel and be more immersive, punishing, tactical and intense!The decision between tak...",
+          "snippet": "",
+          "author": "Venator",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/ca/misc/ai-combat-improvements-mod",
+          "domain": "gta5-mods.com",
+          "title": "Improved Combat & AI",
+          "description": "Hey!You wanna have the AI in GTA 5 to be more spicy, tactical &amp; realistic? You are not interested in constant gun and run that insults your intelligence and are but more likely to actually fight your way through enemies?  In a life where interactions and combat feal like they mean something? This mods overhauls ingame Combat and AI Balance. Combat will now feel and be more immersive, punishing, tactical and intense!The decision between tak...",
+          "snippet": "",
+          "author": "Venator",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/misc/improved-combat-ai-in-gta-5",
+          "domain": "gta5-mods.com",
+          "title": "Improved Combat AI",
+          "description": "So if you're viewing this right now you know why, AI in singleplayer doesn't offer a sufficient challenge when it comes to fights. This mod focuses on improving AI. The mod changes pre-existing code in the game files so you don't need to mess around with issues on scripts. Detailed Improvements listed below.Universal Changes: Restrictions for peds to charge your position have been laxed. Peds can now charge you in groups maximum of 3, they wil...",
+          "snippet": "",
+          "author": "POLICEBRUALITY",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/vi/misc/ai-combat-improvements-mod",
+          "domain": "gta5-mods.com",
+          "title": "Improved Combat & AI",
+          "description": "Hey!You wanna have the AI in GTA 5 to be more spicy, tactical &amp; realistic? You are not interested in constant gun and run that insults your intelligence and are but more likely to actually fight your way through enemies?  In a life where interactions and combat feal like they mean something? This mods overhauls ingame Combat and AI Balance. Combat will now feel and be more immersive, punishing, tactical and intense!The decision between tak...",
+          "snippet": "",
+          "author": "Venator",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/gta5/mods/1579",
+          "domain": "nexusmods.com",
+          "title": "Improved Combat and AI at Grand Theft Auto V Legacy Nexus - Nexus Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/starfield/mods/1392",
+          "domain": "nexusmods.com",
+          "title": "Improved Combat AI at Starfield Nexus - Mods and Community",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/misc/improved-combat-ai-v1-0-1/",
+          "domain": "gta5mod.net",
+          "title": "Improved Combat & AI V1.0.1 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://modshost.co/gta5/other/improved-combat-ai/",
+          "domain": "modshost.co",
+          "title": "Improved Combat & AI V1.0.1 Grand Theft Auto V Mod - ModsHost",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.starfieldmodhub.com/improved-combat-ai/",
+          "domain": "starfieldmodhub.com",
+          "title": "Improved Combat AI | Starfield Mod Download",
+          "description": "Starfield NPCs oftentimes just stand around contemplating their next move. With this mod, NPCs will be more active and will act more intelligently. This may disable achievements. (Use this mod to avoid that) Compatible&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "website visitors. If you notice any mist",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/misc/ai-combat-improvements-mod-v1-0/",
+          "domain": "gta5mod.net",
+          "title": "AI & Combat Improvements Mod V1.0 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 52
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "CP",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        }
+      ]
+    },
     {
       "id": "expert-1784161467234-30614b9f",
       "requestId": "expert-1784161467234-30614b9f",
