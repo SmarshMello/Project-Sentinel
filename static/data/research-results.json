@@ -1,7 +1,414 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:12:24.878Z",
+  "updatedAt": "2026-07-16T06:13:14.935Z",
   "discoveries": [
+    {
+      "id": "research-roadside-assistance",
+      "name": "Roadside Assistance",
+      "shortName": null,
+      "aliases": [
+        "Roadside Assistance",
+        "[ELS] Roadside Assistance V | Service Vehicle (F-350)",
+        "AAA Roadside Assistance Caracara",
+        "Roadside Assistance EUP - Player & Ped Modifications - LCPDFR.com",
+        "Mors Mutual Roadside Assistance Pack (Bravado Bison, Vapid Sandking, Annis Pinnacle) [Add-On]",
+        "roadside-assist",
+        "Towing--Roadside-Assistance-Booking-and-Appointment-System-WordPress-Plugin",
+        "RoadMitra",
+        "RoadAid",
+        "ab5df3ab-towing-roadside-assistance-d"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "Officer246",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 98,
+      "documentationConfidence": 77,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "Hi there everybody! After uploading various textures to the GTA5-Mods community, I've decided to step it up a notch and start working on models. This is my first model that I will be uploading to the site. This vehicle was created to be used with RSA - V (Roadside Assistance V) which is a modification that myself and Abel Software are currently working on.https://www.gta5-mods.com/scripts/roadside-assistance-vIf you have any questions, concern...",
+      "dependencies": [],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.gta5-mods.com/pl/vehicles/roadside-assistance-v-service-vehicle-f-350",
+      "note": "Research Engine found 12 credible sources across 3 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-roadside-assistance",
+      "requestedAt": "2026-07-16T06:13:14.935Z",
+      "sources": [
+        {
+          "url": "https://www.gta5-mods.com/pl/vehicles/roadside-assistance-v-service-vehicle-f-350",
+          "domain": "gta5-mods.com",
+          "title": "[ELS] Roadside Assistance V | Service Vehicle (F-350)",
+          "description": "Hi there everybody! After uploading various textures to the GTA5-Mods community, I've decided to step it up a notch and start working on models. This is my first model that I will be uploading to the site. This vehicle was created to be used with RSA - V (Roadside Assistance V) which is a modification that myself and Abel Software are currently working on.https://www.gta5-mods.com/scripts/roadside-assistance-vIf you have any questions, concern...",
+          "snippet": "",
+          "author": "Officer246",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/paintjobs/aaa-roadside-assistance-caracara",
+          "domain": "gta5-mods.com",
+          "title": "AAA Roadside Assistance Caracara",
+          "description": "Vehicle Download: https://www.gta5-mods.com/vehicles/sams-safety-team-caracara#description_tabI am pleased to release the addition to the AAA Tow Truck, this time with the AAA Roadside Assistance Caracara! If you decide to download this, please check out my AAA Tow Truck as well! These two vehicles would pair great together!Credits:Vehicle made by sas994Livery made by TylerTheDev (me)",
+          "snippet": "",
+          "author": "TylerTheDev",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/character/44510-roadside-assistance-eup/",
+          "domain": "lcpdfr.com",
+          "title": "Roadside Assistance EUP - Player & Ped Modifications - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/vehicles/roadside-assistance-bravado-bison-mors-mutual-add-on",
+          "domain": "gta5-mods.com",
+          "title": "Mors Mutual Roadside Assistance Pack (Bravado Bison, Vapid Sandking, Annis Pinnacle) [Add-On]",
+          "description": "\"Mors Mutual Insurance, we expect the unexpected\", But one thing that won't be unexpected is the rip-off deductible you'll get once you accidentally drowned your car in the LS river while running away from a rampaging tank, or when you got blown up by mysterious flying motorcycles.This is a complete reboot of my original Bison MMI, it now includes two more cars! An agent/recovery Annis Pinnacle, A Vapid Sanking Roadside assistance Truck and Br...",
+          "snippet": "",
+          "author": "bravo-one-charlie",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/vehicles/roadside-assistance-v-service-vehicle-f-350",
+          "domain": "gta5-mods.com",
+          "title": "[ELS] Roadside Assistance V | Service Vehicle (F-350)",
+          "description": "Hi there everybody! After uploading various textures to the GTA5-Mods community, I've decided to step it up a notch and start working on models. This is my first model that I will be uploading to the site. This vehicle was created to be used with RSA - V (Roadside Assistance V) which is a modification that myself and Abel Software are currently working on.https://www.gta5-mods.com/scripts/roadside-assistance-vIf you have any questions, concern...",
+          "snippet": "",
+          "author": "Officer246",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/K-i-T-S/roadside-assist",
+          "domain": "github.com",
+          "title": "roadside-assist",
+          "description": "roadside assistance website, connecting your emergency needs with the required professionals ASAP!",
+          "snippet": "roadside assistance website, connecting your emergency needs with the required professionals ASAP!",
+          "author": "K-i-T-S",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T23:06:54Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/ncreighton/Towing--Roadside-Assistance-Booking-and-Appointment-System-WordPress-Plugin",
+          "domain": "github.com",
+          "title": "Towing--Roadside-Assistance-Booking-and-Appointment-System-WordPress-Plugin",
+          "description": "Towing & Roadside Assistance Booking And Appointment — professional-grade functionality with zero code. Join hundreds of towings already using this daily.",
+          "snippet": "Towing & Roadside Assistance Booking And Appointment — professional-grade functionality with zero code. Join hundreds of towings already using this daily.",
+          "author": "ncreighton",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T19:12:09Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/himanshudubey7778/RoadMitra",
+          "domain": "github.com",
+          "title": "RoadMitra",
+          "description": "A real-time full-stack emergency roadside assistance platform designed to connect stranded motorists with nearby registered delivery riders (Uber/Rapido) and local mechanics using MERN Stack, TypeScript, WebSockets, and MongoDB GeoSpatial queries.",
+          "snippet": "A real-time full-stack emergency roadside assistance platform designed to connect stranded motorists with nearby registered delivery riders (Uber/Rapido) and local mechanics using MERN Stack, TypeScript, WebSockets, and MongoDB GeoSpatial queries.",
+          "author": "himanshudubey7778",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T18:28:33Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Vishnuuuu154/RoadAid",
+          "domain": "github.com",
+          "title": "RoadAid",
+          "description": "A responsive web application for smart roadside assistance and mobile mechanic services.",
+          "snippet": "A responsive web application for smart roadside assistance and mobile mechanic services.",
+          "author": "Vishnuuuu154",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T16:12:54Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/ncreighton/ab5df3ab-towing-roadside-assistance-d",
+          "domain": "github.com",
+          "title": "ab5df3ab-towing-roadside-assistance-d",
+          "description": "Generate PDFs, contracts, reports, and forms from templates with dynamic Towing & Roadside Assistance data",
+          "snippet": "Generate PDFs, contracts, reports, and forms from templates with dynamic Towing & Roadside Assistance data",
+          "author": "ncreighton",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T15:20:18Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Amrata009/VahaanResQ",
+          "domain": "github.com",
+          "title": "VahaanResQ",
+          "description": "VahaanResQ - On-demand roadside assistance platform for two-wheelers.",
+          "snippet": "VahaanResQ - On-demand roadside assistance platform for two-wheelers.",
+          "author": "Amrata009",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T14:59:37Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/ncreighton/55576674-towing-roadside-assistance-s",
+          "domain": "github.com",
+          "title": "55576674-towing-roadside-assistance-s",
+          "description": "Towing & Roadside Assistance Search And Discovery — production-ready data access in minutes. Your time is worth more than the asking price.",
+          "snippet": "Towing & Roadside Assistance Search And Discovery — production-ready data access in minutes. Your time is worth more than the asking price.",
+          "author": "ncreighton",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T14:58:05Z",
+          "score": 100
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/pl/vehicles/roadside-assistance-v-service-vehicle-f-350",
+          "domain": "gta5-mods.com",
+          "title": "[ELS] Roadside Assistance V | Service Vehicle (F-350)",
+          "description": "Hi there everybody! After uploading various textures to the GTA5-Mods community, I've decided to step it up a notch and start working on models. This is my first model that I will be uploading to the site. This vehicle was created to be used with RSA - V (Roadside Assistance V) which is a modification that myself and Abel Software are currently working on.https://www.gta5-mods.com/scripts/roadside-assistance-vIf you have any questions, concern...",
+          "snippet": "",
+          "author": "Officer246",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/paintjobs/aaa-roadside-assistance-caracara",
+          "domain": "gta5-mods.com",
+          "title": "AAA Roadside Assistance Caracara",
+          "description": "Vehicle Download: https://www.gta5-mods.com/vehicles/sams-safety-team-caracara#description_tabI am pleased to release the addition to the AAA Tow Truck, this time with the AAA Roadside Assistance Caracara! If you decide to download this, please check out my AAA Tow Truck as well! These two vehicles would pair great together!Credits:Vehicle made by sas994Livery made by TylerTheDev (me)",
+          "snippet": "",
+          "author": "TylerTheDev",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/character/44510-roadside-assistance-eup/",
+          "domain": "lcpdfr.com",
+          "title": "Roadside Assistance EUP - Player & Ped Modifications - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/vehicles/roadside-assistance-bravado-bison-mors-mutual-add-on",
+          "domain": "gta5-mods.com",
+          "title": "Mors Mutual Roadside Assistance Pack (Bravado Bison, Vapid Sandking, Annis Pinnacle) [Add-On]",
+          "description": "\"Mors Mutual Insurance, we expect the unexpected\", But one thing that won't be unexpected is the rip-off deductible you'll get once you accidentally drowned your car in the LS river while running away from a rampaging tank, or when you got blown up by mysterious flying motorcycles.This is a complete reboot of my original Bison MMI, it now includes two more cars! An agent/recovery Annis Pinnacle, A Vapid Sanking Roadside assistance Truck and Br...",
+          "snippet": "",
+          "author": "bravo-one-charlie",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/vehicles/roadside-assistance-v-service-vehicle-f-350",
+          "domain": "gta5-mods.com",
+          "title": "[ELS] Roadside Assistance V | Service Vehicle (F-350)",
+          "description": "Hi there everybody! After uploading various textures to the GTA5-Mods community, I've decided to step it up a notch and start working on models. This is my first model that I will be uploading to the site. This vehicle was created to be used with RSA - V (Roadside Assistance V) which is a modification that myself and Abel Software are currently working on.https://www.gta5-mods.com/scripts/roadside-assistance-vIf you have any questions, concern...",
+          "snippet": "",
+          "author": "Officer246",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/K-i-T-S/roadside-assist",
+          "domain": "github.com",
+          "title": "roadside-assist",
+          "description": "roadside assistance website, connecting your emergency needs with the required professionals ASAP!",
+          "snippet": "roadside assistance website, connecting your emergency needs with the required professionals ASAP!",
+          "author": "K-i-T-S",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T23:06:54Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/ncreighton/Towing--Roadside-Assistance-Booking-and-Appointment-System-WordPress-Plugin",
+          "domain": "github.com",
+          "title": "Towing--Roadside-Assistance-Booking-and-Appointment-System-WordPress-Plugin",
+          "description": "Towing & Roadside Assistance Booking And Appointment — professional-grade functionality with zero code. Join hundreds of towings already using this daily.",
+          "snippet": "Towing & Roadside Assistance Booking And Appointment — professional-grade functionality with zero code. Join hundreds of towings already using this daily.",
+          "author": "ncreighton",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T19:12:09Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/himanshudubey7778/RoadMitra",
+          "domain": "github.com",
+          "title": "RoadMitra",
+          "description": "A real-time full-stack emergency roadside assistance platform designed to connect stranded motorists with nearby registered delivery riders (Uber/Rapido) and local mechanics using MERN Stack, TypeScript, WebSockets, and MongoDB GeoSpatial queries.",
+          "snippet": "A real-time full-stack emergency roadside assistance platform designed to connect stranded motorists with nearby registered delivery riders (Uber/Rapido) and local mechanics using MERN Stack, TypeScript, WebSockets, and MongoDB GeoSpatial queries.",
+          "author": "himanshudubey7778",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T18:28:33Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Vishnuuuu154/RoadAid",
+          "domain": "github.com",
+          "title": "RoadAid",
+          "description": "A responsive web application for smart roadside assistance and mobile mechanic services.",
+          "snippet": "A responsive web application for smart roadside assistance and mobile mechanic services.",
+          "author": "Vishnuuuu154",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T16:12:54Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/ncreighton/ab5df3ab-towing-roadside-assistance-d",
+          "domain": "github.com",
+          "title": "ab5df3ab-towing-roadside-assistance-d",
+          "description": "Generate PDFs, contracts, reports, and forms from templates with dynamic Towing & Roadside Assistance data",
+          "snippet": "Generate PDFs, contracts, reports, and forms from templates with dynamic Towing & Roadside Assistance data",
+          "author": "ncreighton",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T15:20:18Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Amrata009/VahaanResQ",
+          "domain": "github.com",
+          "title": "VahaanResQ",
+          "description": "VahaanResQ - On-demand roadside assistance platform for two-wheelers.",
+          "snippet": "VahaanResQ - On-demand roadside assistance platform for two-wheelers.",
+          "author": "Amrata009",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T14:59:37Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/ncreighton/55576674-towing-roadside-assistance-s",
+          "domain": "github.com",
+          "title": "55576674-towing-roadside-assistance-s",
+          "description": "Towing & Roadside Assistance Search And Discovery — production-ready data access in minutes. Your time is worth more than the asking price.",
+          "snippet": "Towing & Roadside Assistance Search And Discovery — production-ready data access in minutes. Your time is worth more than the asking price.",
+          "author": "ncreighton",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T14:58:05Z",
+          "score": 100
+        }
+      ]
+    },
     {
       "id": "research-police-helper",
       "name": "Police Helper",
@@ -4753,6 +5160,203 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182353682-8f547f85",
+      "requestId": "expert-1784182353682-8f547f85",
+      "query": "Roadside Assistance",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:13:14.935Z",
+      "completedAt": "2026-07-16T06:13:14.935Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 12,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/pl/vehicles/roadside-assistance-v-service-vehicle-f-350",
+          "domain": "gta5-mods.com",
+          "title": "[ELS] Roadside Assistance V | Service Vehicle (F-350)",
+          "description": "Hi there everybody! After uploading various textures to the GTA5-Mods community, I've decided to step it up a notch and start working on models. This is my first model that I will be uploading to the site. This vehicle was created to be used with RSA - V (Roadside Assistance V) which is a modification that myself and Abel Software are currently working on.https://www.gta5-mods.com/scripts/roadside-assistance-vIf you have any questions, concern...",
+          "snippet": "",
+          "author": "Officer246",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/paintjobs/aaa-roadside-assistance-caracara",
+          "domain": "gta5-mods.com",
+          "title": "AAA Roadside Assistance Caracara",
+          "description": "Vehicle Download: https://www.gta5-mods.com/vehicles/sams-safety-team-caracara#description_tabI am pleased to release the addition to the AAA Tow Truck, this time with the AAA Roadside Assistance Caracara! If you decide to download this, please check out my AAA Tow Truck as well! These two vehicles would pair great together!Credits:Vehicle made by sas994Livery made by TylerTheDev (me)",
+          "snippet": "",
+          "author": "TylerTheDev",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/character/44510-roadside-assistance-eup/",
+          "domain": "lcpdfr.com",
+          "title": "Roadside Assistance EUP - Player & Ped Modifications - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/vehicles/roadside-assistance-bravado-bison-mors-mutual-add-on",
+          "domain": "gta5-mods.com",
+          "title": "Mors Mutual Roadside Assistance Pack (Bravado Bison, Vapid Sandking, Annis Pinnacle) [Add-On]",
+          "description": "\"Mors Mutual Insurance, we expect the unexpected\", But one thing that won't be unexpected is the rip-off deductible you'll get once you accidentally drowned your car in the LS river while running away from a rampaging tank, or when you got blown up by mysterious flying motorcycles.This is a complete reboot of my original Bison MMI, it now includes two more cars! An agent/recovery Annis Pinnacle, A Vapid Sanking Roadside assistance Truck and Br...",
+          "snippet": "",
+          "author": "bravo-one-charlie",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/vehicles/roadside-assistance-v-service-vehicle-f-350",
+          "domain": "gta5-mods.com",
+          "title": "[ELS] Roadside Assistance V | Service Vehicle (F-350)",
+          "description": "Hi there everybody! After uploading various textures to the GTA5-Mods community, I've decided to step it up a notch and start working on models. This is my first model that I will be uploading to the site. This vehicle was created to be used with RSA - V (Roadside Assistance V) which is a modification that myself and Abel Software are currently working on.https://www.gta5-mods.com/scripts/roadside-assistance-vIf you have any questions, concern...",
+          "snippet": "",
+          "author": "Officer246",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/K-i-T-S/roadside-assist",
+          "domain": "github.com",
+          "title": "roadside-assist",
+          "description": "roadside assistance website, connecting your emergency needs with the required professionals ASAP!",
+          "snippet": "roadside assistance website, connecting your emergency needs with the required professionals ASAP!",
+          "author": "K-i-T-S",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T23:06:54Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/ncreighton/Towing--Roadside-Assistance-Booking-and-Appointment-System-WordPress-Plugin",
+          "domain": "github.com",
+          "title": "Towing--Roadside-Assistance-Booking-and-Appointment-System-WordPress-Plugin",
+          "description": "Towing & Roadside Assistance Booking And Appointment — professional-grade functionality with zero code. Join hundreds of towings already using this daily.",
+          "snippet": "Towing & Roadside Assistance Booking And Appointment — professional-grade functionality with zero code. Join hundreds of towings already using this daily.",
+          "author": "ncreighton",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T19:12:09Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/himanshudubey7778/RoadMitra",
+          "domain": "github.com",
+          "title": "RoadMitra",
+          "description": "A real-time full-stack emergency roadside assistance platform designed to connect stranded motorists with nearby registered delivery riders (Uber/Rapido) and local mechanics using MERN Stack, TypeScript, WebSockets, and MongoDB GeoSpatial queries.",
+          "snippet": "A real-time full-stack emergency roadside assistance platform designed to connect stranded motorists with nearby registered delivery riders (Uber/Rapido) and local mechanics using MERN Stack, TypeScript, WebSockets, and MongoDB GeoSpatial queries.",
+          "author": "himanshudubey7778",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T18:28:33Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Vishnuuuu154/RoadAid",
+          "domain": "github.com",
+          "title": "RoadAid",
+          "description": "A responsive web application for smart roadside assistance and mobile mechanic services.",
+          "snippet": "A responsive web application for smart roadside assistance and mobile mechanic services.",
+          "author": "Vishnuuuu154",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T16:12:54Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/ncreighton/ab5df3ab-towing-roadside-assistance-d",
+          "domain": "github.com",
+          "title": "ab5df3ab-towing-roadside-assistance-d",
+          "description": "Generate PDFs, contracts, reports, and forms from templates with dynamic Towing & Roadside Assistance data",
+          "snippet": "Generate PDFs, contracts, reports, and forms from templates with dynamic Towing & Roadside Assistance data",
+          "author": "ncreighton",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T15:20:18Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Amrata009/VahaanResQ",
+          "domain": "github.com",
+          "title": "VahaanResQ",
+          "description": "VahaanResQ - On-demand roadside assistance platform for two-wheelers.",
+          "snippet": "VahaanResQ - On-demand roadside assistance platform for two-wheelers.",
+          "author": "Amrata009",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T14:59:37Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/ncreighton/55576674-towing-roadside-assistance-s",
+          "domain": "github.com",
+          "title": "55576674-towing-roadside-assistance-s",
+          "description": "Towing & Roadside Assistance Search And Discovery — production-ready data access in minutes. Your time is worth more than the asking price.",
+          "snippet": "Towing & Roadside Assistance Search And Discovery — production-ready data access in minutes. Your time is worth more than the asking price.",
+          "author": "ncreighton",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T14:58:05Z",
+          "score": 100
+        }
+      ]
+    },
     {
       "id": "expert-1784182318234-f12800dc",
       "requestId": "expert-1784182318234-f12800dc",
