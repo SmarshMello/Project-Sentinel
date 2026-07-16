@@ -3,6 +3,34 @@
   "watcherVersion": "0.7.0",
   "scans": [
     {
+      "checkedAt": "2026-07-16T03:58:16.499Z",
+      "durationSeconds": 11,
+      "averageHealth": 81,
+      "counts": {
+        "tracked": 30,
+        "healthy": 14,
+        "possibleUpdates": 0,
+        "metadataChanged": 0,
+        "timedOut": 8,
+        "blocked": 0,
+        "redirected": 0,
+        "notFound": 0,
+        "rateLimited": 8,
+        "serverErrors": 0,
+        "archived": 0,
+        "failed": 0,
+        "needsReview": 6,
+        "highPriority": 0
+      },
+      "changeCounts": {
+        "total": 4,
+        "releases": 0,
+        "statuses": 0,
+        "moved": 0,
+        "newSources": 4
+      }
+    },
+    {
       "checkedAt": "2026-07-15T23:44:35.099Z",
       "durationSeconds": 7,
       "averageHealth": 77,
