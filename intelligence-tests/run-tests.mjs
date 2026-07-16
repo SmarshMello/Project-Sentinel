@@ -78,3 +78,28 @@ const {buildWatcherActivity} = await import('../src/intelligence/activityEngine.
 const feed = buildWatcherActivity([{id:'a',name:'A',watcher:{status:'healthy',checkedAt:'2026-01-01T00:00:00Z'},risk:{tone:'safe'},release:{},recommendation:{reasons:['ok']}},{id:'b',name:'B',watcher:{status:'possible-update',checkedAt:'2026-02-01T00:00:00Z'},risk:{tone:'unknown'},release:{detectedVersion:'2'},recommendation:{reasons:['review']}}]);
 assert.equal(feed[0].pluginId,'b'); assert.equal(feed.length,2);
 console.log('PASS Watcher activity ordering');
+
+const {createInstallationPlan} = await import('../src/intelligence/buildPlannerEngine.js');
+const plannerGraph = {edges:[
+  {source:'plugin',target:'library',resolved:true},
+  {source:'library',target:'loader',resolved:true},
+]};
+const plannerProfiles = [
+  {id:'loader',name:'Loader',currentVersion:'1',risk:{key:'safe'},recommendation:{label:'Monitor'},goldenBuild:true},
+  {id:'library',name:'Library',currentVersion:'2',risk:{key:'safe'},recommendation:{label:'Monitor'},goldenBuild:false},
+  {id:'plugin',name:'Plugin',currentVersion:'3',risk:{key:'likelySafe'},recommendation:{label:'Monitor'},goldenBuild:false},
+];
+const plan = createInstallationPlan(['plugin'], plannerGraph, plannerProfiles);
+assert.deepEqual(plan.steps.map((step)=>step.id), ['loader','library','plugin']);
+assert.equal(plan.autoAddedIds.length,2);
+assert.equal(plan.ready,true);
+console.log('PASS Build Planner dependency expansion and installation ordering');
+
+const {verifyBuild} = await import('../src/intelligence/buildVerifierEngine.js');
+const blocked = verifyBuild(['plugin'], plannerGraph, plannerProfiles);
+assert.equal(blocked.readyToLaunch,false);
+assert.equal(blocked.counts.error,1);
+const verified = verifyBuild(['loader','library','plugin'], plannerGraph, plannerProfiles);
+assert.equal(verified.readyToLaunch,true);
+assert.equal(verified.counts.error,0);
+console.log('PASS Build Verifier dependency completeness and launch readiness');

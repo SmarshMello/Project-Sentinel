@@ -10,6 +10,8 @@ import ImpactSimulator from '@site/src/components/intelligence/ImpactSimulator';
 import WatcherFeed from '@site/src/components/intelligence/WatcherFeed';
 import RegistryQuality from '@site/src/components/intelligence/RegistryQuality';
 import GoldenBuildManager from '@site/src/components/intelligence/GoldenBuildManager';
+import BuildPlanner from '@site/src/components/intelligence/BuildPlanner';
+import BuildVerifier from '@site/src/components/intelligence/BuildVerifier';
 import styles from './styles.module.css';
 
 const INTENT_FILTERS = {
@@ -59,9 +61,9 @@ export default function IntelligenceCenter() {
   return <Layout title="Sentinel Intelligence" description="Release intelligence, Plugin DNA and compatibility predictions for Project Sentinel.">
     <main className={styles.page}>
       <header className={styles.hero}><div className="container">
-        <span className={styles.eyebrow}>Build change management · 2.0</span>
+        <span className={styles.eyebrow}>Build planning and verification · 2.1</span>
         <Heading as="h1">Sentinel Intelligence</Heading>
-        <p>Map dependencies, simulate build-wide change impact, compare Golden Build snapshots, audit registry quality, and turn Watcher and Doctor evidence into a unified operations picture.</p>
+        <p>Design installation orders, verify build readiness, map dependencies, simulate change impact, compare Golden Build snapshots, and turn Watcher and Doctor evidence into one operations picture.</p>
         <div className={styles.heroActions}><Link to="/watcher">Open Watcher</Link><Link to="/compatibility">Compatibility Center</Link></div>
       </div></header>
 
@@ -75,6 +77,8 @@ export default function IntelligenceCenter() {
           <WatcherFeed profiles={snapshot.profiles} onSelect={(id) => {setSelectedId(id); setExpanded(id);}} />
           <RegistryQuality snapshot={snapshot} onSelect={(id) => {setSelectedId(id); setExpanded(id);}} />
           <GoldenBuildManager profiles={snapshot.profiles} />
+          <BuildPlanner snapshot={snapshot} selectedId={selectedId} onSelect={setSelectedId} />
+          <BuildVerifier snapshot={snapshot} onSelect={(id) => {setSelectedId(id); setExpanded(id);}} />
         </div>
 
         <div className={styles.sectionHeader}><div><span className={styles.eyebrow}>Release intelligence</span><Heading as="h2">Plugin DNA and update decisions</Heading><p>Search normally or use phrases such as “needs review,” “breaking updates,” “outdated dependencies,” “Golden Build,” “updated,” or “deprecated.”</p></div></div>
