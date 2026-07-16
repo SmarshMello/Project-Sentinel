@@ -1,7 +1,416 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:17:57.949Z",
+  "updatedAt": "2026-07-16T06:19:58.427Z",
   "discoveries": [
+    {
+      "id": "research-scene-manager",
+      "name": "Scene Manager",
+      "shortName": null,
+      "aliases": [
+        "Scene Manager",
+        "Scene Manager - Script Modifications & Plugins - LCPDFR.com",
+        "Does Scene Manager Still Work? - LCPDFR.com",
+        "ManagersT",
+        "3DManager",
+        "godot.lib.scene-manager-rs",
+        "Scene Manager - Great Roadside Barriers and More! | Patreon",
+        "Scene Manager Mod Still Works - Basic Tutorial - YouTube Members Vid",
+        "Scene Manager 2.3.3 - GTA 5 mod",
+        "Steam Community :: Video :: GTA 5: LSPDFR Scene Manager Plugin Showcase"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "Unknown",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 98,
+      "documentationConfidence": 63,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "Sentinel Research found credible public sources for Scene Manager. Compatibility remains unverified until review.",
+      "dependencies": [
+        "LSPDFR"
+      ],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.lcpdfr.com/downloads/gta5mods/scripts/27954-scene-manager/",
+      "note": "Research Engine found 12 credible sources across 8 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-scene-manager",
+      "requestedAt": "2026-07-16T06:19:58.427Z",
+      "sources": [
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/27954-scene-manager/",
+          "domain": "lcpdfr.com",
+          "title": "Scene Manager - Script Modifications & Plugins - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/forums/topic/137704-does-scene-manager-still-work/",
+          "domain": "lcpdfr.com",
+          "title": "Does Scene Manager Still Work? - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/16Byte/ManagersT",
+          "domain": "github.com",
+          "title": "ManagersT",
+          "description": "Tired of writing singletons? Hate having 30 managers cluttering every scene? Manager<T> is a tiny Unity framework for persistent, scene-aware manager singletons. Write your manager once, drop it on a prefab, add it to one list — and it spawns itself, survives every scene load, and gives you a clean Instance accessor.",
+          "snippet": "Tired of writing singletons? Hate having 30 managers cluttering every scene? Manager<T> is a tiny Unity framework for persistent, scene-aware manager singletons. Write your manager once, drop it on a prefab, add it to one list — and it spawns itself, survives every scene load, and gives you a clean Instance accessor.",
+          "author": "16Byte",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T06:47:37Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/mobojingjiniao/3DManager",
+          "domain": "github.com",
+          "title": "3DManager",
+          "description": "Android 3DGS scene manager — TDD-verified, with Live Wallpaper + gravity sensing",
+          "snippet": "Android 3DGS scene manager — TDD-verified, with Live Wallpaper + gravity sensing",
+          "author": "mobojingjiniao",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-13T15:46:43Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/SignalWalker/godot.lib.scene-manager-rs",
+          "domain": "github.com",
+          "title": "godot.lib.scene-manager-rs",
+          "description": "",
+          "snippet": "",
+          "author": "SignalWalker",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-13T14:06:49Z",
+          "score": 100
+        },
+        {
+          "url": "https://www.patreon.com/posts/scene-manager-95486226",
+          "domain": "patreon.com",
+          "title": "Scene Manager - Great Roadside Barriers and More! | Patreon",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=dSNmdTn210A",
+          "domain": "youtube.com",
+          "title": "Scene Manager Mod Still Works - Basic Tutorial - YouTube Members Vid",
+          "description": "Scene Manager still works great. Quick Install and demo of the barrier system.Graphics Mod - StryVision Early Access - https://ko-fi.com/s/0cba02a3c5StryVisi...",
+          "snippet": "",
+          "author": "Request",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/scene-manager-2-3-3/",
+          "domain": "gta5mod.net",
+          "title": "Scene Manager 2.3.3 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3307198276",
+          "domain": "steamcommunity.com",
+          "title": "Steam Community :: Video :: GTA 5: LSPDFR Scene Manager Plugin Showcase",
+          "description": "Steam Community: Grand Theft Auto V. ►Subscribe Here: https://bit.ly/2DLX4ne\n►Donate Here: https://bit.ly/2IGxq20 \n►Join The Discord Fanbase: https://discord.gg/TWzMBcu\n►Follow Me on Twitch: https://www.twitch.tv/yoadriangaming",
+          "snippet": "",
+          "author": "mistake",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.facebook.com/groups/888202417899838/posts/26975261158767274/",
+          "domain": "facebook.com",
+          "title": "LSPDFR Support | Any good replacements for Scene Manager | Facebook",
+          "description": "Any good replacements for Scene Manager? I know it technically works but is years out of date and tends to crash quite often. Im looking for path creation, collector points and props, though props...",
+          "snippet": "",
+          "author": "AI from the post below",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/lspdfr/comments/kqk5pl/i_love_scene_manager_no_longer_having_traffic_jam/",
+          "domain": "reddit.com",
+          "title": "I love scene manager. No longer having traffic jam everywhere ... - Reddit",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/GTAV_Mods/comments/saoqex/scene_manager_install_and_showcase_lspdfr_gta_v/",
+          "domain": "reddit.com",
+          "title": "Scene Manager | Install and Showcase | LSPDFR | GTA V",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/27954-scene-manager/",
+          "domain": "lcpdfr.com",
+          "title": "Scene Manager - Script Modifications & Plugins - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/forums/topic/137704-does-scene-manager-still-work/",
+          "domain": "lcpdfr.com",
+          "title": "Does Scene Manager Still Work? - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/16Byte/ManagersT",
+          "domain": "github.com",
+          "title": "ManagersT",
+          "description": "Tired of writing singletons? Hate having 30 managers cluttering every scene? Manager<T> is a tiny Unity framework for persistent, scene-aware manager singletons. Write your manager once, drop it on a prefab, add it to one list — and it spawns itself, survives every scene load, and gives you a clean Instance accessor.",
+          "snippet": "Tired of writing singletons? Hate having 30 managers cluttering every scene? Manager<T> is a tiny Unity framework for persistent, scene-aware manager singletons. Write your manager once, drop it on a prefab, add it to one list — and it spawns itself, survives every scene load, and gives you a clean Instance accessor.",
+          "author": "16Byte",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T06:47:37Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/mobojingjiniao/3DManager",
+          "domain": "github.com",
+          "title": "3DManager",
+          "description": "Android 3DGS scene manager — TDD-verified, with Live Wallpaper + gravity sensing",
+          "snippet": "Android 3DGS scene manager — TDD-verified, with Live Wallpaper + gravity sensing",
+          "author": "mobojingjiniao",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-13T15:46:43Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/SignalWalker/godot.lib.scene-manager-rs",
+          "domain": "github.com",
+          "title": "godot.lib.scene-manager-rs",
+          "description": "",
+          "snippet": "",
+          "author": "SignalWalker",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-13T14:06:49Z",
+          "score": 100
+        },
+        {
+          "url": "https://www.patreon.com/posts/scene-manager-95486226",
+          "domain": "patreon.com",
+          "title": "Scene Manager - Great Roadside Barriers and More! | Patreon",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=dSNmdTn210A",
+          "domain": "youtube.com",
+          "title": "Scene Manager Mod Still Works - Basic Tutorial - YouTube Members Vid",
+          "description": "Scene Manager still works great. Quick Install and demo of the barrier system.Graphics Mod - StryVision Early Access - https://ko-fi.com/s/0cba02a3c5StryVisi...",
+          "snippet": "",
+          "author": "Request",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/scene-manager-2-3-3/",
+          "domain": "gta5mod.net",
+          "title": "Scene Manager 2.3.3 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3307198276",
+          "domain": "steamcommunity.com",
+          "title": "Steam Community :: Video :: GTA 5: LSPDFR Scene Manager Plugin Showcase",
+          "description": "Steam Community: Grand Theft Auto V. ►Subscribe Here: https://bit.ly/2DLX4ne\n►Donate Here: https://bit.ly/2IGxq20 \n►Join The Discord Fanbase: https://discord.gg/TWzMBcu\n►Follow Me on Twitch: https://www.twitch.tv/yoadriangaming",
+          "snippet": "",
+          "author": "mistake",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.facebook.com/groups/888202417899838/posts/26975261158767274/",
+          "domain": "facebook.com",
+          "title": "LSPDFR Support | Any good replacements for Scene Manager | Facebook",
+          "description": "Any good replacements for Scene Manager? I know it technically works but is years out of date and tends to crash quite often. Im looking for path creation, collector points and props, though props...",
+          "snippet": "",
+          "author": "AI from the post below",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/lspdfr/comments/kqk5pl/i_love_scene_manager_no_longer_having_traffic_jam/",
+          "domain": "reddit.com",
+          "title": "I love scene manager. No longer having traffic jam everywhere ... - Reddit",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/GTAV_Mods/comments/saoqex/scene_manager_install_and_showcase_lspdfr_gta_v/",
+          "domain": "reddit.com",
+          "title": "Scene Manager | Install and Showcase | LSPDFR | GTA V",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        }
+      ]
+    },
     {
       "id": "research-air-support-plus",
       "name": "Air Support Plus",
@@ -6781,6 +7190,203 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182754771-0d96e00f",
+      "requestId": "expert-1784182754771-0d96e00f",
+      "query": "Scene Manager",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:19:58.427Z",
+      "completedAt": "2026-07-16T06:19:58.427Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 12,
+      "candidates": [
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/27954-scene-manager/",
+          "domain": "lcpdfr.com",
+          "title": "Scene Manager - Script Modifications & Plugins - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/forums/topic/137704-does-scene-manager-still-work/",
+          "domain": "lcpdfr.com",
+          "title": "Does Scene Manager Still Work? - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/16Byte/ManagersT",
+          "domain": "github.com",
+          "title": "ManagersT",
+          "description": "Tired of writing singletons? Hate having 30 managers cluttering every scene? Manager<T> is a tiny Unity framework for persistent, scene-aware manager singletons. Write your manager once, drop it on a prefab, add it to one list — and it spawns itself, survives every scene load, and gives you a clean Instance accessor.",
+          "snippet": "Tired of writing singletons? Hate having 30 managers cluttering every scene? Manager<T> is a tiny Unity framework for persistent, scene-aware manager singletons. Write your manager once, drop it on a prefab, add it to one list — and it spawns itself, survives every scene load, and gives you a clean Instance accessor.",
+          "author": "16Byte",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T06:47:37Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/mobojingjiniao/3DManager",
+          "domain": "github.com",
+          "title": "3DManager",
+          "description": "Android 3DGS scene manager — TDD-verified, with Live Wallpaper + gravity sensing",
+          "snippet": "Android 3DGS scene manager — TDD-verified, with Live Wallpaper + gravity sensing",
+          "author": "mobojingjiniao",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-13T15:46:43Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/SignalWalker/godot.lib.scene-manager-rs",
+          "domain": "github.com",
+          "title": "godot.lib.scene-manager-rs",
+          "description": "",
+          "snippet": "",
+          "author": "SignalWalker",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-13T14:06:49Z",
+          "score": 100
+        },
+        {
+          "url": "https://www.patreon.com/posts/scene-manager-95486226",
+          "domain": "patreon.com",
+          "title": "Scene Manager - Great Roadside Barriers and More! | Patreon",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=dSNmdTn210A",
+          "domain": "youtube.com",
+          "title": "Scene Manager Mod Still Works - Basic Tutorial - YouTube Members Vid",
+          "description": "Scene Manager still works great. Quick Install and demo of the barrier system.Graphics Mod - StryVision Early Access - https://ko-fi.com/s/0cba02a3c5StryVisi...",
+          "snippet": "",
+          "author": "Request",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/scene-manager-2-3-3/",
+          "domain": "gta5mod.net",
+          "title": "Scene Manager 2.3.3 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3307198276",
+          "domain": "steamcommunity.com",
+          "title": "Steam Community :: Video :: GTA 5: LSPDFR Scene Manager Plugin Showcase",
+          "description": "Steam Community: Grand Theft Auto V. ►Subscribe Here: https://bit.ly/2DLX4ne\n►Donate Here: https://bit.ly/2IGxq20 \n►Join The Discord Fanbase: https://discord.gg/TWzMBcu\n►Follow Me on Twitch: https://www.twitch.tv/yoadriangaming",
+          "snippet": "",
+          "author": "mistake",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.facebook.com/groups/888202417899838/posts/26975261158767274/",
+          "domain": "facebook.com",
+          "title": "LSPDFR Support | Any good replacements for Scene Manager | Facebook",
+          "description": "Any good replacements for Scene Manager? I know it technically works but is years out of date and tends to crash quite often. Im looking for path creation, collector points and props, though props...",
+          "snippet": "",
+          "author": "AI from the post below",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/lspdfr/comments/kqk5pl/i_love_scene_manager_no_longer_having_traffic_jam/",
+          "domain": "reddit.com",
+          "title": "I love scene manager. No longer having traffic jam everywhere ... - Reddit",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/GTAV_Mods/comments/saoqex/scene_manager_install_and_showcase_lspdfr_gta_v/",
+          "domain": "reddit.com",
+          "title": "Scene Manager | Install and Showcase | LSPDFR | GTA V",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        }
+      ]
+    },
     {
       "id": "expert-1784182658879-66c28868",
       "requestId": "expert-1784182658879-66c28868",
