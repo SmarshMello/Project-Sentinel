@@ -72,7 +72,7 @@ export default function Watcher() {
   }, [reportUrl, historyUrl]);
 
   const waitForPublishedReport = useCallback((previousCheckedAt, attempt = 0) => {
-    const maxAttempts = 36;
+    const maxAttempts = 72;
     setPublishStatus(attempt === 0 ? 'GitHub Pages is publishing the new report…' : `Waiting for GitHub Pages… ${attempt * 5}s`);
     publishPollRef.current = window.setTimeout(async () => {
       const nextReport = await loadReport();
@@ -83,7 +83,7 @@ export default function Watcher() {
         return;
       }
       if (attempt + 1 >= maxAttempts) {
-        setPublishStatus('The scan finished, but GitHub Pages is still publishing. Refresh this page in a minute.');
+        setPublishStatus('The scan finished and the Pages deployment was triggered, but the new report is still publishing. Check the Pages workflow or refresh shortly.');
         return;
       }
       waitForPublishedReport(previousCheckedAt, attempt + 1);
