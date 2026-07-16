@@ -1,7 +1,420 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:09:39.274Z",
+  "updatedAt": "2026-07-16T06:10:30.703Z",
   "discoveries": [
+    {
+      "id": "research-arrest-manager",
+      "name": "Arrest Manager",
+      "shortName": null,
+      "aliases": [
+        "Arrest Manager",
+        "Arrest Manager 2025 - Transport, Coroners, Jail Dropoffs & More",
+        "Arrest Manager (Grab Peds, More Jail Points, Prisoner Transport & more)",
+        "[REL] Arrest Manager  (More Jail Points with cells, Improved Prisoner Transport, Scene Management -Towing&Insurance, PedFollow&Taxi-, WeaponDrop, XML Customisation, API)",
+        "Arrest-Manager-2025",
+        "Arrest-Manager-2025/README.md at main · Sparky81x/Arrest-Manager-2025",
+        "Arrest-Manager",
+        "Releases · Albo1125/Arrest-Manager",
+        "ArrestManagerPlus",
+        "Arrest Manager and Stop the Ped : r/lspdfr - Reddit"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "Unknown",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 97,
+      "documentationConfidence": 63,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "Sentinel Research found credible public sources for Arrest Manager. Compatibility remains unverified until review.",
+      "dependencies": [
+        "LSPDFR"
+      ],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.lcpdfr.com/downloads/gta5mods/scripts/51092-arrest-manager-2025-transport-coroners-jail-dropoffs-more/",
+      "note": "Research Engine found 12 credible sources across 6 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-arrest-manager",
+      "requestedAt": "2026-07-16T06:10:30.703Z",
+      "sources": [
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/51092-arrest-manager-2025-transport-coroners-jail-dropoffs-more/",
+          "domain": "lcpdfr.com",
+          "title": "Arrest Manager 2025 - Transport, Coroners, Jail Dropoffs & More",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/8107-arrest-manager-grab-peds-more-jail-points-prisoner-transport-more/",
+          "domain": "lcpdfr.com",
+          "title": "Arrest Manager (Grab Peds, More Jail Points, Prisoner Transport & more)",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/forums/topic/64213-rel-arrest-manager-more-jail-points-with-cells-improved-prisoner-transport-scene-management-towinginsurance-pedfollowtaxi-weapondrop-xml-customisation-api/page/3/",
+          "domain": "lcpdfr.com",
+          "title": "[REL] Arrest Manager  (More Jail Points with cells, Improved Prisoner Transport, Scene Management -Towing&Insurance, PedFollow&Taxi-, WeaponDrop, XML Customisation, API)",
+          "description": "",
+          "snippet": "",
+          "author": "g17fapro --",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Sparky81x/Arrest-Manager-2025",
+          "domain": "github.com",
+          "title": "Arrest-Manager-2025",
+          "description": "Arrest Manager is a plugin for LSPDFR by Albo1125.",
+          "snippet": "Arrest Manager is a plugin for LSPDFR by Albo1125.",
+          "author": "Sparky81x",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2025-05-31T16:09:14Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Sparky81x/Arrest-Manager-2025/blob/main/README.md",
+          "domain": "github.com",
+          "title": "Arrest-Manager-2025/README.md at main · Sparky81x/Arrest-Manager-2025",
+          "description": "Arrest Manager is a plugin for LSPDFR by Albo1125. - Arrest-Manager-2025/README.md at main · Sparky81x/Arrest-Manager-2025",
+          "snippet": "",
+          "author": "Albo1125. - Arrest-Manager-2025",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Albo1125/Arrest-Manager",
+          "domain": "github.com",
+          "title": "Arrest-Manager",
+          "description": "Arrest Manager is a plugin for LSPDFR by Albo1125.",
+          "snippet": "Arrest Manager is a plugin for LSPDFR by Albo1125.",
+          "author": "Albo1125",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 24,
+          "updatedAt": "2026-04-19T15:58:19Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Albo1125/Arrest-Manager/releases",
+          "domain": "github.com",
+          "title": "Releases · Albo1125/Arrest-Manager",
+          "description": "Arrest Manager is a plugin for LSPDFR by Albo1125. - Releases · Albo1125/Arrest-Manager",
+          "snippet": "",
+          "author": "Albo1125. - Releases",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/WithLithum-archive/ArrestManagerPlus",
+          "domain": "github.com",
+          "title": "ArrestManagerPlus",
+          "description": "Maintainance of utilities and services for Arrest Manager",
+          "snippet": "Maintainance of utilities and services for Arrest Manager",
+          "author": "WithLithum-archive",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-08-19T06:19:53Z",
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/lspdfr/comments/b28cou/arrest_manager_and_stop_the_ped/",
+          "domain": "reddit.com",
+          "title": "Arrest Manager and Stop the Ped : r/lspdfr - Reddit",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://itsmatog.tebex.io/package/6124722",
+          "domain": "itsmatog.tebex.io",
+          "title": "ItsMatOG&#x27;s Software House · Arrest Manager Package",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 98
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/arrest-ped-v",
+          "domain": "gta5-mods.com",
+          "title": "Arrest Peds V (Police mech / cuffs)",
+          "description": "XMOD PRESENTS: ---ArrestPedV---Description: This mod allows you to execute an arrest on peds. First they will freeze and put their hands up which will be followed by an option to cuff them.You can also drive them to the precinct and bring them to justice. GTA V online is not supported.-----------------------------------------------Usage instruction: (PLEASE SEE THE VIDEO)- Press 'F3' while AIMING at a PED / VEHICLE to make them freeze and rais...",
+          "snippet": "",
+          "author": "XMOD",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 89
+        },
+        {
+          "url": "https://www.nexusmods.com/schedule1/mods/2291",
+          "domain": "nexusmods.com",
+          "title": "Enhanced Police (Raids - Arrest Tweaks - Awareness)",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 75
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/51092-arrest-manager-2025-transport-coroners-jail-dropoffs-more/",
+          "domain": "lcpdfr.com",
+          "title": "Arrest Manager 2025 - Transport, Coroners, Jail Dropoffs & More",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/8107-arrest-manager-grab-peds-more-jail-points-prisoner-transport-more/",
+          "domain": "lcpdfr.com",
+          "title": "Arrest Manager (Grab Peds, More Jail Points, Prisoner Transport & more)",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/forums/topic/64213-rel-arrest-manager-more-jail-points-with-cells-improved-prisoner-transport-scene-management-towinginsurance-pedfollowtaxi-weapondrop-xml-customisation-api/page/3/",
+          "domain": "lcpdfr.com",
+          "title": "[REL] Arrest Manager  (More Jail Points with cells, Improved Prisoner Transport, Scene Management -Towing&Insurance, PedFollow&Taxi-, WeaponDrop, XML Customisation, API)",
+          "description": "",
+          "snippet": "",
+          "author": "g17fapro --",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Sparky81x/Arrest-Manager-2025",
+          "domain": "github.com",
+          "title": "Arrest-Manager-2025",
+          "description": "Arrest Manager is a plugin for LSPDFR by Albo1125.",
+          "snippet": "Arrest Manager is a plugin for LSPDFR by Albo1125.",
+          "author": "Sparky81x",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2025-05-31T16:09:14Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Sparky81x/Arrest-Manager-2025/blob/main/README.md",
+          "domain": "github.com",
+          "title": "Arrest-Manager-2025/README.md at main · Sparky81x/Arrest-Manager-2025",
+          "description": "Arrest Manager is a plugin for LSPDFR by Albo1125. - Arrest-Manager-2025/README.md at main · Sparky81x/Arrest-Manager-2025",
+          "snippet": "",
+          "author": "Albo1125. - Arrest-Manager-2025",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Albo1125/Arrest-Manager",
+          "domain": "github.com",
+          "title": "Arrest-Manager",
+          "description": "Arrest Manager is a plugin for LSPDFR by Albo1125.",
+          "snippet": "Arrest Manager is a plugin for LSPDFR by Albo1125.",
+          "author": "Albo1125",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 24,
+          "updatedAt": "2026-04-19T15:58:19Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Albo1125/Arrest-Manager/releases",
+          "domain": "github.com",
+          "title": "Releases · Albo1125/Arrest-Manager",
+          "description": "Arrest Manager is a plugin for LSPDFR by Albo1125. - Releases · Albo1125/Arrest-Manager",
+          "snippet": "",
+          "author": "Albo1125. - Releases",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/WithLithum-archive/ArrestManagerPlus",
+          "domain": "github.com",
+          "title": "ArrestManagerPlus",
+          "description": "Maintainance of utilities and services for Arrest Manager",
+          "snippet": "Maintainance of utilities and services for Arrest Manager",
+          "author": "WithLithum-archive",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-08-19T06:19:53Z",
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/lspdfr/comments/b28cou/arrest_manager_and_stop_the_ped/",
+          "domain": "reddit.com",
+          "title": "Arrest Manager and Stop the Ped : r/lspdfr - Reddit",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://itsmatog.tebex.io/package/6124722",
+          "domain": "itsmatog.tebex.io",
+          "title": "ItsMatOG&#x27;s Software House · Arrest Manager Package",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 98
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/arrest-ped-v",
+          "domain": "gta5-mods.com",
+          "title": "Arrest Peds V (Police mech / cuffs)",
+          "description": "XMOD PRESENTS: ---ArrestPedV---Description: This mod allows you to execute an arrest on peds. First they will freeze and put their hands up which will be followed by an option to cuff them.You can also drive them to the precinct and bring them to justice. GTA V online is not supported.-----------------------------------------------Usage instruction: (PLEASE SEE THE VIDEO)- Press 'F3' while AIMING at a PED / VEHICLE to make them freeze and rais...",
+          "snippet": "",
+          "author": "XMOD",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 89
+        },
+        {
+          "url": "https://www.nexusmods.com/schedule1/mods/2291",
+          "domain": "nexusmods.com",
+          "title": "Enhanced Police (Raids - Arrest Tweaks - Awareness)",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 75
+        }
+      ]
+    },
     {
       "id": "research-vehicle-persistence",
       "name": "Vehicle Persistence",
@@ -3893,6 +4306,205 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182188820-71362e3f",
+      "requestId": "expert-1784182188820-71362e3f",
+      "query": "Arrest Manager",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:10:30.703Z",
+      "completedAt": "2026-07-16T06:10:30.703Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 12,
+      "candidates": [
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/51092-arrest-manager-2025-transport-coroners-jail-dropoffs-more/",
+          "domain": "lcpdfr.com",
+          "title": "Arrest Manager 2025 - Transport, Coroners, Jail Dropoffs & More",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/8107-arrest-manager-grab-peds-more-jail-points-prisoner-transport-more/",
+          "domain": "lcpdfr.com",
+          "title": "Arrest Manager (Grab Peds, More Jail Points, Prisoner Transport & more)",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/forums/topic/64213-rel-arrest-manager-more-jail-points-with-cells-improved-prisoner-transport-scene-management-towinginsurance-pedfollowtaxi-weapondrop-xml-customisation-api/page/3/",
+          "domain": "lcpdfr.com",
+          "title": "[REL] Arrest Manager  (More Jail Points with cells, Improved Prisoner Transport, Scene Management -Towing&Insurance, PedFollow&Taxi-, WeaponDrop, XML Customisation, API)",
+          "description": "",
+          "snippet": "",
+          "author": "g17fapro --",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Sparky81x/Arrest-Manager-2025",
+          "domain": "github.com",
+          "title": "Arrest-Manager-2025",
+          "description": "Arrest Manager is a plugin for LSPDFR by Albo1125.",
+          "snippet": "Arrest Manager is a plugin for LSPDFR by Albo1125.",
+          "author": "Sparky81x",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2025-05-31T16:09:14Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Sparky81x/Arrest-Manager-2025/blob/main/README.md",
+          "domain": "github.com",
+          "title": "Arrest-Manager-2025/README.md at main · Sparky81x/Arrest-Manager-2025",
+          "description": "Arrest Manager is a plugin for LSPDFR by Albo1125. - Arrest-Manager-2025/README.md at main · Sparky81x/Arrest-Manager-2025",
+          "snippet": "",
+          "author": "Albo1125. - Arrest-Manager-2025",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Albo1125/Arrest-Manager",
+          "domain": "github.com",
+          "title": "Arrest-Manager",
+          "description": "Arrest Manager is a plugin for LSPDFR by Albo1125.",
+          "snippet": "Arrest Manager is a plugin for LSPDFR by Albo1125.",
+          "author": "Albo1125",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 24,
+          "updatedAt": "2026-04-19T15:58:19Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Albo1125/Arrest-Manager/releases",
+          "domain": "github.com",
+          "title": "Releases · Albo1125/Arrest-Manager",
+          "description": "Arrest Manager is a plugin for LSPDFR by Albo1125. - Releases · Albo1125/Arrest-Manager",
+          "snippet": "",
+          "author": "Albo1125. - Releases",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/WithLithum-archive/ArrestManagerPlus",
+          "domain": "github.com",
+          "title": "ArrestManagerPlus",
+          "description": "Maintainance of utilities and services for Arrest Manager",
+          "snippet": "Maintainance of utilities and services for Arrest Manager",
+          "author": "WithLithum-archive",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-08-19T06:19:53Z",
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/lspdfr/comments/b28cou/arrest_manager_and_stop_the_ped/",
+          "domain": "reddit.com",
+          "title": "Arrest Manager and Stop the Ped : r/lspdfr - Reddit",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://itsmatog.tebex.io/package/6124722",
+          "domain": "itsmatog.tebex.io",
+          "title": "ItsMatOG&#x27;s Software House · Arrest Manager Package",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 98
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/arrest-ped-v",
+          "domain": "gta5-mods.com",
+          "title": "Arrest Peds V (Police mech / cuffs)",
+          "description": "XMOD PRESENTS: ---ArrestPedV---Description: This mod allows you to execute an arrest on peds. First they will freeze and put their hands up which will be followed by an option to cuff them.You can also drive them to the precinct and bring them to justice. GTA V online is not supported.-----------------------------------------------Usage instruction: (PLEASE SEE THE VIDEO)- Press 'F3' while AIMING at a PED / VEHICLE to make them freeze and rais...",
+          "snippet": "",
+          "author": "XMOD",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 89
+        },
+        {
+          "url": "https://www.nexusmods.com/schedule1/mods/2291",
+          "domain": "nexusmods.com",
+          "title": "Enhanced Police (Raids - Arrest Tweaks - Awareness)",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 75
+        }
+      ]
+    },
     {
       "id": "expert-1784182147772-f9a92b0f",
       "requestId": "expert-1784182147772-f9a92b0f",
