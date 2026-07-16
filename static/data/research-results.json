@@ -1,7 +1,324 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:08:06.826Z",
+  "updatedAt": "2026-07-16T06:08:29.457Z",
   "discoveries": [
+    {
+      "id": "research-responsev",
+      "name": "ResponseV",
+      "shortName": null,
+      "aliases": [
+        "ResponseV",
+        "ResponseV/README.md at master · trdwll/ResponseV",
+        "Releases · trdwll/ResponseV",
+        "Responsev",
+        "Omlette-recipe",
+        "responsevent"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "COMPANY SIZE",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 94,
+      "documentationConfidence": 81,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "A LSPDFR mod to add more calls, immersion, and overall fun to the core mod. - ResponseV/README.md at master · trdwll/ResponseV",
+      "dependencies": [
+        "LSPDFR"
+      ],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://github.com/trdwll/ResponseV/blob/master/README.md",
+      "note": "Research Engine found 6 credible sources across 1 domain. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-responsev",
+      "requestedAt": "2026-07-16T06:08:29.457Z",
+      "sources": [
+        {
+          "url": "https://github.com/trdwll/ResponseV/blob/master/README.md",
+          "domain": "github.com",
+          "title": "ResponseV/README.md at master · trdwll/ResponseV",
+          "description": "A LSPDFR mod to add more calls, immersion, and overall fun to the core mod. - ResponseV/README.md at master · trdwll/ResponseV",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/trdwll/ResponseV/",
+          "domain": "github.com",
+          "title": "ResponseV",
+          "description": "A LSPDFR mod to add more calls, immersion, and overall fun to the core mod.",
+          "snippet": "A LSPDFR mod to add more calls, immersion, and overall fun to the core mod.",
+          "author": "trdwll",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2023-01-28T15:52:32Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/trdwll/ResponseV/releases",
+          "domain": "github.com",
+          "title": "Releases · trdwll/ResponseV",
+          "description": "A LSPDFR mod to add more calls, immersion, and overall fun to the core mod. - Releases · trdwll/ResponseV",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Allamurodov/Responsev",
+          "domain": "github.com",
+          "title": "Responsev",
+          "description": "",
+          "snippet": "",
+          "author": "Allamurodov",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-08T08:30:10Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/eyad-sc16/Omlette-recipe",
+          "domain": "github.com",
+          "title": "Omlette-recipe",
+          "description": "a simple landing page for omlette recipe,  with responsev desighn",
+          "snippet": "a simple landing page for omlette recipe,  with responsev desighn",
+          "author": "eyad-sc16",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-14T09:36:48Z",
+          "score": 96
+        },
+        {
+          "url": "https://github.com/FxRayHughes/responsevent",
+          "domain": "github.com",
+          "title": "responsevent",
+          "description": "Event-driven plugin framework with extensible source/channel/action registries",
+          "snippet": "Event-driven plugin framework with extensible source/channel/action registries",
+          "author": "FxRayHughes",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-05T10:07:54Z",
+          "score": 70
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://github.com/trdwll/ResponseV/blob/master/README.md",
+          "domain": "github.com",
+          "title": "ResponseV/README.md at master · trdwll/ResponseV",
+          "description": "A LSPDFR mod to add more calls, immersion, and overall fun to the core mod. - ResponseV/README.md at master · trdwll/ResponseV",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/trdwll/ResponseV/",
+          "domain": "github.com",
+          "title": "ResponseV",
+          "description": "A LSPDFR mod to add more calls, immersion, and overall fun to the core mod.",
+          "snippet": "A LSPDFR mod to add more calls, immersion, and overall fun to the core mod.",
+          "author": "trdwll",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2023-01-28T15:52:32Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/trdwll/ResponseV/releases",
+          "domain": "github.com",
+          "title": "Releases · trdwll/ResponseV",
+          "description": "A LSPDFR mod to add more calls, immersion, and overall fun to the core mod. - Releases · trdwll/ResponseV",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Allamurodov/Responsev",
+          "domain": "github.com",
+          "title": "Responsev",
+          "description": "",
+          "snippet": "",
+          "author": "Allamurodov",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-08T08:30:10Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/eyad-sc16/Omlette-recipe",
+          "domain": "github.com",
+          "title": "Omlette-recipe",
+          "description": "a simple landing page for omlette recipe,  with responsev desighn",
+          "snippet": "a simple landing page for omlette recipe,  with responsev desighn",
+          "author": "eyad-sc16",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-14T09:36:48Z",
+          "score": 96
+        },
+        {
+          "url": "https://github.com/FxRayHughes/responsevent",
+          "domain": "github.com",
+          "title": "responsevent",
+          "description": "Event-driven plugin framework with extensible source/channel/action registries",
+          "snippet": "Event-driven plugin framework with extensible source/channel/action registries",
+          "author": "FxRayHughes",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-05T10:07:54Z",
+          "score": 70
+        },
+        {
+          "url": "https://github.com/thebannana/RAPID-RESPONSEv0.1",
+          "domain": "github.com",
+          "title": "RAPID-RESPONSEv0.1",
+          "description": "Rapid Response is a tactical police RTS game developed in Unity. The first-ever version of Rapid Response secured 1st place in the Game Development category at the FIT Coding Challenge 2024.",
+          "snippet": "Rapid Response is a tactical police RTS game developed in Unity. The first-ever version of Rapid Response secured 1st place in the Game Development category at the FIT Coding Challenge 2024.",
+          "author": "thebannana",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-12-23T21:37:40Z",
+          "score": 60
+        },
+        {
+          "url": "https://github.com/nicolasdanieldev/site-responseve-",
+          "domain": "github.com",
+          "title": "site-responseve-",
+          "description": "This is a site, project for initial programations, with responsive languagens: HTML, CSS, basic and eays, for acess the site,  user for yours preference. LETS CODE!",
+          "snippet": "This is a site, project for initial programations, with responsive languagens: HTML, CSS, basic and eays, for acess the site,  user for yours preference. LETS CODE!",
+          "author": "nicolasdanieldev",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-02-26T00:56:03Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/RuslanUterly/ResponseVacancyUI",
+          "domain": "github.com",
+          "title": "ResponseVacancyUI",
+          "description": "",
+          "snippet": "",
+          "author": "RuslanUterly",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2025-12-17T18:41:15Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/RuslanUterly/ResponseVacancyEngine",
+          "domain": "github.com",
+          "title": "ResponseVacancyEngine",
+          "description": "",
+          "snippet": "",
+          "author": "RuslanUterly",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2025-12-17T18:40:11Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/ethem27/responsevie_hotel_site",
+          "domain": "github.com",
+          "title": "responsevie_hotel_site",
+          "description": "",
+          "snippet": "",
+          "author": "ethem27",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-11-21T10:38:37Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/a7med-ma7moud-7/Responseve_Dashboard",
+          "domain": "github.com",
+          "title": "Responseve_Dashboard",
+          "description": "",
+          "snippet": "",
+          "author": "a7med-ma7moud-7",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-11-17T14:11:14Z",
+          "score": 54
+        }
+      ]
+    },
     {
       "id": "research-better-chases",
       "name": "Better Chases+",
@@ -2793,6 +3110,204 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182095511-6cb7e4a2",
+      "requestId": "expert-1784182095511-6cb7e4a2",
+      "query": "ResponseV",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:08:29.457Z",
+      "completedAt": "2026-07-16T06:08:29.457Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 6,
+      "candidates": [
+        {
+          "url": "https://github.com/trdwll/ResponseV/blob/master/README.md",
+          "domain": "github.com",
+          "title": "ResponseV/README.md at master · trdwll/ResponseV",
+          "description": "A LSPDFR mod to add more calls, immersion, and overall fun to the core mod. - ResponseV/README.md at master · trdwll/ResponseV",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/trdwll/ResponseV/",
+          "domain": "github.com",
+          "title": "ResponseV",
+          "description": "A LSPDFR mod to add more calls, immersion, and overall fun to the core mod.",
+          "snippet": "A LSPDFR mod to add more calls, immersion, and overall fun to the core mod.",
+          "author": "trdwll",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2023-01-28T15:52:32Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/trdwll/ResponseV/releases",
+          "domain": "github.com",
+          "title": "Releases · trdwll/ResponseV",
+          "description": "A LSPDFR mod to add more calls, immersion, and overall fun to the core mod. - Releases · trdwll/ResponseV",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Allamurodov/Responsev",
+          "domain": "github.com",
+          "title": "Responsev",
+          "description": "",
+          "snippet": "",
+          "author": "Allamurodov",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-08T08:30:10Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/eyad-sc16/Omlette-recipe",
+          "domain": "github.com",
+          "title": "Omlette-recipe",
+          "description": "a simple landing page for omlette recipe,  with responsev desighn",
+          "snippet": "a simple landing page for omlette recipe,  with responsev desighn",
+          "author": "eyad-sc16",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-14T09:36:48Z",
+          "score": 96
+        },
+        {
+          "url": "https://github.com/FxRayHughes/responsevent",
+          "domain": "github.com",
+          "title": "responsevent",
+          "description": "Event-driven plugin framework with extensible source/channel/action registries",
+          "snippet": "Event-driven plugin framework with extensible source/channel/action registries",
+          "author": "FxRayHughes",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-05T10:07:54Z",
+          "score": 70
+        },
+        {
+          "url": "https://github.com/thebannana/RAPID-RESPONSEv0.1",
+          "domain": "github.com",
+          "title": "RAPID-RESPONSEv0.1",
+          "description": "Rapid Response is a tactical police RTS game developed in Unity. The first-ever version of Rapid Response secured 1st place in the Game Development category at the FIT Coding Challenge 2024.",
+          "snippet": "Rapid Response is a tactical police RTS game developed in Unity. The first-ever version of Rapid Response secured 1st place in the Game Development category at the FIT Coding Challenge 2024.",
+          "author": "thebannana",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-12-23T21:37:40Z",
+          "score": 60
+        },
+        {
+          "url": "https://github.com/nicolasdanieldev/site-responseve-",
+          "domain": "github.com",
+          "title": "site-responseve-",
+          "description": "This is a site, project for initial programations, with responsive languagens: HTML, CSS, basic and eays, for acess the site,  user for yours preference. LETS CODE!",
+          "snippet": "This is a site, project for initial programations, with responsive languagens: HTML, CSS, basic and eays, for acess the site,  user for yours preference. LETS CODE!",
+          "author": "nicolasdanieldev",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-02-26T00:56:03Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/RuslanUterly/ResponseVacancyUI",
+          "domain": "github.com",
+          "title": "ResponseVacancyUI",
+          "description": "",
+          "snippet": "",
+          "author": "RuslanUterly",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2025-12-17T18:41:15Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/RuslanUterly/ResponseVacancyEngine",
+          "domain": "github.com",
+          "title": "ResponseVacancyEngine",
+          "description": "",
+          "snippet": "",
+          "author": "RuslanUterly",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2025-12-17T18:40:11Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/ethem27/responsevie_hotel_site",
+          "domain": "github.com",
+          "title": "responsevie_hotel_site",
+          "description": "",
+          "snippet": "",
+          "author": "ethem27",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-11-21T10:38:37Z",
+          "score": 54
+        },
+        {
+          "url": "https://github.com/a7med-ma7moud-7/Responseve_Dashboard",
+          "domain": "github.com",
+          "title": "Responseve_Dashboard",
+          "description": "",
+          "snippet": "",
+          "author": "a7med-ma7moud-7",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-11-17T14:11:14Z",
+          "score": 54
+        }
+      ]
+    },
     {
       "id": "expert-1784182068926-a58b2b1b",
       "requestId": "expert-1784182068926-a58b2b1b",
