@@ -12,6 +12,8 @@ function normalizePlan(plan) {
     status: 'open',
     updatedAt: plan.createdAt || new Date().toISOString(),
     notes: '',
+    completedSteps: [],
+    verification: {startup: 'not-tested', onDuty: 'not-tested', gameplay: 'not-tested', logs: 'not-tested'},
     ...plan,
   };
 }
@@ -39,6 +41,8 @@ export function buildDoctorPlan(profile) {
     updatedAt: now,
     status: 'open',
     notes: '',
+    completedSteps: [],
+    verification: {startup: 'not-tested', onDuty: 'not-tested', gameplay: 'not-tested', logs: 'not-tested'},
     source: 'sentinel-intelligence',
     pluginId: profile.id,
     pluginName: profile.name,
