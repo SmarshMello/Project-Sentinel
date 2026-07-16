@@ -1,7 +1,414 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:21:28.165Z",
+  "updatedAt": "2026-07-16T06:23:00.332Z",
   "discoveries": [
+    {
+      "id": "research-evidence-locker",
+      "name": "Evidence Locker",
+      "shortName": null,
+      "aliases": [
+        "Evidence Locker",
+        "Digital-Evidence-locker",
+        "evidence-locker-colonialism",
+        "BRIJIMI-AI",
+        "HormigasAIS-Institucionalidad",
+        "digital-evidence-locker",
+        "A-Cloud-and-Blockchain-based-Digital-Evidence-Locker",
+        "evidence-locker-demo",
+        "Digital-Evidance-Locker",
+        "ai-evidence-locker"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "chandradivyadeepthi-cyber",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 98,
+      "documentationConfidence": 77,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "Role-Based Digital Evidence Locker using Python & MySQL with bcrypt authentication, evidence tracking, chain of custody, and activity logging.",
+      "dependencies": [],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://github.com/chandradivyadeepthi-cyber/Digital-Evidence-locker",
+      "note": "Research Engine found 12 credible sources across 2 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-evidence-locker",
+      "requestedAt": "2026-07-16T06:23:00.332Z",
+      "sources": [
+        {
+          "url": "https://github.com/chandradivyadeepthi-cyber/Digital-Evidence-locker",
+          "domain": "github.com",
+          "title": "Digital-Evidence-locker",
+          "description": "Role-Based Digital Evidence Locker using Python & MySQL with bcrypt authentication, evidence tracking, chain of custody, and activity logging.",
+          "snippet": "Role-Based Digital Evidence Locker using Python & MySQL with bcrypt authentication, evidence tracking, chain of custody, and activity logging.",
+          "author": "chandradivyadeepthi-cyber",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T09:57:31Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/open-archives/evidence-locker-colonialism",
+          "domain": "github.com",
+          "title": "evidence-locker-colonialism",
+          "description": "",
+          "snippet": "",
+          "author": "open-archives",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T05:53:56Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/mithunmaharaj113/BRIJIMI-AI",
+          "domain": "github.com",
+          "title": "BRIJIMI-AI",
+          "description": "AI EVIDENCE LOCKER 2.o",
+          "snippet": "AI EVIDENCE LOCKER 2.o",
+          "author": "mithunmaharaj113",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-13T13:17:53Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Thrumanshow/HormigasAIS-Institucionalidad",
+          "domain": "github.com",
+          "title": "HormigasAIS-Institucionalidad",
+          "description": "Evidence Locker — Registro de marca, propiedad intelectual y sello criptográfico soberano de HormigasAIS. Sellado desde Nodo A16-SanMiguel-SV · Protocolo LBH v2.0",
+          "snippet": "Evidence Locker — Registro de marca, propiedad intelectual y sello criptográfico soberano de HormigasAIS. Sellado desde Nodo A16-SanMiguel-SV · Protocolo LBH v2.0",
+          "author": "Thrumanshow",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-14T02:35:24Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/fayaz12fayaz/digital-evidence-locker",
+          "domain": "github.com",
+          "title": "digital-evidence-locker",
+          "description": "A secure Digital Evidence Locker built with Python and MySQL featuring role-based authentication, evidence management, chain of custody tracking, activity logging, and bcrypt password hashing.",
+          "snippet": "A secure Digital Evidence Locker built with Python and MySQL featuring role-based authentication, evidence management, chain of custody tracking, activity logging, and bcrypt password hashing.",
+          "author": "fayaz12fayaz",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-10T15:23:33Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/dhanushiyaprakash318/A-Cloud-and-Blockchain-based-Digital-Evidence-Locker",
+          "domain": "github.com",
+          "title": "A-Cloud-and-Blockchain-based-Digital-Evidence-Locker",
+          "description": "",
+          "snippet": "",
+          "author": "dhanushiyaprakash318",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-09T15:52:41Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/kinde-starter-kits/evidence-locker-demo",
+          "domain": "github.com",
+          "title": "evidence-locker-demo",
+          "description": "",
+          "snippet": "",
+          "author": "kinde-starter-kits",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-09T02:28:54Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/HarshadKhot11/Digital-Evidance-Locker",
+          "domain": "github.com",
+          "title": "Digital-Evidance-Locker",
+          "description": "Digital Evidence Locker is a secure web application built with Angular and ASP.NET Core (.NET 8) for storing, managing, and verifying digital documents. It provides user authentication, secure file handling, and an intuitive interface for efficient evidence management.",
+          "snippet": "Digital Evidence Locker is a secure web application built with Angular and ASP.NET Core (.NET 8) for storing, managing, and verifying digital documents. It provides user authentication, secure file handling, and an intuitive interface for efficient evidence management.",
+          "author": "HarshadKhot11",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-05T09:20:39Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/mithunmaharaj113/ai-evidence-locker",
+          "domain": "github.com",
+          "title": "ai-evidence-locker",
+          "description": "my project",
+          "snippet": "my project",
+          "author": "mithunmaharaj113",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-05T08:14:52Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/KarthickRaghul/Divel---Digital-Evidence-Locker",
+          "domain": "github.com",
+          "title": "Divel---Digital-Evidence-Locker",
+          "description": "Divel is a blockchain-backed, AI-powered digital evidence locker that ensures tamper-proof integrity and a verifiable chain-of-custody. It securely stores evidence off-chain, records cryptographic proof on blockchain, and uses AI to summarize and analyze evidence for faster justice. ",
+          "snippet": "Divel is a blockchain-backed, AI-powered digital evidence locker that ensures tamper-proof integrity and a verifiable chain-of-custody. It securely stores evidence off-chain, records cryptographic proof on blockchain, and uses AI to summarize and analyze evidence for faster justice. ",
+          "author": "KarthickRaghul",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-04T18:05:00Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/NexOffline/nex-evidence",
+          "domain": "github.com",
+          "title": "GitHub - NexOffline/nex-evidence: A simple script which allows players with the police job to open a static evidence locker via a command.",
+          "description": "A simple script which allows players with the police job to open a static evidence locker via a command. - NexOffline/nex-evidence",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://forum.gta.world/en/topic/147080-evidence-locker/",
+          "domain": "forum.gta.world",
+          "title": "Evidence Locker",
+          "description": "Feature Showcase: Evidence Locker The Evidence Locker script has been written from scratch in order to offer a more modern and robust system that is in line with our other scripts in 2025. We have considered community feedback from over the years in order to ensure that this rework is not simply ...",
+          "snippet": "",
+          "author": "Invision Community",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://github.com/chandradivyadeepthi-cyber/Digital-Evidence-locker",
+          "domain": "github.com",
+          "title": "Digital-Evidence-locker",
+          "description": "Role-Based Digital Evidence Locker using Python & MySQL with bcrypt authentication, evidence tracking, chain of custody, and activity logging.",
+          "snippet": "Role-Based Digital Evidence Locker using Python & MySQL with bcrypt authentication, evidence tracking, chain of custody, and activity logging.",
+          "author": "chandradivyadeepthi-cyber",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T09:57:31Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/open-archives/evidence-locker-colonialism",
+          "domain": "github.com",
+          "title": "evidence-locker-colonialism",
+          "description": "",
+          "snippet": "",
+          "author": "open-archives",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T05:53:56Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/mithunmaharaj113/BRIJIMI-AI",
+          "domain": "github.com",
+          "title": "BRIJIMI-AI",
+          "description": "AI EVIDENCE LOCKER 2.o",
+          "snippet": "AI EVIDENCE LOCKER 2.o",
+          "author": "mithunmaharaj113",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-13T13:17:53Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Thrumanshow/HormigasAIS-Institucionalidad",
+          "domain": "github.com",
+          "title": "HormigasAIS-Institucionalidad",
+          "description": "Evidence Locker — Registro de marca, propiedad intelectual y sello criptográfico soberano de HormigasAIS. Sellado desde Nodo A16-SanMiguel-SV · Protocolo LBH v2.0",
+          "snippet": "Evidence Locker — Registro de marca, propiedad intelectual y sello criptográfico soberano de HormigasAIS. Sellado desde Nodo A16-SanMiguel-SV · Protocolo LBH v2.0",
+          "author": "Thrumanshow",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-14T02:35:24Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/fayaz12fayaz/digital-evidence-locker",
+          "domain": "github.com",
+          "title": "digital-evidence-locker",
+          "description": "A secure Digital Evidence Locker built with Python and MySQL featuring role-based authentication, evidence management, chain of custody tracking, activity logging, and bcrypt password hashing.",
+          "snippet": "A secure Digital Evidence Locker built with Python and MySQL featuring role-based authentication, evidence management, chain of custody tracking, activity logging, and bcrypt password hashing.",
+          "author": "fayaz12fayaz",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-10T15:23:33Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/dhanushiyaprakash318/A-Cloud-and-Blockchain-based-Digital-Evidence-Locker",
+          "domain": "github.com",
+          "title": "A-Cloud-and-Blockchain-based-Digital-Evidence-Locker",
+          "description": "",
+          "snippet": "",
+          "author": "dhanushiyaprakash318",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-09T15:52:41Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/kinde-starter-kits/evidence-locker-demo",
+          "domain": "github.com",
+          "title": "evidence-locker-demo",
+          "description": "",
+          "snippet": "",
+          "author": "kinde-starter-kits",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-09T02:28:54Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/HarshadKhot11/Digital-Evidance-Locker",
+          "domain": "github.com",
+          "title": "Digital-Evidance-Locker",
+          "description": "Digital Evidence Locker is a secure web application built with Angular and ASP.NET Core (.NET 8) for storing, managing, and verifying digital documents. It provides user authentication, secure file handling, and an intuitive interface for efficient evidence management.",
+          "snippet": "Digital Evidence Locker is a secure web application built with Angular and ASP.NET Core (.NET 8) for storing, managing, and verifying digital documents. It provides user authentication, secure file handling, and an intuitive interface for efficient evidence management.",
+          "author": "HarshadKhot11",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-05T09:20:39Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/mithunmaharaj113/ai-evidence-locker",
+          "domain": "github.com",
+          "title": "ai-evidence-locker",
+          "description": "my project",
+          "snippet": "my project",
+          "author": "mithunmaharaj113",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-05T08:14:52Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/KarthickRaghul/Divel---Digital-Evidence-Locker",
+          "domain": "github.com",
+          "title": "Divel---Digital-Evidence-Locker",
+          "description": "Divel is a blockchain-backed, AI-powered digital evidence locker that ensures tamper-proof integrity and a verifiable chain-of-custody. It securely stores evidence off-chain, records cryptographic proof on blockchain, and uses AI to summarize and analyze evidence for faster justice. ",
+          "snippet": "Divel is a blockchain-backed, AI-powered digital evidence locker that ensures tamper-proof integrity and a verifiable chain-of-custody. It securely stores evidence off-chain, records cryptographic proof on blockchain, and uses AI to summarize and analyze evidence for faster justice. ",
+          "author": "KarthickRaghul",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-04T18:05:00Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/NexOffline/nex-evidence",
+          "domain": "github.com",
+          "title": "GitHub - NexOffline/nex-evidence: A simple script which allows players with the police job to open a static evidence locker via a command.",
+          "description": "A simple script which allows players with the police job to open a static evidence locker via a command. - NexOffline/nex-evidence",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://forum.gta.world/en/topic/147080-evidence-locker/",
+          "domain": "forum.gta.world",
+          "title": "Evidence Locker",
+          "description": "Feature Showcase: Evidence Locker The Evidence Locker script has been written from scratch in order to offer a more modern and robust system that is in line with our other scripts in 2025. We have considered community feedback from over the years in order to ensure that this rework is not simply ...",
+          "snippet": "",
+          "author": "Invision Community",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        }
+      ]
+    },
     {
       "id": "research-crime-scene-toolkit",
       "name": "Crime Scene Toolkit",
@@ -7379,6 +7786,203 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182959362-ce69c54d",
+      "requestId": "expert-1784182959362-ce69c54d",
+      "query": "Evidence Locker",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:23:00.332Z",
+      "completedAt": "2026-07-16T06:23:00.332Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 12,
+      "candidates": [
+        {
+          "url": "https://github.com/chandradivyadeepthi-cyber/Digital-Evidence-locker",
+          "domain": "github.com",
+          "title": "Digital-Evidence-locker",
+          "description": "Role-Based Digital Evidence Locker using Python & MySQL with bcrypt authentication, evidence tracking, chain of custody, and activity logging.",
+          "snippet": "Role-Based Digital Evidence Locker using Python & MySQL with bcrypt authentication, evidence tracking, chain of custody, and activity logging.",
+          "author": "chandradivyadeepthi-cyber",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T09:57:31Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/open-archives/evidence-locker-colonialism",
+          "domain": "github.com",
+          "title": "evidence-locker-colonialism",
+          "description": "",
+          "snippet": "",
+          "author": "open-archives",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-15T05:53:56Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/mithunmaharaj113/BRIJIMI-AI",
+          "domain": "github.com",
+          "title": "BRIJIMI-AI",
+          "description": "AI EVIDENCE LOCKER 2.o",
+          "snippet": "AI EVIDENCE LOCKER 2.o",
+          "author": "mithunmaharaj113",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-13T13:17:53Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Thrumanshow/HormigasAIS-Institucionalidad",
+          "domain": "github.com",
+          "title": "HormigasAIS-Institucionalidad",
+          "description": "Evidence Locker — Registro de marca, propiedad intelectual y sello criptográfico soberano de HormigasAIS. Sellado desde Nodo A16-SanMiguel-SV · Protocolo LBH v2.0",
+          "snippet": "Evidence Locker — Registro de marca, propiedad intelectual y sello criptográfico soberano de HormigasAIS. Sellado desde Nodo A16-SanMiguel-SV · Protocolo LBH v2.0",
+          "author": "Thrumanshow",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-14T02:35:24Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/fayaz12fayaz/digital-evidence-locker",
+          "domain": "github.com",
+          "title": "digital-evidence-locker",
+          "description": "A secure Digital Evidence Locker built with Python and MySQL featuring role-based authentication, evidence management, chain of custody tracking, activity logging, and bcrypt password hashing.",
+          "snippet": "A secure Digital Evidence Locker built with Python and MySQL featuring role-based authentication, evidence management, chain of custody tracking, activity logging, and bcrypt password hashing.",
+          "author": "fayaz12fayaz",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-10T15:23:33Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/dhanushiyaprakash318/A-Cloud-and-Blockchain-based-Digital-Evidence-Locker",
+          "domain": "github.com",
+          "title": "A-Cloud-and-Blockchain-based-Digital-Evidence-Locker",
+          "description": "",
+          "snippet": "",
+          "author": "dhanushiyaprakash318",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-09T15:52:41Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/kinde-starter-kits/evidence-locker-demo",
+          "domain": "github.com",
+          "title": "evidence-locker-demo",
+          "description": "",
+          "snippet": "",
+          "author": "kinde-starter-kits",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-09T02:28:54Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/HarshadKhot11/Digital-Evidance-Locker",
+          "domain": "github.com",
+          "title": "Digital-Evidance-Locker",
+          "description": "Digital Evidence Locker is a secure web application built with Angular and ASP.NET Core (.NET 8) for storing, managing, and verifying digital documents. It provides user authentication, secure file handling, and an intuitive interface for efficient evidence management.",
+          "snippet": "Digital Evidence Locker is a secure web application built with Angular and ASP.NET Core (.NET 8) for storing, managing, and verifying digital documents. It provides user authentication, secure file handling, and an intuitive interface for efficient evidence management.",
+          "author": "HarshadKhot11",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-05T09:20:39Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/mithunmaharaj113/ai-evidence-locker",
+          "domain": "github.com",
+          "title": "ai-evidence-locker",
+          "description": "my project",
+          "snippet": "my project",
+          "author": "mithunmaharaj113",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-05T08:14:52Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/KarthickRaghul/Divel---Digital-Evidence-Locker",
+          "domain": "github.com",
+          "title": "Divel---Digital-Evidence-Locker",
+          "description": "Divel is a blockchain-backed, AI-powered digital evidence locker that ensures tamper-proof integrity and a verifiable chain-of-custody. It securely stores evidence off-chain, records cryptographic proof on blockchain, and uses AI to summarize and analyze evidence for faster justice. ",
+          "snippet": "Divel is a blockchain-backed, AI-powered digital evidence locker that ensures tamper-proof integrity and a verifiable chain-of-custody. It securely stores evidence off-chain, records cryptographic proof on blockchain, and uses AI to summarize and analyze evidence for faster justice. ",
+          "author": "KarthickRaghul",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-04T18:05:00Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/NexOffline/nex-evidence",
+          "domain": "github.com",
+          "title": "GitHub - NexOffline/nex-evidence: A simple script which allows players with the police job to open a static evidence locker via a command.",
+          "description": "A simple script which allows players with the police job to open a static evidence locker via a command. - NexOffline/nex-evidence",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://forum.gta.world/en/topic/147080-evidence-locker/",
+          "domain": "forum.gta.world",
+          "title": "Evidence Locker",
+          "description": "Feature Showcase: Evidence Locker The Evidence Locker script has been written from scratch in order to offer a more modern and robust system that is in line with our other scripts in 2025. We have considered community feedback from over the years in order to ensure that this rework is not simply ...",
+          "snippet": "",
+          "author": "Invision Community",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        }
+      ]
+    },
     {
       "id": "expert-1784182869642-33f25ffe",
       "requestId": "expert-1784182869642-33f25ffe",
