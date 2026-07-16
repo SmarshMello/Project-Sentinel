@@ -18,3 +18,24 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Environment and secret files
+.env
+.env.*
+!.env.example
+!.env.*.example
+**/.dev.vars
+**/.wrangler/
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+credentials*.json
+secrets*.json
+secret*.txt
+
+# Local archives and exports
+*.zip
+*.7z
+*.rar

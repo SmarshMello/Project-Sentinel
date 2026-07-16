@@ -123,6 +123,12 @@ export default function Watcher() {
     }
   }, [controlEndpoint, waitForPublishedReport]);
 
+  const forgetAdminKey = () => {
+    setAdminKey('');
+    if (typeof window !== 'undefined') window.sessionStorage.removeItem('sentinel-watcher-admin-key');
+    setRunError('Watcher admin key cleared from this browser tab.');
+  };
+
   const startScan = async () => {
     if (!controlEndpoint) {
       setRunError('Watcher Control Worker is not connected yet. Follow WATCHER_CONTROL_SETUP.md.');
@@ -256,6 +262,7 @@ export default function Watcher() {
               <button type="button" onClick={startScan} disabled={starting || running}>
                 {running ? 'Scan running…' : starting ? 'Starting…' : 'Run new scan'}
               </button>
+              <button type="button" className={styles.secondaryButton} onClick={forgetAdminKey} disabled={!adminKey || running}>Forget key</button>
             </div>
             {run && (
               <div className={styles.progressPanel}>

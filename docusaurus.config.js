@@ -11,7 +11,7 @@ const config = {
   projectName: 'Project-Sentinel',
   trailingSlash: false,
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {hooks: {onBrokenMarkdownLinks: 'warn'}},
   i18n: {defaultLocale: 'en', locales: ['en']},
   customFields: {
     paypalUrl: '',
@@ -82,6 +82,7 @@ const config = {
           {to: '/checklist', label: 'Installation Checklist'},
         ]},
         {to: '/help', label: 'Help', position: 'left'},
+        {to: '/donate', label: 'Donate', position: 'left'},
         {href: 'https://github.com/SmarshMello/Project-Sentinel', label: 'GitHub', position: 'right'},
       ],
     },
@@ -90,7 +91,7 @@ const config = {
       links: [
         {title: 'Sentinel Police', items: [{label:'Overview',to:'/sentinel-police'},{label:'Build Guide',to:'/guide/intro'},{label:'Working Build',to:'/builds'},{label:'Checklist',to:'/checklist'}]},
         {title: 'Database & Tools', items: [{label:'Getting Started',to:'/guide/getting-started/clean-install'},{label:'Plugin Database',to:'/plugins'},{label:'Golden Builds',to:'/builds'},{label:'Compatibility',to:'/compatibility'},{label:'Build Planner',to:'/planner'},{label:'Dashboard',to:'/dashboard'},{label:'Sentinel Watcher',to:'/watcher'},{label:'Sentinel Expert System',to:'/sentinel-ai'},{label:'Troubleshooting Wizard',to:'/troubleshooter'},{label:'Sentinel Doctor',to:'/doctor'},{label:'Installation Checklist',to:'/checklist'},{label:'Troubleshooting',to: '/guide/troubleshooting'}]},
-        {title: 'Community', items:[{label:'Help Tickets',to:'/help'},{label:'Suggestions',href:'https://github.com/SmarshMello/Project-Sentinel/issues/new?template=suggestion.yml'}]},
+        {title: 'Community', items:[{label:'Help Tickets',to:'/help'},{label:'Suggestions',href:'https://github.com/SmarshMello/Project-Sentinel/issues/new?template=suggestion.yml'},{label:'Donate',to:'/donate'}]},
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Project Sentinel. Third-party mods belong to their creators.`,
     },
