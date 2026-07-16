@@ -1,4 +1,7 @@
 import {registry} from './registry';
+import {buildReleaseIntelligence} from '../intelligence/releaseEngine';
+import {recommendUpgrade} from '../intelligence/recommendationEngine';
+import {calculatePluginHealth} from '../intelligence/healthEngine';
 
 export const RISK_LEVELS = {
   safe: {label: 'Safe', score: 0, tone: 'safe'},
@@ -91,6 +94,9 @@ export function createPluginDNA(plugin, graph = buildKnowledgeGraph(), watcherIt
   const outgoing = graph.edges.filter((edge) => edge.source === plugin.id);
   const incoming = graph.edges.filter((edge) => edge.target === plugin.id);
   const prediction = predictCompatibility(plugin, watcherItem);
+  const release = buildReleaseIntelligence(plugin, watcherItem);
+  const recommendation = recommendUpgrade(plugin, release, prediction, watcherItem);
+  const health = calculatePluginHealth(plugin, watcherItem, prediction);
   return {
     id: plugin.id,
     name: plugin.name,
@@ -104,6 +110,10 @@ export function createPluginDNA(plugin, graph = buildKnowledgeGraph(), watcherIt
     dependencies: outgoing,
     usedBy: incoming.map((edge) => graph.nodes.find((node) => node.id === edge.source)).filter(Boolean),
     risk: prediction,
+    release,
+    recommendation,
+    health,
+    watcher: watcherItem,
     profile: plugin.profile,
     guide: plugin.guide,
   };
@@ -127,7 +137,11 @@ export function buildIntelligenceSnapshot(watcherReport = null, entries = regist
       resolvedRelationships: graph.edges.filter((edge) => edge.resolved).length,
       unresolvedRelationships: graph.edges.filter((edge) => !edge.resolved).length,
       goldenBuildPlugins: profiles.filter((profile) => profile.goldenBuild).length,
-      watcherConnected: watcherById.size,
+      watcherConnected: profiles.filter((profile) => profile.watcher).length,
+      updatesDetected: profiles.filter((profile) => profile.release.updateDetected).length,
+      needsReview: profiles.filter((profile) => profile.recommendation.key === 'wait' || profile.recommendation.key === 'avoid').length,
+      dependencyAlerts: profiles.filter((profile) => profile.risk.unresolvedDependencies.length > 0).length,
+      averageHealth: profiles.length ? Math.round(profiles.reduce((sum, profile) => sum + profile.health.score, 0) / profiles.length) : 0,
       riskCounts,
     },
   };
