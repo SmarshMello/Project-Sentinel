@@ -1,7 +1,214 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:14:42.923Z",
+  "updatedAt": "2026-07-16T06:15:09.339Z",
   "discoveries": [
+    {
+      "id": "research-officer-ai-overhaul",
+      "name": "Officer AI Overhaul",
+      "shortName": null,
+      "aliases": [
+        "Officer AI Overhaul",
+        "Captain and Defense Officer AI Overhaul - Nexus Mods",
+        "Steam Workshop::Captain and Defense Officer AI Overhaul (Basic)",
+        "Steam Workshop::Captain and Defense Officer AI Overhaul (Ignore Jump Fuel)",
+        "Tactical Enforcers [Police AI Overhaul]"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "Unknown",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 89,
+      "documentationConfidence": 43,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "Sentinel Research found credible public sources for Officer AI Overhaul. Compatibility remains unverified until review.",
+      "dependencies": [],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.nexusmods.com/xrebirth/mods/375",
+      "note": "Research Engine found 5 credible sources across 3 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-officer-ai-overhaul",
+      "requestedAt": "2026-07-16T06:15:09.339Z",
+      "sources": [
+        {
+          "url": "https://www.nexusmods.com/xrebirth/mods/375",
+          "domain": "nexusmods.com",
+          "title": "Captain and Defense Officer AI Overhaul - Nexus Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=248599124",
+          "domain": "steamcommunity.com",
+          "title": "Steam Workshop::Captain and Defense Officer AI Overhaul (Basic)",
+          "description": "",
+          "snippet": "",
+          "author": "mistake",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 88
+        },
+        {
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=248605513",
+          "domain": "steamcommunity.com",
+          "title": "Steam Workshop::Captain and Defense Officer AI Overhaul (Ignore Jump Fuel)",
+          "description": "",
+          "snippet": "",
+          "author": "mistake",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 88
+        },
+        {
+          "url": "https://www.gta5-mods.com/misc/tactical-enforcers-police-ai-overhaul",
+          "domain": "gta5-mods.com",
+          "title": "Tactical Enforcers [Police AI Overhaul]",
+          "description": "This mod makes the cops in gta 5 more tactical. It also adds more vehicles to pursuit without making the game crap itself. This mod also balances the combat ai for cops and swat (also gangs).Changes made in Tactical Enforcers:*Guards and Cops can't charge at you now*Cops will take cover more often*No more aimbot from LSPD Officers.*Aggressive SWAT and Soldier AI*SWAT can spawn with more armour.*Police will now retreat on 4 stars, will only spa...",
+          "snippet": "",
+          "author": "Ilikeeditingpolice01",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 84
+        },
+        {
+          "url": "https://www.gta5-mods.com/ca/misc/tactical-enforcers-police-ai-overhaul",
+          "domain": "gta5-mods.com",
+          "title": "Tactical Enforcers [Police AI Overhaul]",
+          "description": "This mod makes the cops in gta 5 more tactical. It also adds more vehicles to pursuit without making the game crap itself. This mod also balances the combat ai for cops and swat (also gangs).Changes made in Tactical Enforcers:*Guards and Cops can't charge at you now*Cops will take cover more often*No more aimbot from LSPD Officers.*Aggressive SWAT and Soldier AI*SWAT can spawn with more armour.*Police will now retreat on 4 stars, will only spa...",
+          "snippet": "",
+          "author": "Ilikeeditingpolice01",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 84
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.nexusmods.com/xrebirth/mods/375",
+          "domain": "nexusmods.com",
+          "title": "Captain and Defense Officer AI Overhaul - Nexus Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=248599124",
+          "domain": "steamcommunity.com",
+          "title": "Steam Workshop::Captain and Defense Officer AI Overhaul (Basic)",
+          "description": "",
+          "snippet": "",
+          "author": "mistake",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 88
+        },
+        {
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=248605513",
+          "domain": "steamcommunity.com",
+          "title": "Steam Workshop::Captain and Defense Officer AI Overhaul (Ignore Jump Fuel)",
+          "description": "",
+          "snippet": "",
+          "author": "mistake",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 88
+        },
+        {
+          "url": "https://www.gta5-mods.com/misc/tactical-enforcers-police-ai-overhaul",
+          "domain": "gta5-mods.com",
+          "title": "Tactical Enforcers [Police AI Overhaul]",
+          "description": "This mod makes the cops in gta 5 more tactical. It also adds more vehicles to pursuit without making the game crap itself. This mod also balances the combat ai for cops and swat (also gangs).Changes made in Tactical Enforcers:*Guards and Cops can't charge at you now*Cops will take cover more often*No more aimbot from LSPD Officers.*Aggressive SWAT and Soldier AI*SWAT can spawn with more armour.*Police will now retreat on 4 stars, will only spa...",
+          "snippet": "",
+          "author": "Ilikeeditingpolice01",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 84
+        },
+        {
+          "url": "https://www.gta5-mods.com/ca/misc/tactical-enforcers-police-ai-overhaul",
+          "domain": "gta5-mods.com",
+          "title": "Tactical Enforcers [Police AI Overhaul]",
+          "description": "This mod makes the cops in gta 5 more tactical. It also adds more vehicles to pursuit without making the game crap itself. This mod also balances the combat ai for cops and swat (also gangs).Changes made in Tactical Enforcers:*Guards and Cops can't charge at you now*Cops will take cover more often*No more aimbot from LSPD Officers.*Aggressive SWAT and Soldier AI*SWAT can spawn with more armour.*Police will now retreat on 4 stars, will only spa...",
+          "snippet": "",
+          "author": "Ilikeeditingpolice01",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 84
+        },
+        {
+          "url": "https://www.nexusmods.com/readyornot/mods/6319",
+          "domain": "nexusmods.com",
+          "title": "AI OVERHAUL VARIETY PACK at Ready or Not Nexus - Nexus Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 64
+        }
+      ]
+    },
     {
       "id": "research-police-partner",
       "name": "Police Partner",
@@ -5978,6 +6185,113 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182490960-d382c804",
+      "requestId": "expert-1784182490960-d382c804",
+      "query": "Officer AI Overhaul",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:15:09.339Z",
+      "completedAt": "2026-07-16T06:15:09.339Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 6,
+      "credibleCandidateCount": 5,
+      "candidates": [
+        {
+          "url": "https://www.nexusmods.com/xrebirth/mods/375",
+          "domain": "nexusmods.com",
+          "title": "Captain and Defense Officer AI Overhaul - Nexus Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=248599124",
+          "domain": "steamcommunity.com",
+          "title": "Steam Workshop::Captain and Defense Officer AI Overhaul (Basic)",
+          "description": "",
+          "snippet": "",
+          "author": "mistake",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 88
+        },
+        {
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=248605513",
+          "domain": "steamcommunity.com",
+          "title": "Steam Workshop::Captain and Defense Officer AI Overhaul (Ignore Jump Fuel)",
+          "description": "",
+          "snippet": "",
+          "author": "mistake",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 88
+        },
+        {
+          "url": "https://www.gta5-mods.com/misc/tactical-enforcers-police-ai-overhaul",
+          "domain": "gta5-mods.com",
+          "title": "Tactical Enforcers [Police AI Overhaul]",
+          "description": "This mod makes the cops in gta 5 more tactical. It also adds more vehicles to pursuit without making the game crap itself. This mod also balances the combat ai for cops and swat (also gangs).Changes made in Tactical Enforcers:*Guards and Cops can't charge at you now*Cops will take cover more often*No more aimbot from LSPD Officers.*Aggressive SWAT and Soldier AI*SWAT can spawn with more armour.*Police will now retreat on 4 stars, will only spa...",
+          "snippet": "",
+          "author": "Ilikeeditingpolice01",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 84
+        },
+        {
+          "url": "https://www.gta5-mods.com/ca/misc/tactical-enforcers-police-ai-overhaul",
+          "domain": "gta5-mods.com",
+          "title": "Tactical Enforcers [Police AI Overhaul]",
+          "description": "This mod makes the cops in gta 5 more tactical. It also adds more vehicles to pursuit without making the game crap itself. This mod also balances the combat ai for cops and swat (also gangs).Changes made in Tactical Enforcers:*Guards and Cops can't charge at you now*Cops will take cover more often*No more aimbot from LSPD Officers.*Aggressive SWAT and Soldier AI*SWAT can spawn with more armour.*Police will now retreat on 4 stars, will only spa...",
+          "snippet": "",
+          "author": "Ilikeeditingpolice01",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 84
+        },
+        {
+          "url": "https://www.nexusmods.com/readyornot/mods/6319",
+          "domain": "nexusmods.com",
+          "title": "AI OVERHAUL VARIETY PACK at Ready or Not Nexus - Nexus Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 64
+        }
+      ]
+    },
     {
       "id": "expert-1784182455743-d7b530e3",
       "requestId": "expert-1784182455743-d7b530e3",
