@@ -1,8 +1,610 @@
 {
-  "schemaVersion": 2,
-  "updatedAt": "2026-07-16T00:04:58.543Z",
-  "discoveries": [],
+  "schemaVersion": 3,
+  "updatedAt": "2026-07-16T00:25:06.364Z",
+  "discoveries": [
+    {
+      "id": "research-los-santos-alive-18d5a84",
+      "name": "Los Santos Alive",
+      "shortName": null,
+      "aliases": [
+        "Los Santos Alive",
+        "Los Santos Alive - Next Generation AI NPCs",
+        "Los Santos Alive: Building a Living NPC Simulation for GTA V",
+        "Living Los Santos - Script Modifications & Plugins - LCPDFR.com",
+        "Los Santos Alive - Next Generation AI NPCs at Grand Theft Auto V ...",
+        "Los Santos Alive — AI-powered NPC interaction for Grand Theft Auto V",
+        "Los Santos Alive — Simulation 2.0 Update Available Now For ... - Patreon",
+        "- YouTube",
+        "Los Santos Alive - Next Generation AI NPCs V0.2.1 - GTA 5 mod",
+        "LOS Santos Alive - Next Generation AI Npcs V0.0.1 GTA 5 Script Mod ..."
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "personality",
+      "impact": "Unknown",
+      "confidence": 82,
+      "description": "Los Santos AliveA next-generation AI-driven roleplay sandbox for GTA V.Join the Los Santos Alive Discord CommunityWant even more? The largest update in Los Santos Alive's history, Simulation 2.0, is available now for Patreon supporters.Get The Latest BuildsLos Santos Alive transforms Grand Theft Auto V into a living social world where pedestrians can think, react, converse, and physically respond to the player and the environment around them i...",
+      "dependencies": [],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.gta5-mods.com/scripts/los-santos-alive-next-generation-ai-npcs",
+      "note": "Research Engine found 11 credible sources across 8 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "requestedAt": "2026-07-16T00:25:06.364Z",
+      "sources": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/los-santos-alive-next-generation-ai-npcs",
+          "domain": "gta5-mods.com",
+          "title": "Los Santos Alive - Next Generation AI NPCs",
+          "description": "Los Santos AliveA next-generation AI-driven roleplay sandbox for GTA V.Join the Los Santos Alive Discord CommunityWant even more? The largest update in Los Santos Alive's history, Simulation 2.0, is available now for Patreon supporters.Get The Latest BuildsLos Santos Alive transforms Grand Theft Auto V into a living social world where pedestrians can think, react, converse, and physically respond to the player and the environment around them i...",
+          "snippet": "May 29, 2026 &nbsp;&#0183;&#32;Los Santos AliveA next-generation AI-driven roleplay sandbox for GTA V.Join the Los Santos Alive Discord …",
+          "author": "personality",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/forums/topic/156722-los-santos-alive-building-a-living-npc-simulation-for-gta-v/",
+          "domain": "lcpdfr.com",
+          "title": "Los Santos Alive: Building a Living NPC Simulation for GTA V",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/54337-living-los-santos/",
+          "domain": "lcpdfr.com",
+          "title": "Living Los Santos - Script Modifications & Plugins - LCPDFR.com",
+          "description": "Jun 3, 2026 &nbsp;&#0183;&#32;Living Los SantosLiving Los Santos makes Los Santos feel more alive by dynamically adjusting traffic, pedestrians, …",
+          "snippet": "Jun 3, 2026 &nbsp;&#0183;&#32;Living Los SantosLiving Los Santos makes Los Santos feel more alive by dynamically adjusting traffic, pedestrians, …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/gta5enhanced/mods/985",
+          "domain": "nexusmods.com",
+          "title": "Los Santos Alive - Next Generation AI NPCs at Grand Theft Auto V ...",
+          "description": "May 29, 2026 &nbsp;&#0183;&#32;Los Santos Alive A next-generation AI-driven roleplay sandbox for GTA V. Los Santos Alive transforms Grand Theft …",
+          "snippet": "May 29, 2026 &nbsp;&#0183;&#32;Los Santos Alive A next-generation AI-driven roleplay sandbox for GTA V. Los Santos Alive transforms Grand Theft …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.patreon.com/cw/LosSantosAlive",
+          "domain": "patreon.com",
+          "title": "Los Santos Alive — AI-powered NPC interaction for Grand Theft Auto V",
+          "description": "Get more from Los Santos Alive on Patreon. AI-powered NPC interaction for Grand Theft Auto V. Support Los Santos Alive and get …",
+          "snippet": "Get more from Los Santos Alive on Patreon. AI-powered NPC interaction for Grand Theft Auto V. Support Los Santos Alive and get …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.patreon.com/LosSantosAlive/posts/los-santos-alive-162199476",
+          "domain": "patreon.com",
+          "title": "Los Santos Alive — Simulation 2.0 Update Available Now For ... - Patreon",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "May 30, 2026 &nbsp;&#0183;&#32;How to install Los Santos Alive (Another NPCAI mod) BrendanPlays 345 subscribers 48",
+          "author": "NPCAI",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "May 19, 2026 &nbsp;&#0183;&#32;This GTA V Mod Makes NPCs Alive: Los Santos Alive Los Santos Alive 132 subscribers 143 Share",
+          "author": "voice",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/los-santos-alive-next-generation-ai-npcs-v0-0-1/",
+          "domain": "gta5mod.net",
+          "title": "Los Santos Alive - Next Generation AI NPCs V0.2.1 - GTA 5 mod",
+          "description": "Los Santos Alive is an actively evolving alpha project focused on pushing immersion, emergent gameplay, and AI-driven interaction …",
+          "snippet": "Los Santos Alive is an actively evolving alpha project focused on pushing immersion, emergent gameplay, and AI-driven interaction …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://modshost.co/gta5/scripts/los-santos-alive-next-generation-ai-npcs/",
+          "domain": "modshost.co",
+          "title": "LOS Santos Alive - Next Generation AI Npcs V0.0.1 GTA 5 Script Mod ...",
+          "description": "Jun 5, 2026 &nbsp;&#0183;&#32;Download LOS Santos Alive – Next Generation AI Npcs V0.0.1 mod for Grand Theft Auto V. A next-generation AI …",
+          "snippet": "Jun 5, 2026 &nbsp;&#0183;&#32;Download LOS Santos Alive – Next Generation AI Npcs V0.0.1 mod for Grand Theft Auto V. A next-generation AI …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/NANODLAPISCINE/Gta-5-los-santos-became-alive",
+          "domain": "github.com",
+          "title": "Gta-5-los-santos-became-alive",
+          "description": "",
+          "snippet": "",
+          "author": "NANODLAPISCINE",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-06-22T23:46:05Z",
+          "score": 72
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/los-santos-alive-next-generation-ai-npcs",
+          "domain": "gta5-mods.com",
+          "title": "Los Santos Alive - Next Generation AI NPCs",
+          "description": "Los Santos AliveA next-generation AI-driven roleplay sandbox for GTA V.Join the Los Santos Alive Discord CommunityWant even more? The largest update in Los Santos Alive's history, Simulation 2.0, is available now for Patreon supporters.Get The Latest BuildsLos Santos Alive transforms Grand Theft Auto V into a living social world where pedestrians can think, react, converse, and physically respond to the player and the environment around them i...",
+          "snippet": "May 29, 2026 &nbsp;&#0183;&#32;Los Santos AliveA next-generation AI-driven roleplay sandbox for GTA V.Join the Los Santos Alive Discord …",
+          "author": "personality",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/forums/topic/156722-los-santos-alive-building-a-living-npc-simulation-for-gta-v/",
+          "domain": "lcpdfr.com",
+          "title": "Los Santos Alive: Building a Living NPC Simulation for GTA V",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/54337-living-los-santos/",
+          "domain": "lcpdfr.com",
+          "title": "Living Los Santos - Script Modifications & Plugins - LCPDFR.com",
+          "description": "Jun 3, 2026 &nbsp;&#0183;&#32;Living Los SantosLiving Los Santos makes Los Santos feel more alive by dynamically adjusting traffic, pedestrians, …",
+          "snippet": "Jun 3, 2026 &nbsp;&#0183;&#32;Living Los SantosLiving Los Santos makes Los Santos feel more alive by dynamically adjusting traffic, pedestrians, …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/gta5enhanced/mods/985",
+          "domain": "nexusmods.com",
+          "title": "Los Santos Alive - Next Generation AI NPCs at Grand Theft Auto V ...",
+          "description": "May 29, 2026 &nbsp;&#0183;&#32;Los Santos Alive A next-generation AI-driven roleplay sandbox for GTA V. Los Santos Alive transforms Grand Theft …",
+          "snippet": "May 29, 2026 &nbsp;&#0183;&#32;Los Santos Alive A next-generation AI-driven roleplay sandbox for GTA V. Los Santos Alive transforms Grand Theft …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.patreon.com/cw/LosSantosAlive",
+          "domain": "patreon.com",
+          "title": "Los Santos Alive — AI-powered NPC interaction for Grand Theft Auto V",
+          "description": "Get more from Los Santos Alive on Patreon. AI-powered NPC interaction for Grand Theft Auto V. Support Los Santos Alive and get …",
+          "snippet": "Get more from Los Santos Alive on Patreon. AI-powered NPC interaction for Grand Theft Auto V. Support Los Santos Alive and get …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.patreon.com/LosSantosAlive/posts/los-santos-alive-162199476",
+          "domain": "patreon.com",
+          "title": "Los Santos Alive — Simulation 2.0 Update Available Now For ... - Patreon",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "May 30, 2026 &nbsp;&#0183;&#32;How to install Los Santos Alive (Another NPCAI mod) BrendanPlays 345 subscribers 48",
+          "author": "NPCAI",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "May 19, 2026 &nbsp;&#0183;&#32;This GTA V Mod Makes NPCs Alive: Los Santos Alive Los Santos Alive 132 subscribers 143 Share",
+          "author": "voice",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/los-santos-alive-next-generation-ai-npcs-v0-0-1/",
+          "domain": "gta5mod.net",
+          "title": "Los Santos Alive - Next Generation AI NPCs V0.2.1 - GTA 5 mod",
+          "description": "Los Santos Alive is an actively evolving alpha project focused on pushing immersion, emergent gameplay, and AI-driven interaction …",
+          "snippet": "Los Santos Alive is an actively evolving alpha project focused on pushing immersion, emergent gameplay, and AI-driven interaction …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://modshost.co/gta5/scripts/los-santos-alive-next-generation-ai-npcs/",
+          "domain": "modshost.co",
+          "title": "LOS Santos Alive - Next Generation AI Npcs V0.0.1 GTA 5 Script Mod ...",
+          "description": "Jun 5, 2026 &nbsp;&#0183;&#32;Download LOS Santos Alive – Next Generation AI Npcs V0.0.1 mod for Grand Theft Auto V. A next-generation AI …",
+          "snippet": "Jun 5, 2026 &nbsp;&#0183;&#32;Download LOS Santos Alive – Next Generation AI Npcs V0.0.1 mod for Grand Theft Auto V. A next-generation AI …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/NANODLAPISCINE/Gta-5-los-santos-became-alive",
+          "domain": "github.com",
+          "title": "Gta-5-los-santos-became-alive",
+          "description": "",
+          "snippet": "",
+          "author": "NANODLAPISCINE",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-06-22T23:46:05Z",
+          "score": 72
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "voice",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        }
+      ]
+    }
+  ],
   "requests": [
+    {
+      "id": "expert-1784161467234-30614b9f",
+      "requestId": "expert-1784161467234-30614b9f",
+      "query": "Los Santos Alive",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T00:25:06.364Z",
+      "completedAt": "2026-07-16T00:25:06.364Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 11,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/los-santos-alive-next-generation-ai-npcs",
+          "domain": "gta5-mods.com",
+          "title": "Los Santos Alive - Next Generation AI NPCs",
+          "description": "Los Santos AliveA next-generation AI-driven roleplay sandbox for GTA V.Join the Los Santos Alive Discord CommunityWant even more? The largest update in Los Santos Alive's history, Simulation 2.0, is available now for Patreon supporters.Get The Latest BuildsLos Santos Alive transforms Grand Theft Auto V into a living social world where pedestrians can think, react, converse, and physically respond to the player and the environment around them i...",
+          "snippet": "May 29, 2026 &nbsp;&#0183;&#32;Los Santos AliveA next-generation AI-driven roleplay sandbox for GTA V.Join the Los Santos Alive Discord …",
+          "author": "personality",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/forums/topic/156722-los-santos-alive-building-a-living-npc-simulation-for-gta-v/",
+          "domain": "lcpdfr.com",
+          "title": "Los Santos Alive: Building a Living NPC Simulation for GTA V",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/54337-living-los-santos/",
+          "domain": "lcpdfr.com",
+          "title": "Living Los Santos - Script Modifications & Plugins - LCPDFR.com",
+          "description": "Jun 3, 2026 &nbsp;&#0183;&#32;Living Los SantosLiving Los Santos makes Los Santos feel more alive by dynamically adjusting traffic, pedestrians, …",
+          "snippet": "Jun 3, 2026 &nbsp;&#0183;&#32;Living Los SantosLiving Los Santos makes Los Santos feel more alive by dynamically adjusting traffic, pedestrians, …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/gta5enhanced/mods/985",
+          "domain": "nexusmods.com",
+          "title": "Los Santos Alive - Next Generation AI NPCs at Grand Theft Auto V ...",
+          "description": "May 29, 2026 &nbsp;&#0183;&#32;Los Santos Alive A next-generation AI-driven roleplay sandbox for GTA V. Los Santos Alive transforms Grand Theft …",
+          "snippet": "May 29, 2026 &nbsp;&#0183;&#32;Los Santos Alive A next-generation AI-driven roleplay sandbox for GTA V. Los Santos Alive transforms Grand Theft …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.patreon.com/cw/LosSantosAlive",
+          "domain": "patreon.com",
+          "title": "Los Santos Alive — AI-powered NPC interaction for Grand Theft Auto V",
+          "description": "Get more from Los Santos Alive on Patreon. AI-powered NPC interaction for Grand Theft Auto V. Support Los Santos Alive and get …",
+          "snippet": "Get more from Los Santos Alive on Patreon. AI-powered NPC interaction for Grand Theft Auto V. Support Los Santos Alive and get …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.patreon.com/LosSantosAlive/posts/los-santos-alive-162199476",
+          "domain": "patreon.com",
+          "title": "Los Santos Alive — Simulation 2.0 Update Available Now For ... - Patreon",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "May 30, 2026 &nbsp;&#0183;&#32;How to install Los Santos Alive (Another NPCAI mod) BrendanPlays 345 subscribers 48",
+          "author": "NPCAI",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "May 19, 2026 &nbsp;&#0183;&#32;This GTA V Mod Makes NPCs Alive: Los Santos Alive Los Santos Alive 132 subscribers 143 Share",
+          "author": "voice",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/los-santos-alive-next-generation-ai-npcs-v0-0-1/",
+          "domain": "gta5mod.net",
+          "title": "Los Santos Alive - Next Generation AI NPCs V0.2.1 - GTA 5 mod",
+          "description": "Los Santos Alive is an actively evolving alpha project focused on pushing immersion, emergent gameplay, and AI-driven interaction …",
+          "snippet": "Los Santos Alive is an actively evolving alpha project focused on pushing immersion, emergent gameplay, and AI-driven interaction …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://modshost.co/gta5/scripts/los-santos-alive-next-generation-ai-npcs/",
+          "domain": "modshost.co",
+          "title": "LOS Santos Alive - Next Generation AI Npcs V0.0.1 GTA 5 Script Mod ...",
+          "description": "Jun 5, 2026 &nbsp;&#0183;&#32;Download LOS Santos Alive – Next Generation AI Npcs V0.0.1 mod for Grand Theft Auto V. A next-generation AI …",
+          "snippet": "Jun 5, 2026 &nbsp;&#0183;&#32;Download LOS Santos Alive – Next Generation AI Npcs V0.0.1 mod for Grand Theft Auto V. A next-generation AI …",
+          "author": "",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/NANODLAPISCINE/Gta-5-los-santos-became-alive",
+          "domain": "github.com",
+          "title": "Gta-5-los-santos-became-alive",
+          "description": "",
+          "snippet": "",
+          "author": "NANODLAPISCINE",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-06-22T23:46:05Z",
+          "score": 72
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "voice",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        }
+      ]
+    },
     {
       "id": "expert-1784160283074-7e936285",
       "requestId": "expert-1784160283074-7e936285",
