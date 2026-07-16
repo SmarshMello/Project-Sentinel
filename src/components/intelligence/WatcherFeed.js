@@ -1,0 +1,4 @@
+import React from 'react';
+import {buildWatcherActivity} from '@site/src/intelligence/activityEngine';
+import styles from './WatcherFeed.module.css';
+export default function WatcherFeed({profiles, onSelect}) { const items=buildWatcherActivity(profiles); return <div className={styles.panel}><h3>Watcher activity feed</h3><p>Latest source checks and release signals across the registry.</p><div className={styles.feed}>{items.slice(0,12).map((item)=><button key={item.id} onClick={()=>onSelect(item.pluginId)}><span className={styles[item.risk.tone]}/><div><b>{item.pluginName}</b><strong>{item.title}</strong><small>{item.timestamp ? new Date(item.timestamp).toLocaleString() : 'Time unavailable'}{item.detectedVersion ? ` · ${item.detectedVersion}` : ''}</small></div></button>)}</div>{!items.length&&<p>No Watcher activity is currently available.</p>}</div> }

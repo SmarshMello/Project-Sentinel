@@ -4,3 +4,4 @@
 .doctorAction h4,.doctorAction p{margin:0}.doctorAction p{margin-top:.3rem;color:var(--ifm-color-emphasis-700)}
 .doctorAction button{border:0;border-radius:9px;padding:.7rem 1rem;font-weight:700;cursor:pointer;background:var(--ifm-color-primary);color:#fff;white-space:nowrap}
 @media(max-width:700px){.doctorAction{align-items:flex-start;flex-direction:column}.doctorAction button{width:100%}}
+.relationships{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1rem 0}.relationships section{background:rgba(255,255,255,.025);border:1px solid rgba(130,210,255,.1);border-radius:10px;padding:.75rem}.relationships h4{margin:0 0 .45rem}.relationships p,.relationships li{font-size:.78rem;color:#9fb5c5}.relationships ul{margin:0;padding-left:1.1rem}@media(max-width:800px){.relationships{grid-template-columns:1fr}}

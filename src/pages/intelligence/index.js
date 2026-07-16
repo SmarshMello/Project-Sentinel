@@ -5,6 +5,11 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {buildIntelligenceSnapshot} from '@site/src/data/intelligenceEngine';
 import ReleaseDetails from '@site/src/components/intelligence/ReleaseDetails';
+import DependencyGraph from '@site/src/components/intelligence/DependencyGraph';
+import ImpactSimulator from '@site/src/components/intelligence/ImpactSimulator';
+import WatcherFeed from '@site/src/components/intelligence/WatcherFeed';
+import RegistryQuality from '@site/src/components/intelligence/RegistryQuality';
+import GoldenBuildManager from '@site/src/components/intelligence/GoldenBuildManager';
 import styles from './styles.module.css';
 
 const INTENT_FILTERS = {
@@ -22,6 +27,7 @@ export default function IntelligenceCenter() {
   const [query, setQuery] = useState('');
   const [risk, setRisk] = useState('all');
   const [expanded, setExpanded] = useState(null);
+  const [selectedId, setSelectedId] = useState('lspdfr');
 
   useEffect(() => {
     fetch(`${reportUrl}?t=${Date.now()}`, {cache: 'no-store'})
@@ -53,14 +59,23 @@ export default function IntelligenceCenter() {
   return <Layout title="Sentinel Intelligence" description="Release intelligence, Plugin DNA and compatibility predictions for Project Sentinel.">
     <main className={styles.page}>
       <header className={styles.hero}><div className="container">
-        <span className={styles.eyebrow}>Plugin lifecycle intelligence · 1.7</span>
+        <span className={styles.eyebrow}>Build change management · 2.0</span>
         <Heading as="h1">Sentinel Intelligence</Heading>
-        <p>Analyze release signals, calculate plugin health, predict upgrade safety, and inspect each plugin’s Watcher, Doctor, Golden Build, and registry history in a unified timeline.</p>
+        <p>Map dependencies, simulate build-wide change impact, compare Golden Build snapshots, audit registry quality, and turn Watcher and Doctor evidence into a unified operations picture.</p>
         <div className={styles.heroActions}><Link to="/watcher">Open Watcher</Link><Link to="/compatibility">Compatibility Center</Link></div>
       </div></header>
 
       <section className={`container ${styles.content}`}>
         <div className={styles.metrics}>{cards.map(([label, value]) => <article key={label}><strong>{value}</strong><span>{label}</span></article>)}</div>
+
+        <div className={styles.sectionHeader}><div><span className={styles.eyebrow}>Change management</span><Heading as="h2">Intelligence operations console</Heading><p>Select any plugin in the graph, activity feed, impact simulator, or quality audit. Every module stays centered on the same project.</p></div></div>
+        <div className={styles.operationsGrid}>
+          <div className={styles.graphPanel}><DependencyGraph snapshot={snapshot} selectedId={selectedId} onSelect={setSelectedId} /></div>
+          <ImpactSimulator snapshot={snapshot} selectedId={selectedId} onSelect={setSelectedId} />
+          <WatcherFeed profiles={snapshot.profiles} onSelect={(id) => {setSelectedId(id); setExpanded(id);}} />
+          <RegistryQuality snapshot={snapshot} onSelect={(id) => {setSelectedId(id); setExpanded(id);}} />
+          <GoldenBuildManager profiles={snapshot.profiles} />
+        </div>
 
         <div className={styles.sectionHeader}><div><span className={styles.eyebrow}>Release intelligence</span><Heading as="h2">Plugin DNA and update decisions</Heading><p>Search normally or use phrases such as “needs review,” “breaking updates,” “outdated dependencies,” “Golden Build,” “updated,” or “deprecated.”</p></div></div>
         <div className={styles.filters}>
@@ -77,7 +92,7 @@ export default function IntelligenceCenter() {
           <div className={styles.badges}><b className={styles[profile.recommendation.tone]}>{profile.recommendation.label}</b><b className={styles.healthBadge}>Health {profile.health.score}</b>{profile.release.updateDetected && <b className={styles.updateBadge}>Update detected</b>}</div>
           <dl><div><dt>Confidence</dt><dd>{profile.confidence}%</dd></div><div><dt>Dependencies</dt><dd>{profile.dependencies.length}</dd></div><div><dt>Retest impact</dt><dd>{profile.usedBy.length}</dd></div><div><dt>Golden Build</dt><dd>{profile.goldenBuild ? 'Yes' : 'No'}</dd></div></dl>
           <div className={styles.reason}>{profile.recommendation.reasons[0]}</div>
-          <div className={styles.actions}><button type="button" onClick={() => setExpanded(expanded === profile.id ? null : profile.id)}>{expanded === profile.id ? 'Hide intelligence' : 'Analyze release'}</button><Link to={profile.profile}>Full profile →</Link></div>
+          <div className={styles.actions}><button type="button" onClick={() => {setSelectedId(profile.id); setExpanded(expanded === profile.id ? null : profile.id);}}>{expanded === profile.id ? 'Hide intelligence' : 'Analyze release'}</button><Link to={profile.profile}>Full profile →</Link></div>
           {expanded === profile.id && <ReleaseDetails profile={profile} />}
         </article>)}</div>
       </section>

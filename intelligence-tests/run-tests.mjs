@@ -42,3 +42,39 @@ assert.equal(timelineSummary.watcher, 1);
 assert.equal(timelineSummary.build, 1);
 assert.ok(timeline.some((item) => item.id === 'registry-baseline'));
 console.log('PASS plugin lifecycle timeline ordering and event summary');
+
+
+const {simulateImpact} = await import('../src/intelligence/impactEngine.js');
+const impactGraph = {edges:[
+  {source:'child-a',target:'root',resolved:true},
+  {source:'child-b',target:'child-a',resolved:true},
+  {source:'child-c',target:'child-b',resolved:true},
+]};
+const impactProfiles = [
+  {id:'root',name:'Root',risk:{score:5},goldenBuild:true},
+  {id:'child-a',name:'Child A',risk:{score:20},goldenBuild:false},
+  {id:'child-b',name:'Child B',risk:{score:40},goldenBuild:false},
+  {id:'child-c',name:'Child C',risk:{score:70},goldenBuild:false},
+];
+const impact = simulateImpact('root', impactGraph, impactProfiles);
+assert.equal(impact.affected.length,3);
+assert.equal(impact.critical[0].id,'child-a');
+assert.equal(impact.medium[0].id,'child-b');
+assert.equal(impact.low[0].id,'child-c');
+console.log('PASS transitive impact simulation and priority ordering');
+
+const {auditRegistry} = await import('../src/intelligence/registryQualityEngine.js');
+const audit = auditRegistry([{id:'p',name:'Plugin',developer:'Unknown',currentVersion:'Unknown',confidence:40,profile:null,guide:null,watcher:null}],{edges:[{source:'p',target:null,targetLabel:'Missing',resolved:false}]});
+assert.ok(audit.issues.length >= 6);
+assert.equal(audit.counts.dependency,1);
+console.log('PASS registry quality audit coverage');
+
+const {compareGoldenSnapshots} = await import('../src/intelligence/goldenBuildEngine.js');
+const diff = compareGoldenSnapshots({plugins:[{id:'a',name:'A',version:'1',risk:'safe',health:90},{id:'b',name:'B',version:'1',risk:'safe',health:80}]},{plugins:[{id:'a',name:'A',version:'2',risk:'likelySafe',health:85},{id:'c',name:'C',version:'1',risk:'safe',health:90}]});
+assert.equal(diff.added.length,1); assert.equal(diff.removed.length,1); assert.equal(diff.changed.length,1);
+console.log('PASS Golden Build snapshot comparison');
+
+const {buildWatcherActivity} = await import('../src/intelligence/activityEngine.js');
+const feed = buildWatcherActivity([{id:'a',name:'A',watcher:{status:'healthy',checkedAt:'2026-01-01T00:00:00Z'},risk:{tone:'safe'},release:{},recommendation:{reasons:['ok']}},{id:'b',name:'B',watcher:{status:'possible-update',checkedAt:'2026-02-01T00:00:00Z'},risk:{tone:'unknown'},release:{detectedVersion:'2'},recommendation:{reasons:['review']}}]);
+assert.equal(feed[0].pluginId,'b'); assert.equal(feed.length,2);
+console.log('PASS Watcher activity ordering');

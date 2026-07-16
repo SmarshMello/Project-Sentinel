@@ -37,6 +37,13 @@ export default function ReleaseDetails({profile}) {
       <div><h4>Recommendation reason</h4><p>{recommendation.reasons[0]}</p><p>{profile.risk.reasons.join(' ')}</p></div>
     </div>
 
+
+    <div className={styles.relationships}>
+      <section><h4>Depends on</h4>{profile.dependencies.length ? <ul>{profile.dependencies.map((edge) => <li key={edge.id}>{edge.targetLabel}{!edge.resolved ? ' · unresolved' : ''}</li>)}</ul> : <p>None registered.</p>}</section>
+      <section><h4>Used by</h4>{profile.usedBy.length ? <ul>{profile.usedBy.map((item) => <li key={item.id}>{item.label}</li>)}</ul> : <p>No reverse dependencies registered.</p>}</section>
+      <section><h4>Build relationships</h4><p>{profile.goldenBuild ? 'Included in the current Golden Build.' : 'Not included in the current Golden Build.'}</p><p>{doctorCases.length} related Doctor case{doctorCases.length === 1 ? '' : 's'} stored locally.</p></section>
+    </div>
+
     <div className={styles.doctorAction}><div><h4>Doctor integration</h4><p>Turn this intelligence profile into an ordered backup, dependency, installation, and retest plan.</p></div><button type="button" onClick={openDoctor}>Create Doctor case →</button></div>
 
     <PluginTimeline profile={profile} doctorCases={doctorCases} />
