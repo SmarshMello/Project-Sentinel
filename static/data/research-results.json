@@ -1,7 +1,196 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:19:58.427Z",
+  "updatedAt": "2026-07-16T06:21:28.165Z",
   "discoveries": [
+    {
+      "id": "research-crime-scene-toolkit",
+      "name": "Crime Scene Toolkit",
+      "shortName": null,
+      "aliases": [
+        "Crime Scene Toolkit",
+        "Crime Scene"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "Elwero",
+      "impact": "Unknown",
+      "confidence": 88,
+      "identityConfidence": 88,
+      "sourceCredibility": 84,
+      "documentationConfidence": 60,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "This mod adds a more realistic crime scene aftermath system to GTA VWhenever a pedestrian is killed and the body remains in the world, emergency services can later appear around the corpse and create a small crime scene. The idea is to make the world feel like it actually reacts after something happened, instead of dead NPCs just lying there with nothing going on.After some time passes, if you leave the area and come back, the scene can appear...",
+      "dependencies": [],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.gta5-mods.com/scripts/crime-scene-elwero",
+      "note": "Research Engine found 2 credible sources across 1 domain. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-crime-scene-toolkit",
+      "requestedAt": "2026-07-16T06:21:28.165Z",
+      "sources": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/crime-scene-elwero",
+          "domain": "gta5-mods.com",
+          "title": "Crime Scene",
+          "description": "This mod adds a more realistic crime scene aftermath system to GTA VWhenever a pedestrian is killed and the body remains in the world, emergency services can later appear around the corpse and create a small crime scene. The idea is to make the world feel like it actually reacts after something happened, instead of dead NPCs just lying there with nothing going on.After some time passes, if you leave the area and come back, the scene can appear...",
+          "snippet": "",
+          "author": "Elwero",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 84
+        },
+        {
+          "url": "https://www.gta5-mods.com/maps/crime-scene-unknownm0dd3r",
+          "domain": "gta5-mods.com",
+          "title": "Crime Scene",
+          "description": "===============================   My Menyoo Mod Installation=============================== REQUIREMENTS:- GTA V installed.- Menyoo PC installed: https://www.gta5-mods.com/scripts/menyoo-pc-sp-------------------------------   HOW TO INSTALL:-------------------------------1) Make sure Menyoo is installed correctly.   If you don’t have it yet, download it and follow the instructions on the download page.2) Find your GTA V main folder.   Open the...",
+          "snippet": "",
+          "author": "UnknownM0dd3r",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 84
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/crime-scene-elwero",
+          "domain": "gta5-mods.com",
+          "title": "Crime Scene",
+          "description": "This mod adds a more realistic crime scene aftermath system to GTA VWhenever a pedestrian is killed and the body remains in the world, emergency services can later appear around the corpse and create a small crime scene. The idea is to make the world feel like it actually reacts after something happened, instead of dead NPCs just lying there with nothing going on.After some time passes, if you leave the area and come back, the scene can appear...",
+          "snippet": "",
+          "author": "Elwero",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 84
+        },
+        {
+          "url": "https://www.gta5-mods.com/maps/crime-scene-unknownm0dd3r",
+          "domain": "gta5-mods.com",
+          "title": "Crime Scene",
+          "description": "===============================   My Menyoo Mod Installation=============================== REQUIREMENTS:- GTA V installed.- Menyoo PC installed: https://www.gta5-mods.com/scripts/menyoo-pc-sp-------------------------------   HOW TO INSTALL:-------------------------------1) Make sure Menyoo is installed correctly.   If you don’t have it yet, download it and follow the instructions on the download page.2) Find your GTA V main folder.   Open the...",
+          "snippet": "",
+          "author": "UnknownM0dd3r",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 84
+        },
+        {
+          "url": "https://www.nexusmods.com/games/crimescenecleaner",
+          "domain": "nexusmods.com",
+          "title": "Crime Scene Cleaner - Nexus Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 64
+        },
+        {
+          "url": "https://www.nexusmods.com/games/crimescenecleaner/mods",
+          "domain": "nexusmods.com",
+          "title": "Crime Scene Cleaner Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 64
+        },
+        {
+          "url": "https://github.com/vahpy/XR-Crime-Animator",
+          "domain": "github.com",
+          "title": "XR-Crime-Animator",
+          "description": "This repository provides source code for Criminator, an Easy-to-Use XR \"Crime Scene Animator\" toolkit, published at CHI 2026.",
+          "snippet": "This repository provides source code for Criminator, an Easy-to-Use XR \"Crime Scene Animator\" toolkit, published at CHI 2026.",
+          "author": "vahpy",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-02-02T04:22:34Z",
+          "score": 62
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/crime-scene/",
+          "domain": "gta5mod.net",
+          "title": "Crime Scene V1.1 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 42
+        },
+        {
+          "url": "https://foundryvtt.com/packages/csi-toolkit",
+          "domain": "foundryvtt.com",
+          "title": "Crime Scene Investigation Toolkit | Foundry Virtual Tabletop",
+          "description": "Crime Scene Investigation Toolkit, an Add-on Module for Foundry Virtual Tabletop",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 36
+        },
+        {
+          "url": "https://gamebanana.com/games/22233",
+          "domain": "gamebanana.com",
+          "title": "Crime Scene Cleaner Mods, Tutorials & Community | CSC Hub",
+          "description": "Discover Crime Scene Cleaner mods, tutorials, questions, requests, and fan discussions. Also known as CSC, this is the go-to hub for custom content and help.",
+          "snippet": "",
+          "author": "the Crime Scene Cleaner Modding Communit",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 26
+        }
+      ]
+    },
     {
       "id": "research-scene-manager",
       "name": "Scene Manager",
@@ -7190,6 +7379,143 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182869642-33f25ffe",
+      "requestId": "expert-1784182869642-33f25ffe",
+      "query": "Crime Scene Toolkit",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:21:28.165Z",
+      "completedAt": "2026-07-16T06:21:28.165Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 8,
+      "credibleCandidateCount": 2,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/crime-scene-elwero",
+          "domain": "gta5-mods.com",
+          "title": "Crime Scene",
+          "description": "This mod adds a more realistic crime scene aftermath system to GTA VWhenever a pedestrian is killed and the body remains in the world, emergency services can later appear around the corpse and create a small crime scene. The idea is to make the world feel like it actually reacts after something happened, instead of dead NPCs just lying there with nothing going on.After some time passes, if you leave the area and come back, the scene can appear...",
+          "snippet": "",
+          "author": "Elwero",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 84
+        },
+        {
+          "url": "https://www.gta5-mods.com/maps/crime-scene-unknownm0dd3r",
+          "domain": "gta5-mods.com",
+          "title": "Crime Scene",
+          "description": "===============================   My Menyoo Mod Installation=============================== REQUIREMENTS:- GTA V installed.- Menyoo PC installed: https://www.gta5-mods.com/scripts/menyoo-pc-sp-------------------------------   HOW TO INSTALL:-------------------------------1) Make sure Menyoo is installed correctly.   If you don’t have it yet, download it and follow the instructions on the download page.2) Find your GTA V main folder.   Open the...",
+          "snippet": "",
+          "author": "UnknownM0dd3r",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 84
+        },
+        {
+          "url": "https://www.nexusmods.com/games/crimescenecleaner",
+          "domain": "nexusmods.com",
+          "title": "Crime Scene Cleaner - Nexus Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 64
+        },
+        {
+          "url": "https://www.nexusmods.com/games/crimescenecleaner/mods",
+          "domain": "nexusmods.com",
+          "title": "Crime Scene Cleaner Mods",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 64
+        },
+        {
+          "url": "https://github.com/vahpy/XR-Crime-Animator",
+          "domain": "github.com",
+          "title": "XR-Crime-Animator",
+          "description": "This repository provides source code for Criminator, an Easy-to-Use XR \"Crime Scene Animator\" toolkit, published at CHI 2026.",
+          "snippet": "This repository provides source code for Criminator, an Easy-to-Use XR \"Crime Scene Animator\" toolkit, published at CHI 2026.",
+          "author": "vahpy",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-02-02T04:22:34Z",
+          "score": 62
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/crime-scene/",
+          "domain": "gta5mod.net",
+          "title": "Crime Scene V1.1 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 42
+        },
+        {
+          "url": "https://foundryvtt.com/packages/csi-toolkit",
+          "domain": "foundryvtt.com",
+          "title": "Crime Scene Investigation Toolkit | Foundry Virtual Tabletop",
+          "description": "Crime Scene Investigation Toolkit, an Add-on Module for Foundry Virtual Tabletop",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 36
+        },
+        {
+          "url": "https://gamebanana.com/games/22233",
+          "domain": "gamebanana.com",
+          "title": "Crime Scene Cleaner Mods, Tutorials & Community | CSC Hub",
+          "description": "Discover Crime Scene Cleaner mods, tutorials, questions, requests, and fan discussions. Also known as CSC, this is the go-to hub for custom content and help.",
+          "snippet": "",
+          "author": "the Crime Scene Cleaner Modding Communit",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 26
+        }
+      ]
+    },
     {
       "id": "expert-1784182754771-0d96e00f",
       "requestId": "expert-1784182754771-0d96e00f",
