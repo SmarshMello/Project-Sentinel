@@ -1,5 +1,5 @@
 import React from 'react';
-import {useHistory} from '@docusaurus/router';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import {buildDoctorPlan, saveDoctorPlan} from '@site/src/intelligence/doctorPlanEngine';
 import styles from './ReleaseDetails.module.css';
 
@@ -9,11 +9,11 @@ const SECTION_LABELS = {
 };
 
 export default function ReleaseDetails({profile}) {
-  const history = useHistory();
+  const doctorUrl = useBaseUrl('/doctor');
   const {release, recommendation, health} = profile;
   const openDoctor = () => {
     saveDoctorPlan(buildDoctorPlan(profile));
-    history.push('/doctor?from=intelligence');
+    window.location.assign(`${doctorUrl}?from=intelligence`);
   };
   const sections = Object.entries(SECTION_LABELS).filter(([key]) => release.classified[key]?.length);
   return <div className={styles.panel}>
