@@ -1,7 +1,137 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:10:30.703Z",
+  "updatedAt": "2026-07-16T06:11:02.613Z",
   "discoveries": [
+    {
+      "id": "research-immersive-traffic-stops",
+      "name": "Immersive Traffic Stops",
+      "shortName": null,
+      "aliases": [
+        "Immersive Traffic Stops",
+        "Ambient Police: Sitting Patrols and Traffic Stops",
+        "Riskier Traffic Stops - Script Modifications & Plugins - LCPDFR.com"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "GTAPatrol2026",
+      "impact": "Unknown",
+      "confidence": 80,
+      "identityConfidence": 80,
+      "sourceCredibility": 76,
+      "documentationConfidence": 60,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "This is a Script that goes into the GTA\\Scripts folder.To update: INI file has not changed syntax since V1.7, replace .dll and pdb files, INI file does not need replaced. It was renamed in V2.0.\"1803 Ambient Police.ini\" should be the name of the .ini file moving forward.Showcase:https://www.youtube.com/watch?v=IZAp9k2m1kgHow to install:1. Make sure to have ScripthookVdotnetV3, the link below allows you to run both V2 and V3: https://www.gta5-m...",
+      "dependencies": [],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.gta5-mods.com/scripts/ambient-ai-police-w-traffic-stops",
+      "note": "Research Engine found 2 credible sources across 2 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-immersive-traffic-stops",
+      "requestedAt": "2026-07-16T06:11:02.613Z",
+      "sources": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/ambient-ai-police-w-traffic-stops",
+          "domain": "gta5-mods.com",
+          "title": "Ambient Police: Sitting Patrols and Traffic Stops",
+          "description": "This is a Script that goes into the GTA\\Scripts folder.To update: INI file has not changed syntax since V1.7, replace .dll and pdb files, INI file does not need replaced. It was renamed in V2.0.\"1803 Ambient Police.ini\" should be the name of the .ini file moving forward.Showcase:https://www.youtube.com/watch?v=IZAp9k2m1kgHow to install:1. Make sure to have ScripthookVdotnetV3, the link below allows you to run both V2 and V3: https://www.gta5-m...",
+          "snippet": "",
+          "author": "GTAPatrol2026",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 76
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/44036-riskier-traffic-stops/",
+          "domain": "lcpdfr.com",
+          "title": "Riskier Traffic Stops - Script Modifications & Plugins - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 76
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/ambient-ai-police-w-traffic-stops",
+          "domain": "gta5-mods.com",
+          "title": "Ambient Police: Sitting Patrols and Traffic Stops",
+          "description": "This is a Script that goes into the GTA\\Scripts folder.To update: INI file has not changed syntax since V1.7, replace .dll and pdb files, INI file does not need replaced. It was renamed in V2.0.\"1803 Ambient Police.ini\" should be the name of the .ini file moving forward.Showcase:https://www.youtube.com/watch?v=IZAp9k2m1kgHow to install:1. Make sure to have ScripthookVdotnetV3, the link below allows you to run both V2 and V3: https://www.gta5-m...",
+          "snippet": "",
+          "author": "GTAPatrol2026",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 76
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/44036-riskier-traffic-stops/",
+          "domain": "lcpdfr.com",
+          "title": "Riskier Traffic Stops - Script Modifications & Plugins - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 76
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/riskier-traffic-stops-v3-2/",
+          "domain": "gta5mod.net",
+          "title": "Riskier Traffic Stops V3.2 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 34
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "voice",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        }
+      ]
+    },
     {
       "id": "research-arrest-manager",
       "name": "Arrest Manager",
@@ -4306,6 +4436,83 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182238607-6bdb779e",
+      "requestId": "expert-1784182238607-6bdb779e",
+      "query": "Immersive Traffic Stops",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:11:02.613Z",
+      "completedAt": "2026-07-16T06:11:02.613Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 4,
+      "credibleCandidateCount": 2,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/ambient-ai-police-w-traffic-stops",
+          "domain": "gta5-mods.com",
+          "title": "Ambient Police: Sitting Patrols and Traffic Stops",
+          "description": "This is a Script that goes into the GTA\\Scripts folder.To update: INI file has not changed syntax since V1.7, replace .dll and pdb files, INI file does not need replaced. It was renamed in V2.0.\"1803 Ambient Police.ini\" should be the name of the .ini file moving forward.Showcase:https://www.youtube.com/watch?v=IZAp9k2m1kgHow to install:1. Make sure to have ScripthookVdotnetV3, the link below allows you to run both V2 and V3: https://www.gta5-m...",
+          "snippet": "",
+          "author": "GTAPatrol2026",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 76
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/44036-riskier-traffic-stops/",
+          "domain": "lcpdfr.com",
+          "title": "Riskier Traffic Stops - Script Modifications & Plugins - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 76
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/riskier-traffic-stops-v3-2/",
+          "domain": "gta5mod.net",
+          "title": "Riskier Traffic Stops V3.2 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 34
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "voice",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        }
+      ]
+    },
     {
       "id": "expert-1784182188820-71362e3f",
       "requestId": "expert-1784182188820-71362e3f",
