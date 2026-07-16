@@ -1,7 +1,418 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:14:03.654Z",
+  "updatedAt": "2026-07-16T06:14:42.923Z",
   "discoveries": [
+    {
+      "id": "research-police-partner",
+      "name": "Police Partner",
+      "shortName": null,
+      "aliases": [
+        "Police Partner",
+        "Police Partner (discontinued)",
+        "LCPDFR.com",
+        "GTAV-LSPDFR-Police-Partner/README.md at master · minipunch/GTAV-LSPDFR-Police-Partner",
+        "GTAV-LSPDFR-Police-Partner",
+        "1803-Police-Partner-Plugin",
+        "1803 Police Partner Plugin V1.0 - GTA 5 mod",
+        "partner-dont-police",
+        "SafeBond",
+        "Abolish-Every-Police-Officer-.-period-."
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "Rustic7",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 95,
+      "documentationConfidence": 95,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "Update notes 1.2 - Random weapon- There is 3 guns that spawn random on AI's when you spawn them( Tazer, Nightstick and pistol ) A simple and easy one. I'm trying to figure out how to make it so if you pull out a tazer the partner pulls out a tazer, if you pull out a nightstick he pulls out. Will be more realistic, i'm up for some help if someone knows how to. Please note: If you want to edit the skin just go to line 14 and edit out \"s_m_y_sher...",
+      "dependencies": [
+        "LSPDFR"
+      ],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.gta5-mods.com/ca/scripts/partner-team",
+      "note": "Research Engine found 12 credible sources across 4 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-police-partner",
+      "requestedAt": "2026-07-16T06:14:42.923Z",
+      "sources": [
+        {
+          "url": "https://www.gta5-mods.com/ca/scripts/partner-team",
+          "domain": "gta5-mods.com",
+          "title": "Police Partner",
+          "description": "Update notes 1.2 - Random weapon- There is 3 guns that spawn random on AI's when you spawn them( Tazer, Nightstick and pistol ) A simple and easy one. I'm trying to figure out how to make it so if you pull out a tazer the partner pulls out a tazer, if you pull out a nightstick he pulls out. Will be more realistic, i'm up for some help if someone knows how to. Please note: If you want to edit the skin just go to line 14 and edit out \"s_m_y_sher...",
+          "snippet": "",
+          "author": "Rustic7",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/sv/scripts/partner-team",
+          "domain": "gta5-mods.com",
+          "title": "Police Partner",
+          "description": "Update notes 1.2 - Random weapon- There is 3 guns that spawn random on AI's when you spawn them( Tazer, Nightstick and pistol ) A simple and easy one. I'm trying to figure out how to make it so if you pull out a tazer the partner pulls out a tazer, if you pull out a nightstick he pulls out. Will be more realistic, i'm up for some help if someone knows how to. Please note: If you want to edit the skin just go to line 14 and edit out \"s_m_y_sher...",
+          "snippet": "",
+          "author": "Rustic7",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/police-partner",
+          "domain": "gta5-mods.com",
+          "title": "Police Partner (discontinued)",
+          "description": "Spawn a Police Partner in.  Press F3 - it uses the Native Trainer example GUI for selection.  First select a partner type, then back out and select spawn (same keys as Native Trainer).  Currently the limit has been removed to spawn Officers, and they are unarmed - later I'll be adding to make them come with realistic loadouts, the K9 partner does not currently load into a vehicle, but will be corrected in the upcoming versions.  He will howeve...",
+          "snippet": "",
+          "author": "Finkone",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/partner-team",
+          "domain": "gta5-mods.com",
+          "title": "Police Partner",
+          "description": "Update notes 1.2 - Random weapon- There is 3 guns that spawn random on AI's when you spawn them( Tazer, Nightstick and pistol ) A simple and easy one. I'm trying to figure out how to make it so if you pull out a tazer the partner pulls out a tazer, if you pull out a nightstick he pulls out. Will be more realistic, i'm up for some help if someone knows how to. Please note: If you want to edit the skin just go to line 14 and edit out \"s_m_y_sher...",
+          "snippet": "",
+          "author": "Rustic7",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53589-1803-police-partner-plugin/",
+          "domain": "lcpdfr.com",
+          "title": "LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/minipunch/GTAV-LSPDFR-Police-Partner/blob/master/README.md",
+          "domain": "github.com",
+          "title": "GTAV-LSPDFR-Police-Partner/README.md at master · minipunch/GTAV-LSPDFR-Police-Partner",
+          "description": "A lightweight police partner plugin I made for the LSPD: First Response GTA V modification. - GTAV-LSPDFR-Police-Partner/README.md at master · minipunch/GTAV-LSPDFR-Police-Partner",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/minipunch/GTAV-LSPDFR-Police-Partner",
+          "domain": "github.com",
+          "title": "GTAV-LSPDFR-Police-Partner",
+          "description": "A lightweight police partner plugin I made for the LSPD: First Response GTA V modification.",
+          "snippet": "A lightweight police partner plugin I made for the LSPD: First Response GTA V modification.",
+          "author": "minipunch",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2022-05-02T15:55:33Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/1803creations/1803-Police-Partner-Plugin",
+          "domain": "github.com",
+          "title": "1803-Police-Partner-Plugin",
+          "description": "",
+          "snippet": "",
+          "author": "1803creations",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-02-28T21:03:35Z",
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/1803-police-partner-plugin-v1-0/",
+          "domain": "gta5mod.net",
+          "title": "1803 Police Partner Plugin V1.0 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/michael-borck/partner-dont-police",
+          "domain": "github.com",
+          "title": "partner-dont-police",
+          "description": "Provides curriculum, teaching strategies, and assessment methods for integrating generative AI as a learning partner in business education courses.",
+          "snippet": "Provides curriculum, teaching strategies, and assessment methods for integrating generative AI as a learning partner in business education courses.",
+          "author": "michael-borck",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2026-06-30T10:12:06Z",
+          "score": 78
+        },
+        {
+          "url": "https://github.com/santoshperugu/SafeBond",
+          "domain": "github.com",
+          "title": "SafeBond",
+          "description": "SafeBond is a secure matrimony platform that integrates advanced background checks and trust scoring to ensure high-integrity partner matching. By combining user self-onboarding with rigorous administrative verification and police record checks, it provides a trusted environment for brides and grooms. ",
+          "snippet": "SafeBond is a secure matrimony platform that integrates advanced background checks and trust scoring to ensure high-integrity partner matching. By combining user self-onboarding with rigorous administrative verification and police record checks, it provides a trusted environment for brides and grooms. ",
+          "author": "santoshperugu",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-04-10T09:18:08Z",
+          "score": 78
+        },
+        {
+          "url": "https://github.com/ZoRdBamBi13/Abolish-Every-Police-Officer-.-period-.",
+          "domain": "github.com",
+          "title": "Abolish-Every-Police-Officer-.-period-.",
+          "description": "Police officers abduct children, abduct adults, they abuse their power (like the one who broke my nose then his partner Came and uppercutted me in the face 3 or 5 times)... and they keep humans locked up , controlled and useless to society.... FUCK POLICE OFFICERS!!!!!!",
+          "snippet": "Police officers abduct children, abduct adults, they abuse their power (like the one who broke my nose then his partner Came and uppercutted me in the face 3 or 5 times)... and they keep humans locked up , controlled and useless to society.... FUCK POLICE OFFICERS!!!!!!",
+          "author": "ZoRdBamBi13",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 2,
+          "updatedAt": "2026-01-25T12:47:28Z",
+          "score": 78
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/ca/scripts/partner-team",
+          "domain": "gta5-mods.com",
+          "title": "Police Partner",
+          "description": "Update notes 1.2 - Random weapon- There is 3 guns that spawn random on AI's when you spawn them( Tazer, Nightstick and pistol ) A simple and easy one. I'm trying to figure out how to make it so if you pull out a tazer the partner pulls out a tazer, if you pull out a nightstick he pulls out. Will be more realistic, i'm up for some help if someone knows how to. Please note: If you want to edit the skin just go to line 14 and edit out \"s_m_y_sher...",
+          "snippet": "",
+          "author": "Rustic7",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/sv/scripts/partner-team",
+          "domain": "gta5-mods.com",
+          "title": "Police Partner",
+          "description": "Update notes 1.2 - Random weapon- There is 3 guns that spawn random on AI's when you spawn them( Tazer, Nightstick and pistol ) A simple and easy one. I'm trying to figure out how to make it so if you pull out a tazer the partner pulls out a tazer, if you pull out a nightstick he pulls out. Will be more realistic, i'm up for some help if someone knows how to. Please note: If you want to edit the skin just go to line 14 and edit out \"s_m_y_sher...",
+          "snippet": "",
+          "author": "Rustic7",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/police-partner",
+          "domain": "gta5-mods.com",
+          "title": "Police Partner (discontinued)",
+          "description": "Spawn a Police Partner in.  Press F3 - it uses the Native Trainer example GUI for selection.  First select a partner type, then back out and select spawn (same keys as Native Trainer).  Currently the limit has been removed to spawn Officers, and they are unarmed - later I'll be adding to make them come with realistic loadouts, the K9 partner does not currently load into a vehicle, but will be corrected in the upcoming versions.  He will howeve...",
+          "snippet": "",
+          "author": "Finkone",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/partner-team",
+          "domain": "gta5-mods.com",
+          "title": "Police Partner",
+          "description": "Update notes 1.2 - Random weapon- There is 3 guns that spawn random on AI's when you spawn them( Tazer, Nightstick and pistol ) A simple and easy one. I'm trying to figure out how to make it so if you pull out a tazer the partner pulls out a tazer, if you pull out a nightstick he pulls out. Will be more realistic, i'm up for some help if someone knows how to. Please note: If you want to edit the skin just go to line 14 and edit out \"s_m_y_sher...",
+          "snippet": "",
+          "author": "Rustic7",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53589-1803-police-partner-plugin/",
+          "domain": "lcpdfr.com",
+          "title": "LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/minipunch/GTAV-LSPDFR-Police-Partner/blob/master/README.md",
+          "domain": "github.com",
+          "title": "GTAV-LSPDFR-Police-Partner/README.md at master · minipunch/GTAV-LSPDFR-Police-Partner",
+          "description": "A lightweight police partner plugin I made for the LSPD: First Response GTA V modification. - GTAV-LSPDFR-Police-Partner/README.md at master · minipunch/GTAV-LSPDFR-Police-Partner",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/minipunch/GTAV-LSPDFR-Police-Partner",
+          "domain": "github.com",
+          "title": "GTAV-LSPDFR-Police-Partner",
+          "description": "A lightweight police partner plugin I made for the LSPD: First Response GTA V modification.",
+          "snippet": "A lightweight police partner plugin I made for the LSPD: First Response GTA V modification.",
+          "author": "minipunch",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2022-05-02T15:55:33Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/1803creations/1803-Police-Partner-Plugin",
+          "domain": "github.com",
+          "title": "1803-Police-Partner-Plugin",
+          "description": "",
+          "snippet": "",
+          "author": "1803creations",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-02-28T21:03:35Z",
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/1803-police-partner-plugin-v1-0/",
+          "domain": "gta5mod.net",
+          "title": "1803 Police Partner Plugin V1.0 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/michael-borck/partner-dont-police",
+          "domain": "github.com",
+          "title": "partner-dont-police",
+          "description": "Provides curriculum, teaching strategies, and assessment methods for integrating generative AI as a learning partner in business education courses.",
+          "snippet": "Provides curriculum, teaching strategies, and assessment methods for integrating generative AI as a learning partner in business education courses.",
+          "author": "michael-borck",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2026-06-30T10:12:06Z",
+          "score": 78
+        },
+        {
+          "url": "https://github.com/santoshperugu/SafeBond",
+          "domain": "github.com",
+          "title": "SafeBond",
+          "description": "SafeBond is a secure matrimony platform that integrates advanced background checks and trust scoring to ensure high-integrity partner matching. By combining user self-onboarding with rigorous administrative verification and police record checks, it provides a trusted environment for brides and grooms. ",
+          "snippet": "SafeBond is a secure matrimony platform that integrates advanced background checks and trust scoring to ensure high-integrity partner matching. By combining user self-onboarding with rigorous administrative verification and police record checks, it provides a trusted environment for brides and grooms. ",
+          "author": "santoshperugu",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-04-10T09:18:08Z",
+          "score": 78
+        },
+        {
+          "url": "https://github.com/ZoRdBamBi13/Abolish-Every-Police-Officer-.-period-.",
+          "domain": "github.com",
+          "title": "Abolish-Every-Police-Officer-.-period-.",
+          "description": "Police officers abduct children, abduct adults, they abuse their power (like the one who broke my nose then his partner Came and uppercutted me in the face 3 or 5 times)... and they keep humans locked up , controlled and useless to society.... FUCK POLICE OFFICERS!!!!!!",
+          "snippet": "Police officers abduct children, abduct adults, they abuse their power (like the one who broke my nose then his partner Came and uppercutted me in the face 3 or 5 times)... and they keep humans locked up , controlled and useless to society.... FUCK POLICE OFFICERS!!!!!!",
+          "author": "ZoRdBamBi13",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 2,
+          "updatedAt": "2026-01-25T12:47:28Z",
+          "score": 78
+        }
+      ]
+    },
     {
       "id": "research-vehicle-impound",
       "name": "Vehicle Impound",
@@ -5567,6 +5978,204 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182455743-d7b530e3",
+      "requestId": "expert-1784182455743-d7b530e3",
+      "query": "Police Partner",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:14:42.923Z",
+      "completedAt": "2026-07-16T06:14:42.923Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 12,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/ca/scripts/partner-team",
+          "domain": "gta5-mods.com",
+          "title": "Police Partner",
+          "description": "Update notes 1.2 - Random weapon- There is 3 guns that spawn random on AI's when you spawn them( Tazer, Nightstick and pistol ) A simple and easy one. I'm trying to figure out how to make it so if you pull out a tazer the partner pulls out a tazer, if you pull out a nightstick he pulls out. Will be more realistic, i'm up for some help if someone knows how to. Please note: If you want to edit the skin just go to line 14 and edit out \"s_m_y_sher...",
+          "snippet": "",
+          "author": "Rustic7",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/sv/scripts/partner-team",
+          "domain": "gta5-mods.com",
+          "title": "Police Partner",
+          "description": "Update notes 1.2 - Random weapon- There is 3 guns that spawn random on AI's when you spawn them( Tazer, Nightstick and pistol ) A simple and easy one. I'm trying to figure out how to make it so if you pull out a tazer the partner pulls out a tazer, if you pull out a nightstick he pulls out. Will be more realistic, i'm up for some help if someone knows how to. Please note: If you want to edit the skin just go to line 14 and edit out \"s_m_y_sher...",
+          "snippet": "",
+          "author": "Rustic7",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/police-partner",
+          "domain": "gta5-mods.com",
+          "title": "Police Partner (discontinued)",
+          "description": "Spawn a Police Partner in.  Press F3 - it uses the Native Trainer example GUI for selection.  First select a partner type, then back out and select spawn (same keys as Native Trainer).  Currently the limit has been removed to spawn Officers, and they are unarmed - later I'll be adding to make them come with realistic loadouts, the K9 partner does not currently load into a vehicle, but will be corrected in the upcoming versions.  He will howeve...",
+          "snippet": "",
+          "author": "Finkone",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/partner-team",
+          "domain": "gta5-mods.com",
+          "title": "Police Partner",
+          "description": "Update notes 1.2 - Random weapon- There is 3 guns that spawn random on AI's when you spawn them( Tazer, Nightstick and pistol ) A simple and easy one. I'm trying to figure out how to make it so if you pull out a tazer the partner pulls out a tazer, if you pull out a nightstick he pulls out. Will be more realistic, i'm up for some help if someone knows how to. Please note: If you want to edit the skin just go to line 14 and edit out \"s_m_y_sher...",
+          "snippet": "",
+          "author": "Rustic7",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53589-1803-police-partner-plugin/",
+          "domain": "lcpdfr.com",
+          "title": "LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/minipunch/GTAV-LSPDFR-Police-Partner/blob/master/README.md",
+          "domain": "github.com",
+          "title": "GTAV-LSPDFR-Police-Partner/README.md at master · minipunch/GTAV-LSPDFR-Police-Partner",
+          "description": "A lightweight police partner plugin I made for the LSPD: First Response GTA V modification. - GTAV-LSPDFR-Police-Partner/README.md at master · minipunch/GTAV-LSPDFR-Police-Partner",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/minipunch/GTAV-LSPDFR-Police-Partner",
+          "domain": "github.com",
+          "title": "GTAV-LSPDFR-Police-Partner",
+          "description": "A lightweight police partner plugin I made for the LSPD: First Response GTA V modification.",
+          "snippet": "A lightweight police partner plugin I made for the LSPD: First Response GTA V modification.",
+          "author": "minipunch",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2022-05-02T15:55:33Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/1803creations/1803-Police-Partner-Plugin",
+          "domain": "github.com",
+          "title": "1803-Police-Partner-Plugin",
+          "description": "",
+          "snippet": "",
+          "author": "1803creations",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-02-28T21:03:35Z",
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/1803-police-partner-plugin-v1-0/",
+          "domain": "gta5mod.net",
+          "title": "1803 Police Partner Plugin V1.0 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/michael-borck/partner-dont-police",
+          "domain": "github.com",
+          "title": "partner-dont-police",
+          "description": "Provides curriculum, teaching strategies, and assessment methods for integrating generative AI as a learning partner in business education courses.",
+          "snippet": "Provides curriculum, teaching strategies, and assessment methods for integrating generative AI as a learning partner in business education courses.",
+          "author": "michael-borck",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 1,
+          "updatedAt": "2026-06-30T10:12:06Z",
+          "score": 78
+        },
+        {
+          "url": "https://github.com/santoshperugu/SafeBond",
+          "domain": "github.com",
+          "title": "SafeBond",
+          "description": "SafeBond is a secure matrimony platform that integrates advanced background checks and trust scoring to ensure high-integrity partner matching. By combining user self-onboarding with rigorous administrative verification and police record checks, it provides a trusted environment for brides and grooms. ",
+          "snippet": "SafeBond is a secure matrimony platform that integrates advanced background checks and trust scoring to ensure high-integrity partner matching. By combining user self-onboarding with rigorous administrative verification and police record checks, it provides a trusted environment for brides and grooms. ",
+          "author": "santoshperugu",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-04-10T09:18:08Z",
+          "score": 78
+        },
+        {
+          "url": "https://github.com/ZoRdBamBi13/Abolish-Every-Police-Officer-.-period-.",
+          "domain": "github.com",
+          "title": "Abolish-Every-Police-Officer-.-period-.",
+          "description": "Police officers abduct children, abduct adults, they abuse their power (like the one who broke my nose then his partner Came and uppercutted me in the face 3 or 5 times)... and they keep humans locked up , controlled and useless to society.... FUCK POLICE OFFICERS!!!!!!",
+          "snippet": "Police officers abduct children, abduct adults, they abuse their power (like the one who broke my nose then his partner Came and uppercutted me in the face 3 or 5 times)... and they keep humans locked up , controlled and useless to society.... FUCK POLICE OFFICERS!!!!!!",
+          "author": "ZoRdBamBi13",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 2,
+          "updatedAt": "2026-01-25T12:47:28Z",
+          "score": 78
+        }
+      ]
+    },
     {
       "id": "expert-1784182408537-4a311df8",
       "requestId": "expert-1784182408537-4a311df8",
