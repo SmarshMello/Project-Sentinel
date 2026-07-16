@@ -44,12 +44,15 @@ assert.equal(collectResearchProjects(junkPayload).length, 0);
 console.log('PASS very low-confidence noise is not added to the Research registry');
 
 const deployWorkflow = fs.readFileSync(new URL('../.github/workflows/deploy.yml', import.meta.url), 'utf8');
-assert.match(deployWorkflow, /workflows:\s*\["Sentinel Watcher", "Sentinel Research"\]/);
-console.log('PASS successful Sentinel Research runs trigger GitHub Pages deployment');
+assert.match(deployWorkflow, /workflows:\s*\["Sentinel Watcher"\]/);
+const researchWorkflow = fs.readFileSync(new URL('../.github/workflows/sentinel-research.yml', import.meta.url), 'utf8');
+assert.match(researchWorkflow, /publish_site/);
+assert.match(researchWorkflow, /gh workflow run deploy\.yml/);
+console.log('PASS bulk research defers Pages deployment until the final publish request');
 
 console.log('\n4/4 Sentinel Research integration tests passed.');
 
-import {parseBulkResearchInput, summarizeBulkResults} from '../src/data/bulkResearch.js';
+import {MAX_BULK_PROJECTS,MAX_INPUT_LENGTH,parseBulkResearchInput, summarizeBulkResults} from '../src/data/bulkResearch.js';
 {
   const known=[{name:'Stop The Ped',aliases:['STP']},{name:'Ultimate Backup',shortName:'UB'}];
   const parsed=parseBulkResearchInput('ResponseV\nStop The Ped\nResponseV\nSTP\nBetter Chases+',known);
@@ -60,5 +63,23 @@ import {parseBulkResearchInput, summarizeBulkResults} from '../src/data/bulkRese
   const summary=summarizeBulkResults([{status:'known'},{status:'found'},{status:'failed'}]);
   assert.equal(summary.total,3);
   assert.equal(summary.found,1);
-  console.log('✓ bulk research parser and result summary');
+  assert.equal(MAX_BULK_PROJECTS,500);
+  assert.equal(MAX_INPUT_LENGTH,100000);
+  const many=parseBulkResearchInput(Array.from({length:520},(_,i)=>`Project ${i+1}`).join('\n'),[]);
+  assert.equal(many.unique.length,500);
+  assert.equal(many.overflow,20);
+  console.log('✓ bulk research parser, higher limits, and result summary');
 }
+
+
+const expertPage = fs.readFileSync(new URL('../src/pages/sentinel-ai/index.js', import.meta.url), 'utf8');
+assert.match(expertPage, /Stop after current project/);
+assert.match(expertPage, /phase:'stopping'/);
+assert.match(expertPage, /sentinel-bulk-research-v2/);
+assert.match(expertPage, /totalUnknown/);
+console.log('PASS bulk queue pause, persistence, and frozen progress totals are wired');
+
+const workerSource = fs.readFileSync(new URL('../watcher-control-worker/src/index.js', import.meta.url), 'utf8');
+assert.match(workerSource, /url\.pathname === '\/publish'/);
+assert.match(workerSource, /publish_site/);
+console.log('PASS bulk completion can request one final Pages publish');

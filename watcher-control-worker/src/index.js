@@ -111,7 +111,7 @@ export default {
     const url = new URL(request.url);
     try {
       if (url.pathname === '/health' && request.method === 'GET') {
-        return json({ok: true, service: 'Sentinel Watcher Control', version: '1.0.0', researchService: true}, 200, env, origin);
+        return json({ok: true, service: 'Sentinel Watcher Control', version: '1.1.0', researchService: true}, 200, env, origin);
       }
 
       if (url.pathname === '/trigger' && request.method === 'POST') {
@@ -151,10 +151,22 @@ export default {
         }
         const response = await github(env, `/actions/workflows/${researchWorkflow}/dispatches`, {
           method: 'POST', headers: {'content-type': 'application/json'},
-          body: JSON.stringify({ref: 'main', inputs: {research_query: query, research_request_id: requestId, original_question: String(body.question || '').slice(0, 500)}}),
+          body: JSON.stringify({ref: 'main', inputs: {research_query: query, research_request_id: requestId, original_question: String(body.question || '').slice(0, 500), publish_site: body.publishSite === false ? 'false' : 'true'}}),
         });
         if (!response.ok) return json({error: `GitHub rejected the research request (${response.status}).`, detail: await response.text()}, 502, env, origin);
         return json({ok: true, reused: false, requestId, scanId, query, status: 'queued'}, 202, env, origin);
+      }
+
+
+      if (url.pathname === '/publish' && request.method === 'POST') {
+        if (!requireAdmin(request, env)) return json({error: 'Invalid Watcher admin key.'}, 401, env, origin);
+        const deployWorkflow = env.DEPLOY_WORKFLOW_FILE || 'deploy.yml';
+        const response = await github(env, `/actions/workflows/${deployWorkflow}/dispatches`, {
+          method: 'POST', headers: {'content-type': 'application/json'},
+          body: JSON.stringify({ref: 'main'}),
+        });
+        if (!response.ok) return json({error: `GitHub rejected the publish request (${response.status}).`, detail: await response.text()}, 502, env, origin);
+        return json({ok: true, status: 'queued'}, 202, env, origin);
       }
 
 

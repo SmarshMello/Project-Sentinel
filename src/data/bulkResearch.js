@@ -1,5 +1,5 @@
-const MAX_BULK_PROJECTS = 50;
-const MAX_INPUT_LENGTH = 10000;
+export const MAX_BULK_PROJECTS = 500;
+export const MAX_INPUT_LENGTH = 100000;
 
 export const normalizeProjectName = (value = '') => String(value)
   .replace(/^[-*•\d.)\s]+/, '')

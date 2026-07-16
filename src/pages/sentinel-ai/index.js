@@ -11,7 +11,7 @@ import {researchDimensions} from '@site/src/data/researchAssessment';
 import {plugins} from '@site/src/data/plugins';
 import {collectResearchProjects} from '@site/src/data/researchRegistry';
 import {loadResearchData} from '@site/src/data/researchData';
-import {parseBulkResearchInput,summarizeBulkResults} from '@site/src/data/bulkResearch';
+import {MAX_INPUT_LENGTH,parseBulkResearchInput,summarizeBulkResults} from '@site/src/data/bulkResearch';
 import styles from './styles.module.css';
 
 function WatcherBadge({p}){if(!p.watcherTracked)return <span className={styles.untracked}>Not monitored</span>;const w=p.watcher;return <span className={w.status==='healthy'?styles.liveGood:styles.liveWarn}>{w.status==='healthy'?'Live healthy':String(w.status||'unknown').replaceAll('-',' ')}</span>}
@@ -43,16 +43,19 @@ function App(){
   const reportUrl=useBaseUrl('/data/watcher-report.json');
   const researchUrl=useBaseUrl('/data/research-results.json');
   const doctorUrl=useBaseUrl('/doctor');
-  const[q,setQ]=useState(''),[r,setR]=useState(null),[history,setHistory]=useState([]),[saved,setSaved]=useState(false),[report,setReport]=useState(null),[discoveries,setDiscoveries]=useState([]),[liveState,setLiveState]=useState('loading'),[researchState,setResearchState]=useState({phase:'idle',percent:0,message:'',activeStep:null,runUrl:null}),[bulkState,setBulkState]=useState({phase:'idle',items:[],current:0});
+  const[q,setQ]=useState(''),[r,setR]=useState(null),[history,setHistory]=useState([]),[saved,setSaved]=useState(false),[report,setReport]=useState(null),[discoveries,setDiscoveries]=useState([]),[liveState,setLiveState]=useState('loading'),[researchState,setResearchState]=useState({phase:'idle',percent:0,message:'',activeStep:null,runUrl:null}),[bulkState,setBulkState]=useState({phase:'idle',items:[],current:0,totalUnknown:0,totalUnique:0,knownCount:0,overflow:0,input:''});
   const pollToken=useRef(0);
   const activeResearch=useRef(null);
   const bulkCancel=useRef(false);
+  const bulkStorageKey='sentinel-bulk-research-v2';
   const normalizeResearchQuery=(value='')=>String(value).toLowerCase().replace(/[^a-z0-9]+/g,' ').replace(/\s+/g,' ').trim();
   const researchStorageKey='sentinel-active-research-v1';
   useEffect(()=>{let active=true;Promise.allSettled([fetch(`${reportUrl}?expert=${Date.now()}`,{cache:'no-store'}),loadResearchData(researchUrl)]).then(async results=>{if(!active)return;const [reportResult,researchResult]=results;if(reportResult.status==='fulfilled'&&reportResult.value.ok){setReport(await reportResult.value.json());setLiveState('ready');}else setLiveState('offline');if(researchResult.status==='fulfilled'){setDiscoveries(collectResearchProjects(researchResult.value));}});return()=>{active=false;pollToken.current+=1};},[reportUrl,researchUrl]);
   const allProjects=useMemo(()=>[...plugins,...discoveries],[discoveries]);
   const bulkInput=useMemo(()=>parseBulkResearchInput(q,allProjects),[q,allProjects]);
   const bulkSummary=useMemo(()=>summarizeBulkResults(bulkState.items),[bulkState.items]);
+  useEffect(()=>{try{const saved=JSON.parse(window.localStorage.getItem(bulkStorageKey)||'null');if(saved?.items?.length){const recovered={...saved,phase:['running','stopping'].includes(saved.phase)?'paused':saved.phase,items:saved.items.map(item=>item.status==='running'?{...item,status:'pending',message:'Waiting to resume after the page was closed.'}:item)};setBulkState(recovered);if(saved.input)setQ(saved.input);}}catch{}},[]);
+  useEffect(()=>{try{if(['idle','ready'].includes(bulkState.phase))window.localStorage.removeItem(bulkStorageKey);else window.localStorage.setItem(bulkStorageKey,JSON.stringify(bulkState));}catch{}},[bulkState]);
   const related=useMemo(()=>r?.mentions?.length?[`What version of ${r.mentions[0].name} should I use?`,`What does ${r.mentions[0].name} require?`,`What is the install order for ${r.mentions[0].name}?`]:expertExamples.slice(0,3),[r]);
   function context(){return r?createExpertContext(q,r):null;}
   function save(){const c=context();if(c&&saveExpertContext(c)){setSaved(true);window.setTimeout(()=>setSaved(false),1800);}}
@@ -130,7 +133,7 @@ function App(){
     setResearchState({phase:'failed',percent:100,message:'Sentinel Research exceeded the ten-minute monitoring window. The GitHub run may still finish in the background.',activeStep:'Monitoring timed out',runUrl});
     return {status:'failed',runUrl};
   }
-  async function submitResearch(projectName=r?.unknownProject,question=q){
+  async function submitResearch(projectName=r?.unknownProject,question=q,options={}){
     if(!projectName||!controlEndpoint)return setResearchState({phase:'failed',percent:100,message:'Sentinel control endpoint is unavailable.',activeStep:'Research not started',runUrl:null});
     const key=window.sessionStorage.getItem('sentinel-watcher-admin-key')||'';
     const normalized=normalizeResearchQuery(projectName);
@@ -149,7 +152,7 @@ function App(){
     window.sessionStorage.setItem(researchStorageKey,JSON.stringify(pending));
     setResearchState({phase:'queued',percent:2,message:`Sending “${projectName}” to Sentinel Research…`,activeStep:'Submitting one uniquely identified research request',runUrl:null});
     try{
-      const response=await fetch(`${controlEndpoint}/research`,{method:'POST',headers:{'content-type':'application/json','x-watcher-key':key},body:JSON.stringify({query:projectName,question,requestId})});
+      const response=await fetch(`${controlEndpoint}/research`,{method:'POST',headers:{'content-type':'application/json','x-watcher-key':key},body:JSON.stringify({query:projectName,question,requestId,publishSite:options.publishSite!==false})});
       if(!response.ok){const detail=await response.json().catch(()=>({}));throw new Error(detail.error||'research');}
       const payload=await response.json();
       const active={...pending,requestId:payload.requestId||requestId,scanId:payload.scanId};
@@ -163,29 +166,54 @@ function App(){
       return {status:'failed'};
     }
   }
+  async function publishBulkResults(){
+    const key=window.sessionStorage.getItem('sentinel-watcher-admin-key')||'';
+    try{
+      const response=await fetch(`${controlEndpoint}/publish`,{method:'POST',headers:{'content-type':'application/json','x-watcher-key':key},body:JSON.stringify({reason:'bulk-research'})});
+      return response.ok;
+    }catch{return false;}
+  }
   async function runBulkResearch(){
-    if(!bulkInput.isBulk||!bulkInput.unknown.length)return;
+    const resuming=['paused','stopped'].includes(bulkState.phase)&&bulkState.items.some(item=>item.status==='pending');
+    if(!resuming&&(!bulkInput.isBulk||!bulkInput.unknown.length))return;
     bulkCancel.current=false;
-    const knownItems=bulkInput.known.map(({name,project})=>({name,status:'known',message:`Already known as ${project.name}.`}));
-    const queued=bulkInput.unknown.map(name=>({name,status:'pending',message:'Waiting in the research queue.'}));
-    setBulkState({phase:'running',items:[...knownItems,...queued],current:0});
+    let items=resuming
+      ? bulkState.items.map(item=>item.status==='running'?{...item,status:'pending',message:'Waiting in the research queue.'}:item)
+      : [...bulkInput.known.map(({name,project})=>({name,status:'known',message:`Already known as ${project.name}.`})),...bulkInput.unknown.map(name=>({name,status:'pending',message:'Waiting in the research queue.'}))];
+    const totalUnknown=resuming?bulkState.totalUnknown:bulkInput.unknown.length;
+    const totalUnique=resuming?bulkState.totalUnique:bulkInput.unique.length;
+    const knownCount=resuming?bulkState.knownCount:bulkInput.known.length;
+    const overflow=resuming?bulkState.overflow:bulkInput.overflow;
+    const input=resuming?bulkState.input:q;
+    let completed=items.filter(item=>item.status!=='known'&&!['pending','running'].includes(item.status)).length;
+    setBulkState({phase:'running',items,current:completed,totalUnknown,totalUnique,knownCount,overflow,input,startedAt:bulkState.startedAt||Date.now()});
     pollToken.current+=1;
-    for(let index=0;index<queued.length;index+=1){
+    const pendingNames=items.filter(item=>item.status==='pending').map(item=>item.name);
+    for(let index=0;index<pendingNames.length;index+=1){
       if(bulkCancel.current)break;
-      const name=queued[index].name;
-      setBulkState(state=>({...state,current:index+1,items:state.items.map(item=>item.name===name?{...item,status:'running',message:'Searching public sources and evaluating candidates.'}:item)}));
-      const result=await submitResearch(name,`Bulk plugin research request for ${name}`);
-      if(bulkCancel.current)break;
+      const name=pendingNames[index];
+      const current=completed+1;
+      items=items.map(item=>item.name===name?{...item,status:'running',message:'Searching public sources and evaluating candidates.'}:item);
+      setBulkState(state=>({...state,phase:'running',items,current,totalUnknown}));
+      const isFinalProject=current===totalUnknown;
+      const result=await submitResearch(name,`Bulk plugin research request for ${name}`,{publishSite:isFinalProject});
       const status=result?.status||'failed';
       const message=status==='found'?'Credible sources found and added to Research.':status==='manual'?'Candidate sources saved as an unverified lead for review.':status==='notFound'?'No relevant public source found.':'Research failed or timed out; retry later.';
-      setBulkState(state=>({...state,items:state.items.map(item=>item.name===name?{...item,status,message,runUrl:result?.runUrl||null}:item)}));
+      items=items.map(item=>item.name===name?{...item,status,message,runUrl:result?.runUrl||null}:item);
+      completed+=1;
+      setBulkState(state=>({...state,items,current:completed,totalUnknown,phase:bulkCancel.current?'stopping':'running'}));
+      if(bulkCancel.current)break;
       await sleep(800);
     }
-    setBulkState(state=>({...state,phase:bulkCancel.current?'stopped':'complete',current:bulkCancel.current?state.current:queued.length}));
+    const remaining=items.filter(item=>item.status==='pending').length;
+    const phase=remaining?'paused':'complete';
+    let published=remaining?await publishBulkResults():true;
+    setBulkState(state=>({...state,phase,items,current:completed,totalUnknown,published,finishedAt:Date.now()}));
     try{const latest=await loadResearchData(`${researchUrl}?bulk=${Date.now()}`);setDiscoveries(collectResearchProjects(latest));}catch{}
   }
-  function stopBulkResearch(){bulkCancel.current=true;pollToken.current+=1;setBulkState(state=>({...state,phase:'stopped'}));setResearchState({phase:'idle',percent:0,message:'',activeStep:null,runUrl:null});}
-  function ask(v=q){const clean=v.trim();if(!clean)return;if(parseBulkResearchInput(clean,allProjects).isBulk){setR(null);setBulkState({phase:'ready',items:[],current:0});return;}pollToken.current+=1;setBulkState({phase:'idle',items:[],current:0});setResearchState({phase:'idle',percent:0,message:'',activeStep:null,runUrl:null});const ans=evaluate(clean);if(ans.type==='unknown'){window.setTimeout(()=>submitResearch(ans.unknownProject,clean),0);}}
-  return <Layout title="Sentinel Expert" description="Registry and Watcher-grounded LSPDFR answers"><main className={styles.page}><header className={styles.hero}><div><small>Sentinel Intelligence Layer · Live Research</small><Heading as="h1">Ask Sentinel.</Heading><p>Structured answers from the Unified Registry, Watcher sources, and reviewed research discoveries—without invented compatibility claims.</p><section><span>{plugins.length+discoveries.length} known projects</span><span className={liveState==='ready'?styles.heroLive:styles.heroMuted}>{liveState==='ready'?'Watcher connected':liveState==='loading'?'Connecting Watcher…':'Registry-only mode'}</span><span>Multi-project reasoning</span><span>Live unknown-mod research</span><span>Install planning</span><span>Doctor routing</span></section></div></header><div className={styles.layout}><aside className={styles.sidebar}><section><b>Try a verified question</b>{expertExamples.map(x=><button key={x} onClick={()=>ask(x)}>{x}</button>)}<button onClick={()=>ask('Can I use EUP and Lennys Mod Loader together?')}>Can I use EUP and Lenny's Mod Loader together?</button></section>{history.length>0&&<section><b>Session history</b>{history.map(x=><button key={x.q} onClick={()=>ask(x.q)}><strong>{x.q}</strong><small>{x.v}</small></button>)}</section>}</aside><section className={styles.main}><div className={styles.ask}><textarea rows="5" maxLength="10000" value={q} onChange={e=>setQ(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey&&!bulkInput.isBulk){e.preventDefault();ask();}}} placeholder="Ask one question, or paste plugin names one per line for Bulk Research…"/><footer><span>{q.length}/10000 · {bulkInput.isBulk?`${bulkInput.unique.length} projects detected`:'Enter to ask'}</span><button disabled={q.trim().length<3||bulkState.phase==='running'} onClick={()=>ask()}>{bulkInput.isBulk?'Prepare bulk research':'Ask Sentinel'}</button></footer></div>{bulkInput.isBulk&&<section className={styles.bulkPanel}><div className={styles.bulkHead}><div><small>Bulk Plugin Research</small><h2>{bulkInput.unique.length} unique projects detected</h2><p>{bulkInput.known.length} already known · {bulkInput.unknown.length} ready for research · {bulkInput.duplicates.length} duplicate{bulkInput.duplicates.length===1?'':'s'} removed{bulkInput.overflow?` · ${bulkInput.overflow} held for the next batch`:''}.</p></div><div className={styles.bulkActions}><button onClick={runBulkResearch} disabled={!bulkInput.unknown.length||bulkState.phase==='running'}>{bulkState.phase==='running'?'Research running…':bulkInput.unknown.length?`Research ${bulkInput.unknown.length} unknown projects`:'Everything is already known'}</button>{bulkState.phase==='running'&&<button className={styles.stopBulk} onClick={stopBulkResearch}>Stop queue</button>}</div></div>{bulkState.phase!=='idle'&&bulkState.phase!=='ready'&&<><div className={styles.bulkProgress}><span style={{width:`${bulkState.items.length?Math.round((bulkState.items.filter(item=>!['pending','running'].includes(item.status)).length/bulkState.items.length)*100):0}%`}}/></div><div className={styles.bulkStats}><b>{bulkState.phase==='complete'?'Complete':`Researching ${bulkState.current} of ${bulkInput.unknown.length}`}</b><span>{bulkSummary.found||0} found</span><span>{bulkSummary.manual||0} review</span><span>{bulkSummary.notFound||0} not found</span><span>{bulkSummary.failed||0} failed</span></div><div className={styles.bulkList}>{bulkState.items.map(item=><article key={item.name} className={styles[`bulk_${item.status}`]||''}><div><strong>{item.name}</strong><small>{item.message}</small></div><span>{String(item.status).replace(/([A-Z])/g,' $1')}</span>{item.runUrl&&<a href={item.runUrl} target="_blank" rel="noreferrer">Run ↗</a>}</article>)}</div></>}</section>} {!bulkInput.isBulk&&<Result r={r} onDoctor={openDoctor} onExport={exportSummary} onSave={save} saved={saved} researchState={researchState} onResearch={()=>submitResearch(r?.unknownProject,q)}/>} {!bulkInput.isBulk&&r&&<section className={styles.related}><b>Related questions</b><div>{related.map(x=><button key={x} onClick={()=>ask(x)}>{x}</button>)}</div></section>}</section></div></main></Layout>;
+  function stopBulkResearch(){bulkCancel.current=true;setBulkState(state=>({...state,phase:'stopping'}));}
+  function clearBulkResearch(){bulkCancel.current=true;pollToken.current+=1;window.localStorage.removeItem(bulkStorageKey);setBulkState({phase:'ready',items:[],current:0,totalUnknown:0,totalUnique:0,knownCount:0,overflow:0,input:''});setResearchState({phase:'idle',percent:0,message:'',activeStep:null,runUrl:null});}
+  function ask(v=q){const clean=v.trim();if(!clean)return;if(parseBulkResearchInput(clean,allProjects).isBulk){setR(null);setBulkState({phase:'ready',items:[],current:0,totalUnknown:0,totalUnique:0,knownCount:0,overflow:0,input:clean});return;}pollToken.current+=1;setBulkState({phase:'idle',items:[],current:0,totalUnknown:0,totalUnique:0,knownCount:0,overflow:0,input:''});setResearchState({phase:'idle',percent:0,message:'',activeStep:null,runUrl:null});const ans=evaluate(clean);if(ans.type==='unknown'){window.setTimeout(()=>submitResearch(ans.unknownProject,clean),0);}}
+  return <Layout title="Sentinel Expert" description="Registry and Watcher-grounded LSPDFR answers"><main className={styles.page}><header className={styles.hero}><div><small>Sentinel Intelligence Layer · Live Research</small><Heading as="h1">Ask Sentinel.</Heading><p>Structured answers from the Unified Registry, Watcher sources, and reviewed research discoveries—without invented compatibility claims.</p><section><span>{plugins.length+discoveries.length} known projects</span><span className={liveState==='ready'?styles.heroLive:styles.heroMuted}>{liveState==='ready'?'Watcher connected':liveState==='loading'?'Connecting Watcher…':'Registry-only mode'}</span><span>Multi-project reasoning</span><span>Live unknown-mod research</span><span>Install planning</span><span>Doctor routing</span></section></div></header><div className={styles.layout}><aside className={styles.sidebar}><section><b>Try a verified question</b>{expertExamples.map(x=><button key={x} onClick={()=>ask(x)}>{x}</button>)}<button onClick={()=>ask('Can I use EUP and Lennys Mod Loader together?')}>Can I use EUP and Lenny's Mod Loader together?</button></section>{history.length>0&&<section><b>Session history</b>{history.map(x=><button key={x.q} onClick={()=>ask(x.q)}><strong>{x.q}</strong><small>{x.v}</small></button>)}</section>}</aside><section className={styles.main}><div className={styles.ask}><textarea rows="7" maxLength={MAX_INPUT_LENGTH} value={q} onChange={e=>setQ(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey&&!bulkInput.isBulk){e.preventDefault();ask();}}} placeholder="Ask one question, or paste plugin names one per line for Bulk Research…"/><footer><span>{q.length.toLocaleString()}/{MAX_INPUT_LENGTH.toLocaleString()} · {bulkInput.isBulk?`${bulkInput.unique.length} projects detected`:'Enter to ask'}</span><button disabled={q.trim().length<3||['running','stopping'].includes(bulkState.phase)} onClick={()=>ask()}>{bulkInput.isBulk?'Prepare bulk research':'Ask Sentinel'}</button></footer></div>{bulkInput.isBulk&&<section className={styles.bulkPanel}><div className={styles.bulkHead}><div><small>Bulk Plugin Research</small><h2>{bulkState.items.length?bulkState.totalUnique:bulkInput.unique.length} unique projects detected</h2><p>{bulkState.items.length?bulkState.knownCount:bulkInput.known.length} already known · {bulkState.items.length?bulkState.totalUnknown:bulkInput.unknown.length} queued for research · {bulkInput.duplicates.length} duplicate{bulkInput.duplicates.length===1?'':'s'} removed{(bulkState.items.length?bulkState.overflow:bulkInput.overflow)?` · ${bulkState.items.length?bulkState.overflow:bulkInput.overflow} held for the next batch`:''}.</p><p className={styles.bulkNotice}>Large overnight batches run one project at a time. Keep this tab open and prevent the computer from sleeping. Completed findings are saved after every project.</p></div><div className={styles.bulkActions}>{!['running','stopping'].includes(bulkState.phase)&&<button onClick={runBulkResearch} disabled={!(bulkState.phase==='paused'?bulkState.items.some(item=>item.status==='pending'):bulkInput.unknown.length)}>{bulkState.phase==='paused'?`Resume ${bulkState.items.filter(item=>item.status==='pending').length} remaining`:bulkInput.unknown.length?`Research ${bulkInput.unknown.length} unknown projects`:'Everything is already known'}</button>}{bulkState.phase==='running'&&<button className={styles.stopBulk} onClick={stopBulkResearch}>Stop after current project</button>}{bulkState.phase==='stopping'&&<button className={styles.stopBulk} disabled>Finishing current project…</button>}{['paused','complete','stopped'].includes(bulkState.phase)&&<button className={styles.clearBulk} onClick={clearBulkResearch}>Clear queue</button>}</div></div>{bulkState.phase!=='idle'&&bulkState.phase!=='ready'&&<><div className={styles.bulkProgress}><span style={{width:`${bulkState.totalUnknown?Math.round((bulkState.items.filter(item=>item.status!=='known'&&!['pending','running'].includes(item.status)).length/bulkState.totalUnknown)*100):0}%`}}/></div><div className={styles.bulkStats}><b>{bulkState.phase==='complete'?`Complete · ${bulkState.current} of ${bulkState.totalUnknown}`:bulkState.phase==='paused'?`Paused · ${bulkState.current} of ${bulkState.totalUnknown} completed`:bulkState.phase==='stopping'?`Stopping after current project · ${bulkState.current} of ${bulkState.totalUnknown}`:`Researching ${Math.min(Math.max(bulkState.current,1),bulkState.totalUnknown)} of ${bulkState.totalUnknown}`}</b><span>{bulkSummary.found||0} found</span><span>{bulkSummary.manual||0} review</span><span>{bulkSummary.notFound||0} not found</span><span>{bulkSummary.failed||0} failed</span></div>{bulkState.phase==='paused'&&<div className={styles.bulkPaused}>Queue paused safely. Completed research is preserved. Resume later to continue with the remaining projects.</div>}{bulkState.phase==='complete'&&<div className={styles.bulkComplete}>Research batch complete. The final website publish has been requested.</div>}<div className={styles.bulkList}>{bulkState.items.map(item=><article key={item.name} className={styles[`bulk_${item.status}`]||''}><div><strong>{item.name}</strong><small>{item.message}</small></div><span>{String(item.status).replace(/([A-Z])/g,' $1')}</span>{item.runUrl&&<a href={item.runUrl} target="_blank" rel="noreferrer">Run ↗</a>}</article>)}</div></>}</section>} {!bulkInput.isBulk&&<Result r={r} onDoctor={openDoctor} onExport={exportSummary} onSave={save} saved={saved} researchState={researchState} onResearch={()=>submitResearch(r?.unknownProject,q)}/>} {!bulkInput.isBulk&&r&&<section className={styles.related}><b>Related questions</b><div>{related.map(x=><button key={x} onClick={()=>ask(x)}>{x}</button>)}</div></section>}</section></div></main></Layout>;
 }
 export default function SentinelAI(){return <BrowserOnly fallback={<Layout title="Sentinel Expert"><main className="container margin-vert--xl">Loading Sentinel intelligence…</main></Layout>}>{()=><App/>}</BrowserOnly>}

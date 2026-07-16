@@ -1,0 +1,10 @@
+PROJECT SENTINEL OVERNIGHT RESEARCH RELEASE
+
+1. Copy the update-only files into your existing repository and replace matching files.
+2. Push the repository changes to GitHub.
+3. Redeploy the Cloudflare watcher-control-worker because its API now includes /publish and the publishSite flag.
+   From watcher-control-worker, run: npm install && npx wrangler deploy
+4. Keep the Sentinel Expert browser tab open and prevent the computer from sleeping during an overnight queue.
+5. Stop after current project safely preserves completed results. Resume continues pending items.
+
+This release raises the input to 100,000 characters and the batch limit to 500 unique projects.

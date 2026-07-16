@@ -16,9 +16,15 @@ on:
         description: Original Sentinel Expert question
         required: false
         type: string
+      publish_site:
+        description: Deploy the website after this research result is committed
+        required: false
+        default: 'true'
+        type: string
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: sentinel-research-${{ inputs.research_request_id }}
@@ -64,6 +70,11 @@ jobs:
             git pull --rebase origin main
             git push origin HEAD:main
           fi
+      - name: Publish updated research website
+        if: success() && inputs.publish_site == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref main
       - name: Upload research result
         if: always()
         uses: actions/upload-artifact@v6
