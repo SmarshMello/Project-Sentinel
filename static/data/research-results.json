@@ -1,7 +1,436 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T01:01:33.467Z",
+  "updatedAt": "2026-07-16T01:37:13.879Z",
   "discoveries": [
+    {
+      "id": "research-modern-siren-pack-oiv-supported",
+      "name": "Modern Siren Pack (OIV Supported )",
+      "shortName": null,
+      "aliases": [
+        "Modern Siren Pack (OIV Supported )",
+        "Lspdfr Oiv Pack - Modern Siren Pack (OIV Supported )",
+        "Better Siren Sounds Lspdfr : Modern Siren Pack (OIV Supported )",
+        "Modern Siren Pack Lspdfr - Modern Siren Pack (OIV Supported )",
+        "Modern Siren Pack - Audio Modifications - LCPDFR.com"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "GravelRoadCop",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 97,
+      "documentationConfidence": 95,
+      "compatibilityConfidence": 90,
+      "compatibilityEvidence": [
+        {
+          "project": "Modern Siren Pack",
+          "sourceCount": 8,
+          "positiveCount": 8,
+          "negativeCount": 0,
+          "confidence": 90,
+          "sources": [
+            {
+              "url": "https://www.gta5-mods.com/vehicles/realistic-american-sirens-pack",
+              "domain": "gta5-mods.com",
+              "title": "Modern Siren Pack (OIV Supported )",
+              "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+              "snippet": "",
+              "author": "GravelRoadCop",
+              "providers": [
+                "duckduckgo"
+              ],
+              "source": "web",
+              "stars": 0,
+              "updatedAt": null,
+              "score": 100
+            },
+            {
+              "url": "https://www.gta5-mods.com/sv/misc/realistic-american-sirens-pack",
+              "domain": "gta5-mods.com",
+              "title": "Modern Siren Pack (OIV Supported )",
+              "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+              "snippet": "",
+              "author": "GravelRoadCop",
+              "providers": [
+                "duckduckgo"
+              ],
+              "source": "web",
+              "stars": 0,
+              "updatedAt": null,
+              "score": 100
+            },
+            {
+              "url": "https://www.gta5-mods.com/ca/misc/realistic-american-sirens-pack",
+              "domain": "gta5-mods.com",
+              "title": "Modern Siren Pack (OIV Supported )",
+              "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+              "snippet": "",
+              "author": "GravelRoadCop",
+              "providers": [
+                "duckduckgo"
+              ],
+              "source": "web",
+              "stars": 0,
+              "updatedAt": null,
+              "score": 100
+            },
+            {
+              "url": "https://www.gta5-mods.com/el/misc/realistic-american-sirens-pack",
+              "domain": "gta5-mods.com",
+              "title": "Modern Siren Pack (OIV Supported )",
+              "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+              "snippet": "",
+              "author": "GravelRoadCop",
+              "providers": [
+                "duckduckgo"
+              ],
+              "source": "web",
+              "stars": 0,
+              "updatedAt": null,
+              "score": 100
+            },
+            {
+              "url": "https://www.gta5-mods.com/misc/realistic-american-sirens-pack",
+              "domain": "gta5-mods.com",
+              "title": "Modern Siren Pack (OIV Supported )",
+              "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+              "snippet": "",
+              "author": "GravelRoadCop",
+              "providers": [
+                "duckduckgo"
+              ],
+              "source": "web",
+              "stars": 0,
+              "updatedAt": null,
+              "score": 100
+            }
+          ]
+        }
+      ],
+      "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+      "dependencies": [
+        "LSPDFR"
+      ],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.gta5-mods.com/vehicles/realistic-american-sirens-pack",
+      "note": "Research Engine found 9 credible sources across 5 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-modern-siren-pack-oiv-supported",
+      "requestedAt": "2026-07-16T01:37:13.879Z",
+      "sources": [
+        {
+          "url": "https://www.gta5-mods.com/vehicles/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/sv/misc/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/ca/misc/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/el/misc/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/misc/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://heritageshellfish.com/lspdfr-oiv-pack-modern-siren-pack-oiv-supported/",
+          "domain": "heritageshellfish.com",
+          "title": "Lspdfr Oiv Pack - Modern Siren Pack (OIV Supported )",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://plan.andovertrask.com/better-siren-sounds-lspdfr-modern-siren-pack-oiv-supported/",
+          "domain": "plan.andovertrask.com",
+          "title": "Better Siren Sounds Lspdfr : Modern Siren Pack (OIV Supported )",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://start.ttecx.de/modern-siren-pack-lspdfr-modern-siren-pack-oiv-supported/",
+          "domain": "start.ttecx.de",
+          "title": "Modern Siren Pack Lspdfr - Modern Siren Pack (OIV Supported )",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/audio/14373-modern-siren-pack/",
+          "domain": "lcpdfr.com",
+          "title": "Modern Siren Pack - Audio Modifications - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 76
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/vehicles/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/sv/misc/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/ca/misc/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/el/misc/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/misc/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://heritageshellfish.com/lspdfr-oiv-pack-modern-siren-pack-oiv-supported/",
+          "domain": "heritageshellfish.com",
+          "title": "Lspdfr Oiv Pack - Modern Siren Pack (OIV Supported )",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://plan.andovertrask.com/better-siren-sounds-lspdfr-modern-siren-pack-oiv-supported/",
+          "domain": "plan.andovertrask.com",
+          "title": "Better Siren Sounds Lspdfr : Modern Siren Pack (OIV Supported )",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://start.ttecx.de/modern-siren-pack-lspdfr-modern-siren-pack-oiv-supported/",
+          "domain": "start.ttecx.de",
+          "title": "Modern Siren Pack Lspdfr - Modern Siren Pack (OIV Supported )",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/audio/14373-modern-siren-pack/",
+          "domain": "lcpdfr.com",
+          "title": "Modern Siren Pack - Audio Modifications - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 76
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "NoCopyrightSounds.",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "Glovebox gaming",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        }
+      ]
+    },
     {
       "id": "research-street-riders-realistic-npc-wheelies-bikelife-for-npcs-62d212f",
       "name": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
@@ -1184,6 +1613,188 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784165806533-5dd48d74",
+      "requestId": "expert-1784165806533-5dd48d74",
+      "query": "Modern Siren Pack (OIV Supported )",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T01:37:13.879Z",
+      "completedAt": "2026-07-16T01:37:13.879Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 11,
+      "credibleCandidateCount": 9,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/vehicles/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/sv/misc/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/ca/misc/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/el/misc/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/misc/realistic-american-sirens-pack",
+          "domain": "gta5-mods.com",
+          "title": "Modern Siren Pack (OIV Supported )",
+          "description": "-- Modern Siren Pack by Gravelroadcop --ABOUT :Modern Siren Pack&nbsp;is a sound modification that&nbsp;introduces current generation&nbsp;real-world&nbsp;siren&nbsp;tones to GTA V, giving you a realistic&nbsp;emergency&nbsp;driving atmosphere. This modification will restructure the discontinued American Siren Pack modification and evolve into a larger scale siren modification for Grand Theft Auto V. The&nbsp;sound pack&nbsp;aims to introduce ...",
+          "snippet": "",
+          "author": "GravelRoadCop",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://heritageshellfish.com/lspdfr-oiv-pack-modern-siren-pack-oiv-supported/",
+          "domain": "heritageshellfish.com",
+          "title": "Lspdfr Oiv Pack - Modern Siren Pack (OIV Supported )",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://plan.andovertrask.com/better-siren-sounds-lspdfr-modern-siren-pack-oiv-supported/",
+          "domain": "plan.andovertrask.com",
+          "title": "Better Siren Sounds Lspdfr : Modern Siren Pack (OIV Supported )",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://start.ttecx.de/modern-siren-pack-lspdfr-modern-siren-pack-oiv-supported/",
+          "domain": "start.ttecx.de",
+          "title": "Modern Siren Pack Lspdfr - Modern Siren Pack (OIV Supported )",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.lcpdfr.com/downloads/gta5mods/audio/14373-modern-siren-pack/",
+          "domain": "lcpdfr.com",
+          "title": "Modern Siren Pack - Audio Modifications - LCPDFR.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 76
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "NoCopyrightSounds.",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        },
+        {
+          "url": "undefined",
+          "domain": "",
+          "title": "- YouTube",
+          "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+          "snippet": "",
+          "author": "Glovebox gaming",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 0
+        }
+      ]
+    },
     {
       "id": "expert-1784163675688-be5a4432",
       "requestId": "expert-1784163675688-be5a4432",
