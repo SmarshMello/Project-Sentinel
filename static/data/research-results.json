@@ -1,7 +1,381 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T06:08:29.457Z",
+  "updatedAt": "2026-07-16T06:08:59.539Z",
   "discoveries": [
+    {
+      "id": "research-pull-me-over",
+      "name": "Pull Me Over",
+      "shortName": null,
+      "aliases": [
+        "Pull Me Over",
+        "GTA 5: How to Install the Pull Me Over Mod on PC - Player Assist | Game Guides & Walkthroughs",
+        "Pull Me Over 0.2.1 - GTA 5 Mod Download",
+        "Pull Me Over 0.2.1 - GTA 5 mod",
+        "Big-Brother---Remote-Security-System",
+        "AI-Product-Knowledge",
+        "price-me-gs"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "Daimian",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 92,
+      "documentationConfidence": 77,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "Pull Me Over is a continuation of sorbas's famous Pull Me Over mod, with permission.Please consider donating to support mod development, even $1 can help! DonatePatrolling cop cars will attempt to pull you over to give a ticket if they see you doing the following:SpeedingTailgatingDriftingUsing a mobile phoneDriving a heavily damaged vehicleDriving against trafficCollidingRunning a red lightDoing a wheelie/stoppieDriving without a helmetDrivin...",
+      "dependencies": [],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.gta5-mods.com/ms/scripts/pull-me-over-daimian",
+      "note": "Research Engine found 10 credible sources across 5 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-pull-me-over",
+      "requestedAt": "2026-07-16T06:08:59.539Z",
+      "sources": [
+        {
+          "url": "https://www.gta5-mods.com/ms/scripts/pull-me-over-daimian",
+          "domain": "gta5-mods.com",
+          "title": "Pull Me Over",
+          "description": "Pull Me Over is a continuation of sorbas's famous Pull Me Over mod, with permission.Please consider donating to support mod development, even $1 can help! DonatePatrolling cop cars will attempt to pull you over to give a ticket if they see you doing the following:SpeedingTailgatingDriftingUsing a mobile phoneDriving a heavily damaged vehicleDriving against trafficCollidingRunning a red lightDoing a wheelie/stoppieDriving without a helmetDrivin...",
+          "snippet": "",
+          "author": "Daimian",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/uk/scripts/pull-me-over-0-8",
+          "domain": "gta5-mods.com",
+          "title": "Pull Me Over",
+          "description": "DescriptionThis script was made in order to have a more realistic experience when it comes to breaking traffic laws. This script relies on that you already have cop cars naturally spawning in traffic. If you don't, there is a link below. Patrolling cop cars will attempt to pull you over to give a ticket if they see you doing the following:-Speeding-Tailgating-Drifting-Using a mobile phone-Driving a heavily damaged vehicle-Driving against traff...",
+          "snippet": "",
+          "author": "default",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/pull-me-over-daimian",
+          "domain": "gta5-mods.com",
+          "title": "Pull Me Over",
+          "description": "Pull Me Over is a continuation of sorbas's famous Pull Me Over mod, with permission.Please consider donating to support mod development, even $1 can help! DonatePatrolling cop cars will attempt to pull you over to give a ticket if they see you doing the following:SpeedingTailgatingDriftingUsing a mobile phoneDriving a heavily damaged vehicleDriving against trafficCollidingRunning a red lightDoing a wheelie/stoppieDriving without a helmetDrivin...",
+          "snippet": "",
+          "author": "Daimian",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/pull-me-over-0-8",
+          "domain": "gta5-mods.com",
+          "title": "Pull Me Over",
+          "description": "DescriptionThis script was made in order to have a more realistic experience when it comes to breaking traffic laws. This script relies on that you already have cop cars naturally spawning in traffic. If you don't, there is a link below. Patrolling cop cars will attempt to pull you over to give a ticket if they see you doing the following:-Speeding-Tailgating-Drifting-Using a mobile phone-Driving a heavily damaged vehicle-Driving against traff...",
+          "snippet": "",
+          "author": "default",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://playerassist.com/gta-5-install-pull-mod-pc/",
+          "domain": "playerassist.com",
+          "title": "GTA 5: How to Install the Pull Me Over Mod on PC - Player Assist | Game Guides & Walkthroughs",
+          "description": "Start a traffic ticket collection with the Pull Me Over Mod for GTA 5.",
+          "snippet": "",
+          "author": "JOHN PAUL SANTIAGO",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/pull-me-over-0-2-1/",
+          "domain": "gta5modhub.com",
+          "title": "Pull Me Over 0.2.1 - GTA 5 Mod Download",
+          "description": "Pull Me Over is a continuation of sorbas&#8217;s famous Pull Me Over mod, with permission. Patrolling cop cars will attempt to pull you over to give a ticket if they see you doing the&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "FIB",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/pull-me-over-0-2-1/",
+          "domain": "gta5mod.net",
+          "title": "Pull Me Over 0.2.1 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Blobby1267/Big-Brother---Remote-Security-System",
+          "domain": "github.com",
+          "title": "Big-Brother---Remote-Security-System",
+          "description": "A self-hosted remote access and anti-theft system for my own Windows, macOS, and Linux devices. Agents run as background services and connect outbound to a private relay server, letting me remotely run commands, lock a stolen device, and pull its approximate location via Wi-Fi geolocation, all over mutually authenticated TLS.",
+          "snippet": "A self-hosted remote access and anti-theft system for my own Windows, macOS, and Linux devices. Agents run as background services and connect outbound to a private relay server, letting me remotely run commands, lock a stolen device, and pull its approximate location via Wi-Fi geolocation, all over mutually authenticated TLS.",
+          "author": "Blobby1267",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-08T08:17:54Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/brianmc/AI-Product-Knowledge",
+          "domain": "github.com",
+          "title": "AI-Product-Knowledge",
+          "description": "This repo contains all the knowledge about my products, it allows agents to pull that knoweldge when adding new features or products, it allows me to reason over that product suite, etc.  It's loosely based on Karpathy's LLM Wiki but we will want it to scale to enterprise levels as well",
+          "snippet": "This repo contains all the knowledge about my products, it allows agents to pull that knoweldge when adding new features or products, it allows me to reason over that product suite, etc.  It's loosely based on Karpathy's LLM Wiki but we will want it to scale to enterprise levels as well",
+          "author": "brianmc",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-05-24T16:05:54Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/MWardill/price-me-gs",
+          "domain": "github.com",
+          "title": "price-me-gs",
+          "description": "App to pull pricing data over time for my collection site",
+          "snippet": "App to pull pricing data over time for my collection site",
+          "author": "MWardill",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-04-01T21:56:34Z",
+          "score": 72
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/ms/scripts/pull-me-over-daimian",
+          "domain": "gta5-mods.com",
+          "title": "Pull Me Over",
+          "description": "Pull Me Over is a continuation of sorbas's famous Pull Me Over mod, with permission.Please consider donating to support mod development, even $1 can help! DonatePatrolling cop cars will attempt to pull you over to give a ticket if they see you doing the following:SpeedingTailgatingDriftingUsing a mobile phoneDriving a heavily damaged vehicleDriving against trafficCollidingRunning a red lightDoing a wheelie/stoppieDriving without a helmetDrivin...",
+          "snippet": "",
+          "author": "Daimian",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/uk/scripts/pull-me-over-0-8",
+          "domain": "gta5-mods.com",
+          "title": "Pull Me Over",
+          "description": "DescriptionThis script was made in order to have a more realistic experience when it comes to breaking traffic laws. This script relies on that you already have cop cars naturally spawning in traffic. If you don't, there is a link below. Patrolling cop cars will attempt to pull you over to give a ticket if they see you doing the following:-Speeding-Tailgating-Drifting-Using a mobile phone-Driving a heavily damaged vehicle-Driving against traff...",
+          "snippet": "",
+          "author": "default",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/pull-me-over-daimian",
+          "domain": "gta5-mods.com",
+          "title": "Pull Me Over",
+          "description": "Pull Me Over is a continuation of sorbas's famous Pull Me Over mod, with permission.Please consider donating to support mod development, even $1 can help! DonatePatrolling cop cars will attempt to pull you over to give a ticket if they see you doing the following:SpeedingTailgatingDriftingUsing a mobile phoneDriving a heavily damaged vehicleDriving against trafficCollidingRunning a red lightDoing a wheelie/stoppieDriving without a helmetDrivin...",
+          "snippet": "",
+          "author": "Daimian",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/pull-me-over-0-8",
+          "domain": "gta5-mods.com",
+          "title": "Pull Me Over",
+          "description": "DescriptionThis script was made in order to have a more realistic experience when it comes to breaking traffic laws. This script relies on that you already have cop cars naturally spawning in traffic. If you don't, there is a link below. Patrolling cop cars will attempt to pull you over to give a ticket if they see you doing the following:-Speeding-Tailgating-Drifting-Using a mobile phone-Driving a heavily damaged vehicle-Driving against traff...",
+          "snippet": "",
+          "author": "default",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://playerassist.com/gta-5-install-pull-mod-pc/",
+          "domain": "playerassist.com",
+          "title": "GTA 5: How to Install the Pull Me Over Mod on PC - Player Assist | Game Guides & Walkthroughs",
+          "description": "Start a traffic ticket collection with the Pull Me Over Mod for GTA 5.",
+          "snippet": "",
+          "author": "JOHN PAUL SANTIAGO",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/pull-me-over-0-2-1/",
+          "domain": "gta5modhub.com",
+          "title": "Pull Me Over 0.2.1 - GTA 5 Mod Download",
+          "description": "Pull Me Over is a continuation of sorbas&#8217;s famous Pull Me Over mod, with permission. Patrolling cop cars will attempt to pull you over to give a ticket if they see you doing the&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "FIB",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/pull-me-over-0-2-1/",
+          "domain": "gta5mod.net",
+          "title": "Pull Me Over 0.2.1 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Blobby1267/Big-Brother---Remote-Security-System",
+          "domain": "github.com",
+          "title": "Big-Brother---Remote-Security-System",
+          "description": "A self-hosted remote access and anti-theft system for my own Windows, macOS, and Linux devices. Agents run as background services and connect outbound to a private relay server, letting me remotely run commands, lock a stolen device, and pull its approximate location via Wi-Fi geolocation, all over mutually authenticated TLS.",
+          "snippet": "A self-hosted remote access and anti-theft system for my own Windows, macOS, and Linux devices. Agents run as background services and connect outbound to a private relay server, letting me remotely run commands, lock a stolen device, and pull its approximate location via Wi-Fi geolocation, all over mutually authenticated TLS.",
+          "author": "Blobby1267",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-08T08:17:54Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/brianmc/AI-Product-Knowledge",
+          "domain": "github.com",
+          "title": "AI-Product-Knowledge",
+          "description": "This repo contains all the knowledge about my products, it allows agents to pull that knoweldge when adding new features or products, it allows me to reason over that product suite, etc.  It's loosely based on Karpathy's LLM Wiki but we will want it to scale to enterprise levels as well",
+          "snippet": "This repo contains all the knowledge about my products, it allows agents to pull that knoweldge when adding new features or products, it allows me to reason over that product suite, etc.  It's loosely based on Karpathy's LLM Wiki but we will want it to scale to enterprise levels as well",
+          "author": "brianmc",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-05-24T16:05:54Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/MWardill/price-me-gs",
+          "domain": "github.com",
+          "title": "price-me-gs",
+          "description": "App to pull pricing data over time for my collection site",
+          "snippet": "App to pull pricing data over time for my collection site",
+          "author": "MWardill",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-04-01T21:56:34Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/munch2u-a11y/Cognitive-Spatial-Memory",
+          "domain": "github.com",
+          "title": "Cognitive-Spatial-Memory",
+          "description": "Spatial Memory replaces standard cosine-similarity RAG with physics-inspired 8D manifold where memories and beliefs have: Mass — derived from confidence and affective encoding ; Temperature — recency heat that cools over time (Lorentzian decay); and Gravity — `F = T × m / d²` — hot, massive, nearby concepts pull attention",
+          "snippet": "Spatial Memory replaces standard cosine-similarity RAG with physics-inspired 8D manifold where memories and beliefs have: Mass — derived from confidence and affective encoding ; Temperature — recency heat that cools over time (Lorentzian decay); and Gravity — `F = T × m / d²` — hot, massive, nearby concepts pull attention",
+          "author": "munch2u-a11y",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 3,
+          "updatedAt": "2026-06-29T17:11:04Z",
+          "score": 62
+        },
+        {
+          "url": "https://github.com/quinlanoconnell/GoFundMe-Success-Scraper",
+          "domain": "github.com",
+          "title": "GoFundMe-Success-Scraper",
+          "description": "Web scraper designed to pull various attributes from GoFundMe posts, which then are analyzed to understand what makes a campaign \"successful\" (funding over the median value).",
+          "snippet": "Web scraper designed to pull various attributes from GoFundMe posts, which then are analyzed to understand what makes a campaign \"successful\" (funding over the median value).",
+          "author": "quinlanoconnell",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-10-16T15:43:08Z",
+          "score": 62
+        }
+      ]
+    },
     {
       "id": "research-responsev",
       "name": "ResponseV",
@@ -3110,6 +3484,203 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182117632-1d467251",
+      "requestId": "expert-1784182117632-1d467251",
+      "query": "Pull Me Over",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:08:59.539Z",
+      "completedAt": "2026-07-16T06:08:59.539Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 10,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/ms/scripts/pull-me-over-daimian",
+          "domain": "gta5-mods.com",
+          "title": "Pull Me Over",
+          "description": "Pull Me Over is a continuation of sorbas's famous Pull Me Over mod, with permission.Please consider donating to support mod development, even $1 can help! DonatePatrolling cop cars will attempt to pull you over to give a ticket if they see you doing the following:SpeedingTailgatingDriftingUsing a mobile phoneDriving a heavily damaged vehicleDriving against trafficCollidingRunning a red lightDoing a wheelie/stoppieDriving without a helmetDrivin...",
+          "snippet": "",
+          "author": "Daimian",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/uk/scripts/pull-me-over-0-8",
+          "domain": "gta5-mods.com",
+          "title": "Pull Me Over",
+          "description": "DescriptionThis script was made in order to have a more realistic experience when it comes to breaking traffic laws. This script relies on that you already have cop cars naturally spawning in traffic. If you don't, there is a link below. Patrolling cop cars will attempt to pull you over to give a ticket if they see you doing the following:-Speeding-Tailgating-Drifting-Using a mobile phone-Driving a heavily damaged vehicle-Driving against traff...",
+          "snippet": "",
+          "author": "default",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/pull-me-over-daimian",
+          "domain": "gta5-mods.com",
+          "title": "Pull Me Over",
+          "description": "Pull Me Over is a continuation of sorbas's famous Pull Me Over mod, with permission.Please consider donating to support mod development, even $1 can help! DonatePatrolling cop cars will attempt to pull you over to give a ticket if they see you doing the following:SpeedingTailgatingDriftingUsing a mobile phoneDriving a heavily damaged vehicleDriving against trafficCollidingRunning a red lightDoing a wheelie/stoppieDriving without a helmetDrivin...",
+          "snippet": "",
+          "author": "Daimian",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/pull-me-over-0-8",
+          "domain": "gta5-mods.com",
+          "title": "Pull Me Over",
+          "description": "DescriptionThis script was made in order to have a more realistic experience when it comes to breaking traffic laws. This script relies on that you already have cop cars naturally spawning in traffic. If you don't, there is a link below. Patrolling cop cars will attempt to pull you over to give a ticket if they see you doing the following:-Speeding-Tailgating-Drifting-Using a mobile phone-Driving a heavily damaged vehicle-Driving against traff...",
+          "snippet": "",
+          "author": "default",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://playerassist.com/gta-5-install-pull-mod-pc/",
+          "domain": "playerassist.com",
+          "title": "GTA 5: How to Install the Pull Me Over Mod on PC - Player Assist | Game Guides & Walkthroughs",
+          "description": "Start a traffic ticket collection with the Pull Me Over Mod for GTA 5.",
+          "snippet": "",
+          "author": "JOHN PAUL SANTIAGO",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/pull-me-over-0-2-1/",
+          "domain": "gta5modhub.com",
+          "title": "Pull Me Over 0.2.1 - GTA 5 Mod Download",
+          "description": "Pull Me Over is a continuation of sorbas&#8217;s famous Pull Me Over mod, with permission. Patrolling cop cars will attempt to pull you over to give a ticket if they see you doing the&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "FIB",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/pull-me-over-0-2-1/",
+          "domain": "gta5mod.net",
+          "title": "Pull Me Over 0.2.1 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/Blobby1267/Big-Brother---Remote-Security-System",
+          "domain": "github.com",
+          "title": "Big-Brother---Remote-Security-System",
+          "description": "A self-hosted remote access and anti-theft system for my own Windows, macOS, and Linux devices. Agents run as background services and connect outbound to a private relay server, letting me remotely run commands, lock a stolen device, and pull its approximate location via Wi-Fi geolocation, all over mutually authenticated TLS.",
+          "snippet": "A self-hosted remote access and anti-theft system for my own Windows, macOS, and Linux devices. Agents run as background services and connect outbound to a private relay server, letting me remotely run commands, lock a stolen device, and pull its approximate location via Wi-Fi geolocation, all over mutually authenticated TLS.",
+          "author": "Blobby1267",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-08T08:17:54Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/brianmc/AI-Product-Knowledge",
+          "domain": "github.com",
+          "title": "AI-Product-Knowledge",
+          "description": "This repo contains all the knowledge about my products, it allows agents to pull that knoweldge when adding new features or products, it allows me to reason over that product suite, etc.  It's loosely based on Karpathy's LLM Wiki but we will want it to scale to enterprise levels as well",
+          "snippet": "This repo contains all the knowledge about my products, it allows agents to pull that knoweldge when adding new features or products, it allows me to reason over that product suite, etc.  It's loosely based on Karpathy's LLM Wiki but we will want it to scale to enterprise levels as well",
+          "author": "brianmc",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-05-24T16:05:54Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/MWardill/price-me-gs",
+          "domain": "github.com",
+          "title": "price-me-gs",
+          "description": "App to pull pricing data over time for my collection site",
+          "snippet": "App to pull pricing data over time for my collection site",
+          "author": "MWardill",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-04-01T21:56:34Z",
+          "score": 72
+        },
+        {
+          "url": "https://github.com/munch2u-a11y/Cognitive-Spatial-Memory",
+          "domain": "github.com",
+          "title": "Cognitive-Spatial-Memory",
+          "description": "Spatial Memory replaces standard cosine-similarity RAG with physics-inspired 8D manifold where memories and beliefs have: Mass — derived from confidence and affective encoding ; Temperature — recency heat that cools over time (Lorentzian decay); and Gravity — `F = T × m / d²` — hot, massive, nearby concepts pull attention",
+          "snippet": "Spatial Memory replaces standard cosine-similarity RAG with physics-inspired 8D manifold where memories and beliefs have: Mass — derived from confidence and affective encoding ; Temperature — recency heat that cools over time (Lorentzian decay); and Gravity — `F = T × m / d²` — hot, massive, nearby concepts pull attention",
+          "author": "munch2u-a11y",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 3,
+          "updatedAt": "2026-06-29T17:11:04Z",
+          "score": 62
+        },
+        {
+          "url": "https://github.com/quinlanoconnell/GoFundMe-Success-Scraper",
+          "domain": "github.com",
+          "title": "GoFundMe-Success-Scraper",
+          "description": "Web scraper designed to pull various attributes from GoFundMe posts, which then are analyzed to understand what makes a campaign \"successful\" (funding over the median value).",
+          "snippet": "Web scraper designed to pull various attributes from GoFundMe posts, which then are analyzed to understand what makes a campaign \"successful\" (funding over the median value).",
+          "author": "quinlanoconnell",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-10-16T15:43:08Z",
+          "score": 62
+        }
+      ]
+    },
     {
       "id": "expert-1784182095511-6cb7e4a2",
       "requestId": "expert-1784182095511-6cb7e4a2",
