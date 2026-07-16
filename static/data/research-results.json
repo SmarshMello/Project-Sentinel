@@ -1,7 +1,423 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T01:37:13.879Z",
+  "updatedAt": "2026-07-16T05:34:05.324Z",
   "discoveries": [
+    {
+      "id": "research-complex-control",
+      "name": "Complex Control",
+      "shortName": null,
+      "aliases": [
+        "Complex Control",
+        "Complex Control 6.11 - GTA 5 mod",
+        "Complex Control 6.11 - GTA 5 - ModLand.net",
+        "Complex Control Mod for GTA 5 — Download",
+        "Complex Control 5.12 - GTA 5 Mod Download",
+        "Download Complex Control for GTA zip - ShareMods.com",
+        "Download Complex Control - GTA 5 - ModLand.net",
+        "Complex Control FAQ : r/complexcontrol - Reddit",
+        "Complex Control - GTA 5 Mods | Grand Theft Auto 5 Complex Control Mods",
+        "Complex Control transforms GTA 5 into an explosive roguelite battle royale war zone"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "standing in the last zone for 4 Seconds.",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 98,
+      "documentationConfidence": 77,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [
+        {
+          "project": "EUP compatible",
+          "sourceCount": 0,
+          "positiveCount": 0,
+          "negativeCount": 0,
+          "confidence": 0,
+          "sources": []
+        }
+      ],
+      "description": "Just like any other rogue-lite, this mod is difficult and takes a while to learn / master, ignoring the mod's core feature such as the Blink teleportation feature will result in a very bad time.Please check the Database (in-game) for all the info about the meta-game. Most if not all of the basic meta is explained there.---------------------------------------------------------------------This project is purely Single Player and coded in C sharp...",
+      "dependencies": [],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.gta5-mods.com/scripts/complex-control-rogue-battleroyale-lite-hybrid-for-gtav-sp",
+      "note": "Research Engine found 12 credible sources across 9 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-complex-control",
+      "requestedAt": "2026-07-16T05:34:05.324Z",
+      "sources": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/complex-control-rogue-battleroyale-lite-hybrid-for-gtav-sp",
+          "domain": "gta5-mods.com",
+          "title": "Complex Control",
+          "description": "Just like any other rogue-lite, this mod is difficult and takes a while to learn / master, ignoring the mod's core feature such as the Blink teleportation feature will result in a very bad time.Please check the Database (in-game) for all the info about the meta-game. Most if not all of the basic meta is explained there.---------------------------------------------------------------------This project is purely Single Player and coded in C sharp...",
+          "snippet": "",
+          "author": "standing in the last zone for 4 Seconds.",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/complex-control-6-11/",
+          "domain": "gta5mod.net",
+          "title": "Complex Control 6.11 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.modland.net/gta-5-mods/scripts/complex-control.html",
+          "domain": "modland.net",
+          "title": "Complex Control 6.11 - GTA 5 - ModLand.net",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gtacache.com/gta5/mods/complex-control/",
+          "domain": "gtacache.com",
+          "title": "Complex Control Mod for GTA 5 — Download",
+          "description": "Explore GTA 5 like never before with the Complex Control Mod, enhancing gameplay mechanics and visuals.",
+          "snippet": "",
+          "author": "introducing a host of new mechanics and",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/complex-control-5-12/",
+          "domain": "gta5modhub.com",
+          "title": "Complex Control 5.12 - GTA 5 Mod Download",
+          "description": "Just like any other rogue-lite, this mod is difficult and takes a while to learn / master, ignoring the mod&#8217;s core feature such as the Blink teleportation feature will result in a very bad&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "standing in the last zone for 4 Seconds.",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://sharemods.com/vn2otyc9b05j/Complex_Control_v6.11_for_GTA_5.zip.html",
+          "domain": "sharemods.com",
+          "title": "Download Complex Control for GTA zip - ShareMods.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.modland.net/download/330570",
+          "domain": "modland.net",
+          "title": "Download Complex Control - GTA 5 - ModLand.net",
+          "description": "Downloading version  of Complex Control mod. Your download is about to start shortly. Thanks for download!",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/complexcontrol/comments/8k1edt/complex_control_faq/",
+          "domain": "reddit.com",
+          "title": "Complex Control FAQ : r/complexcontrol - Reddit",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/tag/complex-control/",
+          "domain": "gta5modhub.com",
+          "title": "Complex Control - GTA 5 Mods | Grand Theft Auto 5 Complex Control Mods",
+          "description": "",
+          "snippet": "",
+          "author": "WP Rocket. Learn more",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.pcgamer.com/complex-control-transforms-gta-5-into-an-explosive-roguelite-battle-royale-war-zone/",
+          "domain": "pcgamer.com",
+          "title": "Complex Control transforms GTA 5 into an explosive roguelite battle royale war zone",
+          "description": "The mod boasts 55 abilities, 100 characters, lightning-fast showdowns, and, um, decoy huskies.",
+          "snippet": "",
+          "author": "Joe Donnelly",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/complexcontrol/hot/",
+          "domain": "reddit.com",
+          "title": "Complex Control - Reddit",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 98
+        },
+        {
+          "url": "https://github.com/DMXControl/Nanoleaf-dmxc3-Plugin",
+          "domain": "github.com",
+          "title": "Nanoleaf-dmxc3-Plugin",
+          "description": "This plugin allows you to control Nanoleaf panels with the freeware DMXControl 3.x. So you can integrate the panels in complex and extensive light shows and setups. Just right for your streaming studio.",
+          "snippet": "This plugin allows you to control Nanoleaf panels with the freeware DMXControl 3.x. So you can integrate the panels in complex and extensive light shows and setups. Just right for your streaming studio.",
+          "author": "DMXControl",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 11,
+          "updatedAt": "2026-07-15T19:16:53Z",
+          "score": 88
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/complex-control-rogue-battleroyale-lite-hybrid-for-gtav-sp",
+          "domain": "gta5-mods.com",
+          "title": "Complex Control",
+          "description": "Just like any other rogue-lite, this mod is difficult and takes a while to learn / master, ignoring the mod's core feature such as the Blink teleportation feature will result in a very bad time.Please check the Database (in-game) for all the info about the meta-game. Most if not all of the basic meta is explained there.---------------------------------------------------------------------This project is purely Single Player and coded in C sharp...",
+          "snippet": "",
+          "author": "standing in the last zone for 4 Seconds.",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/complex-control-6-11/",
+          "domain": "gta5mod.net",
+          "title": "Complex Control 6.11 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.modland.net/gta-5-mods/scripts/complex-control.html",
+          "domain": "modland.net",
+          "title": "Complex Control 6.11 - GTA 5 - ModLand.net",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gtacache.com/gta5/mods/complex-control/",
+          "domain": "gtacache.com",
+          "title": "Complex Control Mod for GTA 5 — Download",
+          "description": "Explore GTA 5 like never before with the Complex Control Mod, enhancing gameplay mechanics and visuals.",
+          "snippet": "",
+          "author": "introducing a host of new mechanics and",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/complex-control-5-12/",
+          "domain": "gta5modhub.com",
+          "title": "Complex Control 5.12 - GTA 5 Mod Download",
+          "description": "Just like any other rogue-lite, this mod is difficult and takes a while to learn / master, ignoring the mod&#8217;s core feature such as the Blink teleportation feature will result in a very bad&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "standing in the last zone for 4 Seconds.",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://sharemods.com/vn2otyc9b05j/Complex_Control_v6.11_for_GTA_5.zip.html",
+          "domain": "sharemods.com",
+          "title": "Download Complex Control for GTA zip - ShareMods.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.modland.net/download/330570",
+          "domain": "modland.net",
+          "title": "Download Complex Control - GTA 5 - ModLand.net",
+          "description": "Downloading version  of Complex Control mod. Your download is about to start shortly. Thanks for download!",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/complexcontrol/comments/8k1edt/complex_control_faq/",
+          "domain": "reddit.com",
+          "title": "Complex Control FAQ : r/complexcontrol - Reddit",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/tag/complex-control/",
+          "domain": "gta5modhub.com",
+          "title": "Complex Control - GTA 5 Mods | Grand Theft Auto 5 Complex Control Mods",
+          "description": "",
+          "snippet": "",
+          "author": "WP Rocket. Learn more",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.pcgamer.com/complex-control-transforms-gta-5-into-an-explosive-roguelite-battle-royale-war-zone/",
+          "domain": "pcgamer.com",
+          "title": "Complex Control transforms GTA 5 into an explosive roguelite battle royale war zone",
+          "description": "The mod boasts 55 abilities, 100 characters, lightning-fast showdowns, and, um, decoy huskies.",
+          "snippet": "",
+          "author": "Joe Donnelly",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/complexcontrol/hot/",
+          "domain": "reddit.com",
+          "title": "Complex Control - Reddit",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 98
+        },
+        {
+          "url": "https://github.com/DMXControl/Nanoleaf-dmxc3-Plugin",
+          "domain": "github.com",
+          "title": "Nanoleaf-dmxc3-Plugin",
+          "description": "This plugin allows you to control Nanoleaf panels with the freeware DMXControl 3.x. So you can integrate the panels in complex and extensive light shows and setups. Just right for your streaming studio.",
+          "snippet": "This plugin allows you to control Nanoleaf panels with the freeware DMXControl 3.x. So you can integrate the panels in complex and extensive light shows and setups. Just right for your streaming studio.",
+          "author": "DMXControl",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 11,
+          "updatedAt": "2026-07-15T19:16:53Z",
+          "score": 88
+        }
+      ]
+    },
     {
       "id": "research-modern-siren-pack-oiv-supported",
       "name": "Modern Siren Pack (OIV Supported )",
@@ -1613,6 +2029,203 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784180027200-25d3f42a",
+      "requestId": "expert-1784180027200-25d3f42a",
+      "query": "Complex Control",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T05:34:05.324Z",
+      "completedAt": "2026-07-16T05:34:05.324Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 12,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/complex-control-rogue-battleroyale-lite-hybrid-for-gtav-sp",
+          "domain": "gta5-mods.com",
+          "title": "Complex Control",
+          "description": "Just like any other rogue-lite, this mod is difficult and takes a while to learn / master, ignoring the mod's core feature such as the Blink teleportation feature will result in a very bad time.Please check the Database (in-game) for all the info about the meta-game. Most if not all of the basic meta is explained there.---------------------------------------------------------------------This project is purely Single Player and coded in C sharp...",
+          "snippet": "",
+          "author": "standing in the last zone for 4 Seconds.",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/complex-control-6-11/",
+          "domain": "gta5mod.net",
+          "title": "Complex Control 6.11 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.modland.net/gta-5-mods/scripts/complex-control.html",
+          "domain": "modland.net",
+          "title": "Complex Control 6.11 - GTA 5 - ModLand.net",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gtacache.com/gta5/mods/complex-control/",
+          "domain": "gtacache.com",
+          "title": "Complex Control Mod for GTA 5 — Download",
+          "description": "Explore GTA 5 like never before with the Complex Control Mod, enhancing gameplay mechanics and visuals.",
+          "snippet": "",
+          "author": "introducing a host of new mechanics and",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/complex-control-5-12/",
+          "domain": "gta5modhub.com",
+          "title": "Complex Control 5.12 - GTA 5 Mod Download",
+          "description": "Just like any other rogue-lite, this mod is difficult and takes a while to learn / master, ignoring the mod&#8217;s core feature such as the Blink teleportation feature will result in a very bad&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "standing in the last zone for 4 Seconds.",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://sharemods.com/vn2otyc9b05j/Complex_Control_v6.11_for_GTA_5.zip.html",
+          "domain": "sharemods.com",
+          "title": "Download Complex Control for GTA zip - ShareMods.com",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.modland.net/download/330570",
+          "domain": "modland.net",
+          "title": "Download Complex Control - GTA 5 - ModLand.net",
+          "description": "Downloading version  of Complex Control mod. Your download is about to start shortly. Thanks for download!",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/complexcontrol/comments/8k1edt/complex_control_faq/",
+          "domain": "reddit.com",
+          "title": "Complex Control FAQ : r/complexcontrol - Reddit",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/tag/complex-control/",
+          "domain": "gta5modhub.com",
+          "title": "Complex Control - GTA 5 Mods | Grand Theft Auto 5 Complex Control Mods",
+          "description": "",
+          "snippet": "",
+          "author": "WP Rocket. Learn more",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.pcgamer.com/complex-control-transforms-gta-5-into-an-explosive-roguelite-battle-royale-war-zone/",
+          "domain": "pcgamer.com",
+          "title": "Complex Control transforms GTA 5 into an explosive roguelite battle royale war zone",
+          "description": "The mod boasts 55 abilities, 100 characters, lightning-fast showdowns, and, um, decoy huskies.",
+          "snippet": "",
+          "author": "Joe Donnelly",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.reddit.com/r/complexcontrol/hot/",
+          "domain": "reddit.com",
+          "title": "Complex Control - Reddit",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 98
+        },
+        {
+          "url": "https://github.com/DMXControl/Nanoleaf-dmxc3-Plugin",
+          "domain": "github.com",
+          "title": "Nanoleaf-dmxc3-Plugin",
+          "description": "This plugin allows you to control Nanoleaf panels with the freeware DMXControl 3.x. So you can integrate the panels in complex and extensive light shows and setups. Just right for your streaming studio.",
+          "snippet": "This plugin allows you to control Nanoleaf panels with the freeware DMXControl 3.x. So you can integrate the panels in complex and extensive light shows and setups. Just right for your streaming studio.",
+          "author": "DMXControl",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 11,
+          "updatedAt": "2026-07-15T19:16:53Z",
+          "score": 88
+        }
+      ]
+    },
     {
       "id": "expert-1784165806533-5dd48d74",
       "requestId": "expert-1784165806533-5dd48d74",
