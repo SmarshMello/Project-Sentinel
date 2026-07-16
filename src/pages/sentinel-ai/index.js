@@ -11,6 +11,7 @@ import {researchDimensions} from '@site/src/data/researchAssessment';
 import {plugins} from '@site/src/data/plugins';
 import {collectResearchProjects} from '@site/src/data/researchRegistry';
 import {loadResearchData} from '@site/src/data/researchData';
+import {parseBulkResearchInput,summarizeBulkResults} from '@site/src/data/bulkResearch';
 import styles from './styles.module.css';
 
 function WatcherBadge({p}){if(!p.watcherTracked)return <span className={styles.untracked}>Not monitored</span>;const w=p.watcher;return <span className={w.status==='healthy'?styles.liveGood:styles.liveWarn}>{w.status==='healthy'?'Live healthy':String(w.status||'unknown').replaceAll('-',' ')}</span>}
@@ -42,12 +43,16 @@ function App(){
   const reportUrl=useBaseUrl('/data/watcher-report.json');
   const researchUrl=useBaseUrl('/data/research-results.json');
   const doctorUrl=useBaseUrl('/doctor');
-  const[q,setQ]=useState(''),[r,setR]=useState(null),[history,setHistory]=useState([]),[saved,setSaved]=useState(false),[report,setReport]=useState(null),[discoveries,setDiscoveries]=useState([]),[liveState,setLiveState]=useState('loading'),[researchState,setResearchState]=useState({phase:'idle',percent:0,message:'',activeStep:null,runUrl:null});
+  const[q,setQ]=useState(''),[r,setR]=useState(null),[history,setHistory]=useState([]),[saved,setSaved]=useState(false),[report,setReport]=useState(null),[discoveries,setDiscoveries]=useState([]),[liveState,setLiveState]=useState('loading'),[researchState,setResearchState]=useState({phase:'idle',percent:0,message:'',activeStep:null,runUrl:null}),[bulkState,setBulkState]=useState({phase:'idle',items:[],current:0});
   const pollToken=useRef(0);
   const activeResearch=useRef(null);
+  const bulkCancel=useRef(false);
   const normalizeResearchQuery=(value='')=>String(value).toLowerCase().replace(/[^a-z0-9]+/g,' ').replace(/\s+/g,' ').trim();
   const researchStorageKey='sentinel-active-research-v1';
   useEffect(()=>{let active=true;Promise.allSettled([fetch(`${reportUrl}?expert=${Date.now()}`,{cache:'no-store'}),loadResearchData(researchUrl)]).then(async results=>{if(!active)return;const [reportResult,researchResult]=results;if(reportResult.status==='fulfilled'&&reportResult.value.ok){setReport(await reportResult.value.json());setLiveState('ready');}else setLiveState('offline');if(researchResult.status==='fulfilled'){setDiscoveries(collectResearchProjects(researchResult.value));}});return()=>{active=false;pollToken.current+=1};},[reportUrl,researchUrl]);
+  const allProjects=useMemo(()=>[...plugins,...discoveries],[discoveries]);
+  const bulkInput=useMemo(()=>parseBulkResearchInput(q,allProjects),[q,allProjects]);
+  const bulkSummary=useMemo(()=>summarizeBulkResults(bulkState.items),[bulkState.items]);
   const related=useMemo(()=>r?.mentions?.length?[`What version of ${r.mentions[0].name} should I use?`,`What does ${r.mentions[0].name} require?`,`What is the install order for ${r.mentions[0].name}?`]:expertExamples.slice(0,3),[r]);
   function context(){return r?createExpertContext(q,r):null;}
   function save(){const c=context();if(c&&saveExpertContext(c)){setSaved(true);window.setTimeout(()=>setSaved(false),1800);}}
@@ -102,24 +107,28 @@ function App(){
             setR(answer);setHistory(h=>[{q:question,v:answer.verdict},...h.filter(x=>x.q!==question)].slice(0,6));
             activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
             setResearchState({phase:'found',percent:100,message:`Watcher found ${published.request.credibleCandidateCount||1} credible candidate source${published.request.credibleCandidateCount===1?'':'s'}. Sentinel re-evaluated your original question using the new Research record.`,activeStep:'Question automatically re-submitted with published findings',runUrl});
+            return {status:'found',published,runUrl};
           }else if(published.request.status==='needs-manual-research'){
             activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
             setResearchState({phase:'manual-review',percent:100,message:`Research completed across ${(published.request.searchProviders||[]).length||'multiple'} public search sources. No candidate cleared the automatic credibility threshold, so Sentinel kept the project unverified and exposed the best candidates for review.`,activeStep:'Research complete — candidate review required',runUrl,candidates:published.request.candidates||[]});
+            return {status:'manual',published,runUrl};
           }else{
             activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
             setResearchState({phase:'not-found',percent:100,message:'Sentinel Research completed the internet search but found no relevant public source. Sentinel will continue treating the project as unknown.',activeStep:'No relevant public source found',runUrl,candidates:published.request.candidates||[]});
+            return {status:'notFound',published,runUrl};
           }
           return;
         }
       }catch(error){
         if(String(error?.message)==='status'){await sleep(3000);continue;}
         activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
-        setResearchState({phase:'failed',percent:100,message:'The Sentinel Research run could not be completed or its published result could not be confirmed. Open the run for details and try again.',activeStep:'Research stopped',runUrl});return;
+        setResearchState({phase:'failed',percent:100,message:'The Sentinel Research run could not be completed or its published result could not be confirmed. Open the run for details and try again.',activeStep:'Research stopped',runUrl});return {status:'failed',runUrl};
       }
       await sleep(3000);
     }
     activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
     setResearchState({phase:'failed',percent:100,message:'Sentinel Research exceeded the ten-minute monitoring window. The GitHub run may still finish in the background.',activeStep:'Monitoring timed out',runUrl});
+    return {status:'failed',runUrl};
   }
   async function submitResearch(projectName=r?.unknownProject,question=q){
     if(!projectName||!controlEndpoint)return setResearchState({phase:'failed',percent:100,message:'Sentinel control endpoint is unavailable.',activeStep:'Research not started',runUrl:null});
@@ -131,8 +140,7 @@ function App(){
     if(existing?.scanId){
       activeResearch.current=existing;
       setResearchState({phase:'queued',percent:3,message:`Sentinel Research is already researching “${projectName}”. Reconnecting to the existing run instead of starting a duplicate.`,activeStep:'Reusing active research request',runUrl:existing.runUrl||null});
-      await monitorResearch(existing.scanId,existing.requestId,projectName,question,existing.requestedAt,token,key);
-      return;
+      return await monitorResearch(existing.scanId,existing.requestId,projectName,question,existing.requestedAt,token,key);
     }
     const requestedAt=Date.now();
     const requestId=`expert-${requestedAt}-${crypto.randomUUID().slice(0,8)}`;
@@ -147,14 +155,37 @@ function App(){
       const active={...pending,requestId:payload.requestId||requestId,scanId:payload.scanId};
       activeResearch.current=active;window.sessionStorage.setItem(researchStorageKey,JSON.stringify(active));
       setResearchState({phase:'queued',percent:3,message:payload.reused?'An identical Watcher request is already active. Reconnecting without launching another run.':'Research request accepted. Waiting for GitHub Actions to start.',activeStep:payload.reused?'Duplicate prevented — using existing run':'Sentinel Research queued',runUrl:null});
-      await monitorResearch(active.scanId,active.requestId,projectName,question,requestedAt,token,key);
+      return await monitorResearch(active.scanId,active.requestId,projectName,question,requestedAt,token,key);
     }catch(error){
       activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
       const message=String(error?.message||'');
       setResearchState({phase:'failed',percent:100,message:message&&message!=='research'?message:'The research request could not be queued. Verify the Worker deployment.',activeStep:'Submission failed',runUrl:null});
+      return {status:'failed'};
     }
   }
-  function ask(v=q){const clean=v.trim();if(!clean)return;pollToken.current+=1;setResearchState({phase:'idle',percent:0,message:'',activeStep:null,runUrl:null});const ans=evaluate(clean);if(ans.type==='unknown'){window.setTimeout(()=>submitResearch(ans.unknownProject,clean),0);}}
-  return <Layout title="Sentinel Expert" description="Registry and Watcher-grounded LSPDFR answers"><main className={styles.page}><header className={styles.hero}><div><small>Sentinel Intelligence Layer · Live Research</small><Heading as="h1">Ask Sentinel.</Heading><p>Structured answers from the Unified Registry, Watcher sources, and reviewed research discoveries—without invented compatibility claims.</p><section><span>{plugins.length+discoveries.length} known projects</span><span className={liveState==='ready'?styles.heroLive:styles.heroMuted}>{liveState==='ready'?'Watcher connected':liveState==='loading'?'Connecting Watcher…':'Registry-only mode'}</span><span>Multi-project reasoning</span><span>Live unknown-mod research</span><span>Install planning</span><span>Doctor routing</span></section></div></header><div className={styles.layout}><aside className={styles.sidebar}><section><b>Try a verified question</b>{expertExamples.map(x=><button key={x} onClick={()=>ask(x)}>{x}</button>)}<button onClick={()=>ask('Can I use EUP and Lennys Mod Loader together?')}>Can I use EUP and Lenny's Mod Loader together?</button></section>{history.length>0&&<section><b>Session history</b>{history.map(x=><button key={x.q} onClick={()=>ask(x.q)}><strong>{x.q}</strong><small>{x.v}</small></button>)}</section>}</aside><section className={styles.main}><div className={styles.ask}><textarea rows="3" maxLength="500" value={q} onChange={e=>setQ(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ask();}}} placeholder="Ask about a plugin, version, install order, dependency, conflict, category, or crash…"/><footer><span>{q.length}/500 · Enter to ask</span><button disabled={q.trim().length<3} onClick={()=>ask()}>Ask Sentinel</button></footer></div><Result r={r} onDoctor={openDoctor} onExport={exportSummary} onSave={save} saved={saved} researchState={researchState} onResearch={()=>submitResearch(r?.unknownProject,q)}/>{r&&<section className={styles.related}><b>Related questions</b><div>{related.map(x=><button key={x} onClick={()=>ask(x)}>{x}</button>)}</div></section>}</section></div></main></Layout>;
+  async function runBulkResearch(){
+    if(!bulkInput.isBulk||!bulkInput.unknown.length)return;
+    bulkCancel.current=false;
+    const knownItems=bulkInput.known.map(({name,project})=>({name,status:'known',message:`Already known as ${project.name}.`}));
+    const queued=bulkInput.unknown.map(name=>({name,status:'pending',message:'Waiting in the research queue.'}));
+    setBulkState({phase:'running',items:[...knownItems,...queued],current:0});
+    pollToken.current+=1;
+    for(let index=0;index<queued.length;index+=1){
+      if(bulkCancel.current)break;
+      const name=queued[index].name;
+      setBulkState(state=>({...state,current:index+1,items:state.items.map(item=>item.name===name?{...item,status:'running',message:'Searching public sources and evaluating candidates.'}:item)}));
+      const result=await submitResearch(name,`Bulk plugin research request for ${name}`);
+      if(bulkCancel.current)break;
+      const status=result?.status||'failed';
+      const message=status==='found'?'Credible sources found and added to Research.':status==='manual'?'Candidate sources saved as an unverified lead for review.':status==='notFound'?'No relevant public source found.':'Research failed or timed out; retry later.';
+      setBulkState(state=>({...state,items:state.items.map(item=>item.name===name?{...item,status,message,runUrl:result?.runUrl||null}:item)}));
+      await sleep(800);
+    }
+    setBulkState(state=>({...state,phase:bulkCancel.current?'stopped':'complete',current:bulkCancel.current?state.current:queued.length}));
+    try{const latest=await loadResearchData(`${researchUrl}?bulk=${Date.now()}`);setDiscoveries(collectResearchProjects(latest));}catch{}
+  }
+  function stopBulkResearch(){bulkCancel.current=true;pollToken.current+=1;setBulkState(state=>({...state,phase:'stopped'}));setResearchState({phase:'idle',percent:0,message:'',activeStep:null,runUrl:null});}
+  function ask(v=q){const clean=v.trim();if(!clean)return;if(parseBulkResearchInput(clean,allProjects).isBulk){setR(null);setBulkState({phase:'ready',items:[],current:0});return;}pollToken.current+=1;setBulkState({phase:'idle',items:[],current:0});setResearchState({phase:'idle',percent:0,message:'',activeStep:null,runUrl:null});const ans=evaluate(clean);if(ans.type==='unknown'){window.setTimeout(()=>submitResearch(ans.unknownProject,clean),0);}}
+  return <Layout title="Sentinel Expert" description="Registry and Watcher-grounded LSPDFR answers"><main className={styles.page}><header className={styles.hero}><div><small>Sentinel Intelligence Layer · Live Research</small><Heading as="h1">Ask Sentinel.</Heading><p>Structured answers from the Unified Registry, Watcher sources, and reviewed research discoveries—without invented compatibility claims.</p><section><span>{plugins.length+discoveries.length} known projects</span><span className={liveState==='ready'?styles.heroLive:styles.heroMuted}>{liveState==='ready'?'Watcher connected':liveState==='loading'?'Connecting Watcher…':'Registry-only mode'}</span><span>Multi-project reasoning</span><span>Live unknown-mod research</span><span>Install planning</span><span>Doctor routing</span></section></div></header><div className={styles.layout}><aside className={styles.sidebar}><section><b>Try a verified question</b>{expertExamples.map(x=><button key={x} onClick={()=>ask(x)}>{x}</button>)}<button onClick={()=>ask('Can I use EUP and Lennys Mod Loader together?')}>Can I use EUP and Lenny's Mod Loader together?</button></section>{history.length>0&&<section><b>Session history</b>{history.map(x=><button key={x.q} onClick={()=>ask(x.q)}><strong>{x.q}</strong><small>{x.v}</small></button>)}</section>}</aside><section className={styles.main}><div className={styles.ask}><textarea rows="5" maxLength="10000" value={q} onChange={e=>setQ(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey&&!bulkInput.isBulk){e.preventDefault();ask();}}} placeholder="Ask one question, or paste plugin names one per line for Bulk Research…"/><footer><span>{q.length}/10000 · {bulkInput.isBulk?`${bulkInput.unique.length} projects detected`:'Enter to ask'}</span><button disabled={q.trim().length<3||bulkState.phase==='running'} onClick={()=>ask()}>{bulkInput.isBulk?'Prepare bulk research':'Ask Sentinel'}</button></footer></div>{bulkInput.isBulk&&<section className={styles.bulkPanel}><div className={styles.bulkHead}><div><small>Bulk Plugin Research</small><h2>{bulkInput.unique.length} unique projects detected</h2><p>{bulkInput.known.length} already known · {bulkInput.unknown.length} ready for research · {bulkInput.duplicates.length} duplicate{bulkInput.duplicates.length===1?'':'s'} removed{bulkInput.overflow?` · ${bulkInput.overflow} held for the next batch`:''}.</p></div><div className={styles.bulkActions}><button onClick={runBulkResearch} disabled={!bulkInput.unknown.length||bulkState.phase==='running'}>{bulkState.phase==='running'?'Research running…':bulkInput.unknown.length?`Research ${bulkInput.unknown.length} unknown projects`:'Everything is already known'}</button>{bulkState.phase==='running'&&<button className={styles.stopBulk} onClick={stopBulkResearch}>Stop queue</button>}</div></div>{bulkState.phase!=='idle'&&bulkState.phase!=='ready'&&<><div className={styles.bulkProgress}><span style={{width:`${bulkState.items.length?Math.round((bulkState.items.filter(item=>!['pending','running'].includes(item.status)).length/bulkState.items.length)*100):0}%`}}/></div><div className={styles.bulkStats}><b>{bulkState.phase==='complete'?'Complete':`Researching ${bulkState.current} of ${bulkInput.unknown.length}`}</b><span>{bulkSummary.found||0} found</span><span>{bulkSummary.manual||0} review</span><span>{bulkSummary.notFound||0} not found</span><span>{bulkSummary.failed||0} failed</span></div><div className={styles.bulkList}>{bulkState.items.map(item=><article key={item.name} className={styles[`bulk_${item.status}`]||''}><div><strong>{item.name}</strong><small>{item.message}</small></div><span>{String(item.status).replace(/([A-Z])/g,' $1')}</span>{item.runUrl&&<a href={item.runUrl} target="_blank" rel="noreferrer">Run ↗</a>}</article>)}</div></>}</section>} {!bulkInput.isBulk&&<Result r={r} onDoctor={openDoctor} onExport={exportSummary} onSave={save} saved={saved} researchState={researchState} onResearch={()=>submitResearch(r?.unknownProject,q)}/>} {!bulkInput.isBulk&&r&&<section className={styles.related}><b>Related questions</b><div>{related.map(x=><button key={x} onClick={()=>ask(x)}>{x}</button>)}</div></section>}</section></div></main></Layout>;
 }
 export default function SentinelAI(){return <BrowserOnly fallback={<Layout title="Sentinel Expert"><main className="container margin-vert--xl">Loading Sentinel intelligence…</main></Layout>}>{()=><App/>}</BrowserOnly>}

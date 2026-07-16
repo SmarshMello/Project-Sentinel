@@ -48,3 +48,17 @@ assert.match(deployWorkflow, /workflows:\s*\["Sentinel Watcher", "Sentinel Resea
 console.log('PASS successful Sentinel Research runs trigger GitHub Pages deployment');
 
 console.log('\n4/4 Sentinel Research integration tests passed.');
+
+import {parseBulkResearchInput, summarizeBulkResults} from '../src/data/bulkResearch.js';
+{
+  const known=[{name:'Stop The Ped',aliases:['STP']},{name:'Ultimate Backup',shortName:'UB'}];
+  const parsed=parseBulkResearchInput('ResponseV\nStop The Ped\nResponseV\nSTP\nBetter Chases+',known);
+  assert.equal(parsed.isBulk,true,'multi-line input should activate bulk mode');
+  assert.equal(parsed.duplicates.length,1,'exact duplicate should be removed');
+  assert.equal(parsed.known.length,2,'known names and aliases should be classified');
+  assert.deepEqual(parsed.unknown,['ResponseV','Better Chases+'],'unknown projects should remain queued');
+  const summary=summarizeBulkResults([{status:'known'},{status:'found'},{status:'failed'}]);
+  assert.equal(summary.total,3);
+  assert.equal(summary.found,1);
+  console.log('✓ bulk research parser and result summary');
+}

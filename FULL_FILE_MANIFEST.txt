@@ -14,6 +14,7 @@ COPYRIGHT.md
 FINAL_CLEANUP_REPORT.md
 FULL_FILE_MANIFEST.txt
 FULL_REPLACEMENT_INSTRUCTIONS.txt
+PROJECT_SENTINEL_BULK_RESEARCH_RELEASE_HANDOFF.md
 PROJECT_SENTINEL_FINAL_STABILITY_RELEASE_HANDOFF.md
 PUBLIC_RELEASE_CHECKLIST.md
 README.md
@@ -211,6 +212,7 @@ src/components/intelligence/WatcherFeed.js
 src/components/intelligence/WatcherFeed.module.css
 src/css/custom.css
 src/data/builds.js
+src/data/bulkResearch.js
 src/data/compatibility.js
 src/data/diagnostics.js
 src/data/doctorEnvironment.js
