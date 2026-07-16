@@ -15,7 +15,7 @@ const config = {
   i18n: {defaultLocale: 'en', locales: ['en']},
   customFields: {
     paypalUrl: '',
-    kofiUrl: '',
+    kofiUrl: 'https://ko-fi.com/smarshmello',
     watcherControlEndpoint: 'https://project-sentinel-watcher-control.sentinelwatcher.workers.dev',
   },
   presets: [[
