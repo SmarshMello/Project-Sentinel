@@ -1,0 +1,356 @@
+.page {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 8%, rgba(77, 226, 210, 0.12), transparent 28rem),
+    radial-gradient(circle at 5% 32%, rgba(76, 143, 224, 0.1), transparent 32rem);
+}
+
+.hero {
+  padding: clamp(5rem, 9vw, 8rem) 0 clamp(4rem, 7vw, 6.5rem);
+  border-bottom: 1px solid rgba(121, 164, 190, 0.16);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 6rem);
+}
+
+.heroCopy h1 {
+  max-width: 860px;
+  margin: 0.75rem 0 1.4rem;
+  font-size: clamp(3.3rem, 7vw, 6.7rem);
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: #55e4d6;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.lead {
+  max-width: 780px;
+  margin: 0;
+  color: #b7c9d4;
+  font-size: clamp(1.08rem, 1.8vw, 1.3rem);
+  line-height: 1.75;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 2rem 0 1.15rem;
+}
+
+.donateButton,
+.secondaryButton,
+.disabledButton {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.9rem 1.25rem;
+  border-radius: 0.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.donateButton {
+  border: 1px solid #58e4d5;
+  background: linear-gradient(135deg, #56e6d6, #50b9ef);
+  color: #04141e;
+  box-shadow: 0 12px 40px rgba(75, 213, 211, 0.2);
+}
+
+.donateButton:hover {
+  color: #04141e;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 48px rgba(75, 213, 211, 0.28);
+}
+
+.secondaryButton {
+  border: 1px solid rgba(137, 178, 202, 0.35);
+  background: rgba(11, 28, 40, 0.76);
+  color: #dcecf4;
+}
+
+.secondaryButton:hover {
+  border-color: #55e4d6;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.disabledButton {
+  border: 1px solid rgba(137, 178, 202, 0.2);
+  background: rgba(31, 48, 59, 0.7);
+  color: #80939f;
+  cursor: not-allowed;
+}
+
+.providerNote {
+  max-width: 700px;
+  margin: 0;
+  color: #839aa8;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.appreciationCard {
+  position: relative;
+  padding: clamp(1.7rem, 4vw, 2.4rem);
+  overflow: hidden;
+  border: 1px solid rgba(82, 225, 213, 0.3);
+  border-radius: 1.4rem;
+  background:
+    linear-gradient(145deg, rgba(13, 39, 54, 0.96), rgba(7, 22, 32, 0.96));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+}
+
+.appreciationCard::before {
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  right: -4rem;
+  top: -5rem;
+  border-radius: 50%;
+  background: rgba(78, 223, 211, 0.13);
+  content: '';
+  filter: blur(6px);
+}
+
+.cardLabel {
+  color: #8da7b6;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.appreciationCard h2 {
+  position: relative;
+  margin: 0.8rem 0 1rem;
+  font-size: clamp(1.75rem, 3vw, 2.45rem);
+  letter-spacing: -0.035em;
+}
+
+.appreciationCard p {
+  position: relative;
+  margin: 0;
+  color: #aec3cf;
+  line-height: 1.75;
+}
+
+.promise {
+  position: relative;
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.05rem;
+  border-left: 3px solid #55e4d6;
+  border-radius: 0.5rem;
+  background: rgba(4, 18, 27, 0.7);
+}
+
+.promise strong {
+  color: #fff;
+}
+
+.promise span {
+  color: #95acb9;
+  line-height: 1.55;
+}
+
+.supportSection,
+.communitySection,
+.finalCta {
+  padding: clamp(4rem, 7vw, 6.5rem) 0;
+}
+
+.supportSection {
+  background: rgba(4, 17, 26, 0.58);
+}
+
+.sectionHeading {
+  max-width: 780px;
+  margin-bottom: 2rem;
+}
+
+.sectionHeading h2,
+.communityCard h2,
+.finalCta h2 {
+  margin: 0.65rem 0 0.85rem;
+  font-size: clamp(2.1rem, 4vw, 3.65rem);
+  letter-spacing: -0.05em;
+}
+
+.sectionHeading p,
+.communityCard p,
+.finalCta p {
+  margin: 0;
+  color: #9fb5c2;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.supportGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.supportCard {
+  min-height: 220px;
+  padding: 1.45rem;
+  border: 1px solid rgba(111, 153, 179, 0.23);
+  border-radius: 1rem;
+  background: rgba(10, 29, 41, 0.82);
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.supportCard:hover {
+  border-color: rgba(85, 228, 214, 0.54);
+  background: rgba(12, 34, 47, 0.96);
+  transform: translateY(-3px);
+}
+
+.supportNumber {
+  color: #55e4d6;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.supportCard h3 {
+  margin: 1.3rem 0 0.7rem;
+  font-size: 1.24rem;
+}
+
+.supportCard p {
+  margin: 0;
+  color: #91a8b5;
+  line-height: 1.65;
+}
+
+.communitySection {
+  border-top: 1px solid rgba(121, 164, 190, 0.12);
+  border-bottom: 1px solid rgba(121, 164, 190, 0.12);
+}
+
+.communityCard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  align-items: center;
+  gap: 3rem;
+  padding: clamp(1.8rem, 5vw, 3rem);
+  border: 1px solid rgba(121, 164, 190, 0.25);
+  border-radius: 1.35rem;
+  background: linear-gradient(135deg, rgba(11, 31, 44, 0.94), rgba(7, 22, 31, 0.92));
+}
+
+.communityLinks {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.communityLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(112, 155, 181, 0.24);
+  border-radius: 0.7rem;
+  background: rgba(3, 15, 23, 0.46);
+  color: #dcebf3;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.communityLinks a:hover {
+  border-color: #55e4d6;
+  color: #fff;
+  text-decoration: none;
+}
+
+.finalCta {
+  background:
+    linear-gradient(135deg, rgba(14, 47, 61, 0.83), rgba(6, 24, 35, 0.94));
+}
+
+.finalCtaInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 3rem;
+}
+
+.finalCtaInner > div {
+  max-width: 820px;
+}
+
+@media (max-width: 1100px) {
+  .supportGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 996px) {
+  .heroGrid,
+  .communityCard,
+  .finalCtaInner {
+    grid-template-columns: 1fr;
+  }
+
+  .heroGrid {
+    gap: 2.5rem;
+  }
+
+  .appreciationCard {
+    max-width: 720px;
+  }
+
+  .finalCtaInner {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 4.2rem;
+  }
+
+  .heroCopy h1 {
+    font-size: clamp(2.75rem, 14vw, 4.4rem);
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .donateButton,
+  .secondaryButton,
+  .disabledButton {
+    width: 100%;
+  }
+
+  .supportGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .supportCard {
+    min-height: auto;
+  }
+}
