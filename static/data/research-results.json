@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T01:00:45.897Z",
+  "updatedAt": "2026-07-16T01:01:33.467Z",
   "discoveries": [
     {
       "id": "research-street-riders-realistic-npc-wheelies-bikelife-for-npcs-62d212f",
@@ -8,7 +8,11 @@
       "shortName": null,
       "aliases": [
         "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
-        "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) V2.0 - GTA 5 mod"
+        "GTA 5 Mods by Lorcann - GTA5-Mods.com",
+        "Lorcann的GTA5模组 - GTA5-Mods.com",
+        "Mods pour GTA 5 par frankin341 - GTA5-Mods.com",
+        "GTA 5 Mods von frankin341 - GTA5-Mods.com",
+        "Mods de GTA 5 por Lorcann - GTA5-Mods.com"
       ],
       "category": "Research discoveries",
       "status": "research",
@@ -39,21 +43,22 @@
       ],
       "guide": null,
       "download": "https://www.gta5-mods.com/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
-      "note": "Research Engine found 6 credible sources across 2 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "note": "Research Engine found 12 credible sources across 2 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
       "sentinelPolice": false,
       "researchDiscovered": true,
       "researchStatus": "pending-review",
       "profile": "/plugins/research?project=research-street-riders-realistic-npc-wheelies-bikelife-for-npcs-62d212f",
-      "requestedAt": "2026-07-16T01:00:45.897Z",
+      "requestedAt": "2026-07-16T01:01:33.467Z",
       "sources": [
         {
           "url": "https://www.gta5-mods.com/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
           "domain": "gta5-mods.com",
           "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
           "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
-          "snippet": "",
+          "snippet": "Feb 13, 2026 &nbsp;&#0183;&#32;Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural …",
           "author": "category",
           "providers": [
+            "bing",
             "duckduckgo"
           ],
           "source": "web",
@@ -66,9 +71,10 @@
           "domain": "gta5-mods.com",
           "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
           "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
-          "snippet": "",
+          "snippet": "Jun 6, 2026 &nbsp;&#0183;&#32;Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural …",
           "author": "category",
           "providers": [
+            "bing",
             "duckduckgo"
           ],
           "source": "web",
@@ -77,13 +83,14 @@
           "score": 100
         },
         {
-          "url": "https://www.gta5-mods.com/gl/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "url": "https://www.gta5-mods.com/users/Lorcann",
           "domain": "gta5-mods.com",
-          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
-          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
-          "snippet": "",
-          "author": "category",
+          "title": "GTA 5 Mods by Lorcann - GTA5-Mods.com",
+          "description": "Expand to read the full comment View Context May 18, 2026 Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak …",
+          "snippet": "Expand to read the full comment View Context May 18, 2026 Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak …",
+          "author": "Lorcann - GTA5-Mods.com",
           "providers": [
+            "bing",
             "duckduckgo"
           ],
           "source": "web",
@@ -92,14 +99,46 @@
           "score": 100
         },
         {
-          "url": "https://www.gta5-mods.com/no/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "url": "https://www.gta5-mods.com/it/users/Lorcann",
           "domain": "gta5-mods.com",
-          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
-          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
-          "snippet": "",
-          "author": "category",
+          "title": "GTA 5 Mods by Lorcann - GTA5-Mods.com",
+          "description": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "snippet": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "author": "Lorcann - GTA5-Mods.com",
           "providers": [
+            "bing",
             "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/zh/users/Lorcann",
+          "domain": "gta5-mods.com",
+          "title": "Lorcann的GTA5模组 - GTA5-Mods.com",
+          "description": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "snippet": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "author": "experimenting with different DrivingFlag",
+          "providers": [
+            "bing",
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/fr/users/frankin341",
+          "domain": "gta5-mods.com",
+          "title": "Mods pour GTA 5 par frankin341 - GTA5-Mods.com",
+          "description": "frankin341 &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @joeybad Sadly, these won't help because i had this mods for a long amount of time and nothing works",
+          "snippet": "frankin341 &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @joeybad Sadly, these won't help because i had this mods for a long amount of time and nothing works",
+          "author": "",
+          "providers": [
+            "bing"
           ],
           "source": "web",
           "stars": 0,
@@ -111,9 +150,42 @@
           "domain": "gta5-mods.com",
           "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
           "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
-          "snippet": "",
+          "snippet": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.",
           "author": "category",
           "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/no/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "domain": "gta5-mods.com",
+          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
+          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
+          "snippet": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.",
+          "author": "category",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/gl/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "domain": "gta5-mods.com",
+          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
+          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
+          "snippet": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders. …",
+          "author": "category",
+          "providers": [
+            "bing",
             "duckduckgo"
           ],
           "source": "web",
@@ -122,14 +194,45 @@
           "score": 100
         },
         {
-          "url": "https://gta5mod.net/gta-5-mods/scripts/street-riders-realistic-npc-wheelies-v1-1-2/",
-          "domain": "gta5mod.net",
-          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) V2.0 - GTA 5 mod",
-          "description": "",
-          "snippet": "",
+          "url": "https://www.gta5-mods.com/de/users/frankin341",
+          "domain": "gta5-mods.com",
+          "title": "GTA 5 Mods von frankin341 - GTA5-Mods.com",
+          "description": "frankin341 &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @joeybad Sadly, these won't help because i had this mods for a long amount of time and nothing works",
+          "snippet": "frankin341 &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @joeybad Sadly, these won't help because i had this mods for a long amount of time and nothing works",
           "author": "",
           "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://es.gta5-mods.com/es/users/Lorcann",
+          "domain": "es.gta5-mods.com",
+          "title": "Mods de GTA 5 por Lorcann - GTA5-Mods.com",
+          "description": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "snippet": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "author": "",
+          "providers": [
+            "bing",
             "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/nl/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "domain": "gta5-mods.com",
+          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
+          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
+          "snippet": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic …",
+          "author": "category",
+          "providers": [
+            "bing"
           ],
           "source": "web",
           "stars": 0,
@@ -143,9 +246,10 @@
           "domain": "gta5-mods.com",
           "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
           "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
-          "snippet": "",
+          "snippet": "Feb 13, 2026 &nbsp;&#0183;&#32;Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural …",
           "author": "category",
           "providers": [
+            "bing",
             "duckduckgo"
           ],
           "source": "web",
@@ -158,9 +262,10 @@
           "domain": "gta5-mods.com",
           "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
           "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
-          "snippet": "",
+          "snippet": "Jun 6, 2026 &nbsp;&#0183;&#32;Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural …",
           "author": "category",
           "providers": [
+            "bing",
             "duckduckgo"
           ],
           "source": "web",
@@ -169,13 +274,14 @@
           "score": 100
         },
         {
-          "url": "https://www.gta5-mods.com/gl/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "url": "https://www.gta5-mods.com/users/Lorcann",
           "domain": "gta5-mods.com",
-          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
-          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
-          "snippet": "",
-          "author": "category",
+          "title": "GTA 5 Mods by Lorcann - GTA5-Mods.com",
+          "description": "Expand to read the full comment View Context May 18, 2026 Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak …",
+          "snippet": "Expand to read the full comment View Context May 18, 2026 Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak …",
+          "author": "Lorcann - GTA5-Mods.com",
           "providers": [
+            "bing",
             "duckduckgo"
           ],
           "source": "web",
@@ -184,14 +290,46 @@
           "score": 100
         },
         {
-          "url": "https://www.gta5-mods.com/no/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "url": "https://www.gta5-mods.com/it/users/Lorcann",
           "domain": "gta5-mods.com",
-          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
-          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
-          "snippet": "",
-          "author": "category",
+          "title": "GTA 5 Mods by Lorcann - GTA5-Mods.com",
+          "description": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "snippet": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "author": "Lorcann - GTA5-Mods.com",
           "providers": [
+            "bing",
             "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/zh/users/Lorcann",
+          "domain": "gta5-mods.com",
+          "title": "Lorcann的GTA5模组 - GTA5-Mods.com",
+          "description": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "snippet": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "author": "experimenting with different DrivingFlag",
+          "providers": [
+            "bing",
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/fr/users/frankin341",
+          "domain": "gta5-mods.com",
+          "title": "Mods pour GTA 5 par frankin341 - GTA5-Mods.com",
+          "description": "frankin341 &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @joeybad Sadly, these won't help because i had this mods for a long amount of time and nothing works",
+          "snippet": "frankin341 &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @joeybad Sadly, these won't help because i had this mods for a long amount of time and nothing works",
+          "author": "",
+          "providers": [
+            "bing"
           ],
           "source": "web",
           "stars": 0,
@@ -203,9 +341,42 @@
           "domain": "gta5-mods.com",
           "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
           "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
-          "snippet": "",
+          "snippet": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.",
           "author": "category",
           "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/no/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "domain": "gta5-mods.com",
+          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
+          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
+          "snippet": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.",
+          "author": "category",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/gl/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "domain": "gta5-mods.com",
+          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
+          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
+          "snippet": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders. …",
+          "author": "category",
+          "providers": [
+            "bing",
             "duckduckgo"
           ],
           "source": "web",
@@ -214,14 +385,45 @@
           "score": 100
         },
         {
-          "url": "https://gta5mod.net/gta-5-mods/scripts/street-riders-realistic-npc-wheelies-v1-1-2/",
-          "domain": "gta5mod.net",
-          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) V2.0 - GTA 5 mod",
-          "description": "",
-          "snippet": "",
+          "url": "https://www.gta5-mods.com/de/users/frankin341",
+          "domain": "gta5-mods.com",
+          "title": "GTA 5 Mods von frankin341 - GTA5-Mods.com",
+          "description": "frankin341 &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @joeybad Sadly, these won't help because i had this mods for a long amount of time and nothing works",
+          "snippet": "frankin341 &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @joeybad Sadly, these won't help because i had this mods for a long amount of time and nothing works",
           "author": "",
           "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://es.gta5-mods.com/es/users/Lorcann",
+          "domain": "es.gta5-mods.com",
+          "title": "Mods de GTA 5 por Lorcann - GTA5-Mods.com",
+          "description": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "snippet": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "author": "",
+          "providers": [
+            "bing",
             "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/nl/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "domain": "gta5-mods.com",
+          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
+          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
+          "snippet": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic …",
+          "author": "category",
+          "providers": [
+            "bing"
           ],
           "source": "web",
           "stars": 0,
@@ -982,6 +1184,212 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784163675688-be5a4432",
+      "requestId": "expert-1784163675688-be5a4432",
+      "query": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T01:01:33.467Z",
+      "completedAt": "2026-07-16T01:01:33.467Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 12,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "domain": "gta5-mods.com",
+          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
+          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
+          "snippet": "Feb 13, 2026 &nbsp;&#0183;&#32;Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural …",
+          "author": "category",
+          "providers": [
+            "bing",
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/ms/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "domain": "gta5-mods.com",
+          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
+          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
+          "snippet": "Jun 6, 2026 &nbsp;&#0183;&#32;Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural …",
+          "author": "category",
+          "providers": [
+            "bing",
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/users/Lorcann",
+          "domain": "gta5-mods.com",
+          "title": "GTA 5 Mods by Lorcann - GTA5-Mods.com",
+          "description": "Expand to read the full comment View Context May 18, 2026 Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak …",
+          "snippet": "Expand to read the full comment View Context May 18, 2026 Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak …",
+          "author": "Lorcann - GTA5-Mods.com",
+          "providers": [
+            "bing",
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/it/users/Lorcann",
+          "domain": "gta5-mods.com",
+          "title": "GTA 5 Mods by Lorcann - GTA5-Mods.com",
+          "description": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "snippet": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "author": "Lorcann - GTA5-Mods.com",
+          "providers": [
+            "bing",
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/zh/users/Lorcann",
+          "domain": "gta5-mods.com",
+          "title": "Lorcann的GTA5模组 - GTA5-Mods.com",
+          "description": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "snippet": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "author": "experimenting with different DrivingFlag",
+          "providers": [
+            "bing",
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/fr/users/frankin341",
+          "domain": "gta5-mods.com",
+          "title": "Mods pour GTA 5 par frankin341 - GTA5-Mods.com",
+          "description": "frankin341 &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @joeybad Sadly, these won't help because i had this mods for a long amount of time and nothing works",
+          "snippet": "frankin341 &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @joeybad Sadly, these won't help because i had this mods for a long amount of time and nothing works",
+          "author": "",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/mk/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "domain": "gta5-mods.com",
+          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
+          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
+          "snippet": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.",
+          "author": "category",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/no/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "domain": "gta5-mods.com",
+          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
+          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
+          "snippet": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.",
+          "author": "category",
+          "providers": [
+            "duckduckgo",
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/gl/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "domain": "gta5-mods.com",
+          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
+          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
+          "snippet": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders. …",
+          "author": "category",
+          "providers": [
+            "bing",
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/de/users/frankin341",
+          "domain": "gta5-mods.com",
+          "title": "GTA 5 Mods von frankin341 - GTA5-Mods.com",
+          "description": "frankin341 &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @joeybad Sadly, these won't help because i had this mods for a long amount of time and nothing works",
+          "snippet": "frankin341 &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @joeybad Sadly, these won't help because i had this mods for a long amount of time and nothing works",
+          "author": "",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://es.gta5-mods.com/es/users/Lorcann",
+          "domain": "es.gta5-mods.com",
+          "title": "Mods de GTA 5 por Lorcann - GTA5-Mods.com",
+          "description": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "snippet": "Lorcann &#187; Street Riders: Realistic NPC Wheelies (BikeLife for NPCs) @BobbyDaBuilder Thanks a lot man! 🔥 You can actually already tweak their behavior in the .ini file by experimenting with different …",
+          "author": "",
+          "providers": [
+            "bing",
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/nl/scripts/bikelife-beta-realistic-motorcycle-gangs-wheelie-physics",
+          "domain": "gta5-mods.com",
+          "title": "Street Riders: Realistic NPC Wheelies (BikeLife for NPCs)",
+          "description": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic riders.COMMUNITY &amp; SUPPORT:Found a bug? Want to share configs or suggest features?👉 Join the Discord ServerTo follow the release of my next mods:👉 @lorcannmodding2👉 Support me on PatreonCORE FEATURES:• Stunt Tricks &amp; Animations: Riders now ra...",
+          "snippet": "Street Riders brings realistic physics-based wheelies to Los Santos. Spawn dynamic motorcycle gangs that patrol territories, do tricks, and ride in formation — or apply wheelies to natural traffic …",
+          "author": "category",
+          "providers": [
+            "bing"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        }
+      ]
+    },
     {
       "id": "expert-1784163631112-49aaa533",
       "requestId": "expert-1784163631112-49aaa533",
