@@ -20,3 +20,25 @@ for (const [name, plugin, release, risk, watcher, expected] of cases) {
 }
 
 console.log(`\n${cases.length}/${cases.length} recommendation consistency cases passed.`);
+
+const {buildPluginTimeline, summarizeTimeline} = await import('../src/intelligence/timelineEngine.js');
+const timelineProfile = {
+  id: 'test-plugin',
+  name: 'Test Plugin',
+  currentVersion: '1.0.0',
+  registryStatus: 'verified',
+  confidence: 100,
+  goldenBuild: true,
+  release: {updateDetected: true, detectedVersion: '1.1.0', hasBreaking: false, needsMigration: false},
+  watcher: {status: 'possible-update', checkedAt: '2026-07-15T12:00:00.000Z', note: 'New version found.', detectedVersion: '1.1.0'},
+};
+const timelineCases = [{id: 'case-1', pluginId: 'test-plugin', status: 'monitoring', createdAt: '2026-07-15T13:00:00.000Z', updatedAt: '2026-07-15T14:00:00.000Z', summary: 'Retest required.', steps: ['one'], completedSteps: []}];
+const timeline = buildPluginTimeline(timelineProfile, timelineCases);
+const timelineSummary = summarizeTimeline(timeline);
+assert.equal(timeline[0].type, 'doctor', 'newest dated event should be the Doctor case');
+assert.equal(timelineSummary.doctor, 1);
+assert.equal(timelineSummary.releases, 1);
+assert.equal(timelineSummary.watcher, 1);
+assert.equal(timelineSummary.build, 1);
+assert.ok(timeline.some((item) => item.id === 'registry-baseline'));
+console.log('PASS plugin lifecycle timeline ordering and event summary');

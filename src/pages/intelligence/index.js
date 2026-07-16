@@ -53,9 +53,9 @@ export default function IntelligenceCenter() {
   return <Layout title="Sentinel Intelligence" description="Release intelligence, Plugin DNA and compatibility predictions for Project Sentinel.">
     <main className={styles.page}>
       <header className={styles.hero}><div className="container">
-        <span className={styles.eyebrow}>Release intelligence engine · 1.3</span>
+        <span className={styles.eyebrow}>Plugin lifecycle intelligence · 1.7</span>
         <Heading as="h1">Sentinel Intelligence</Heading>
-        <p>Analyze release signals, calculate plugin health, predict upgrade safety, and identify every registered plugin that should be retested after a dependency changes.</p>
+        <p>Analyze release signals, calculate plugin health, predict upgrade safety, and inspect each plugin’s Watcher, Doctor, Golden Build, and registry history in a unified timeline.</p>
         <div className={styles.heroActions}><Link to="/watcher">Open Watcher</Link><Link to="/compatibility">Compatibility Center</Link></div>
       </div></header>
 
