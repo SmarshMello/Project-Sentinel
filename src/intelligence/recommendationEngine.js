@@ -7,6 +7,10 @@ export const RECOMMENDATIONS = {
   monitor: {key: 'monitor', label: 'Monitor', tone: 'monitor'},
 };
 
+function isSupportedCurrentInstall(plugin, risk) {
+  return ['verified', 'community', 'documented'].includes(plugin.status) && risk.score <= 35;
+}
+
 export function recommendUpgrade(plugin, release, risk, watcherItem = null) {
   const reasons = [];
   let recommendation = RECOMMENDATIONS.monitor;
@@ -29,9 +33,16 @@ export function recommendUpgrade(plugin, release, risk, watcherItem = null) {
   } else if (watcherItem?.status === 'healthy') {
     recommendation = RECOMMENDATIONS.monitor;
     reasons.push('No change is required; the latest source check is healthy.');
+  } else if (isSupportedCurrentInstall(plugin, risk)) {
+    recommendation = RECOMMENDATIONS.monitor;
+    reasons.push(
+      plugin.status === 'verified'
+        ? 'No change is required; the current version is verified in the Sentinel registry.'
+        : 'No change is required; current registry evidence supports keeping the installed version.'
+    );
   } else {
     recommendation = RECOMMENDATIONS.wait;
-    reasons.push('Source evidence is incomplete or temporarily unavailable.');
+    reasons.push('Source evidence is incomplete, so verify the release before changing the current build.');
   }
 
   return {...recommendation, reasons};

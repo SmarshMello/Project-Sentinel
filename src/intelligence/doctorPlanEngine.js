@@ -26,8 +26,13 @@ export function buildDoctorPlan(profile) {
   steps.push(`Back up the current Golden Build before changing ${profile.name}.`);
   if (unresolved.length) steps.push(`Resolve or verify these dependency records first: ${unresolved.join(', ')}.`);
   if (profile.dependencies.length) steps.push(`Confirm every required dependency for ${profile.name} is installed at the documented version.`);
-  if (profile.release.updateDetected) steps.push(`Install ${profile.release.detectedVersion || 'the detected release'} in an isolated test copy, not the live Golden Build.`);
-  else steps.push(`Keep the current ${profile.currentVersion} install in place while gathering stronger release evidence.`);
+  if (profile.release.updateDetected) {
+    steps.push(`Install ${profile.release.detectedVersion || 'the detected release'} in an isolated test copy, not the live Golden Build.`);
+  } else if (profile.recommendation.key === 'monitor') {
+    steps.push(`Keep the current ${profile.currentVersion} install in place; no update action is required unless Watcher detects a meaningful change.`);
+  } else {
+    steps.push(`Keep the current ${profile.currentVersion} install in place while gathering stronger release evidence.`);
+  }
   steps.push(`Launch GTA V with only the minimum core stack and ${profile.name} enabled.`);
   steps.push(`Run one controlled duty session and capture RAGEPluginHook.log plus lspdfr.log.`);
   if (affected.length) steps.push(`Retest affected projects in this order: ${affected.join(', ')}.`);

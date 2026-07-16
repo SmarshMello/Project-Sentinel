@@ -12,7 +12,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "test:doctor": "node --experimental-specifier-resolution=node doctor-tests/run-tests.mjs"
+    "test:doctor": "node --experimental-specifier-resolution=node doctor-tests/run-tests.mjs",
+    "test:intelligence": "node --experimental-specifier-resolution=node intelligence-tests/run-tests.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",
