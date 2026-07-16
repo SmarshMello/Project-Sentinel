@@ -1,7 +1,416 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T05:35:23.473Z",
+  "updatedAt": "2026-07-16T05:51:21.743Z",
   "discoveries": [
+    {
+      "id": "research-map-editor",
+      "name": "Map Editor",
+      "shortName": null,
+      "aliases": [
+        "Map Editor",
+        "Latest GTA 5 Mods - Map Editor - GTA5-Mods.com",
+        "US/Canada Border Checkpoint [Map Editor]",
+        "How to Install Map Editor in Gta V Complete Guide to Use Map Editor ...",
+        "Map Editor Extended at Stardew Valley Nexus - Mods and community",
+        "Map Editor file - ModDB",
+        "DUI/RBT Checkpoint Map for LSPDFR",
+        "🗺️ Map Editor – Custom Map Creation Tool for GTA V",
+        ".github",
+        "Map-Editor-V3-BuildMigrator"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "Guadmaz",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 98,
+      "documentationConfidence": 95,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "DescriptionThis is a tool reminiscent of MTA:SA Map Editor days. You have a freecam to navigate around, and you can spawn objects (with preview!), move them around with your mouse or keys. Then you can save or load your map in various formats, currently supported are XML and Simple Trainer format (objects.ini).ControlsF7 or R3 + LB - Open main menu.WASD or Left Stick - Fly around while inside map editor, or when having an object selected, move...",
+      "dependencies": [
+        "LSPDFR"
+      ],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.gta5-mods.com/scripts/map-editor",
+      "note": "Research Engine found 12 credible sources across 4 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-map-editor",
+      "requestedAt": "2026-07-16T05:51:21.743Z",
+      "sources": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/map-editor",
+          "domain": "gta5-mods.com",
+          "title": "Map Editor",
+          "description": "DescriptionThis is a tool reminiscent of MTA:SA Map Editor days. You have a freecam to navigate around, and you can spawn objects (with preview!), move them around with your mouse or keys. Then you can save or load your map in various formats, currently supported are XML and Simple Trainer format (objects.ini).ControlsF7 or R3 + LB - Open main menu.WASD or Left Stick - Fly around while inside map editor, or when having an object selected, move...",
+          "snippet": "",
+          "author": "Guadmaz",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/all/tags/map-editor",
+          "domain": "gta5-mods.com",
+          "title": "Latest GTA 5 Mods - Map Editor - GTA5-Mods.com",
+          "description": "",
+          "snippet": "",
+          "author": "The Breaking Bad Series",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/maps/us-canada-border-checkpoint-working",
+          "domain": "gta5-mods.com",
+          "title": "US/Canada Border Checkpoint [Map Editor]",
+          "description": "*Inspired by the popular Netflix shows \"Border Security\" about America and Canada's Front-line I created this semi-authentic checkpoint.  This is the highest detail and most functional check point mod I believe that has been made to date, I have been enjoying this map for months and I have finally decided to make it public and share it.  (If you know how to make car skins, scripts, or ped uniforms \"CBP\" \"CBSA\" it would be awesome to see these ...",
+          "snippet": "",
+          "author": "the popular Netflix shows",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/tools/map-editor-oldnapalm",
+          "domain": "gta5-mods.com",
+          "title": "Map Editor",
+          "description": "This is an update to Map Editor by @Guadmaz, uploaded with author's permission.Changelog:Version 2.17Fixed issue with ped's weaponVersion 2.16Fixed bug in object rotationUpdated peds and vehicles lists (from ScriptHookVDotNet Jun 16, 2023 update)Version 2.15BugfixesVersion 2.14Updated to work with new versions of NativeUI and ScriptHookVDotNetAdded props texture variationFixed position and rotation menu settingsSource code: https://github.com/...",
+          "snippet": "",
+          "author": "oldnapalm",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/map-editor-oldnapalm",
+          "domain": "gta5-mods.com",
+          "title": "Map Editor",
+          "description": "This is an update to Map Editor by @Guadmaz, uploaded with author's permission.Changelog:Version 2.17Fixed issue with ped's weaponVersion 2.16Fixed bug in object rotationUpdated peds and vehicles lists (from ScriptHookVDotNet Jun 16, 2023 update)Version 2.15BugfixesVersion 2.14Updated to work with new versions of NativeUI and ScriptHookVDotNetAdded props texture variationFixed position and rotation menu settingsSource code: https://github.com/...",
+          "snippet": "",
+          "author": "oldnapalm",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/gta5/videos/1099",
+          "domain": "nexusmods.com",
+          "title": "How to Install Map Editor in Gta V Complete Guide to Use Map Editor ...",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/stardewvalley/mods/18387",
+          "domain": "nexusmods.com",
+          "title": "Map Editor Extended at Stardew Valley Nexus - Mods and community",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.moddb.com/mods/map-editor/downloads/map-editor",
+          "domain": "moddb.com",
+          "title": "Map Editor file - ModDB",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/maps/dui-rbt-checkpoint-map-for-lspdfr",
+          "domain": "gta5-mods.com",
+          "title": "DUI/RBT Checkpoint Map for LSPDFR",
+          "description": "DUI/RBT CheckPoint Map V1 - a BuddaModz™ Creation The first of many GTA 5 Map Editor Maps designed specifically for use with LSPDFR and the various plugins available for use with LSPDFR. This particular map was designed for use the Patrol Toolkit by Darkmyre Gaming and Traffic control by Stealth22. See the Showcase/Demo Video: https://www.youtube.com/watch?v=SfwGeZ3SFLs Included in Version 1: → Custom Map XML file → Related screenshots and med...",
+          "snippet": "",
+          "author": "Darkmyre Gaming and Traffic control by S",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/map-editor-windows",
+          "domain": "github.com",
+          "title": "🗺️ Map Editor – Custom Map Creation Tool for GTA V",
+          "description": "Map Editor for Windows enables GTA V players to build, edit, and share custom maps with props, objects, and structures for roleplay and creative gameplay. - 🗺️ Map Editor – Custom Map Creation Tool for GTA V",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/map-editor-windows/.github",
+          "domain": "github.com",
+          "title": ".github",
+          "description": "Map Editor for Windows is a GTA V modification tool that allows players to create, edit, and save custom maps with objects, props, and structures for immersive gameplay.",
+          "snippet": "Map Editor for Windows is a GTA V modification tool that allows players to create, edit, and save custom maps with objects, props, and structures for immersive gameplay.",
+          "author": "map-editor-windows",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-11-03T00:11:58Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/simonseidel/Map-Editor-V3-BuildMigrator",
+          "domain": "github.com",
+          "title": "Map-Editor-V3-BuildMigrator",
+          "description": "This scripts migrates all of the building data in gta san andreas to the map editor v3 database.",
+          "snippet": "This scripts migrates all of the building data in gta san andreas to the map editor v3 database.",
+          "author": "simonseidel",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 4,
+          "updatedAt": "2026-02-14T04:45:31Z",
+          "score": 100
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/map-editor",
+          "domain": "gta5-mods.com",
+          "title": "Map Editor",
+          "description": "DescriptionThis is a tool reminiscent of MTA:SA Map Editor days. You have a freecam to navigate around, and you can spawn objects (with preview!), move them around with your mouse or keys. Then you can save or load your map in various formats, currently supported are XML and Simple Trainer format (objects.ini).ControlsF7 or R3 + LB - Open main menu.WASD or Left Stick - Fly around while inside map editor, or when having an object selected, move...",
+          "snippet": "",
+          "author": "Guadmaz",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/all/tags/map-editor",
+          "domain": "gta5-mods.com",
+          "title": "Latest GTA 5 Mods - Map Editor - GTA5-Mods.com",
+          "description": "",
+          "snippet": "",
+          "author": "The Breaking Bad Series",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/maps/us-canada-border-checkpoint-working",
+          "domain": "gta5-mods.com",
+          "title": "US/Canada Border Checkpoint [Map Editor]",
+          "description": "*Inspired by the popular Netflix shows \"Border Security\" about America and Canada's Front-line I created this semi-authentic checkpoint.  This is the highest detail and most functional check point mod I believe that has been made to date, I have been enjoying this map for months and I have finally decided to make it public and share it.  (If you know how to make car skins, scripts, or ped uniforms \"CBP\" \"CBSA\" it would be awesome to see these ...",
+          "snippet": "",
+          "author": "the popular Netflix shows",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/tools/map-editor-oldnapalm",
+          "domain": "gta5-mods.com",
+          "title": "Map Editor",
+          "description": "This is an update to Map Editor by @Guadmaz, uploaded with author's permission.Changelog:Version 2.17Fixed issue with ped's weaponVersion 2.16Fixed bug in object rotationUpdated peds and vehicles lists (from ScriptHookVDotNet Jun 16, 2023 update)Version 2.15BugfixesVersion 2.14Updated to work with new versions of NativeUI and ScriptHookVDotNetAdded props texture variationFixed position and rotation menu settingsSource code: https://github.com/...",
+          "snippet": "",
+          "author": "oldnapalm",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/map-editor-oldnapalm",
+          "domain": "gta5-mods.com",
+          "title": "Map Editor",
+          "description": "This is an update to Map Editor by @Guadmaz, uploaded with author's permission.Changelog:Version 2.17Fixed issue with ped's weaponVersion 2.16Fixed bug in object rotationUpdated peds and vehicles lists (from ScriptHookVDotNet Jun 16, 2023 update)Version 2.15BugfixesVersion 2.14Updated to work with new versions of NativeUI and ScriptHookVDotNetAdded props texture variationFixed position and rotation menu settingsSource code: https://github.com/...",
+          "snippet": "",
+          "author": "oldnapalm",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/gta5/videos/1099",
+          "domain": "nexusmods.com",
+          "title": "How to Install Map Editor in Gta V Complete Guide to Use Map Editor ...",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/stardewvalley/mods/18387",
+          "domain": "nexusmods.com",
+          "title": "Map Editor Extended at Stardew Valley Nexus - Mods and community",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.moddb.com/mods/map-editor/downloads/map-editor",
+          "domain": "moddb.com",
+          "title": "Map Editor file - ModDB",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/maps/dui-rbt-checkpoint-map-for-lspdfr",
+          "domain": "gta5-mods.com",
+          "title": "DUI/RBT Checkpoint Map for LSPDFR",
+          "description": "DUI/RBT CheckPoint Map V1 - a BuddaModz™ Creation The first of many GTA 5 Map Editor Maps designed specifically for use with LSPDFR and the various plugins available for use with LSPDFR. This particular map was designed for use the Patrol Toolkit by Darkmyre Gaming and Traffic control by Stealth22. See the Showcase/Demo Video: https://www.youtube.com/watch?v=SfwGeZ3SFLs Included in Version 1: → Custom Map XML file → Related screenshots and med...",
+          "snippet": "",
+          "author": "Darkmyre Gaming and Traffic control by S",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/map-editor-windows",
+          "domain": "github.com",
+          "title": "🗺️ Map Editor – Custom Map Creation Tool for GTA V",
+          "description": "Map Editor for Windows enables GTA V players to build, edit, and share custom maps with props, objects, and structures for roleplay and creative gameplay. - 🗺️ Map Editor – Custom Map Creation Tool for GTA V",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/map-editor-windows/.github",
+          "domain": "github.com",
+          "title": ".github",
+          "description": "Map Editor for Windows is a GTA V modification tool that allows players to create, edit, and save custom maps with objects, props, and structures for immersive gameplay.",
+          "snippet": "Map Editor for Windows is a GTA V modification tool that allows players to create, edit, and save custom maps with objects, props, and structures for immersive gameplay.",
+          "author": "map-editor-windows",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-11-03T00:11:58Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/simonseidel/Map-Editor-V3-BuildMigrator",
+          "domain": "github.com",
+          "title": "Map-Editor-V3-BuildMigrator",
+          "description": "This scripts migrates all of the building data in gta san andreas to the map editor v3 database.",
+          "snippet": "This scripts migrates all of the building data in gta san andreas to the map editor v3 database.",
+          "author": "simonseidel",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 4,
+          "updatedAt": "2026-02-14T04:45:31Z",
+          "score": 100
+        }
+      ]
+    },
     {
       "id": "research-complex-control",
       "name": "Complex Control",
@@ -2020,6 +2429,203 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784181062500-10085647",
+      "requestId": "expert-1784181062500-10085647",
+      "query": "Map Editor",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T05:51:21.743Z",
+      "completedAt": "2026-07-16T05:51:21.743Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 12,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/map-editor",
+          "domain": "gta5-mods.com",
+          "title": "Map Editor",
+          "description": "DescriptionThis is a tool reminiscent of MTA:SA Map Editor days. You have a freecam to navigate around, and you can spawn objects (with preview!), move them around with your mouse or keys. Then you can save or load your map in various formats, currently supported are XML and Simple Trainer format (objects.ini).ControlsF7 or R3 + LB - Open main menu.WASD or Left Stick - Fly around while inside map editor, or when having an object selected, move...",
+          "snippet": "",
+          "author": "Guadmaz",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/all/tags/map-editor",
+          "domain": "gta5-mods.com",
+          "title": "Latest GTA 5 Mods - Map Editor - GTA5-Mods.com",
+          "description": "",
+          "snippet": "",
+          "author": "The Breaking Bad Series",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/maps/us-canada-border-checkpoint-working",
+          "domain": "gta5-mods.com",
+          "title": "US/Canada Border Checkpoint [Map Editor]",
+          "description": "*Inspired by the popular Netflix shows \"Border Security\" about America and Canada's Front-line I created this semi-authentic checkpoint.  This is the highest detail and most functional check point mod I believe that has been made to date, I have been enjoying this map for months and I have finally decided to make it public and share it.  (If you know how to make car skins, scripts, or ped uniforms \"CBP\" \"CBSA\" it would be awesome to see these ...",
+          "snippet": "",
+          "author": "the popular Netflix shows",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/tools/map-editor-oldnapalm",
+          "domain": "gta5-mods.com",
+          "title": "Map Editor",
+          "description": "This is an update to Map Editor by @Guadmaz, uploaded with author's permission.Changelog:Version 2.17Fixed issue with ped's weaponVersion 2.16Fixed bug in object rotationUpdated peds and vehicles lists (from ScriptHookVDotNet Jun 16, 2023 update)Version 2.15BugfixesVersion 2.14Updated to work with new versions of NativeUI and ScriptHookVDotNetAdded props texture variationFixed position and rotation menu settingsSource code: https://github.com/...",
+          "snippet": "",
+          "author": "oldnapalm",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/map-editor-oldnapalm",
+          "domain": "gta5-mods.com",
+          "title": "Map Editor",
+          "description": "This is an update to Map Editor by @Guadmaz, uploaded with author's permission.Changelog:Version 2.17Fixed issue with ped's weaponVersion 2.16Fixed bug in object rotationUpdated peds and vehicles lists (from ScriptHookVDotNet Jun 16, 2023 update)Version 2.15BugfixesVersion 2.14Updated to work with new versions of NativeUI and ScriptHookVDotNetAdded props texture variationFixed position and rotation menu settingsSource code: https://github.com/...",
+          "snippet": "",
+          "author": "oldnapalm",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/gta5/videos/1099",
+          "domain": "nexusmods.com",
+          "title": "How to Install Map Editor in Gta V Complete Guide to Use Map Editor ...",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.nexusmods.com/stardewvalley/mods/18387",
+          "domain": "nexusmods.com",
+          "title": "Map Editor Extended at Stardew Valley Nexus - Mods and community",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.moddb.com/mods/map-editor/downloads/map-editor",
+          "domain": "moddb.com",
+          "title": "Map Editor file - ModDB",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/maps/dui-rbt-checkpoint-map-for-lspdfr",
+          "domain": "gta5-mods.com",
+          "title": "DUI/RBT Checkpoint Map for LSPDFR",
+          "description": "DUI/RBT CheckPoint Map V1 - a BuddaModz™ Creation The first of many GTA 5 Map Editor Maps designed specifically for use with LSPDFR and the various plugins available for use with LSPDFR. This particular map was designed for use the Patrol Toolkit by Darkmyre Gaming and Traffic control by Stealth22. See the Showcase/Demo Video: https://www.youtube.com/watch?v=SfwGeZ3SFLs Included in Version 1: → Custom Map XML file → Related screenshots and med...",
+          "snippet": "",
+          "author": "Darkmyre Gaming and Traffic control by S",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/map-editor-windows",
+          "domain": "github.com",
+          "title": "🗺️ Map Editor – Custom Map Creation Tool for GTA V",
+          "description": "Map Editor for Windows enables GTA V players to build, edit, and share custom maps with props, objects, and structures for roleplay and creative gameplay. - 🗺️ Map Editor – Custom Map Creation Tool for GTA V",
+          "snippet": "",
+          "author": "COMPANY SIZE",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/map-editor-windows/.github",
+          "domain": "github.com",
+          "title": ".github",
+          "description": "Map Editor for Windows is a GTA V modification tool that allows players to create, edit, and save custom maps with objects, props, and structures for immersive gameplay.",
+          "snippet": "Map Editor for Windows is a GTA V modification tool that allows players to create, edit, and save custom maps with objects, props, and structures for immersive gameplay.",
+          "author": "map-editor-windows",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2025-11-03T00:11:58Z",
+          "score": 100
+        },
+        {
+          "url": "https://github.com/simonseidel/Map-Editor-V3-BuildMigrator",
+          "domain": "github.com",
+          "title": "Map-Editor-V3-BuildMigrator",
+          "description": "This scripts migrates all of the building data in gta san andreas to the map editor v3 database.",
+          "snippet": "This scripts migrates all of the building data in gta san andreas to the map editor v3 database.",
+          "author": "simonseidel",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 4,
+          "updatedAt": "2026-02-14T04:45:31Z",
+          "score": 100
+        }
+      ]
+    },
     {
       "id": "expert-1784180098952-398cdce4",
       "requestId": "expert-1784180098952-398cdce4",
