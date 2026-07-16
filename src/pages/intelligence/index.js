@@ -61,7 +61,7 @@ export default function IntelligenceCenter() {
   return <Layout title="Sentinel Intelligence" description="Release intelligence, Plugin DNA and compatibility predictions for Project Sentinel.">
     <main className={styles.page}>
       <header className={styles.hero}><div className="container">
-        <span className={styles.eyebrow}>Build planning and verification · 2.1</span>
+        <span className={styles.eyebrow}>Operations console refinement · 2.2</span>
         <Heading as="h1">Sentinel Intelligence</Heading>
         <p>Design installation orders, verify build readiness, map dependencies, simulate change impact, compare Golden Build snapshots, and turn Watcher and Doctor evidence into one operations picture.</p>
         <div className={styles.heroActions}><Link to="/watcher">Open Watcher</Link><Link to="/compatibility">Compatibility Center</Link></div>
@@ -72,11 +72,17 @@ export default function IntelligenceCenter() {
 
         <div className={styles.sectionHeader}><div><span className={styles.eyebrow}>Change management</span><Heading as="h2">Intelligence operations console</Heading><p>Select any plugin in the graph, activity feed, impact simulator, or quality audit. Every module stays centered on the same project.</p></div></div>
         <div className={styles.operationsGrid}>
-          <div className={styles.graphPanel}><DependencyGraph snapshot={snapshot} selectedId={selectedId} onSelect={setSelectedId} /></div>
-          <ImpactSimulator snapshot={snapshot} selectedId={selectedId} onSelect={setSelectedId} />
-          <WatcherFeed profiles={snapshot.profiles} onSelect={(id) => {setSelectedId(id); setExpanded(id);}} />
-          <RegistryQuality snapshot={snapshot} onSelect={(id) => {setSelectedId(id); setExpanded(id);}} />
-          <GoldenBuildManager profiles={snapshot.profiles} />
+          <div className={styles.operationsColumns}>
+            <div className={styles.primaryColumn}>
+              <div className={styles.graphPanel}><DependencyGraph snapshot={snapshot} selectedId={selectedId} onSelect={setSelectedId} /></div>
+              <RegistryQuality snapshot={snapshot} onSelect={(id) => {setSelectedId(id); setExpanded(id);}} />
+              <GoldenBuildManager profiles={snapshot.profiles} />
+            </div>
+            <div className={styles.secondaryColumn}>
+              <ImpactSimulator snapshot={snapshot} selectedId={selectedId} onSelect={setSelectedId} />
+              <WatcherFeed profiles={snapshot.profiles} onSelect={(id) => {setSelectedId(id); setExpanded(id);}} />
+            </div>
+          </div>
           <BuildPlanner snapshot={snapshot} selectedId={selectedId} onSelect={setSelectedId} />
           <BuildVerifier snapshot={snapshot} onSelect={(id) => {setSelectedId(id); setExpanded(id);}} />
         </div>
