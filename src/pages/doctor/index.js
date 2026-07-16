@@ -8,6 +8,8 @@ import {buildDoctorContext, doctorEnvironmentFields, doctorSymptoms} from '@site
 import {analyzeRegistryContext} from '@site/src/data/doctorRegistry';
 import {validateDoctorEnvironment} from '@site/src/data/doctorEnvironment';
 import {clearExpertContext, loadExpertContext} from '@site/src/data/expertHandoff';
+import IntelligenceCase from '@site/src/components/doctor/IntelligenceCase';
+import {clearDoctorPlan, loadDoctorPlan} from '@site/src/intelligence/doctorPlanEngine';
 import styles from './styles.module.css';
 
 export default function DoctorPage() {
@@ -26,8 +28,18 @@ export default function DoctorPage() {
   const environmentAnalysis = useMemo(() => ran ? validateDoctorEnvironment(environment) : null, [ran, environment]);
   const primary = matches[0];
   const [expertContext, setExpertContext] = useState(null);
+  const [intelligencePlan, setIntelligencePlan] = useState(null);
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
+    if (params.get('from') === 'intelligence') {
+      const plan = loadDoctorPlan();
+      if (plan) {
+        setIntelligencePlan(plan);
+        setSymptom('plugin');
+        setEnvironment((current) => ({...current, lastChange: `${plan.pluginName} ${plan.detectedVersion || plan.currentVersion}`}));
+      }
+      return;
+    }
     if (params.get('from') !== 'expert') return;
     const saved = loadExpertContext();
     if (!saved) return;
@@ -54,6 +66,7 @@ export default function DoctorPage() {
     <main className={styles.page}>
       <header className={styles.hero}><div className="container"><span>Local diagnostic workstation</span><Heading as="h1">Sentinel Doctor</Heading><p>Drop in a crash log or paste the evidence. Doctor builds a causal chain, uses positive and negative evidence, and turns the diagnosis into a guided repair plan.</p></div></header>
       <section className={styles.body}><div className="container">
+        {intelligencePlan && <IntelligenceCase plan={intelligencePlan} onDismiss={() => {clearDoctorPlan(); setIntelligencePlan(null);}} />}
         {expertContext && <section className={styles.expertHandoff}><div><span>Sentinel Expert handoff</span><Heading as="h2">{expertContext.verdict}</Heading><p>{expertContext.summary}</p><small>{expertContext.projects?.length||0} project{expertContext.projects?.length===1?'':'s'} transferred · {expertContext.confidence!=null?`${expertContext.confidence}% confidence`:'confidence not scored'}</small></div><button type="button" onClick={()=>{clearExpertContext();setExpertContext(null);}}>Dismiss</button></section>}<div className={styles.privacy}><b>Private by design</b><span>Files are read locally. Sentinel Doctor does not upload or modify them.</span></div>
         <section className={styles.intakeCard}>
           <div className={styles.cardHead}><div><span>Step 1</span><Heading as="h2">Describe the failure</Heading></div><small>This context improves ranking before Doctor reads the log.</small></div>
