@@ -1,7 +1,371 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-16T05:51:21.743Z",
+  "updatedAt": "2026-07-16T06:08:06.826Z",
   "discoveries": [
+    {
+      "id": "research-better-chases",
+      "name": "Better Chases+",
+      "shortName": null,
+      "aliases": [
+        "Better Chases+",
+        "Better Chases+ Enhanced Edition",
+        "BetterChasesPlus-Enhanced",
+        "Better Chases+ Enhanced Edition V1.0 - GTA 5 mod",
+        "Better Chases+ Enhanced Edition GTA 5 Script Mod - ModsHost",
+        "Better Chases+ 1.1.2 - GTA 5 mod",
+        "[REL/WIP] Better Chases+ Enhanced Compatibility Port",
+        "Better Chases+ 1.1.2 - GTA 5 Mod Download"
+      ],
+      "category": "Research discoveries",
+      "status": "research",
+      "version": "Not verified",
+      "developer": "b3hold",
+      "impact": "Unknown",
+      "confidence": 98,
+      "identityConfidence": 98,
+      "sourceCredibility": 98,
+      "documentationConfidence": 95,
+      "compatibilityConfidence": 0,
+      "compatibilityEvidence": [],
+      "description": "BETTER CHASES PLUS - ENHANCED EDITIONBetter Chases Plus overhauls GTA V's police and wanted-level system into a deeper, more realistic experience.Progressive wanted system. Chases escalate from 1 to 5 stars based on what you actually do (fleeing, reckless driving, hitting peds or cops, drawing or firing weapons), not random chance.Realistic, proportional police response. Backup, PIT maneuvers, and lethal force are authorized in stages as a cha...",
+      "dependencies": [
+        "LemonUI"
+      ],
+      "tags": [
+        "Internet research",
+        "Pending review",
+        "Automatic discovery"
+      ],
+      "guide": null,
+      "download": "https://www.gta5-mods.com/scripts/better-chases-enhanced-edition",
+      "note": "Research Engine found 9 credible sources across 6 domains. This project was added automatically as Research and must be reviewed before compatibility approval.",
+      "sentinelPolice": false,
+      "researchDiscovered": true,
+      "researchStatus": "pending-review",
+      "profile": "/plugins/research?project=research-better-chases",
+      "requestedAt": "2026-07-16T06:08:06.826Z",
+      "sources": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/better-chases-enhanced-edition",
+          "domain": "gta5-mods.com",
+          "title": "Better Chases+ Enhanced Edition",
+          "description": "BETTER CHASES PLUS - ENHANCED EDITIONBetter Chases Plus overhauls GTA V's police and wanted-level system into a deeper, more realistic experience.Progressive wanted system. Chases escalate from 1 to 5 stars based on what you actually do (fleeing, reckless driving, hitting peds or cops, drawing or firing weapons), not random chance.Realistic, proportional police response. Backup, PIT maneuvers, and lethal force are authorized in stages as a cha...",
+          "snippet": "",
+          "author": "b3hold",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/id/scripts/better-chases",
+          "domain": "gta5-mods.com",
+          "title": "Better Chases+",
+          "description": "Better Chases+ is a continuation of Eddlm's &amp; Guadmaz's famous Better Chases and Arrest Warrants mods, with permission. Completely rewritten with maximum performance in mind and new features added.Please consider donating to support mod development, even $1 can help! DonateFeaturesRevamped Wanted Level to be a progressive system with extensive customizationA more realistic and proportional police responseArrest Warrant system that adds new...",
+          "snippet": "",
+          "author": "Daimian",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/better-chases",
+          "domain": "gta5-mods.com",
+          "title": "Better Chases+",
+          "description": "Better Chases+ is a continuation of Eddlm's &amp; Guadmaz's famous Better Chases and Arrest Warrants mods, with permission. Completely rewritten with maximum performance in mind and new features added.Please consider donating to support mod development, even $1 can help! DonateFeaturesRevamped Wanted Level to be a progressive system with extensive customizationA more realistic and proportional police responseArrest Warrant system that adds new...",
+          "snippet": "",
+          "author": "Daimian",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/saaiidd/BetterChasesPlus-Enhanced",
+          "domain": "github.com",
+          "title": "BetterChasesPlus-Enhanced",
+          "description": "Community GTA V Enhanced (SHVDNE + LemonUI) port of Better Chases+ by Daimian. Gameplay unchanged; Enhanced compatibility only.",
+          "snippet": "Community GTA V Enhanced (SHVDNE + LemonUI) port of Better Chases+ by Daimian. Gameplay unchanged; Enhanced compatibility only.",
+          "author": "saaiidd",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-26T01:43:40Z",
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/better-chases-enhanced-edition-v1-0/",
+          "domain": "gta5mod.net",
+          "title": "Better Chases+ Enhanced Edition V1.0 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://modshost.co/gta5/scripts/better-chases-enhanced-edition/",
+          "domain": "modshost.co",
+          "title": "Better Chases+ Enhanced Edition GTA 5 Script Mod - ModsHost",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/better-chases-1-0-7/",
+          "domain": "gta5mod.net",
+          "title": "Better Chases+ 1.1.2 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gtaforums.com/topic/1006254-relwip-better-chases-enhanced-compatibility-port/",
+          "domain": "gtaforums.com",
+          "title": "[REL/WIP] Better Chases+ Enhanced Compatibility Port",
+          "description": "One of my favorite Legacy script mods, Better Chases+, never worked properly on GTA V Enhanced, so I made an Enhanced compatibility port. It is now approved and live on GTA5-Mods: https://www.gta5-mods.com/scripts/better-chases-enhanced-edition Important note: This is only an Enhanced compatibili...",
+          "snippet": "",
+          "author": "b3hold",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/better-chases-1-1-2/",
+          "domain": "gta5modhub.com",
+          "title": "Better Chases+ 1.1.2 - GTA 5 Mod Download",
+          "description": "Better Chases+ is a continuation of Eddlm&#8217;s & Guadmaz&#8217;s famous Better Chases and Arrest Warrants mods, with permission. Completely rewritten with maximum performance in mind and new features added. Features Revamped Wanted Level to&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "changing clothes or painting a vehicle t",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/better-chases-enhanced-edition",
+          "domain": "gta5-mods.com",
+          "title": "Better Chases+ Enhanced Edition",
+          "description": "BETTER CHASES PLUS - ENHANCED EDITIONBetter Chases Plus overhauls GTA V's police and wanted-level system into a deeper, more realistic experience.Progressive wanted system. Chases escalate from 1 to 5 stars based on what you actually do (fleeing, reckless driving, hitting peds or cops, drawing or firing weapons), not random chance.Realistic, proportional police response. Backup, PIT maneuvers, and lethal force are authorized in stages as a cha...",
+          "snippet": "",
+          "author": "b3hold",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/id/scripts/better-chases",
+          "domain": "gta5-mods.com",
+          "title": "Better Chases+",
+          "description": "Better Chases+ is a continuation of Eddlm's &amp; Guadmaz's famous Better Chases and Arrest Warrants mods, with permission. Completely rewritten with maximum performance in mind and new features added.Please consider donating to support mod development, even $1 can help! DonateFeaturesRevamped Wanted Level to be a progressive system with extensive customizationA more realistic and proportional police responseArrest Warrant system that adds new...",
+          "snippet": "",
+          "author": "Daimian",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/better-chases",
+          "domain": "gta5-mods.com",
+          "title": "Better Chases+",
+          "description": "Better Chases+ is a continuation of Eddlm's &amp; Guadmaz's famous Better Chases and Arrest Warrants mods, with permission. Completely rewritten with maximum performance in mind and new features added.Please consider donating to support mod development, even $1 can help! DonateFeaturesRevamped Wanted Level to be a progressive system with extensive customizationA more realistic and proportional police responseArrest Warrant system that adds new...",
+          "snippet": "",
+          "author": "Daimian",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/saaiidd/BetterChasesPlus-Enhanced",
+          "domain": "github.com",
+          "title": "BetterChasesPlus-Enhanced",
+          "description": "Community GTA V Enhanced (SHVDNE + LemonUI) port of Better Chases+ by Daimian. Gameplay unchanged; Enhanced compatibility only.",
+          "snippet": "Community GTA V Enhanced (SHVDNE + LemonUI) port of Better Chases+ by Daimian. Gameplay unchanged; Enhanced compatibility only.",
+          "author": "saaiidd",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-26T01:43:40Z",
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/better-chases-enhanced-edition-v1-0/",
+          "domain": "gta5mod.net",
+          "title": "Better Chases+ Enhanced Edition V1.0 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://modshost.co/gta5/scripts/better-chases-enhanced-edition/",
+          "domain": "modshost.co",
+          "title": "Better Chases+ Enhanced Edition GTA 5 Script Mod - ModsHost",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/better-chases-1-0-7/",
+          "domain": "gta5mod.net",
+          "title": "Better Chases+ 1.1.2 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gtaforums.com/topic/1006254-relwip-better-chases-enhanced-compatibility-port/",
+          "domain": "gtaforums.com",
+          "title": "[REL/WIP] Better Chases+ Enhanced Compatibility Port",
+          "description": "One of my favorite Legacy script mods, Better Chases+, never worked properly on GTA V Enhanced, so I made an Enhanced compatibility port. It is now approved and live on GTA5-Mods: https://www.gta5-mods.com/scripts/better-chases-enhanced-edition Important note: This is only an Enhanced compatibili...",
+          "snippet": "",
+          "author": "b3hold",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/better-chases-1-1-2/",
+          "domain": "gta5modhub.com",
+          "title": "Better Chases+ 1.1.2 - GTA 5 Mod Download",
+          "description": "Better Chases+ is a continuation of Eddlm&#8217;s & Guadmaz&#8217;s famous Better Chases and Arrest Warrants mods, with permission. Completely rewritten with maximum performance in mind and new features added. Features Revamped Wanted Level to&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "changing clothes or painting a vehicle t",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/annaziarkiewicz/vue-kaleido-kubes",
+          "domain": "github.com",
+          "title": "vue-kaleido-kubes",
+          "description": "This is a classic puzzle game where you place colorful tiles so their edges match. The better the match, the more points you score. Fill the board and chase high scores against the clock.",
+          "snippet": "This is a classic puzzle game where you place colorful tiles so their edges match. The better the match, the more points you score. Fill the board and chase high scores against the clock.",
+          "author": "annaziarkiewicz",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-11T16:01:12Z",
+          "score": 57
+        },
+        {
+          "url": "https://github.com/Razzle123/82-0-bot",
+          "domain": "github.com",
+          "title": "82-0-bot",
+          "description": "A reinforcement-learning agent (hand-written DQN) that plays the browser game Better 82-0 and learns to build cliff-crossing synergy lineups under random spins — chasing the perfect 82-0 season.",
+          "snippet": "A reinforcement-learning agent (hand-written DQN) that plays the browser game Better 82-0 and learns to build cliff-crossing synergy lineups under random spins — chasing the perfect 82-0 season.",
+          "author": "Razzle123",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-09T18:24:17Z",
+          "score": 57
+        },
+        {
+          "url": "https://github.com/qithuege/wtk_lprb",
+          "domain": "github.com",
+          "title": "wtk_lprb",
+          "description": "Success is not the destination but the determination to bravely face all challenges; every step we take shapes a better version of ourselves, chasing dreams.",
+          "snippet": "Success is not the destination but the determination to bravely face all challenges; every step we take shapes a better version of ourselves, chasing dreams.",
+          "author": "qithuege",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-09T06:41:00Z",
+          "score": 57
+        }
+      ]
+    },
     {
       "id": "research-map-editor",
       "name": "Map Editor",
@@ -2429,6 +2793,204 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1784182068926-a58b2b1b",
+      "requestId": "expert-1784182068926-a58b2b1b",
+      "query": "Better Chases+",
+      "status": "resolved",
+      "requestedAt": "2026-07-16T06:08:06.826Z",
+      "completedAt": "2026-07-16T06:08:06.826Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 12,
+      "credibleCandidateCount": 9,
+      "candidates": [
+        {
+          "url": "https://www.gta5-mods.com/scripts/better-chases-enhanced-edition",
+          "domain": "gta5-mods.com",
+          "title": "Better Chases+ Enhanced Edition",
+          "description": "BETTER CHASES PLUS - ENHANCED EDITIONBetter Chases Plus overhauls GTA V's police and wanted-level system into a deeper, more realistic experience.Progressive wanted system. Chases escalate from 1 to 5 stars based on what you actually do (fleeing, reckless driving, hitting peds or cops, drawing or firing weapons), not random chance.Realistic, proportional police response. Backup, PIT maneuvers, and lethal force are authorized in stages as a cha...",
+          "snippet": "",
+          "author": "b3hold",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/id/scripts/better-chases",
+          "domain": "gta5-mods.com",
+          "title": "Better Chases+",
+          "description": "Better Chases+ is a continuation of Eddlm's &amp; Guadmaz's famous Better Chases and Arrest Warrants mods, with permission. Completely rewritten with maximum performance in mind and new features added.Please consider donating to support mod development, even $1 can help! DonateFeaturesRevamped Wanted Level to be a progressive system with extensive customizationA more realistic and proportional police responseArrest Warrant system that adds new...",
+          "snippet": "",
+          "author": "Daimian",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5-mods.com/scripts/better-chases",
+          "domain": "gta5-mods.com",
+          "title": "Better Chases+",
+          "description": "Better Chases+ is a continuation of Eddlm's &amp; Guadmaz's famous Better Chases and Arrest Warrants mods, with permission. Completely rewritten with maximum performance in mind and new features added.Please consider donating to support mod development, even $1 can help! DonateFeaturesRevamped Wanted Level to be a progressive system with extensive customizationA more realistic and proportional police responseArrest Warrant system that adds new...",
+          "snippet": "",
+          "author": "Daimian",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/saaiidd/BetterChasesPlus-Enhanced",
+          "domain": "github.com",
+          "title": "BetterChasesPlus-Enhanced",
+          "description": "Community GTA V Enhanced (SHVDNE + LemonUI) port of Better Chases+ by Daimian. Gameplay unchanged; Enhanced compatibility only.",
+          "snippet": "Community GTA V Enhanced (SHVDNE + LemonUI) port of Better Chases+ by Daimian. Gameplay unchanged; Enhanced compatibility only.",
+          "author": "saaiidd",
+          "providers": [
+            "duckduckgo",
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-06-26T01:43:40Z",
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/better-chases-enhanced-edition-v1-0/",
+          "domain": "gta5mod.net",
+          "title": "Better Chases+ Enhanced Edition V1.0 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://modshost.co/gta5/scripts/better-chases-enhanced-edition/",
+          "domain": "modshost.co",
+          "title": "Better Chases+ Enhanced Edition GTA 5 Script Mod - ModsHost",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gta5mod.net/gta-5-mods/scripts/better-chases-1-0-7/",
+          "domain": "gta5mod.net",
+          "title": "Better Chases+ 1.1.2 - GTA 5 mod",
+          "description": "",
+          "snippet": "",
+          "author": "",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://gtaforums.com/topic/1006254-relwip-better-chases-enhanced-compatibility-port/",
+          "domain": "gtaforums.com",
+          "title": "[REL/WIP] Better Chases+ Enhanced Compatibility Port",
+          "description": "One of my favorite Legacy script mods, Better Chases+, never worked properly on GTA V Enhanced, so I made an Enhanced compatibility port. It is now approved and live on GTA5-Mods: https://www.gta5-mods.com/scripts/better-chases-enhanced-edition Important note: This is only an Enhanced compatibili...",
+          "snippet": "",
+          "author": "b3hold",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://www.gta5modhub.com/better-chases-1-1-2/",
+          "domain": "gta5modhub.com",
+          "title": "Better Chases+ 1.1.2 - GTA 5 Mod Download",
+          "description": "Better Chases+ is a continuation of Eddlm&#8217;s & Guadmaz&#8217;s famous Better Chases and Arrest Warrants mods, with permission. Completely rewritten with maximum performance in mind and new features added. Features Revamped Wanted Level to&#046;&#046;&#046;",
+          "snippet": "",
+          "author": "changing clothes or painting a vehicle t",
+          "providers": [
+            "duckduckgo"
+          ],
+          "source": "web",
+          "stars": 0,
+          "updatedAt": null,
+          "score": 100
+        },
+        {
+          "url": "https://github.com/annaziarkiewicz/vue-kaleido-kubes",
+          "domain": "github.com",
+          "title": "vue-kaleido-kubes",
+          "description": "This is a classic puzzle game where you place colorful tiles so their edges match. The better the match, the more points you score. Fill the board and chase high scores against the clock.",
+          "snippet": "This is a classic puzzle game where you place colorful tiles so their edges match. The better the match, the more points you score. Fill the board and chase high scores against the clock.",
+          "author": "annaziarkiewicz",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-11T16:01:12Z",
+          "score": 57
+        },
+        {
+          "url": "https://github.com/Razzle123/82-0-bot",
+          "domain": "github.com",
+          "title": "82-0-bot",
+          "description": "A reinforcement-learning agent (hand-written DQN) that plays the browser game Better 82-0 and learns to build cliff-crossing synergy lineups under random spins — chasing the perfect 82-0 season.",
+          "snippet": "A reinforcement-learning agent (hand-written DQN) that plays the browser game Better 82-0 and learns to build cliff-crossing synergy lineups under random spins — chasing the perfect 82-0 season.",
+          "author": "Razzle123",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-09T18:24:17Z",
+          "score": 57
+        },
+        {
+          "url": "https://github.com/qithuege/wtk_lprb",
+          "domain": "github.com",
+          "title": "wtk_lprb",
+          "description": "Success is not the destination but the determination to bravely face all challenges; every step we take shapes a better version of ourselves, chasing dreams.",
+          "snippet": "Success is not the destination but the determination to bravely face all challenges; every step we take shapes a better version of ourselves, chasing dreams.",
+          "author": "qithuege",
+          "providers": [
+            "github-api"
+          ],
+          "source": "github",
+          "stars": 0,
+          "updatedAt": "2026-07-09T06:41:00Z",
+          "score": 57
+        }
+      ]
+    },
     {
       "id": "expert-1784181062500-10085647",
       "requestId": "expert-1784181062500-10085647",
