@@ -1,0 +1,12 @@
+# Default review ownership
+* @SmarshMello
+
+# Sensitive deployment and automation areas
+/.github/workflows/ @SmarshMello
+/watcher-control-worker/ @SmarshMello
+/sentinel-ai-worker/ @SmarshMello
+/scripts/ @SmarshMello
+/package.json @SmarshMello
+/package-lock.json @SmarshMello
+/docusaurus.config.js @SmarshMello
+/SECURITY.md @SmarshMello

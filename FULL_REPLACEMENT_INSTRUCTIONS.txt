@@ -1,0 +1,31 @@
+PROJECT SENTINEL — CLEAN PUBLIC RELEASE CANDIDATE
+
+IMPORTANT: This clean full package intentionally does not include:
+- .git
+- node_modules
+- .docusaurus
+- build
+- local secrets or Worker state
+
+RECOMMENDED REPLACEMENT METHOD
+1. In GitHub Desktop, select Project-Sentinel and choose Repository > Show in Explorer.
+2. Close any terminal or development server using the repository.
+3. Keep the hidden .git folder in your existing repository. Do not delete it.
+4. Delete all other files and folders from the existing repository directory.
+5. Copy everything inside this package's Project-Sentinel folder into the existing repository directory.
+6. Open GitHub Desktop and review the changes.
+7. Commit with: Prepare Project Sentinel public release candidate
+8. Push origin and confirm the Pages workflow succeeds.
+
+ALTERNATIVE
+Create a fresh folder from this package, then clone the GitHub repository separately and copy these files into the clone. Never upload or distribute your .git folder as part of a release ZIP.
+
+BEFORE PUBLISHING
+Run:
+  npm ci --no-audit --no-fund
+  npm run test:intelligence
+  npm run test:doctor
+  npm run security:audit
+  npm run build
+
+Review PUBLIC_RELEASE_CHECKLIST.md for the final GitHub settings and route checks.

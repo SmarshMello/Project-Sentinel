@@ -85,7 +85,6 @@ You should see JSON containing `"ok": true`.
 
 ```js
 customFields: {
-  paypalUrl: '',
   kofiUrl: '',
   watcherControlEndpoint: '',
 },
@@ -95,7 +94,6 @@ customFields: {
 
 ```js
 customFields: {
-  paypalUrl: '',
   kofiUrl: '',
   watcherControlEndpoint: 'https://project-sentinel-watcher-control.YOUR-SUBDOMAIN.workers.dev',
 },
