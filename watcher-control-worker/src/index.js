@@ -38,6 +38,25 @@ async function github(env, path, options = {}) {
   });
 }
 
+
+function isAllowedOrigin(origin, env) {
+  const allowed = env.ALLOWED_ORIGIN || 'https://smarshmello.github.io';
+  return !origin || origin === allowed;
+}
+
+async function researchRateLimit(request, env, query) {
+  const ip = request.headers.get('cf-connecting-ip') || 'unknown';
+  const bucket = Math.floor(Date.now() / (10 * 60 * 1000));
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${ip}:${bucket}:${query.toLowerCase()}`));
+  const key = [...new Uint8Array(digest)].slice(0, 12).map(x => x.toString(16).padStart(2, '0')).join('');
+  const cache = caches.default;
+  const cacheUrl = new URL(`/research-limit/${key}`, request.url);
+  const cached = await cache.match(cacheUrl.toString());
+  if (cached) return false;
+  await cache.put(cacheUrl.toString(), new Response('1', {headers: {'cache-control': 'public, max-age=600'}}));
+  return true;
+}
+
 function requireAdmin(request, env) {
   const supplied = request.headers.get('x-watcher-key') || '';
   return Boolean(env.WATCHER_ADMIN_KEY) && supplied === env.WATCHER_ADMIN_KEY;
@@ -112,10 +131,14 @@ export default {
 
 
       if (url.pathname === '/research' && request.method === 'POST') {
-        if (!requireAdmin(request, env)) return json({error: 'Watcher admin key required to submit research.'}, 401, env, origin);
+        if (!isAllowedOrigin(origin, env)) return json({error: 'Research requests are only accepted from the Project Sentinel website.'}, 403, env, origin);
         const body = await request.json().catch(() => ({}));
         const query = String(body.query || '').trim().replace(/\s+/g, ' ');
         if (query.length < 3 || query.length > 120) return json({error: 'Research query must be 3–120 characters.'}, 400, env, origin);
+        const isAdmin = requireAdmin(request, env);
+        if (!isAdmin && !(await researchRateLimit(request, env, query))) {
+          return json({error: 'This project was already submitted recently. Please wait before trying again.'}, 429, env, origin);
+        }
         const suppliedRequestId = String(body.requestId || '').trim();
         const requestId = /^[a-zA-Z0-9_-]{8,100}$/.test(suppliedRequestId)
           ? suppliedRequestId
@@ -136,7 +159,7 @@ export default {
 
 
       if (url.pathname === '/research-result' && request.method === 'GET') {
-        if (!requireAdmin(request, env)) return json({error: 'Watcher admin key required.'}, 401, env, origin);
+        if (!isAllowedOrigin(origin, env)) return json({error: 'Research results are only available to Project Sentinel.'}, 403, env, origin);
         const requestId = String(url.searchParams.get('requestId') || '').trim();
         if (!requestId) return json({error: 'requestId is required.'}, 400, env, origin);
         const response = await github(env, '/contents/static/data/research-results.json?ref=main');
@@ -151,9 +174,11 @@ export default {
       }
 
       if (url.pathname === '/status' && request.method === 'GET') {
-        if (!requireAdmin(request, env)) return json({error: 'Invalid Watcher admin key.'}, 401, env, origin);
         const runId = url.searchParams.get('runId');
         const scanId = url.searchParams.get('scanId');
+        const isResearchStatus = Boolean(scanId && scanId.startsWith('research-'));
+        if (!isResearchStatus && !requireAdmin(request, env)) return json({error: 'Invalid Watcher admin key.'}, 401, env, origin);
+        if (isResearchStatus && !isAllowedOrigin(origin, env)) return json({error: 'Research status is only available to Project Sentinel.'}, 403, env, origin);
         let run = null;
         if (runId) {
           const response = await github(env, `/actions/runs/${encodeURIComponent(runId)}`);

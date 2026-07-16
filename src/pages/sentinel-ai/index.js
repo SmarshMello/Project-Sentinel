@@ -122,7 +122,6 @@ function App(){
   async function submitResearch(projectName=r?.unknownProject,question=q){
     if(!projectName||!controlEndpoint)return setResearchState({phase:'failed',percent:100,message:'Sentinel control endpoint is unavailable.',activeStep:'Research not started',runUrl:null});
     const key=window.sessionStorage.getItem('sentinel-watcher-admin-key')||'';
-    if(!key)return setResearchState({phase:'key-needed',percent:0,message:'Open Watcher once and enter the private admin key, then return and search again.',activeStep:'Admin key required',runUrl:null});
     const normalized=normalizeResearchQuery(projectName);
     let stored=null;try{stored=JSON.parse(window.sessionStorage.getItem(researchStorageKey)||'null');}catch{}
     const existing=activeResearch.current||(stored&&stored.normalized===normalized&&Date.now()-stored.requestedAt<15*60*1000?stored:null);
@@ -141,15 +140,16 @@ function App(){
     setResearchState({phase:'queued',percent:2,message:`Sending “${projectName}” to Sentinel Research…`,activeStep:'Submitting one uniquely identified research request',runUrl:null});
     try{
       const response=await fetch(`${controlEndpoint}/research`,{method:'POST',headers:{'content-type':'application/json','x-watcher-key':key},body:JSON.stringify({query:projectName,question,requestId})});
-      if(!response.ok)throw new Error('research');
+      if(!response.ok){const detail=await response.json().catch(()=>({}));throw new Error(detail.error||'research');}
       const payload=await response.json();
       const active={...pending,requestId:payload.requestId||requestId,scanId:payload.scanId};
       activeResearch.current=active;window.sessionStorage.setItem(researchStorageKey,JSON.stringify(active));
       setResearchState({phase:'queued',percent:3,message:payload.reused?'An identical Watcher request is already active. Reconnecting without launching another run.':'Research request accepted. Waiting for GitHub Actions to start.',activeStep:payload.reused?'Duplicate prevented — using existing run':'Sentinel Research queued',runUrl:null});
       await monitorResearch(active.scanId,active.requestId,projectName,question,requestedAt,token,key);
-    }catch{
+    }catch(error){
       activeResearch.current=null;window.sessionStorage.removeItem(researchStorageKey);
-      setResearchState({phase:'failed',percent:100,message:'The research request could not be queued. Verify the Worker deployment and Watcher key.',activeStep:'Submission failed',runUrl:null});
+      const message=String(error?.message||'');
+      setResearchState({phase:'failed',percent:100,message:message&&message!=='research'?message:'The research request could not be queued. Verify the Worker deployment.',activeStep:'Submission failed',runUrl:null});
     }
   }
   function ask(v=q){const clean=v.trim();if(!clean)return;pollToken.current+=1;setResearchState({phase:'idle',percent:0,message:'',activeStep:null,runUrl:null});const ans=evaluate(clean);if(ans.type==='unknown'){window.setTimeout(()=>submitResearch(ans.unknownProject,clean),0);}}
