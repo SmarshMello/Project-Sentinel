@@ -1,0 +1,14 @@
+Project Sentinel 6.3 changed files
+
+Replace these paths in the repository:
+- docusaurus.config.js
+- package.json
+- package-lock.json
+- scripts/security-audit.mjs
+- scripts/sentinel-research.mjs
+- static/data/research-results.json
+- watcher-control-worker/src/index.js
+- watcher-control-worker/.dev.vars.example
+- PUBLIC_RELEASE_CHECKLIST.md
+- PROJECT_SENTINEL_6_3_HANDOFF.md
+- CHANGED_FILES_6_3.txt

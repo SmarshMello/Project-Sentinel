@@ -8,6 +8,9 @@ function cors(env, origin) {
     'access-control-allow-headers': 'content-type,x-watcher-key',
     'access-control-max-age': '86400',
     vary: 'Origin',
+    'x-content-type-options': 'nosniff',
+    'referrer-policy': 'no-referrer',
+    'cache-control': 'no-store',
   };
 }
 
@@ -44,10 +47,10 @@ function isAllowedOrigin(origin, env) {
   return !origin || origin === allowed;
 }
 
-async function researchRateLimit(request, env, query) {
+async function researchRateLimit(request, env) {
   const ip = request.headers.get('cf-connecting-ip') || 'unknown';
   const bucket = Math.floor(Date.now() / (10 * 60 * 1000));
-  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${ip}:${bucket}:${query.toLowerCase()}`));
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${ip}:${bucket}`));
   const key = [...new Uint8Array(digest)].slice(0, 12).map(x => x.toString(16).padStart(2, '0')).join('');
   const cache = caches.default;
   const cacheUrl = new URL(`/research-limit/${key}`, request.url);
@@ -124,7 +127,7 @@ export default {
         });
         if (!response.ok) {
           const detail = await response.text();
-          return json({error: `GitHub rejected the scan request (${response.status}).`, detail}, 502, env, origin);
+          return json({error: `GitHub rejected the scan request (${response.status}).`}, 502, env, origin);
         }
         return json({ok: true, scanId, status: 'queued'}, 202, env, origin);
       }
@@ -136,7 +139,7 @@ export default {
         const query = String(body.query || '').trim().replace(/\s+/g, ' ');
         if (query.length < 3 || query.length > 120) return json({error: 'Research query must be 3–120 characters.'}, 400, env, origin);
         const isAdmin = requireAdmin(request, env);
-        if (!isAdmin && !(await researchRateLimit(request, env, query))) {
+        if (!isAdmin && !(await researchRateLimit(request, env))) {
           return json({error: 'This project was already submitted recently. Please wait before trying again.'}, 429, env, origin);
         }
         const suppliedRequestId = String(body.requestId || '').trim();
@@ -153,7 +156,7 @@ export default {
           method: 'POST', headers: {'content-type': 'application/json'},
           body: JSON.stringify({ref: 'main', inputs: {research_query: query, research_request_id: requestId, original_question: String(body.question || '').slice(0, 500), publish_site: body.publishSite === false ? 'false' : 'true'}}),
         });
-        if (!response.ok) return json({error: `GitHub rejected the research request (${response.status}).`, detail: await response.text()}, 502, env, origin);
+        if (!response.ok) return json({error: `GitHub rejected the research request (${response.status}).`}, 502, env, origin);
         return json({ok: true, reused: false, requestId, scanId, query, status: 'queued'}, 202, env, origin);
       }
 
@@ -165,7 +168,7 @@ export default {
           method: 'POST', headers: {'content-type': 'application/json'},
           body: JSON.stringify({ref: 'main'}),
         });
-        if (!response.ok) return json({error: `GitHub rejected the publish request (${response.status}).`, detail: await response.text()}, 502, env, origin);
+        if (!response.ok) return json({error: `GitHub rejected the publish request (${response.status}).`}, 502, env, origin);
         return json({ok: true, status: 'queued'}, 202, env, origin);
       }
 

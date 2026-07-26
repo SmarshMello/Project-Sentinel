@@ -25,6 +25,7 @@ const decodeEntities = (value = '') => String(value)
   .replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'")
   .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#x2F;/g, '/');
 const stripTags = (value = '') => decodeEntities(String(value).replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
+const limitText = (value = '', max = 1200) => stripTags(value).slice(0, max);
 const generic = new Set(['mod', 'plugin', 'police', 'lspdfr', 'gta', 'gta5', 'gtav', 'grand', 'theft', 'auto', 'v', 'for', 'and', 'with', 'the', 'download', 'script']);
 const queryTokens = norm(query).split(' ').filter((token) => token.length > 1 && !generic.has(token));
 const exactQuery = norm(query);
@@ -249,10 +250,10 @@ for (const item of preliminary) {
   enriched.push({
     url: finalUrl,
     domain: domainOf(finalUrl),
-    title: metadata.title || item.title || query,
-    description: metadata.description || item.snippets?.[0] || '',
-    snippet: item.snippets?.join(' ') || '',
-    author: metadata.author || '',
+    title: limitText(metadata.title || item.title || query, 240),
+    description: limitText(metadata.description || item.snippets?.[0] || '', 1200),
+    snippet: limitText(item.snippets?.join(' ') || '', 1200),
+    author: limitText(metadata.author || '', 120),
     providers: item.providers,
     source: item.github ? 'github' : 'web',
     stars: item.github?.stargazers_count || 0,
@@ -262,6 +263,7 @@ for (const item of preliminary) {
 
 const relevantDomains = new Set(enriched.filter((item) => tokenOverlap(`${item.title} ${item.description} ${item.url}`) >= 0.7).map((item) => item.domain));
 const candidates = enriched
+  .filter((candidate) => /^https?:\/\//i.test(candidate.url) && candidate.domain)
   .map((candidate) => ({...candidate, score: scoreCandidate(candidate, relevantDomains.size)}))
   .sort((a, b) => b.score - a.score)
   .slice(0, 12);

@@ -57,6 +57,7 @@ const config = {
           {to: '/sentinel-ai', label: 'Expert System', description: 'Use advanced build reasoning tools'},
         ]},
         {to: '/help', label: 'Help', position: 'left'},
+        {to: '/donate', label: 'Donate', position: 'left'},
         {type: 'search', position: 'right'},
         {href: 'https://github.com/SmarshMello/Project-Sentinel', label: 'GitHub', position: 'right'},
       ],
