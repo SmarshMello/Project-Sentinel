@@ -50,3 +50,9 @@ Thumbs.db
 *.rar
 *.tar
 *.tar.gz
+
+# Local Git history must never be included in release archives
+.git/
+
+# Generated public compatibility folder from older packaging flows
+public/

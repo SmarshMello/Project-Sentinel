@@ -8,8 +8,5 @@
     "GITHUB_REPO": "Project-Sentinel",
     "WORKFLOW_FILE": "sentinel-watcher.yml",
     "ALLOWED_ORIGIN": "https://smarshmello.github.io"
-  },
-  "secrets": {
-    "required": ["GITHUB_TOKEN", "WATCHER_ADMIN_KEY"]
   }
 }

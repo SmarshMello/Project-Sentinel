@@ -24,39 +24,68 @@ on:
 
 permissions:
   contents: write
-  actions: write
 
 concurrency:
-  group: sentinel-research-${{ inputs.research_request_id }}
+  group: sentinel-research-${{ github.run_id }}
   cancel-in-progress: false
 
 jobs:
   research:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      SENTINEL_RESEARCH_QUERY: ${{ inputs.research_query }}
+      SENTINEL_RESEARCH_REQUEST_ID: ${{ inputs.research_request_id }}
+      SENTINEL_RESEARCH_QUESTION: ${{ inputs.original_question }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
+
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
           node-version: 22
+
+      - name: Validate request fields
+        run: |
+          node <<'NODE'
+          const query = process.env.SENTINEL_RESEARCH_QUERY || '';
+          const requestId = process.env.SENTINEL_RESEARCH_REQUEST_ID || '';
+          const question = process.env.SENTINEL_RESEARCH_QUESTION || '';
+          if (!query.trim() || query.length > 160) throw new Error('Research query must be 1-160 characters.');
+          if (!/^[A-Za-z0-9._-]{1,96}$/.test(requestId)) throw new Error('Invalid research request identifier.');
+          if (question.length > 1200) throw new Error('Original question is too long.');
+          NODE
+
       - name: Search the public web and evaluate candidate sources
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SENTINEL_RESEARCH_QUERY: ${{ inputs.research_query }}
-          SENTINEL_RESEARCH_REQUEST_ID: ${{ inputs.research_request_id }}
-          SENTINEL_RESEARCH_QUESTION: ${{ inputs.original_question }}
         run: node scripts/sentinel-research.mjs
+
       - name: Add research summary
         if: always()
         run: |
-          echo "## Sentinel Research" >> "$GITHUB_STEP_SUMMARY"
-          echo "**Query:** ${{ inputs.research_query }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "**Request:** ${{ inputs.research_request_id }}" >> "$GITHUB_STEP_SUMMARY"
-          node -e "const d=require('./static/data/research-results.json'); const r=(d.requests||[]).find(x=>x.requestId==='${{ inputs.research_request_id }}'); console.log(r ? '\n**Status:** '+r.status+'\n\n**Candidates:** '+r.candidateCount+'\n\n**Credible:** '+r.credibleCandidateCount : '\nNo published request record found.')" >> "$GITHUB_STEP_SUMMARY"
+          node <<'NODE' >> "$GITHUB_STEP_SUMMARY"
+          const fs = require('node:fs');
+          const requestId = process.env.SENTINEL_RESEARCH_REQUEST_ID || '';
+          const query = process.env.SENTINEL_RESEARCH_QUERY || '';
+          let data = {requests: []};
+          try { data = JSON.parse(fs.readFileSync('static/data/research-results.json', 'utf8')); } catch {}
+          const record = (data.requests || []).find(item => item.requestId === requestId);
+          console.log('## Sentinel Research');
+          console.log(`**Query:** ${query.replace(/[\r\n]/g, ' ')}`);
+          console.log(`**Request:** ${requestId}`);
+          if (record) {
+            console.log(`\n**Status:** ${record.status}`);
+            console.log(`\n**Candidates:** ${record.candidateCount}`);
+            console.log(`\n**Credible:** ${record.credibleCandidateCount}`);
+          } else {
+            console.log('\nNo published request record found.');
+          }
+          NODE
+
       - name: Publish research findings
         if: success()
         run: |
@@ -66,19 +95,21 @@ jobs:
           if git diff --cached --quiet; then
             echo "No research data changes to publish."
           else
-            git commit -m "chore(research): publish ${{ inputs.research_query }} findings"
+            git commit -m "chore(research): publish validated findings"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
+
       - name: Publish updated research website
         if: success() && inputs.publish_site == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run deploy.yml --ref main
+
       - name: Upload research result
         if: always()
         uses: actions/upload-artifact@v6
         with:
-          name: sentinel-research-${{ inputs.research_request_id }}
+          name: sentinel-research-${{ github.run_id }}
           path: static/data/research-results.json
           retention-days: 30
