@@ -7,6 +7,7 @@ import StatusPill from '@site/src/components/StatusPill';
 import {compatibilityCategories, compatibilityRows, compatibilityStatuses} from '@site/src/data/compatibility';
 import {registry, resolveDependency} from '@site/src/data/registry';
 import styles from './styles.module.css';
+import {platformState} from '@site/src/data/platform';
 
 const Icon = ({name}) => {
   const paths = {
@@ -43,7 +44,7 @@ export default function CompatibilityPage() {
   const goldenCount = compatibilityRows.filter((row) => row.goldenBuild).length;
 
   return (
-    <Layout title="Compatibility Center" description="Project Sentinel compatibility matrix for the current verified GTA V Legacy LSPDFR build.">
+    <Layout title="Compatibility Center" description="Project Sentinel compatibility matrix for the current GTA V Legacy candidate build and archived baselines.">
       <main className={styles.page}>
         <header className={styles.hero}>
           <div className="container">
@@ -52,7 +53,7 @@ export default function CompatibilityPage() {
                 <div className={styles.eyebrow}><span/>Compatibility intelligence</div>
                 <Heading as="h1">Compatibility <em>Center</em></Heading>
                 <p className={styles.lead}>See what is verified, what is still being tested, and what belongs in the current Project Sentinel Golden Build.</p>
-                <div className={styles.baseline}><Icon name="shield"/><div><span>Current baseline</span><strong>Legacy 3788 · RPH 1.130 · LSPDFR 0.4.9</strong></div></div>
+                <div className={styles.baseline}><Icon name="shield"/><div><span>Current candidate baseline</span><strong>Legacy {platformState.current.gameBuild} · RPH 1.131 · LSPDFR build {platformState.current.lspdfrBuild}</strong></div></div>
               </div>
               <div className={styles.summaryPanel}>
                 <div><span>Tracked components</span><strong>{compatibilityRows.length}</strong></div>
@@ -88,7 +89,7 @@ export default function CompatibilityPage() {
 
             <div className={styles.tableWrap}>
               <table className={styles.matrixTable}>
-                <thead><tr><th>Component</th><th>Version</th><th>Legacy 3788</th><th>Golden Build</th><th>Impact</th><th>Status</th><th>Confidence</th><th/></tr></thead>
+                <thead><tr><th>Component</th><th>Version</th><th>3788 historical</th><th>Golden Build</th><th>Impact</th><th>Status</th><th>Confidence</th><th/></tr></thead>
                 <tbody>{filtered.map((row) => <tr key={row.id}>
                   <td><strong>{row.component}</strong><span>{row.category}</span><small>{row.note}</small></td>
                   <td>{row.version}</td>
@@ -105,7 +106,7 @@ export default function CompatibilityPage() {
             <div className={styles.mobileCards}>{filtered.map((row) => <article className={styles.mobileCard} key={row.id}>
               <div className={styles.mobileTop}><div><span>{row.category}</span><Heading as="h2">{row.component}</Heading></div><StatusPill label={compatibilityStatuses[row.status].label} tone={toneMap[row.status]}/></div>
               <p>{row.note}</p>
-              <dl><div><dt>Version</dt><dd>{row.version}</dd></div><div><dt>Legacy 3788</dt><dd>{row.legacy3788}</dd></div><div><dt>Golden Build</dt><dd>{row.goldenBuild ? 'Included' : 'Not included'}</dd></div><div><dt>Impact</dt><dd>{row.impact}</dd></div></dl>
+              <dl><div><dt>Version</dt><dd>{row.version}</dd></div><div><dt>3788 historical</dt><dd>{row.legacy3788}</dd></div><div><dt>Golden Build</dt><dd>{row.goldenBuild ? 'Included' : 'Not included'}</dd></div><div><dt>Impact</dt><dd>{row.impact}</dd></div></dl>
               <div className={styles.mobileConfidence}><span>Verification confidence</span><strong>{row.confidence}%</strong><i><b style={{width:`${row.confidence}%`}}/></i></div>
               <Link className={styles.mobileGuide} to={row.guide}>Open guide <Icon name="arrow"/></Link>
             </article>)}</div>
@@ -118,7 +119,7 @@ export default function CompatibilityPage() {
           <div className="container">
             <div className={styles.dependencyHead}><div><div className={styles.eyebrow}><span/>Relationship map</div><Heading as="h2">Dependency intelligence</Heading><p>Core relationships pulled from Sentinel's unified plugin registry. Select any connected component to inspect its verified guide.</p></div><Link to="/operations/projects">Browse all profiles →</Link></div>
             <div className={styles.graphShell}>
-              <div className={styles.graphLevel}><div className={styles.graphNode}><span>Game baseline</span><strong>GTA V Legacy 3788</strong></div></div>
+              <div className={styles.graphLevel}><div className={styles.graphNode}><span>Game baseline</span><strong>GTA V Legacy {platformState.current.gameBuild}</strong></div></div>
               <div className={styles.graphConnector}/>
               <div className={styles.graphLevel}><Link className={styles.graphNode} to="/plugins/rage-plugin-hook"><span>Runtime</span><strong>RAGE Plugin Hook</strong></Link><Link className={styles.graphNode} to="/plugins/openiv"><span>Archive platform</span><strong>OpenIV</strong></Link><Link className={styles.graphNode} to="/plugins/scripthookv"><span>ASI runtime</span><strong>Script Hook V</strong></Link></div>
               <div className={styles.graphConnector}/>

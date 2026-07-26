@@ -38,6 +38,7 @@ export default function Watcher() {
   const historyUrl = useBaseUrl('/data/watcher-history.json');
   const [report, setReport] = useState(null);
   const [reportError, setReportError] = useState('');
+  const [reportState, setReportState] = useState('loading');
   const [history, setHistory] = useState({scans: []});
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState('review');
@@ -57,7 +58,9 @@ export default function Watcher() {
       const response = await fetch(`${reportUrl}?t=${Date.now()}`, {cache: 'no-store'});
       if (!response.ok) throw new Error(`Report returned HTTP ${response.status}`);
       const nextReport = await response.json();
+      if (!nextReport || typeof nextReport.checkedAt !== 'string' || !nextReport.counts || !Array.isArray(nextReport.items)) throw new Error('Report schema is invalid');
       setReport(nextReport);
+      setReportState(Date.now()-new Date(nextReport.checkedAt).getTime()>36*60*60*1000?'stale-report':'valid');
       setReportError('');
       try {
         const historyResponse = await fetch(`${historyUrl}?t=${Date.now()}`, {cache: 'no-store'});
@@ -66,7 +69,7 @@ export default function Watcher() {
       return nextReport;
     } catch (error) {
       setReportError(error instanceof Error ? error.message : 'Could not load the report.');
-      setReport((current) => current || {counts: {}, items: [], reviewQueue: []});
+      setReportState('fetch-failed');
       return null;
     }
   }, [reportUrl, historyUrl]);
@@ -290,7 +293,8 @@ export default function Watcher() {
             {runError && <div className={styles.error}>{runError}</div>}
           </div>
 
-          <div className={styles.notice}><b>Daily intelligence automation</b><span>Watcher now scans every day, assigns risk and confidence, recommends the next action, and never treats a timeout or bot block as proof that a mod is dead.</span></div>
+          {reportState!=='valid' && <div className={styles.error}><b>Published report unavailable</b><span>{reportState==='stale-report'?'The last report is older than 36 hours.':'Watcher control is connected, but ecosystem changes and review status are unknown until a valid report loads.'} {reportError}</span></div>}
+          <div className={styles.notice}><b>Daily intelligence automation</b><span>Watcher runs every day, assigns risk and confidence, recommends the next action, and never treats a timeout or bot block as proof that a mod is dead.</span></div>
 
           <div className={styles.intelligenceGrid}>
             <article>
@@ -310,12 +314,12 @@ export default function Watcher() {
                 <div><span className={styles.panelLabel}>Since the previous scan</span><Heading as="h2">What changed</Heading></div>
                 <strong>{changes.length}</strong>
               </div>
-              {changes.length ? <div className={styles.changeList}>{changes.slice(0, 6).map((change, index) => (
+              {!report ? <div className={styles.quietState}>No valid report is loaded; change status is unknown.</div> : changes.length ? <div className={styles.changeList}>{changes.slice(0, 6).map((change, index) => (
                 <div key={`${change.id}-${change.type}-${index}`}>
                   <span className={`${styles.changeType} ${styles[change.priority] || ''}`}>{change.type.replaceAll('-', ' ')}</span>
                   <div><b>{change.name}</b><small>{change.summary}</small></div>
                 </div>
-              ))}</div> : <div className={styles.quietState}>No meaningful changes were detected. The ecosystem matches the previous published scan.</div>}
+              ))}</div> : <div className={styles.quietState}>The valid published report contains no meaningful changes.</div>}
               {changes.length > 6 && <small className={styles.moreChanges}>+{changes.length - 6} more changes are included in the records below.</small>}
             </article>
             <article className={styles.historyCard}>
@@ -341,7 +345,7 @@ export default function Watcher() {
             <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search monitored projects…" />
             <select value={filter} onChange={(event) => setFilter(event.target.value)}>{FILTERS.map((value) => <option key={value} value={value}>{value === 'review' ? 'Needs review' : value === 'all' ? 'All tracked' : STATUS_LABELS[value]}</option>)}</select>
           </div>
-          <div className={styles.meta}>Latest published scan: {report?.checkedAt ? new Date(report.checkedAt).toLocaleString() : 'Loading…'} · Showing {items.length} records · Watcher {report?.watcherVersion || '—'} · Average health {report?.averageHealth ?? '—'}% · Runtime {report?.durationSeconds ?? '—'}s</div>
+          <div className={styles.meta}>Latest published scan: {report?.checkedAt ? new Date(report.checkedAt).toLocaleString() : reportState==='loading' ? 'Loading…' : 'Unavailable'} · Showing {items.length} records · Watcher {report?.watcherVersion || '—'} · Average health {report?.averageHealth ?? '—'}% · Runtime {report?.durationSeconds ?? '—'}s</div>
           {reportError && <div className={styles.error}>Dashboard data could not load: {reportError}</div>}
           <div className={styles.list}>{items.map((item) => (
             <article key={item.id}>

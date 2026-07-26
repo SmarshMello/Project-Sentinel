@@ -4,7 +4,7 @@ import SentinelIcon from '@site/src/components/SentinelIcon';
 import StatusPill from '@site/src/components/StatusPill';
 import styles from './styles.module.css';
 
-export default function VersionPanel({title='Legacy 3788', subtitle='Last validation snapshot: July 2026', rows=[]}) {
+export default function VersionPanel({title='Legacy 3889 candidate', subtitle='Official core release: July 2026 · full-stack validation pending', rows=[]}) {
   return (
     <aside className={styles.panel} aria-label="Current verified build status">
       <div className={styles.topbar}><div className={styles.dots}><i/><i/><i/></div><span>SENTINEL_BUILD_STATUS</span><StatusPill compact>Verified</StatusPill></div>

@@ -1,0 +1,20 @@
+name: Sentinel Publication Health
+on:
+  workflow_run:
+    workflows: ["Deploy Docusaurus to GitHub Pages"]
+    types: [completed]
+  workflow_dispatch:
+  schedule:
+    - cron: '47 10 * * *'
+jobs:
+  verify:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: {node-version: 22}
+      - name: Wait for Pages edge propagation
+        run: sleep 30
+      - name: Verify public routes and Watcher schema
+        run: node scripts/verify-publication.mjs

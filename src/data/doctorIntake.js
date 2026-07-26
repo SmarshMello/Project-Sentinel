@@ -8,9 +8,9 @@ export const doctorSymptoms = [
 ];
 
 export const doctorEnvironmentFields = [
-  {id:'gta', label:'GTA build', placeholder:'Example: Legacy 1.0.3788.0'},
-  {id:'rph', label:'RAGE Plugin Hook', placeholder:'Example: 1.130.1406.17682'},
-  {id:'lspdfr', label:'LSPDFR', placeholder:'Example: 0.4.9 / 0.4.9572'},
+  {id:'gta', label:'GTA build', placeholder:'Example: Legacy 1.0.3889.0'},
+  {id:'rph', label:'RAGE Plugin Hook', placeholder:'Example: 1.131.1411.17718'},
+  {id:'lspdfr', label:'LSPDFR', placeholder:'Example: 0.4.9 / build 9695'},
   {id:'lastChange', label:'Last change made', placeholder:'Example: Updated RAGENativeUI'},
 ];
 

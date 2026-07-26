@@ -1,12 +1,12 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "sources": [
     {
       "id": "lspdfr",
       "name": "LSPD First Response",
       "category": "Core & loaders",
       "url": "https://www.lcpdfr.com/downloads/gta5mods/g17media/7792-lspd-first-response/",
-      "expectedVersion": "0.4.9 / 0.4.9572",
+      "expectedVersion": "0.4.9 / build 9695",
       "currentStatus": "verified",
       "sentinelPolice": true
     },
@@ -24,7 +24,7 @@
       "name": "Script Hook V",
       "category": "Core & loaders",
       "url": "http://www.dev-c.com/gtav/scripthookv/",
-      "expectedVersion": "Legacy 3788 compatible",
+      "expectedVersion": "3889-compatible official release",
       "currentStatus": "verified",
       "sentinelPolice": true
     },
@@ -33,7 +33,7 @@
       "name": "RAGENativeUI",
       "category": "Libraries & utilities",
       "url": "https://github.com/alexguirre/RAGENativeUI/releases",
-      "expectedVersion": "Newest official release",
+      "expectedVersion": "1.9.3",
       "currentStatus": "verified",
       "sentinelPolice": true
     },
@@ -233,6 +233,96 @@
       "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/13865-emergency-lighting-system/",
       "expectedVersion": "1.05",
       "currentStatus": "community",
+      "sentinelPolice": false
+    },
+    {
+      "id": "lspdfr-title-update",
+      "name": "LSPDFR Title Update Compatibility",
+      "category": "Core & loaders",
+      "url": "https://www.lcpdfr.com/wiki/gta5/modding-after-title-update/",
+      "expectedVersion": "Legacy 3889 / build 9695",
+      "currentStatus": "verified",
+      "sentinelPolice": true
+    },
+    {
+      "id": "lcpdfr-latest-scripts",
+      "name": "LCPDFR Latest Scripts Discovery Feed",
+      "category": "Discovery feeds",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/",
+      "expectedVersion": "Discovery feed",
+      "currentStatus": "research",
+      "sentinelPolice": false
+    },
+    {
+      "id": "rph-log-analyzer",
+      "name": "RAGE Plugin Hook Log Analyzer",
+      "category": "Diagnostic tools",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/misc/",
+      "expectedVersion": "1.6.0",
+      "currentStatus": "research",
+      "sentinelPolice": false
+    },
+    {
+      "id": "ambient-detective-mode",
+      "name": "Ambient Detective Mode - Revamped",
+      "category": "Investigations",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/53190-ambient-detective-mode-revamped/",
+      "expectedVersion": "3.1.1",
+      "currentStatus": "research",
+      "sentinelPolice": false
+    },
+    {
+      "id": "realistic-traffic-ai",
+      "name": "Realistic Traffic AI",
+      "category": "Traffic AI",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/51788-realistic-traffic-ai/",
+      "expectedVersion": "1.2.0.0",
+      "currentStatus": "research",
+      "sentinelPolice": false
+    },
+    {
+      "id": "apx-radio-ui",
+      "name": "ApxRadio UI",
+      "category": "Communications",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/54813-apxradio-ui/",
+      "expectedVersion": "1.2.1",
+      "currentStatus": "research",
+      "sentinelPolice": false
+    },
+    {
+      "id": "chillls-callouts",
+      "name": "ChillLSCallouts",
+      "category": "Callout packs",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/54569-chilllscallouts/",
+      "expectedVersion": "Active development",
+      "currentStatus": "research",
+      "sentinelPolice": false
+    },
+    {
+      "id": "traffic-accident",
+      "name": "TrafficAccident",
+      "category": "Traffic simulation",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/54769-trafficaccident/",
+      "expectedVersion": "Active development",
+      "currentStatus": "research",
+      "sentinelPolice": false
+    },
+    {
+      "id": "smart-callout-loader",
+      "name": "SmartCalloutLoader",
+      "category": "Callout utilities",
+      "url": "https://www.lcpdfr.com/downloads/gta5mods/scripts/54831-smartcalloutloader/",
+      "expectedVersion": "Active development",
+      "currentStatus": "research",
+      "sentinelPolice": false
+    },
+    {
+      "id": "lcpdfr-featured",
+      "name": "LCPDFR Featured Discovery Feed",
+      "category": "Discovery feeds",
+      "url": "https://www.lcpdfr.com/downloads/featured/?game=gta5mods",
+      "expectedVersion": "Discovery feed",
+      "currentStatus": "research",
       "sentinelPolice": false
     }
   ]

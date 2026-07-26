@@ -155,7 +155,7 @@ export default function PluginDatabase() {
 
             <div className={styles.resultBar}>
               <span><strong>{filteredPlugins.length}</strong> {filteredPlugins.length === 1 ? 'record' : 'records'} shown</span>
-              <span>Golden Build baseline: Legacy 3788</span>
+              <span>Current platform: Legacy 3889 · archived Golden Build: 3788</span>
             </div>
 
             {filteredPlugins.length > 0 ? (

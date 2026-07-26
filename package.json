@@ -1,6 +1,6 @@
 {
   "name": "project-sentinel-docs",
-  "version": "1.0.0",
+  "version": "6.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -15,7 +15,8 @@
     "test:doctor": "node --experimental-specifier-resolution=node doctor-tests/run-tests.mjs",
     "test:intelligence": "node --experimental-specifier-resolution=node intelligence-tests/run-tests.mjs",
     "security:audit": "node scripts/security-audit.mjs",
-    "test:research": "node --experimental-specifier-resolution=node research-tests/run-tests.mjs"
+    "test:research": "node --experimental-specifier-resolution=node research-tests/run-tests.mjs",
+    "verify:publication": "node scripts/verify-publication.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",

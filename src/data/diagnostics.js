@@ -23,7 +23,7 @@ export const diagnosticRules = [
     keywords: ["rage plugin hook", "unsupported game version", "rph version"],
     logPatterns: [/rage plugin hook.*(?:does not support|unsupported)/i,/current game version.*supported game version/i,/failed to hook game/i],
     negativePatterns: [/rage plugin hook.*initialized successfully/i,/rage plugin hook v1\.130\.1406\.17682.*gta v legacy 1\.0\.3788\.0/i],
-    steps: ["Record GTA5.exe file version from Properties → Details.", "Install the RPH build bundled with the compatible LSPDFR release.", "Do not mix RPH files from older packages.", "Restore the last Golden Build if GTA updated unexpectedly."], checks: ["Baseline: GTA Legacy 1.0.3788.0 with RPH 1.130.1406.17682."], guide: "/guide/core/rage-plugin-hook",
+    steps: ["Record GTA5.exe file version from Properties → Details.", "Install the RPH build bundled with the compatible LSPDFR release.", "Do not mix RPH files from older packages.", "Restore the last Golden Build if GTA updated unexpectedly."], checks: ["Current candidate: GTA Legacy 1.0.3889.0 with RPH 1.131.1411.17718 and LSPDFR build 9695."], guide: "/guide/core/rage-plugin-hook",
     suppresses: ["generic-crash", "plugin-timeout"],
   },
   {
@@ -233,6 +233,38 @@ export const diagnosticRules = [
     steps: ["Test Story Mode, then LSPDFR only, then the core Sentinel stack.", "Disable heavy graphics/vegetation changes before police essentials.", "Reduce traffic, backup-unit, and callout density.", "Check for repeated exception spam in the log."], checks: ["Compare tests from the same location, weather, and settings."], guide: "/guide/optimization/golden-build",
   },
   {
+    id: "lspdfr-core-file-missing", subsystem: "LSPDFR core", kind: "root-cause", specificity: 10,
+    title: "The LSPDFR core installation is incomplete", confidence: 'high', status: 'Sentinel Knowledge Base',
+    keywords: ["outfits.xml", "lspdfr.ini", "file not found"],
+    logPatterns: [/failed to find.*lspdfr[\\/](?:data[\\/])?(?:outfits\.xml|lspdfr\.ini)/i,/filenotfoundexception.*lspdfr/i],
+    negativePatterns: [/outfits\.xml.*loaded successfully/i,/lspdfr\.ini.*loaded successfully/i],
+    steps: ["Restore the missing file from the matching official LSPDFR build 9695 package.", "Verify the complete lspdfr and lspdfr/data folders rather than creating an empty file.", "Test base LSPDFR before restoring third-party files."], checks: ["A missing file and malformed XML are different diagnoses."], guide: "/guide/core/lspdfr",
+  },
+  {
+    id: "rph-wrong-directory", subsystem: "Core runtime", kind: "root-cause", specificity: 10,
+    title: "RAGE Plugin Hook is running from the wrong directory", confidence: 'high', status: 'Sentinel Knowledge Base',
+    keywords: ["installed incorrectly", "gta5.exe not found", "documents\\rockstar games"],
+    logPatterns: [/rage plugin hook.*installed incorrectly/i,/gta5\.exe.*not found/i,/current directory.*documents[\\/]rockstar games/i],
+    negativePatterns: [/game path.*gta5\.exe.*verified/i],
+    steps: ["Locate the directory containing GTA5.exe.", "Install and launch RPH from that exact directory.", "Remove or stop launching duplicate RPH copies elsewhere."], checks: ["Legacy-versus-Enhanced mismatch is a separate diagnosis."], guide: "/guide/core/rage-plugin-hook",
+  },
+  {
+    id: "rph-folder-permissions", subsystem: "Windows / storage", kind: "root-cause", specificity: 8,
+    title: "Windows folder permissions are blocking RPH", confidence: 'medium', status: 'Sentinel Knowledge Base',
+    keywords: ["access denied", "unauthorizedaccessexception", "cannot write crash report"],
+    logPatterns: [/unauthorizedaccessexception/i,/access to the path.*denied/i,/failed to (?:create|write).*(?:log|crash report)/i],
+    negativePatterns: [/write access.*verified/i],
+    steps: ["Check the GTA folder Security permissions for the current Windows account.", "Confirm read, execute, and write access.", "Retest before reinstalling unrelated plugins."], checks: ["Do not diagnose permissions from a silent crash without supporting file-write evidence."], guide: "/guide/troubleshooting",
+  },
+  {
+    id: "shared-library-location", subsystem: "Dependencies", kind: "root-cause", specificity: 9,
+    title: "A shared dependency is missing, duplicated, or installed in the wrong scope", confidence: 'high', status: 'Sentinel Knowledge Base',
+    keywords: ["newtonsoft.json", "naudio", "rawcanvasui", "pyrocommon", "dlglobal", "stealth.common"],
+    logPatterns: [/could not load file or assembly ['"]?(?:newtonsoft\.json|naudio|rawcanvasui|pyrocommon|dlglobal|stealth\.common)/i,/assembly.*version.*(?:newtonsoft|naudio)/i],
+    negativePatterns: [/(?:newtonsoft|naudio|rawcanvasui|pyrocommon|dlglobal|stealth\.common).*loaded successfully/i],
+    steps: ["Identify the official package that owns the named assembly.", "Verify its documented version and location.", "Remove stale duplicates rather than downloading an isolated DLL from an unrelated mirror.", "Reinstall the complete affected package and retest."], checks: ["Distinguish absent, wrong-version, wrong-location, duplicate, and blocked assemblies."], guide: "/guide/troubleshooting",
+  },
+  {
     id: "generic-crash", subsystem: "Fallback", kind: "symptom", specificity: 1,
     title: "Return to a known-good baseline and isolate the last change", confidence: 'high', status: 'Sentinel Knowledge Base',
     keywords: ["crash", "fatal error", "desktop"],
@@ -247,4 +279,4 @@ export const conflictRules = [
   {ids:['policing-redefined','compulite'],title:'Policing Redefined conflicts with CompuLite',detail:'The database marks this combination incompatible.'},
 ];
 
-export const diagnosticKnowledgeMeta={version:'3.0.0',ruleCount:diagnosticRules.length,principles:['first failure over final symptom','verified-success lines are negative evidence','specific dependency chains suppress downstream guesses','one controlled change at a time']};
+export const diagnosticKnowledgeMeta={version:'6.0.0',ruleCount:diagnosticRules.length,principles:['first failure over final symptom','verified-success lines are negative evidence','specific dependency chains suppress downstream guesses','one controlled change at a time']};

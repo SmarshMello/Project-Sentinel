@@ -12,6 +12,7 @@ const readTime = (run) => {
 };
 const readHealth = (run) => run?.averageHealth ?? run?.health;
 const readRuntime = (run) => run?.durationSeconds ?? run?.runtimeSeconds;
+const isValidReport = (r) => r && Number(r.schemaVersion) >= 1 && typeof r.checkedAt === 'string' && r.counts && Array.isArray(r.items);
 const isValidRun = (run) => Number.isFinite(readTime(run)) && typeof readHealth(run) === 'number' && readHealth(run) > 0;
 export const normalizeHistory = (history) => (Array.isArray(history) ? history : [])
   .filter(isValidRun)
@@ -36,6 +37,7 @@ export function useSentinelData() {
       fetch(`${HISTORY_URL}?v=${Date.now()}`, {cache:'no-store'}).then(r => r.ok ? r.json() : []).catch(() => []),
     ]).then(([report, history]) => {
       const rawHistory = Array.isArray(history) ? history : history?.scans || history?.runs || [];
+      if (!isValidReport(report)) throw new Error('Watcher report failed schema validation');
       if (active) setState({loading:false, report, history:normalizeHistory(rawHistory), error:null});
     }).catch(error => active && setState({loading:false, report:null, history:[], error:error.message}));
     return () => {active = false;};
@@ -61,8 +63,8 @@ export default function MissionControl({compact=false}) {
   const trend = typeof previousHealth === 'number' ? health - previousHealth : 0;
   const runtimeTrend = typeof previousRuntime === 'number' ? (report?.durationSeconds ?? 0) - previousRuntime : 0;
 
-  if (loading) return <div className={styles.loading}>Connecting to Sentinel intelligence…</div>;
-  if (error) return <div className={styles.error}>Mission Control could not load live Watcher data: {error}</div>;
+  if (loading) return <div className={styles.loading}><strong>Connecting to Sentinel intelligence…</strong><span>Current official platform: GTA V Legacy 3889 · LSPDFR build 9695.</span></div>;
+  if (error) return <div className={styles.error}><strong>Live Watcher data is unavailable.</strong><span>{error}. Current official platform: Legacy 3889 / LSPDFR build 9695. Open Compatibility or Doctor using the last bundled site data.</span></div>;
 
   return <div className={styles.shell}>
     <section className={styles.commandBar}>
