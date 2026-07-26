@@ -5,6 +5,18 @@ sidebar_position: 3
 
 # Paid Sentinel Build — the personal maximum-realism architecture
 
+<span className="guide-kicker">PAID MAXIMUM-REALISM PATH</span>
+
+<p className="guide-lead">Reproduce the actual Sentinel direction: Policing Redefined, NexusMDT FULL, Nexus Dispatch, and natural NPCAI conversation. This path assumes you can already launch and test the modern foundation.</p>
+
+<div className="guide-grid">
+  <div className="guide-card"><span className="guide-card-badge paid">Premium route</span><h3>Start here when</h3><p>Your clean LSPDFR and Policing Redefined foundation already passes testing and you have official access to the required paid packages.</p></div>
+  <div className="guide-card"><span className="guide-card-badge">Expected result</span><h3>What this build provides</h3><p>A connected MDT and dispatch workflow, open-ended AI NPC conversations, optional bodycam roleplay, and fewer menu-driven interactions.</p></div>
+</div>
+
+<div className="guide-path"><span>Verify modern core</span><b>→</b><span>Install DTF + PR</span><b>→</b><span>Activate NexusMDT</span><b>→</b><span>Test Dispatch</span><b>→</b><span>Configure NPCAI</span><b>→</b><span>Add Axon and presentation</span></div>
+
+
 This branch documents the architecture developed through the actual Sentinel installation sessions. Its goal is natural police roleplay: speak to civilians, speak to dispatch, access a modern MDT, and avoid overlapping legacy menus.
 
 ## Final paid architecture

@@ -5,6 +5,18 @@ sidebar_position: 2
 
 # Free Sentinel Build — complete first-time installation
 
+<span className="guide-kicker">FREE MODERN PATH</span>
+
+<p className="guide-lead">Build the modern Policing Redefined foundation without paid mod access. Every phase ends with a real in-game test and a named backup checkpoint.</p>
+
+<div className="guide-grid">
+  <div className="guide-card"><span className="guide-card-badge free">Best for beginners</span><h3>Start here when</h3><p>You are new to LSPDFR, want a no-cost route, or want to prove the foundation before buying premium voice and Nexus features.</p></div>
+  <div className="guide-card"><span className="guide-card-badge">Expected result</span><h3>What this build provides</h3><p>Modern stops and backup, a free MDT, voice dispatch, phrase-based pedestrian voice, EUP, lighting, and a safe expansion path.</p></div>
+</div>
+
+<div className="guide-path"><span>Prepare GTA</span><b>→</b><span>Install core</span><b>→</b><span>Install PR</span><b>→</b><span>Add MDT</span><b>→</b><span>Add voice</span><b>→</b><span>Add presentation</span></div>
+
+
 This route provides a modern police framework, MDT, voice dispatch, voice pedestrian interaction, uniforms, and visual improvements without requiring a paid mod membership.
 
 ## Final free stack

@@ -3,29 +3,32 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
 import {plugins} from '@site/src/data/plugins';
-import styles from './styles.module.css';
 import {platformState} from '@site/src/data/platform';
+import styles from './styles.module.css';
 
-const sections=[
-  ['Choose free or paid','Select the correct architecture before installing police plugins.','/guide/builds/choose-your-build','01'],
-  ['Paid personal build','Reproduce the Policing Redefined, Nexus and NPCAI maximum-realism stack.','/guide/builds/paid-sentinel-build','02'],
-  ['Free community build','Modern MDT and voice options without paid mod access.','/guide/builds/free-sentinel-build','03'],
-  ['Build planner','Generate a profile around stability, realism or experimental systems.','/planner','04'],
-  ['Modern police systems','Policing Redefined, Damage Tracker Framework and Nexus integrations.','/guide/police/policing-redefined','05'],
-  ['Agencies & fleet','Department structure, vehicle strategy and future statewide coverage.','/guide/fleet/department-plan','06'],
-  ['Uniforms','EUP Menu, Law & Order, Serve & Rescue and agency configuration.','/guide/uniforms/eup-menu-ragenativeui','07'],
-  ['Graphics & audio','Emergency lighting, visual presentation and audio strategy.','/guide/presentation/graphics-audio','08'],
-  ['Optimization','Golden-build discipline, keybinds and performance stability.','/guide/optimization/golden-build','09'],
-  ['Build troubleshooting','Fixes documented from the actual Sentinel Police installation.','/troubleshooter','10'],
+const paths=[
+  {tag:'Recommended starting point',title:'Free Modern Build',desc:'Learn the modern Policing Redefined architecture without paid mod access. Upgrade later without rebuilding the foundation.',to:'/guide/builds/free-sentinel-build',tone:'free'},
+  {tag:'Personal Sentinel setup',title:'Paid Maximum-Realism Build',desc:'Use NexusMDT FULL, Nexus Dispatch, and NPCAI for natural voice-driven patrol workflows.',to:'/guide/builds/paid-sentinel-build',tone:'paid'},
+  {tag:'Existing older installations',title:'Legacy Alternative',desc:'Keep Stop The Ped, Ultimate Backup, and CompuLite in their own documented architecture.',to:'/guide/builds/migrate-legacy-to-modern',tone:'legacy'},
 ];
+
+const workflow=[
+  ['1','Choose','Pick one architecture and understand what it replaces.','/guide/builds/choose-your-build'],
+  ['2','Prepare','Create a clean Legacy baseline and named backups.','/guide/getting-started/clean-install'],
+  ['3','Install','Follow the exact dependency order for your chosen path.','/guide/intro'],
+  ['4','Verify','Use test gates, compatibility checks, and the checklist.','/checklist'],
+  ['5','Recover','Diagnose the first real error instead of reinstalling randomly.','/doctor'],
+];
+
 export default function SentinelPolice(){
  const included=plugins.filter(p=>p.sentinelPolice);
- return <Layout title="Sentinel Police" description="The official working Project Sentinel LSPDFR police simulator build.">
+ return <Layout title="Build Guide" description="Choose and install a stable Project Sentinel LSPDFR build.">
   <main className={styles.page}>
-   <header className={styles.hero}><div className={styles.scan}/><div className="container"><div className={styles.kicker}>PROJECT SENTINEL // WORKING MOD PACK</div><div className={styles.heroGrid}><div><Heading as="h1">Sentinel <span>Police</span></Heading><p>The dedicated home of the personally developed GTA V Legacy police simulator. The guide now separates a free community route from the paid maximum-realism route used in the actual Sentinel build, with installation gates and fixes from real troubleshooting sessions.</p><div className={styles.actions}><Link className="button button--primary button--lg" to="/guide/builds/choose-your-build">Choose your build</Link><Link className="button button--secondary button--lg" to="/checklist">Open checklist</Link></div></div><aside><span>Current baseline</span><strong>Legacy {platformState.current.gameBuild}</strong><dl><div><dt>LSPDFR</dt><dd>0.4.9</dd></div><div><dt>RPH</dt><dd>1.131</dd></div><div><dt>Verified components</dt><dd>{included.length}</dd></div><div><dt>Status</dt><dd className={styles.online}>Candidate testing</dd></div></dl></aside></div></div></header>
-   <nav className={styles.bar}><div className="container"><Link to="/sentinel-police">Overview</Link><Link to="/guide/intro">Build Guide</Link><Link to="/builds">Working Build</Link><Link to="/checklist">Checklist</Link><Link to="/planner">Planner</Link><Link to="/troubleshooter">Troubleshooting</Link></div></nav>
-   <section className={styles.content}><div className="container"><div className={styles.heading}><span>BUILD OPERATIONS</span><Heading as="h2">Everything for the working mod pack.</Heading><p>The general database catalogs the wider community. Sentinel Police now documents the real modern stack, a safe free equivalent, the retired legacy branch, and the exact procedures used to keep each architecture understandable and stable.</p></div><div className={styles.grid}>{sections.map(([title,desc,to,num])=><Link className={styles.card} to={to} key={title}><span>{num}</span><Heading as="h3">{title}</Heading><p>{desc}</p><b>Open section →</b></Link>)}</div></div></section>
-   <section className={styles.stack}><div className="container"><div><span>ACTIVE STACK</span><Heading as="h2">Included in Sentinel Police</Heading></div><div className={styles.chips}>{included.map(p=><Link to={`/plugins/${p.id}`} key={p.id}>{p.name}<small>{p.version}</small></Link>)}</div></div></section>
+   <header className={styles.hero}><div className="container"><div className={styles.heroGrid}><div><div className={styles.kicker}>PROJECT SENTINEL // BUILD GUIDE</div><Heading as="h1">Build a stable police simulator, one verified layer at a time.</Heading><p>Choose the free modern path, the paid maximum-realism path, or the separate legacy alternative. Every route uses the same beginner-safe method: install, test, document, and back up.</p><div className={styles.actions}><Link className="button button--primary button--lg" to="/guide/builds/choose-your-build">Compare build paths</Link><Link className="button button--secondary button--lg" to="/guide/getting-started/clean-install">Start with a clean game</Link></div></div><aside><span>Current candidate platform</span><strong>Legacy {platformState.current.gameBuild}</strong><dl><div><dt>LSPDFR</dt><dd>{platformState.current.lspdfr}</dd></div><div><dt>RPH</dt><dd>{platformState.current.rph}</dd></div><div><dt>Documented components</dt><dd>{included.length}</dd></div><div><dt>Installation paths</dt><dd>Free + Paid + Legacy</dd></div></dl></aside></div></div></header>
+   <nav className={styles.bar}><div className="container"><Link to="/guide/builds/choose-your-build">Choose a build</Link><Link to="/guide/getting-started/clean-install">Clean install</Link><Link to="/checklist">Checklist</Link><Link to="/compatibility">Compatibility</Link><Link to="/doctor">Doctor</Link></div></nav>
+   <section className={styles.paths}><div className="container"><div className={styles.heading}><span>CHOOSE ONE PATH</span><Heading as="h2">The difference is clear before you install.</Heading><p>The modern free and paid routes share the same foundation. The legacy route uses a different police framework and must stay separate.</p></div><div className={styles.pathGrid}>{paths.map(path=><Link className={styles.pathCard} to={path.to} key={path.title}><small className={styles[path.tone]}>{path.tag}</small><Heading as="h3">{path.title}</Heading><p>{path.desc}</p><b>Open this path →</b></Link>)}</div></div></section>
+   <section className={styles.workflow}><div className="container"><div className={styles.heading}><span>THE INSTALLATION METHOD</span><Heading as="h2">Five stages from download to patrol.</Heading></div><div className={styles.workflowGrid}>{workflow.map(([num,title,desc,to])=><Link to={to} key={num}><i>{num}</i><strong>{title}</strong><span>{desc}</span></Link>)}</div></div></section>
+   <section className={styles.quick}><div className="container"><div><Heading as="h2">Need the shortest safe route?</Heading><p>Start with the Free Modern Build. It teaches the same foundation used by the paid stack and is the easiest route to diagnose.</p></div><Link className="button button--primary" to="/guide/builds/free-sentinel-build">Start the free build</Link></div></section>
   </main>
  </Layout>
 }
