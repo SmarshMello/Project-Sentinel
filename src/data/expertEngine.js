@@ -9,13 +9,13 @@ const alias={
  'stop the ped':'stop-the-ped','stp':'stop-the-ped','ultimate backup':'ultimate-backup','ub':'ultimate-backup',
  'policing redefined':'policing-redefined','rage plugin hook':'rage-plugin-hook','rph':'rage-plugin-hook','lspdfr':'lspdfr',
  'rage native ui':'ragenativeui','rage nativeui':'ragenativeui','ragenativeui':'ragenativeui','grammar police':'grammar-police',
- 'eup':'eup-menu','eup menu':'eup-menu','emergency uniforms pack':'eup-menu','lennys mod loader':'lennys-mod-loader','lenny s mod loader':'lennys-mod-loader','lml':'lennys-mod-loader','compulite':'compulite','openiv':'openiv','script hook v':'scripthookv','lemonui':'lemonui'};
+ 'eup':'eup-menu','eup menu':'eup-menu','emergency uniforms pack':'eup-menu','lennys mod loader':'lennys-mod-loader','lenny s mod loader':'lennys-mod-loader','lml':'lennys-mod-loader','compulite':'compulite','nexus mdt':'nexus-mdt-full','nexus dispatch':'nexus-dispatch','npcai':'npcai','npci':'npci','damage tracker framework':'damage-tracker-framework','aidispatch':'aidispatch','openiv':'openiv','script hook v':'scripthookv','lemonui':'lemonui'};
 const conflicts=[
  {ids:['policing-redefined','stop-the-ped'],reason:'Policing Redefined is an alternative policing stack and should not be installed beside Stop The Ped.'},
  {ids:['policing-redefined','ultimate-backup'],reason:'Policing Redefined overlaps with Ultimate Backup and belongs in a separate build branch.'},
  {ids:['policing-redefined','compulite'],reason:'The registry documents CompuLite as incompatible with the Policing Redefined branch.'}
 ];
-export const expertExamples=['Can I install Grammar Police, Stop The Ped, Ultimate Backup and CompuLite together?','Can I install Policing Redefined with Stop The Ped?','What version of RAGENativeUI should I use?','What does Ultimate Backup require?','Show me callout packs in testing.','Why is EUP Menu not working?'];
+export const expertExamples=['Should I choose the free or paid Sentinel build?','Can I install NexusMDT and NPCAI with Policing Redefined?','Can I install Grammar Police, Stop The Ped, Ultimate Backup and CompuLite together?','Can I install Policing Redefined with Stop The Ped?','What version of RAGENativeUI should I use?','What does Ultimate Backup require?','Show me callout packs in testing.','Why is EUP Menu not working?'];
 function combinedRegistry(discoveries=[]){const out=new Map(registry.map(p=>[p.id,p]));for(const item of discoveries||[]){if(!item?.id||out.has(item.id))continue;out.set(item.id,{...item,status:item.status||'research',compatibilityStatus:'research',profile:item.profile||researchProfileUrl(item),watcherTracked:false,researchDiscovered:true});}return [...out.values()];}
 function phraseMatch(text, phrase){
  const target=norm(phrase);

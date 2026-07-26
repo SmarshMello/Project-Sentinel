@@ -20,3 +20,9 @@ Never use a modded Project Sentinel installation in GTA Online.
 ## Recommended order
 
 Clean GTA → core tools → LSPDFR → EUP → police systems → communications → callouts → fleet → graphics/audio → optimization → conversational AI laboratory.
+
+## Start with the correct architecture
+
+The working Sentinel guide now has two complete routes: a **free community build** and the **paid maximum-realism build** used in the personal installation. Both use the modern Policing Redefined architecture. The older Stop The Ped/Ultimate Backup/CompuLite pages remain available only as a separate legacy branch.
+
+[Choose your build](./builds/choose-your-build)

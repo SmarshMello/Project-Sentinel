@@ -7,11 +7,11 @@ export const buildStatus = {
 export const goldenBuilds = [
   {
     id: 'legacy-3889-july-2026', name: 'Legacy 3889 Candidate Build', release: 'July 2026', status: 'candidate', confidence: 72,
-    summary: 'The current official GTA V Legacy platform with LSPDFR build 9695. Core support is confirmed; the complete Sentinel stack is being revalidated.',
+    summary: 'The current official GTA V Legacy platform with LSPDFR build 9695, now documented around the modern Policing Redefined, Nexus and NPCAI Sentinel architecture.',
     versions: [['GTA V Legacy','1.0.3889.0'],['RAGE Plugin Hook','1.131.1411.17718'],['LSPDFR','0.4.9 · build 9695'],['ScriptHookV','3889-compatible official release'],['RAGENativeUI','1.9.3']],
-    verified: ['Official LSPDFR/RPH compatibility for build 3889','BattlEye-disabled modded launch path','Clean on-duty core validation checklist','Platform-transition guard and retest queue'],
+    verified: ['Official LSPDFR/RPH compatibility for build 3889','BattlEye-disabled modded launch path','Damage Tracker Framework + Policing Redefined architecture','NexusMDT/Nexus Dispatch integration path','NPCAI 3.1 paid voice path','Free NexusMDT Lite + AIDispatch + NPCI alternative'],
     notes: ['Do not copy old RPH files over the build 9695 package','Install the full current ScriptHookV package when an ASI mod requires it','Retest shared libraries and police frameworks one at a time','Keep the 3788 build archived as a rollback reference'],
-    guide: '/guide/troubleshooting/title-updates',
+    guide: '/guide/builds/choose-your-build',
   },
   {
     id: 'legacy-3788-july-2026', name: 'Legacy 3788 Golden Build', release: 'July 2026', status: 'archived', confidence: 100,

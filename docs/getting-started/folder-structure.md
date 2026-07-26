@@ -17,7 +17,10 @@ Grand Theft Auto V Legacy\
     └── LSPDFR\
         ├── StopThePed.dll
         ├── UltimateBackup.dll
-        ├── CompuLite.dll
+        ├── PolicingRedefined.dll
+        ├── NexusMDT.dll
+        ├── NexusDispatch.dll
+        └── NPCAI.dll
         ├── ALPRLite.dll
         └── SpeedRadarLite.dll
 ```

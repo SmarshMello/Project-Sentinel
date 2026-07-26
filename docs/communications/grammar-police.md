@@ -2,6 +2,10 @@
 title: Grammar Police
 ---
 
+:::warning Legacy branch only
+This guide belongs to the older community architecture. Do not install this component in the modern Policing Redefined + Nexus build unless the current authors explicitly document compatibility.
+:::
+
 [Open the official download page](https://www.lcpdfr.com/downloads/gta5mods/scripts/28003-grammarpolice/)
 
 ## Installation

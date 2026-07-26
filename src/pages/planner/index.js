@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const PLANNER_KEY='sentinelPlannerSelection';
 
 export default function Planner(){
- const [profile,setProfile]=useState('realistic');
+ const [profile,setProfile]=useState('paid');
  const [performance,setPerformance]=useState('balanced');
  useEffect(()=>{try{const saved=JSON.parse(localStorage.getItem(PLANNER_KEY)||'null');if(saved?.profile&&plannerProfiles[saved.profile])setProfile(saved.profile);if(['fps','balanced','realism'].includes(saved?.performance))setPerformance(saved.performance);}catch{}},[]);
  const chosen=useMemo(()=>plannerProfiles[profile].ids.map(id=>plugins.find(p=>p.id===id)).filter(Boolean).filter(p=>performance!=='fps'||p.impact!=='Medium'),[profile,performance]);

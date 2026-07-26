@@ -1,5 +1,6 @@
 export const plannerProfiles = {
-  stable: {label:'Stable foundation', description:'The safest verified baseline with essential police systems.', ids:['lspdfr','rage-plugin-hook','openiv','stop-the-ped','ultimate-backup','compulite']},
-  realistic: {label:'Realistic patrol', description:'Adds verified uniforms and emergency-light improvements.', ids:['lspdfr','rage-plugin-hook','openiv','stop-the-ped','ultimate-backup','compulite','eup-menu','eup-law-order','eup-serve-rescue','better-radiance']},
-  experimental: {label:'Sentinel lab', description:'Includes systems still being evaluated. Use only after backing up.', ids:['lspdfr','rage-plugin-hook','openiv','stop-the-ped','ultimate-backup','compulite','eup-menu','eup-law-order','better-radiance','alpr-lite','speed-radar-lite','grammar-police','callout-interface']},
+  free: {label:'Free modern Sentinel', description:'A complete modern police build without paid plugin entitlements.', ids:['lspdfr','rage-plugin-hook','openiv','scripthookv','heap-adjuster','packfile-limit-adjuster','gameconfig','damage-tracker-framework','policing-redefined','nexus-mdt-lite','aidispatch','npci','eup-menu','eup-law-order','eup-serve-rescue','better-radiance']},
+  paid: {label:'Paid maximum realism', description:'The personal Sentinel architecture with Nexus and unscripted NPCAI voice.', ids:['lspdfr','rage-plugin-hook','openiv','scripthookv','heap-adjuster','packfile-limit-adjuster','gameconfig','damage-tracker-framework','policing-redefined','nexus-mdt-full','nexus-dispatch','npcai','axon-signal','eup-menu','eup-law-order','eup-serve-rescue','better-radiance']},
+  legacy: {label:'Legacy STP community branch', description:'Older Stop The Ped ecosystem kept separate for users who prefer the BejoIjo workflow.', ids:['lspdfr','rage-plugin-hook','openiv','stop-the-ped','ultimate-backup','compulite','grammar-police']},
 };
+export default plannerProfiles;
