@@ -3,6 +3,314 @@
   "watcherVersion": "0.7.0",
   "scans": [
     {
+      "checkedAt": "2026-07-26T12:46:58.796Z",
+      "durationSeconds": 15,
+      "averageHealth": 88,
+      "counts": {
+        "tracked": 116,
+        "healthy": 67,
+        "possibleUpdates": 0,
+        "metadataChanged": 0,
+        "timedOut": 9,
+        "blocked": 1,
+        "redirected": 0,
+        "notFound": 0,
+        "rateLimited": 38,
+        "serverErrors": 0,
+        "archived": 1,
+        "failed": 0,
+        "needsReview": 5,
+        "highPriority": 1
+      },
+      "changeCounts": {
+        "total": 0,
+        "releases": 0,
+        "statuses": 0,
+        "moved": 0,
+        "newSources": 0
+      }
+    },
+    {
+      "checkedAt": "2026-07-25T12:13:45.668Z",
+      "durationSeconds": 9,
+      "averageHealth": 88,
+      "counts": {
+        "tracked": 116,
+        "healthy": 67,
+        "possibleUpdates": 0,
+        "metadataChanged": 0,
+        "timedOut": 8,
+        "blocked": 1,
+        "redirected": 0,
+        "notFound": 0,
+        "rateLimited": 39,
+        "serverErrors": 0,
+        "archived": 1,
+        "failed": 0,
+        "needsReview": 4,
+        "highPriority": 1
+      },
+      "changeCounts": {
+        "total": 0,
+        "releases": 0,
+        "statuses": 0,
+        "moved": 0,
+        "newSources": 0
+      }
+    },
+    {
+      "checkedAt": "2026-07-24T15:16:20.625Z",
+      "durationSeconds": 16,
+      "averageHealth": 87,
+      "counts": {
+        "tracked": 116,
+        "healthy": 67,
+        "possibleUpdates": 0,
+        "metadataChanged": 0,
+        "timedOut": 12,
+        "blocked": 1,
+        "redirected": 0,
+        "notFound": 0,
+        "rateLimited": 35,
+        "serverErrors": 0,
+        "archived": 1,
+        "failed": 0,
+        "needsReview": 5,
+        "highPriority": 1
+      },
+      "changeCounts": {
+        "total": 1,
+        "releases": 0,
+        "statuses": 0,
+        "moved": 1,
+        "newSources": 0
+      }
+    },
+    {
+      "checkedAt": "2026-07-23T16:03:39.228Z",
+      "durationSeconds": 15,
+      "averageHealth": 88,
+      "counts": {
+        "tracked": 116,
+        "healthy": 67,
+        "possibleUpdates": 0,
+        "metadataChanged": 0,
+        "timedOut": 10,
+        "blocked": 1,
+        "redirected": 0,
+        "notFound": 0,
+        "rateLimited": 37,
+        "serverErrors": 0,
+        "archived": 1,
+        "failed": 0,
+        "needsReview": 4,
+        "highPriority": 1
+      },
+      "changeCounts": {
+        "total": 26,
+        "releases": 1,
+        "statuses": 24,
+        "moved": 1,
+        "newSources": 0
+      }
+    },
+    {
+      "checkedAt": "2026-07-22T15:23:27.655Z",
+      "durationSeconds": 30,
+      "averageHealth": 81,
+      "counts": {
+        "tracked": 116,
+        "healthy": 43,
+        "possibleUpdates": 0,
+        "metadataChanged": 0,
+        "timedOut": 38,
+        "blocked": 1,
+        "redirected": 0,
+        "notFound": 0,
+        "rateLimited": 33,
+        "serverErrors": 0,
+        "archived": 1,
+        "failed": 0,
+        "needsReview": 5,
+        "highPriority": 1
+      },
+      "changeCounts": {
+        "total": 24,
+        "releases": 0,
+        "statuses": 24,
+        "moved": 0,
+        "newSources": 0
+      }
+    },
+    {
+      "checkedAt": "2026-07-21T15:26:33.761Z",
+      "durationSeconds": 10,
+      "averageHealth": 88,
+      "counts": {
+        "tracked": 116,
+        "healthy": 67,
+        "possibleUpdates": 0,
+        "metadataChanged": 0,
+        "timedOut": 8,
+        "blocked": 1,
+        "redirected": 0,
+        "notFound": 0,
+        "rateLimited": 39,
+        "serverErrors": 0,
+        "archived": 1,
+        "failed": 0,
+        "needsReview": 5,
+        "highPriority": 1
+      },
+      "changeCounts": {
+        "total": 2,
+        "releases": 0,
+        "statuses": 1,
+        "moved": 1,
+        "newSources": 0
+      }
+    },
+    {
+      "checkedAt": "2026-07-20T16:03:12.514Z",
+      "durationSeconds": 21,
+      "averageHealth": 87,
+      "counts": {
+        "tracked": 116,
+        "healthy": 66,
+        "possibleUpdates": 0,
+        "metadataChanged": 1,
+        "timedOut": 23,
+        "blocked": 1,
+        "redirected": 0,
+        "notFound": 0,
+        "rateLimited": 24,
+        "serverErrors": 0,
+        "archived": 1,
+        "failed": 0,
+        "needsReview": 5,
+        "highPriority": 1
+      },
+      "changeCounts": {
+        "total": 2,
+        "releases": 0,
+        "statuses": 1,
+        "moved": 1,
+        "newSources": 0
+      }
+    },
+    {
+      "checkedAt": "2026-07-19T12:09:47.117Z",
+      "durationSeconds": 15,
+      "averageHealth": 88,
+      "counts": {
+        "tracked": 116,
+        "healthy": 67,
+        "possibleUpdates": 0,
+        "metadataChanged": 0,
+        "timedOut": 10,
+        "blocked": 1,
+        "redirected": 0,
+        "notFound": 0,
+        "rateLimited": 37,
+        "serverErrors": 0,
+        "archived": 1,
+        "failed": 0,
+        "needsReview": 4,
+        "highPriority": 1
+      },
+      "changeCounts": {
+        "total": 0,
+        "releases": 0,
+        "statuses": 0,
+        "moved": 0,
+        "newSources": 0
+      }
+    },
+    {
+      "checkedAt": "2026-07-18T12:09:15.675Z",
+      "durationSeconds": 14,
+      "averageHealth": 88,
+      "counts": {
+        "tracked": 116,
+        "healthy": 67,
+        "possibleUpdates": 0,
+        "metadataChanged": 0,
+        "timedOut": 9,
+        "blocked": 1,
+        "redirected": 0,
+        "notFound": 0,
+        "rateLimited": 38,
+        "serverErrors": 0,
+        "archived": 1,
+        "failed": 0,
+        "needsReview": 4,
+        "highPriority": 1
+      },
+      "changeCounts": {
+        "total": 0,
+        "releases": 0,
+        "statuses": 0,
+        "moved": 0,
+        "newSources": 0
+      }
+    },
+    {
+      "checkedAt": "2026-07-17T14:57:56.133Z",
+      "durationSeconds": 14,
+      "averageHealth": 87,
+      "counts": {
+        "tracked": 116,
+        "healthy": 67,
+        "possibleUpdates": 0,
+        "metadataChanged": 0,
+        "timedOut": 9,
+        "blocked": 1,
+        "redirected": 0,
+        "notFound": 0,
+        "rateLimited": 38,
+        "serverErrors": 0,
+        "archived": 1,
+        "failed": 0,
+        "needsReview": 6,
+        "highPriority": 1
+      },
+      "changeCounts": {
+        "total": 0,
+        "releases": 0,
+        "statuses": 0,
+        "moved": 0,
+        "newSources": 0
+      }
+    },
+    {
+      "checkedAt": "2026-07-16T15:21:25.600Z",
+      "durationSeconds": 25,
+      "averageHealth": 86,
+      "counts": {
+        "tracked": 116,
+        "healthy": 67,
+        "possibleUpdates": 0,
+        "metadataChanged": 0,
+        "timedOut": 25,
+        "blocked": 1,
+        "redirected": 0,
+        "notFound": 0,
+        "rateLimited": 22,
+        "serverErrors": 0,
+        "archived": 1,
+        "failed": 0,
+        "needsReview": 9,
+        "highPriority": 1
+      },
+      "changeCounts": {
+        "total": 86,
+        "releases": 0,
+        "statuses": 0,
+        "moved": 0,
+        "newSources": 86
+      }
+    },
+    {
       "checkedAt": "2026-07-16T04:26:53.104Z",
       "durationSeconds": 8,
       "averageHealth": 81,
@@ -357,88 +665,6 @@
         "failed": 0,
         "needsReview": 1,
         "highPriority": 0
-      },
-      "changeCounts": {
-        "total": 0,
-        "releases": 0,
-        "statuses": 0,
-        "moved": 0,
-        "newSources": 0
-      }
-    },
-    {
-      "checkedAt": "2026-07-15T06:00:23.724Z",
-      "durationSeconds": 34,
-      "averageHealth": 81,
-      "counts": {
-        "tracked": 26,
-        "healthy": 10,
-        "possibleUpdates": 0,
-        "metadataChanged": 0,
-        "timedOut": 4,
-        "blocked": 0,
-        "redirected": 0,
-        "notFound": 0,
-        "rateLimited": 12,
-        "serverErrors": 0,
-        "archived": 0,
-        "failed": 0,
-        "needsReview": 3,
-        "highPriority": 0
-      },
-      "changeCounts": {
-        "total": 3,
-        "releases": 0,
-        "statuses": 3,
-        "moved": 0,
-        "newSources": 0
-      }
-    },
-    {
-      "checkedAt": "2026-07-15T05:42:59.382Z",
-      "durationSeconds": 42,
-      "averageHealth": 80,
-      "counts": {
-        "tracked": 26,
-        "healthy": 10,
-        "possibleUpdates": 0,
-        "metadataChanged": 0,
-        "timedOut": 4,
-        "blocked": 0,
-        "redirected": 0,
-        "notFound": 0,
-        "rateLimited": 11,
-        "serverErrors": 0,
-        "archived": 0,
-        "failed": 1,
-        "needsReview": 5,
-        "highPriority": 0
-      },
-      "changeCounts": {
-        "total": 6,
-        "releases": 0,
-        "statuses": 6,
-        "moved": 0,
-        "newSources": 0
-      }
-    },
-    {
-      "checkedAt": "2026-07-15T02:59:22.549Z",
-      "durationSeconds": null,
-      "averageHealth": null,
-      "counts": {
-        "tracked": 26,
-        "healthy": 10,
-        "changed": 0,
-        "timedOut": 12,
-        "blocked": 4,
-        "redirected": 0,
-        "notFound": 0,
-        "rateLimited": 0,
-        "serverErrors": 0,
-        "archived": 0,
-        "failed": 0,
-        "needsReview": 16
       },
       "changeCounts": {
         "total": 0,
