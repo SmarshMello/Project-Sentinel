@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-07-26T23:57:53.584Z",
+  "updatedAt": "2026-07-28T04:16:26.297Z",
   "discoveries": [
     {
       "id": "research-mccallouts",
@@ -30336,6 +30336,22 @@
     }
   ],
   "requests": [
+    {
+      "id": "expert-1785212166815-60457041",
+      "requestId": "expert-1785212166815-60457041",
+      "query": "Show me callout packs in testing",
+      "status": "no-results",
+      "requestedAt": "2026-07-28T04:16:26.297Z",
+      "completedAt": "2026-07-28T04:16:26.297Z",
+      "searchProviders": [
+        "Bing web search",
+        "DuckDuckGo web search",
+        "GitHub API"
+      ],
+      "candidateCount": 0,
+      "credibleCandidateCount": 0,
+      "candidates": []
+    },
     {
       "id": "expert-1785110253606-fef2b412",
       "requestId": "expert-1785110253606-fef2b412",
