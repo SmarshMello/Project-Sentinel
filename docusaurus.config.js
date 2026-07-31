@@ -42,6 +42,7 @@ const config = {
       items: [
         {to: '/', label: 'Home', position: 'left', exact: true},
         {to: '/sentinel-police', label: 'Build Guide', position: 'left'},
+        {to: '/keybinds', label: 'Keybinds', position: 'left'},
         {label: 'Research', position: 'left', items: [
           {to: '/watcher', label: 'Sentinel Watcher', description: 'Monitor releases and ecosystem changes'},
           {to: '/dashboard', label: 'Operations Dashboard', description: 'Review current platform and project status'},
@@ -70,6 +71,7 @@ const config = {
           {label:'Free build',to:'/guide/builds/free-sentinel-build'},
           {label:'Paid realism build',to:'/guide/builds/paid-sentinel-build'},
           {label:'Clean installation',to:'/guide/getting-started/clean-install'},
+          {label:'Keybinds',to:'/keybinds'},
         ]},
         {title: 'Verify and repair', items: [
           {label:'Compatibility Center',to:'/compatibility'},

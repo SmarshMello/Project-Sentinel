@@ -1,0 +1,40 @@
+PROJECT SENTINEL — SENTINEL BUILD v1.0 WEBSITE UPDATE
+Completed: July 30, 2026
+
+WHAT CHANGED
+- Reframed the Build Guide around the completed, verified Sentinel Build v1.0.
+- Rewrote the final build guide with the exact finished stack, install order, acceptance test, exclusions, graphics setup, and final keybind plan.
+- Updated the build-selection guide so Sentinel Build v1.0 is the primary reference build.
+- Marked the Legacy 3889 Sentinel build as verified with 100% confidence in the site data.
+- Updated the Build Guide landing page to feature Sentinel Build v1.0.
+- Added a top-level Keybinds navbar tab.
+- Added a searchable keybind page with a compact overview and detailed descriptions.
+- Added file names and locations for changing each keybind.
+- Established a non-overlapping final key map: F24 Dispatch, F23 NPCAI, Q MDT, F8 ALPR, B PR backup, F11 EUP.
+- Updated the graphics guide to the tested VisualV 1.0.630 + Better Radiance baseline.
+- Removed AxonSignal from the default paid planner stack and added ALPR Lite.
+
+FILES TO REPLACE
+- docusaurus.config.js
+- sidebars.js
+- docs/builds/choose-your-build.md
+- docs/builds/paid-sentinel-build.md
+- docs/optimization/keybinds.md
+- docs/presentation/graphics-audio.md
+- src/data/builds.js
+- src/data/planner.js
+- src/pages/sentinel-police/index.js
+
+NEW FILES/FOLDERS
+- src/pages/keybinds/index.js
+- src/pages/keybinds/styles.module.css
+
+DEPLOYMENT
+1. Replace the listed files and add the new keybinds folder.
+2. Commit the changes in GitHub Desktop.
+3. Push to the main branch.
+4. Allow the existing GitHub Pages workflow to build and deploy.
+
+VALIDATION
+- JavaScript syntax checks passed for all edited JavaScript files.
+- A full npm/Docusaurus build could not be completed in this environment because the internal npm registry did not contain the required zwitch@2.0.4 package.

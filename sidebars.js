@@ -35,7 +35,7 @@ const sidebars = {
       type:'category',
       label:'Stability and Recovery',
       collapsed:true,
-      items:['optimization/keybinds','optimization/golden-build','troubleshooting/index','troubleshooting/modern-sentinel-stack','troubleshooting/eup-crash','troubleshooting/plugin-attribute','troubleshooting/title-updates'],
+      items:['optimization/golden-build','optimization/keybinds','troubleshooting/index','troubleshooting/modern-sentinel-stack','troubleshooting/eup-crash','troubleshooting/plugin-attribute','troubleshooting/title-updates'],
     },
     {
       type:'category',

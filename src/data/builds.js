@@ -6,12 +6,12 @@ export const buildStatus = {
 
 export const goldenBuilds = [
   {
-    id: 'legacy-3889-july-2026', name: 'Legacy 3889 Candidate Build', release: 'July 2026', status: 'candidate', confidence: 72,
-    summary: 'The current official GTA V Legacy platform with LSPDFR build 9695, now documented around the modern Policing Redefined, Nexus and NPCAI Sentinel architecture.',
+    id: 'legacy-3889-july-2026', name: 'Sentinel Build v1.0 · Legacy 3889', release: 'July 30, 2026', status: 'verified', confidence: 100,
+    summary: 'The completed and tested Project Sentinel reference build: Policing Redefined, NexusMDT FULL, Nexus Dispatch, NPCAI, ALPR Lite, EUP, ELS, VisualV, and Better Radiance.',
     versions: [['GTA V Legacy','1.0.3889.0'],['RAGE Plugin Hook','1.131.1411.17718'],['LSPDFR','0.4.9 · build 9695'],['ScriptHookV','3889-compatible official release'],['RAGENativeUI','1.9.3']],
-    verified: ['Official LSPDFR/RPH compatibility for build 3889','BattlEye-disabled modded launch path','Damage Tracker Framework + Policing Redefined architecture','NexusMDT/Nexus Dispatch integration path','NPCAI 3.1 paid voice path','Free NexusMDT Lite + AIDispatch + NPCI alternative'],
-    notes: ['Do not copy old RPH files over the build 9695 package','Install the full current ScriptHookV package when an ASI mod requires it','Retest shared libraries and police frameworks one at a time','Keep the 3788 build archived as a rollback reference'],
-    guide: '/guide/builds/choose-your-build',
+    verified: ['Story Mode and LSPDFR duty launch','Damage Tracker Framework + Policing Redefined','NexusMDT FULL activation and records workflow','Nexus Dispatch voice integration','NPCAI conversation and microphone path','ALPR Lite realistic configuration','EUP + ELS','VisualV 1.0.630 + Better Radiance'],
+    notes: ['Do not install Stop The Ped, Ultimate Backup, CompuLite, GrammarPolice, or Callout Interface beside this build','Keep Nexus Dispatch on F24 and NPCAI on F23','Back up the complete stable GTA folder before future changes','Add nothing unless it solves a real problem found during play'],
+    guide: '/guide/builds/paid-sentinel-build',
   },
   {
     id: 'legacy-3788-july-2026', name: 'Legacy 3788 Golden Build', release: 'July 2026', status: 'archived', confidence: 100,

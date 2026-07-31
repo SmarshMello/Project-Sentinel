@@ -1,115 +1,169 @@
 ---
-title: Paid Maximum-Realism Sentinel Build
+title: Sentinel Build v1.0
 sidebar_position: 3
 ---
 
-# Paid Sentinel Build — the personal maximum-realism architecture
+# Sentinel Build v1.0 — verified maximum-realism build
 
-<span className="guide-kicker">PAID MAXIMUM-REALISM PATH</span>
+<span className="guide-kicker">COMPLETED JULY 30, 2026</span>
 
-<p className="guide-lead">Reproduce the actual Sentinel direction: Policing Redefined, NexusMDT FULL, Nexus Dispatch, and natural NPCAI conversation. This path assumes you can already launch and test the modern foundation.</p>
+<p className="guide-lead">This is the finished Project Sentinel police-simulator build: a small, purpose-built stack centered on Policing Redefined, Nexus, natural NPCAI conversation, realistic ALPR, EUP, ELS, VisualV, and Better Radiance.</p>
 
 <div className="guide-grid">
-  <div className="guide-card"><span className="guide-card-badge paid">Premium route</span><h3>Start here when</h3><p>Your clean LSPDFR and Policing Redefined foundation already passes testing and you have official access to the required paid packages.</p></div>
-  <div className="guide-card"><span className="guide-card-badge">Expected result</span><h3>What this build provides</h3><p>A connected MDT and dispatch workflow, open-ended AI NPC conversations, optional bodycam roleplay, and fewer menu-driven interactions.</p></div>
+  <div className="guide-card"><span className="guide-card-badge paid">Verified build</span><h3>What this guide reproduces</h3><p>The exact architecture that passed launch, duty, MDT, dispatch, NPCAI, ALPR, EUP, ELS, and graphics testing.</p></div>
+  <div className="guide-card"><span className="guide-card-badge">Build rule</span><h3>Stop when it works</h3><p>Every component has one job. Do not add overlapping police frameworks, duplicate computers, extra dispatch systems, or random callout packs.</p></div>
 </div>
 
-<div className="guide-path"><span>Verify modern core</span><b>→</b><span>Install DTF + PR</span><b>→</b><span>Activate NexusMDT</span><b>→</b><span>Test Dispatch</span><b>→</b><span>Configure NPCAI</span><b>→</b><span>Add Axon and presentation</span></div>
+<div className="guide-path"><span>Core runtime</span><b>→</b><span>DTF + PR</span><b>→</b><span>Nexus MDT + Dispatch</span><b>→</b><span>NPCAI</span><b>→</b><span>EUP + ELS + ALPR</span><b>→</b><span>VisualV + Radiance</span></div>
 
+## Final verified stack
 
-This branch documents the architecture developed through the actual Sentinel installation sessions. Its goal is natural police roleplay: speak to civilians, speak to dispatch, access a modern MDT, and avoid overlapping legacy menus.
-
-## Final paid architecture
-
-![Paid Sentinel architecture](/img/sentinel-build/paid-architecture.svg)
-
-| Layer | Selected component | Sentinel role |
+| Layer | Selection | Purpose |
 |---|---|---|
-| Core | GTA V Legacy 3889, LSPDFR build 9695, current RPH | Supported game and police runtime |
-| Police framework | Policing Redefined 1.0.0.5 | Stops, interactions, backup, and police state |
-| Shared damage layer | Damage Tracker Framework 2.0.0 | Accurate damage events required by parts of the stack |
-| Computer | NexusMDT FULL | Records, citations, reports, ALPR/radar, connected patrol workflow |
-| Dispatch | Nexus Dispatch | Radio UI, call status, unit actions, and dispatch integration |
-| Ped conversation | DoubleHook NPCAI 3.1 | Unscripted AI conversation with civilians and first responders |
-| Optional recording | AxonSignal | Bodycam and dashcam roleplay |
-| Presentation | EUP + Better Radiance + lore-friendly fleet | Uniform and visual identity |
+| Game | GTA V Legacy 1.0.3889.0 | Verified game platform |
+| Runtime | RAGE Plugin Hook + LSPDFR 0.4.9 | Police runtime and duty system |
+| File tools | OpenIV, ASI Loader, OpenIV.asi | Safe mods-folder installation |
+| ASI support | ScriptHookV | ELS and ASI runtime support |
+| Limits | Expanded GameConfig, Heap Adjuster, Packfile Limit Adjuster | Stable expanded archives and resources |
+| UI dependency | Current RAGENativeUI | EUP and supported plugin interfaces |
+| Police framework | Policing Redefined | Stops, interactions, backup, arrests, and police workflow |
+| Framework dependency | Damage Tracker Framework | Shared damage/event dependency |
+| MDT | NexusMDT FULL | Records, citations, reports, and patrol computer |
+| Dispatch | Nexus Dispatch | Voice radio and PR-integrated dispatch actions |
+| NPC conversation | NPCAI, Policing Redefined edition | Open-ended AI conversation with civilians and responders |
+| Plate reader | ALPR Lite | Realistic mobile plate scanning |
+| Uniforms | EUP Menu, Law & Order, Serve & Rescue | Uniforms and duty equipment |
+| Emergency lighting | ELS | Emergency-light and siren control |
+| Graphics | VisualV 1.0.630 | Weather, lighting, fog, and color improvements |
+| Lighting | Better Radiance | Improved emergency and environmental light visibility |
 
-:::danger Remove the old police branch first
-Before installing this build, remove or quarantine Stop The Ped, Ultimate Backup, CompuLite, and GrammarPolice. Policing Redefined replaces the first three. Nexus Dispatch replaces the strict phrase-dispatch role in this paid architecture. Leaving old DLLs installed can produce double menus, duplicated backup, conflicting records handoffs, and keys that appear not to work.
+:::danger Never mix the old police branch into this build
+Do not install **Stop The Ped**, **Ultimate Backup**, **CompuLite**, or **GrammarPolice** beside this architecture. Do not add Callout Interface merely to force callouts. These systems duplicate responsibilities already owned by Policing Redefined, Nexus, or the base LSPDFR workflow.
 :::
 
-## Paid files and licensing
+## Exact installation order
 
-Paid files must be downloaded from the creator's official account, Patreon, entitlement dashboard, or Discord delivery system. Never copy a friend's DLL, use a re-upload, or publish the archive inside a modpack. Project Sentinel documents configuration but does not include protected files.
+### 1. Establish the clean Legacy core
 
-## Installation order
+Install and test, in order:
 
-### Stage 1 — current clean foundation
+1. OpenIV, ASI Loader, and OpenIV.asi.
+2. ScriptHookV.
+3. Expanded GameConfig.
+4. Heap Adjuster.
+5. Packfile Limit Adjuster.
+6. RAGE Plugin Hook.
+7. LSPDFR.
+8. Current RAGENativeUI.
 
-Complete the core install and title-update guide first. Confirm GTA Legacy 3889, LSPDFR build 9695, and the matching RPH launch cleanly. Because Microsoft Defender has produced a known false-positive against RPH, use the official package and follow the official antivirus guidance rather than downloading replacement executables from mirrors.
+Pass Story Mode, RPH launch, station entry, On Duty, and the F4 console before continuing.
 
-### Stage 2 — Damage Tracker Framework
+### 2. Install the modern police foundation
 
-Install the framework using its documented split layout. In the Sentinel build, failures here previously caused Policing Redefined and NPCAI-related systems to load incorrectly. Test the framework before adding PR.
+1. Damage Tracker Framework.
+2. Policing Redefined.
 
-### Stage 3 — Policing Redefined
+Test a traffic stop, pedestrian interaction, arrest, backup request, and cleanup. Do not restore Stop The Ped or Ultimate Backup configuration files.
 
-Install the complete main-directory and plugin content. Do not restore old STP/UB configuration files. Go on duty and test a stop, arrest, backup, and cleanup.
+### 3. Install NexusMDT FULL
 
-### Stage 4 — NexusMDT FULL
+1. Extract the complete official entitlement package while preserving folders.
+2. Use the HTML/WebView interface when supported.
+3. Activate through the in-game **Settings → Activate** screen.
+4. Confirm officer and department information appear.
+5. Assign **Q** as the only MDT toggle.
+6. Open the MDT, search a record, and complete one citation or report action.
 
-1. Download the current FULL entitlement package from the NexusMDT dashboard.
-2. Extract the complete archive into the GTA root, preserving folders.
-3. Confirm `UiMode=html` when using the modern WebView interface.
-4. Confirm the config file is in the exact folder expected by the plugin.
-5. Activate the entitlement through the in-game Settings app.
-6. Confirm the officer/department information appears.
-7. Set one MDT toggle key. In the personal build, Q and F7 were tested; choose one that does not conflict with PR or another UI.
-8. Open the tablet outside and inside a vehicle if your settings allow it.
+### 4. Install Nexus Dispatch
 
-The personal build's MDT failed to appear until the plugin configuration and `Plugins.ini` placement were corrected. A successful entitlement status alone does not prove the overlay files are in the correct location.
+1. Preserve the package's audio, scanner, and configuration folders.
+2. Keep Policing Redefined selected as the backup/action handler.
+3. Keep Nexus MDT integration enabled.
+4. Put personal changes in `custom.ini` rather than editing the shipped default file.
+5. Assign **F24** to Dispatch PTT. A mouse side button can be mapped to F24 in Logitech G Hub.
+6. Test a status command such as going 10-8 and one backup request.
 
-### Stage 5 — Nexus Dispatch
+### 5. Install NPCAI
 
-Install the complete entitlement package and scanner/audio folders. Confirm its radio UI and settings menu load before adding NPCAI. Give dispatch its own push-to-talk key. Do not bind MDT toggle, dispatch PTT, and NPCAI PTT to the same physical key unless the tool intentionally supports a layered macro.
+Use the NPCAI package specifically built for **Policing Redefined**. Restore all included .NET dependency files exactly as delivered.
 
-### Stage 6 — NPCAI 3.1
-
-Download NPCAI from DoubleHook's official Patreon. Select the build intended for **Policing Redefined**, not the Stop The Ped edition.
-
-The personal build used mouse software to map a Logitech side button to an unused function key such as F24. This is more reliable than expecting every RPH plugin to recognize `XButton2` directly.
-
-Recommended starting configuration:
+Recommended controls:
 
 ```ini
-AmbientSpeechEnabled=true
-AmbientSpeechMinutes=3
+PushToTalkKey=F23
 EnableVisualContext=false
 VisualContextToggleKey=L
 VisualContextToggleModifier=RShift
+AmbientSpeechEnabled=true
+AmbientSpeechMinutes=3
 ```
 
-Keep visual context off during routine patrol to reduce API usage; enable it only when scene awareness is needed.
+Use F23 for NPCAI so it never competes with Nexus Dispatch on F24. Confirm microphone capture, officer mouth animation, and an NPC response.
 
-### Stage 7 — AxonSignal and presentation
+### 6. Install uniforms, ELS, and ALPR
 
-Add AxonSignal only after voice, dispatch, and MDT pass. The personal build used `O` for bodycam recording. Adjust the dashcam overlay before adding further graphics mods.
+Install and test:
 
-### Stage 8 — lore-friendly fleet and graphics
+1. EUP Law & Order.
+2. EUP Serve & Rescue.
+3. EUP Menu.
+4. ELS and its required root files/folder.
+5. ALPR Lite.
 
-Add vehicles in small batches and keep a list of every DLC pack added to `dlclist.xml`. Test game loading after each batch. Graphics and siren packs are last because they can create crashes that look unrelated to the police plugins.
+Sentinel ALPR configuration:
 
-## Paid-build acceptance test
+```ini
+ToggleKey=F8
+ModifierKey=None
+ALPRHitProbability=4
+RegistrationIssueProbability=30
+InsuranceIssueProbability=30
+StolenVehicleProbability=8
+OwnerWantedProbability=7
+OwnerLicenseIssueProbability=25
+SilencePeriodAfterHit=60000
+BlipAlertedVehicle=no
+```
 
-Run one 30-minute patrol and prove:
+### 7. Install the final graphics stack
 
-1. PR traffic stop and pedestrian interaction work.
-2. Nexus MDT opens, searches records, and accepts a citation.
-3. Nexus Dispatch hears one command and executes the corresponding PR action.
-4. NPCAI records voice, animates the officer's mouth, and returns an NPC response.
-5. Backup and EMS spawn and clean up.
-6. Bodycam/dashcam toggles do not block other controls.
-7. No duplicate records or double menus appear.
-8. The game can return to duty after a plugin reload or full restart.
+1. Install the base `VisualV.oiv` to the OpenIV **mods folder**.
+2. Skip VisualV's optional ENB, ReShade, motion-blur, and experimental extras for the verified baseline.
+3. Replace `mods\update\update.rpf\common\data\visualsettings.dat` with Better Radiance's main file.
+4. The optional taxi/bus/train brightness fix is unnecessary unless those signs are visibly too bright.
 
-Create a full backup immediately after this test passes.
+## Final keybind map
+
+| Key | Action |
+|---|---|
+| F4 | RPH console |
+| F11 | EUP Menu |
+| Q | Nexus MDT |
+| F24 | Nexus Dispatch PTT |
+| F23 | NPCAI PTT |
+| Right Shift + L | NPCAI visual context |
+| F8 | ALPR Lite |
+| E | Contextual LSPDFR/PR interaction |
+| B | Policing Redefined backup workflow |
+| J | ELS siren stage |
+| G | Horn/secondary siren tone |
+
+Use the searchable **[Keybinds page](/keybinds)** for descriptions and exact configuration-file locations.
+
+## Final acceptance test
+
+Run one uninterrupted patrol of at least 30 minutes and prove:
+
+1. Story Mode and LSPDFR load normally.
+2. You can go on duty and perform a traffic stop.
+3. Policing Redefined interactions, backup, arrest, and cleanup work.
+4. Nexus MDT opens with Q and completes a records action.
+5. Nexus Dispatch hears F24 speech and performs a PR action.
+6. NPCAI hears F23 speech, animates the officer, and returns a response.
+7. ALPR toggles with F8 and produces realistic alerts.
+8. EUP Menu opens with F11.
+9. ELS emergency lights and sirens work.
+10. VisualV and Better Radiance work in day, night, and rain.
+11. No duplicate menus, competing PTT keys, or old-framework DLLs appear.
+
+When all eleven pass, create a complete backup named **Sentinel Build v1.0 Stable**. Do not add another mod unless it solves a problem you have actually encountered during normal play.
