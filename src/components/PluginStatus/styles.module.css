@@ -22,7 +22,7 @@
   height: .42rem;
   border-radius: 50%;
   background: currentColor;
-  box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 15%, transparent), 0 0 12px currentColor;
+  box-shadow:none;
 }
 
 .verified { --badge-color: #5ce6a6; }
