@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1118" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Grant Wizard" />
+  <title>Grant Wizard Mobile</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <style>
+    :root{color-scheme:dark;--bg:#091019;--panel:#101925;--panel2:#152130;--line:#26364a;--text:#edf4fb;--muted:#98a9bc;--good:#6bd8a8}
+    *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{min-height:100vh;padding:max(16px,env(safe-area-inset-top)) 16px max(20px,env(safe-area-inset-bottom))}.wrap{max-width:760px;margin:0 auto}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}.brand{font-size:22px;font-weight:750}.pill{font-size:12px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}.hero,.card{background:linear-gradient(180deg,var(--panel),#0e1722);border:1px solid var(--line);border-radius:18px}.hero{padding:20px;margin-bottom:14px}.hero h1{font-size:27px;line-height:1.04;margin:4px 0 8px}.hero p,.sub,.note{color:var(--muted);line-height:1.45}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.card{padding:16px;min-height:112px}.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}.value{font-size:22px;font-weight:720;margin-top:7px}.sub{font-size:13px;margin-top:5px}.wide{grid-column:1/-1}.status{display:flex;gap:9px;align-items:center}.dot{width:9px;height:9px;border-radius:50%;background:var(--good);box-shadow:0 0 18px rgba(107,216,168,.65)}button{width:100%;border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:14px;border-radius:13px;font-weight:650;font-size:15px;margin-top:12px}.note{font-size:12px;margin:14px 2px 0}.footer{text-align:center;color:#6f8195;font-size:11px;margin-top:18px}@media(max-width:520px){.grid{grid-template-columns:1fr}.wide{grid-column:auto}}
+  </style>
+</head>
+<body><div class="wrap">
+  <div class="top"><div class="brand">Grant Wizard</div><div class="pill">Mobile</div></div>
+  <section class="hero"><div class="label">Home Screen companion</div><h1>Grant Wizard on iPhone.</h1><p>Add this page to your Home Screen now. It will open as a standalone app and can check the live Grant Wizard release service.</p></section>
+  <div class="grid">
+    <section class="card"><div class="label">Desktop release</div><div id="ver" class="value">Checking…</div><div id="verSub" class="sub">Reading the update service.</div></section>
+    <section class="card"><div class="label">Knowledge Loop</div><div class="value status"><span class="dot"></span>Enabled</div><div class="sub">Autonomous improvement loop is running independently of the desktop PC.</div></section>
+    <section class="card wide"><div class="label">Install</div><div class="value">Share → Add to Home Screen</div><div class="sub">Open this page in Safari, tap Share, then Add to Home Screen.</div><button onclick="refreshRelease()">Refresh status</button></section>
+    <section class="card wide"><div class="label">Personal data</div><div class="value">Not exposed</div><div class="sub">This overnight mobile shell does not publish your Brain, Gmail, applications, passwords, or applicant profile. Authenticated sync can be added separately.</div></section>
+  </div>
+  <div class="note">This URL is an unlinked public shell hosted with the existing Project Sentinel GitHub Pages site. It contains no private Grant Wizard data.</div>
+  <div class="footer">Grant Wizard Mobile • build 0.1</div>
+</div>
+<script>
+async function refreshRelease(){const v=document.getElementById('ver'),s=document.getElementById('verSub');v.textContent='Checking…';try{const r=await fetch('https://grantwizard-update-service.sentinelwatcher.workers.dev/developer/manifest.json?mobile='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error();const m=await r.json();v.textContent='v'+(m.Version||'?');s.textContent=(m.Notes||'Latest developer release.').slice(0,130)}catch(e){v.textContent='Offline';s.textContent='Could not reach update service.'}}refreshRelease();if('serviceWorker'in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}
+</script></body></html>
