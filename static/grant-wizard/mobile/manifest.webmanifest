@@ -1,0 +1,8 @@
+{
+  "name":"Grant Wizard Mobile",
+  "short_name":"Grant Wizard",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#091019",
+  "theme_color":"#0b1118"
+}
