@@ -5,18 +5,18 @@
   "researchBotEnabled": true,
   "knowledgeLoopEnabled": true,
   "lastPrivateRelaySync": "Private Brain review relay reachable",
-  "generatedAt": "2026-08-13T01:02:11Z",
-  "latestVersion": "0.15.35",
-  "latestUpdateName": "Approved Opportunity Auto-Vault",
-  "latestUpdateNotes": "Independently reviewed opportunities with an explicit APPROVE verdict and at least 85% confidence can now be added to Applications as Ready, with evidence retained, duplicate URLs suppressed, and final submission still requiring human control. REJECT decisions are remembered and suppressed; HOLD decisions remain unresolved for further review.",
+  "generatedAt": "2026-08-13T02:01:05Z",
+  "latestVersion": "0.15.36",
+  "latestUpdateName": "Mail Precision + Header Decode",
+  "latestUpdateNotes": "Improves mailbox precision by requiring real scholarship/grant context plus an application-lifecycle signal for unmatched messages, rejects common non-application notification/promotional patterns, and decodes encoded mail headers before classification. Preserves Approved Opportunity Auto-Vault, discovery memory, updater safeguards, cost controls, and final-submit human control.",
   "message": "Remote evaluation status is live. Public checks refresh every minute; private operational metadata is refreshed on the safe status cycle.",
   "components": {
     "desktopRelay": "reachable through private Brain relay",
     "brainSync": "private review feed reachable",
-    "researchBot": "enabled",
-    "knowledgeLoop": "enabled",
+    "researchBot": "enabled and recently active",
+    "knowledgeLoop": "enabled and recently active",
     "reviewer": "enabled through the active research-review path",
-    "updater": "developer channel v0.15.35 reachable",
-    "lastScan": "a privacy-safe discovery scan signal is present in the private review feed"
+    "updater": "developer channel v0.15.36 reachable",
+    "lastScan": "a privacy-safe discovery scan signal is present; no newer scan signal is exposed in the current safe feed"
   }
 }
