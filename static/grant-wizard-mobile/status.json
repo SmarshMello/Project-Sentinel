@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-08-13T07:10:30Z",
+  "generatedAt": "2026-08-13T13:05:55Z",
   "monitorOnline": true,
-  "reviewQueue": 16,
+  "reviewQueue": 94,
   "researchBotEnabled": true,
   "chatgptReviewerEnabled": true,
   "knowledgeLoopEnabled": true,
-  "lastPrivateRelaySync": "Private review feed is reachable and contains recent Application Training Lab audit activity; freshness is slightly delayed relative to this refresh.",
-  "latestVersion": "0.15.53",
-  "latestUpdateName": "Progressive Adaptive Application Lab",
-  "latestUpdateNotes": "Adds quality-gated progressive synthetic difficulty, weakness-targeted mutations, novelty fingerprints, harder role/study-level/conditional/consent/state traps, varied essay prompts and limits, and richer PASS/FAIL audit metadata while preserving unattended rollback and human control over real submissions and verification.",
+  "lastPrivateRelaySync": "Private operational feed is reachable; latest heartbeat appears delayed.",
+  "latestVersion": "0.15.63",
+  "latestUpdateName": "Hands-Off Canary",
+  "latestUpdateNotes": "Validates hands-off update discovery, verification, install, restart, health checks, and return to normal operation while preserving the repaired local build path.",
   "components": {
-    "desktopRelay": "private relay source reachable; recent synthetic audit events are visible",
-    "brainSync": "private routed review feed reachable; 16 actionable discovery-review items are currently exposed to the safe monitor",
-    "researchBot": "enabled and recently active",
-    "knowledgeLoop": "enabled and recently active",
-    "reviewer": "overnight external Lab supervisor is enabled; PASS and FAIL audit coverage is active",
-    "updater": "developer channel v0.15.53 manifest reachable; v0.15.54 remains a non-published diagnostic candidate under Windows preflight",
-    "lastScan": "recent private operational activity is present; no direct current discovery-scan heartbeat is safely exposed"
+    "desktopRelay": "reachable; heartbeat delayed",
+    "brainSync": "reachable; unresolved review count available",
+    "researchBot": "enabled",
+    "knowledgeLoop": "enabled",
+    "reviewer": "enabled",
+    "updater": "developer manifest reachable at v0.15.63",
+    "lastScan": "no current scan heartbeat safely inferable"
   }
 }
