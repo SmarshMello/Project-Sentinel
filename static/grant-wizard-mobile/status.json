@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-08-13T13:05:55Z",
+  "generatedAt": "2026-08-13T16:01:57Z",
   "monitorOnline": true,
-  "reviewQueue": 94,
+  "reviewQueue": 2,
   "researchBotEnabled": true,
   "chatgptReviewerEnabled": true,
   "knowledgeLoopEnabled": true,
-  "lastPrivateRelaySync": "Private operational feed is reachable; latest heartbeat appears delayed.",
-  "latestVersion": "0.15.63",
-  "latestUpdateName": "Hands-Off Canary",
-  "latestUpdateNotes": "Validates hands-off update discovery, verification, install, restart, health checks, and return to normal operation while preserving the repaired local build path.",
+  "lastPrivateRelaySync": "Private operational feed is reachable; relay transport is currently operating in a limited legacy-feed mode.",
+  "latestVersion": "0.15.64",
+  "latestUpdateName": "Autonomous Evidence-First Lab",
+  "latestUpdateNotes": "Improves autonomous synthetic application training with stronger evidence-based grading, automatic Lab resume, recovery supervision, and expanded regression checks while preserving human control for real submissions and verification.",
   "components": {
-    "desktopRelay": "reachable; heartbeat delayed",
+    "desktopRelay": "reachable; transport limited by legacy-feed mode",
     "brainSync": "reachable; unresolved review count available",
     "researchBot": "enabled",
     "knowledgeLoop": "enabled",
     "reviewer": "enabled",
-    "updater": "developer manifest reachable at v0.15.63",
+    "updater": "developer manifest reachable at v0.15.64",
     "lastScan": "no current scan heartbeat safely inferable"
   }
 }
