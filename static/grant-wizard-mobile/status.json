@@ -6,6 +6,9 @@
   "knowledgeLoopEnabled": true,
   "lastPrivateRelaySync": "Private Brain review relay reachable",
   "generatedAt": "2026-08-12T23:59:56Z",
+  "latestVersion": "0.15.33",
+  "latestUpdateName": "Source Hub Leak Gate",
+  "latestUpdateNotes": "Fresh Brain-review evidence and hub-vs-opportunity evaluation rules now reject several parent catalog/resource pages from applicant-facing Discover while preserving them as Hunter expansion sources. Exact individual opportunities remain eligible for discovery.",
   "message": "Remote evaluation status is live. Public checks refresh every minute; private operational metadata is refreshed on the safe status cycle.",
   "components": {
     "desktopRelay": "reachable through private Brain relay",
