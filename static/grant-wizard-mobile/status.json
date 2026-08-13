@@ -1,8 +1,19 @@
 {
   "monitorOnline": true,
-  "reviewQueue": 87,
+  "reviewQueue": 13,
   "chatgptReviewerEnabled": true,
-  "lastPrivateRelaySync": "Private relay active",
-  "generatedAt": "2026-08-12",
-  "message": "Remote status is live. Only privacy-safe operational metadata is published here."
+  "researchBotEnabled": true,
+  "knowledgeLoopEnabled": true,
+  "lastPrivateRelaySync": "Private Brain review relay reachable",
+  "generatedAt": "2026-08-12T23:59:56Z",
+  "message": "Remote evaluation status is live. Public checks refresh every minute; private operational metadata is refreshed on the safe status cycle.",
+  "components": {
+    "desktopRelay": "reachable through private Brain relay",
+    "brainSync": "private review feed reachable",
+    "researchBot": "enabled",
+    "knowledgeLoop": "enabled",
+    "reviewer": "enabled",
+    "updater": "developer channel v0.15.33 reachable",
+    "lastScan": "not exposed unless a privacy-safe scan heartbeat is available"
+  }
 }
