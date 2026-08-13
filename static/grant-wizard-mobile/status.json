@@ -1,22 +1,21 @@
 {
+  "generatedAt": "2026-08-13T02:59:52.472876Z",
   "monitorOnline": true,
-  "reviewQueue": 7,
-  "chatgptReviewerEnabled": true,
+  "reviewQueue": 78,
   "researchBotEnabled": true,
+  "chatgptReviewerEnabled": true,
   "knowledgeLoopEnabled": true,
-  "lastPrivateRelaySync": "Private Brain review relay reachable",
-  "generatedAt": "2026-08-13T02:01:05Z",
-  "latestVersion": "0.15.36",
-  "latestUpdateName": "Mail Precision + Header Decode",
-  "latestUpdateNotes": "Improves mailbox precision by requiring real scholarship/grant context plus an application-lifecycle signal for unmatched messages, rejects common non-application notification/promotional patterns, and decodes encoded mail headers before classification. Preserves Approved Opportunity Auto-Vault, discovery memory, updater safeguards, cost controls, and final-submit human control.",
-  "message": "Remote evaluation status is live. Public checks refresh every minute; private operational metadata is refreshed on the safe status cycle.",
+  "lastPrivateRelaySync": "Private Brain review feed is reachable; the latest visible relay activity is older than this refresh, so relay freshness is reported as delayed rather than fully current.",
+  "latestVersion": "0.15.41",
+  "latestUpdateName": "Auto Application Fill + Contact Roles",
+  "latestUpdateNotes": "Adds automatic safe known-answer filling for tracked applications, stronger separation of applicant and relationship contact roles, correction-aware reuse of confirmed values, improved study-level and autocomplete handling, and preserves human control over marketing consent, required acknowledgements, and final submission.",
   "components": {
-    "desktopRelay": "reachable through private Brain relay",
-    "brainSync": "private review feed reachable",
+    "desktopRelay": "private relay source reachable; heartbeat freshness delayed",
+    "brainSync": "private review feed reachable; 78 review-feed items currently exposed to the safe monitor",
     "researchBot": "enabled and recently active",
     "knowledgeLoop": "enabled and recently active",
     "reviewer": "enabled through the active research-review path",
-    "updater": "developer channel v0.15.36 reachable",
-    "lastScan": "a privacy-safe discovery scan signal is present; no newer scan signal is exposed in the current safe feed"
+    "updater": "developer channel v0.15.41 manifest reachable",
+    "lastScan": "recent discovery-review activity is present in the private feed; no direct current scan heartbeat is safely exposed"
   }
 }
