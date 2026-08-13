@@ -1,22 +1,22 @@
 {
   "monitorOnline": true,
-  "reviewQueue": 13,
+  "reviewQueue": 7,
   "chatgptReviewerEnabled": true,
   "researchBotEnabled": true,
   "knowledgeLoopEnabled": true,
   "lastPrivateRelaySync": "Private Brain review relay reachable",
-  "generatedAt": "2026-08-12T23:59:56Z",
-  "latestVersion": "0.15.33",
-  "latestUpdateName": "Source Hub Leak Gate",
-  "latestUpdateNotes": "Fresh Brain-review evidence and hub-vs-opportunity evaluation rules now reject several parent catalog/resource pages from applicant-facing Discover while preserving them as Hunter expansion sources. Exact individual opportunities remain eligible for discovery.",
+  "generatedAt": "2026-08-13T01:02:11Z",
+  "latestVersion": "0.15.35",
+  "latestUpdateName": "Approved Opportunity Auto-Vault",
+  "latestUpdateNotes": "Independently reviewed opportunities with an explicit APPROVE verdict and at least 85% confidence can now be added to Applications as Ready, with evidence retained, duplicate URLs suppressed, and final submission still requiring human control. REJECT decisions are remembered and suppressed; HOLD decisions remain unresolved for further review.",
   "message": "Remote evaluation status is live. Public checks refresh every minute; private operational metadata is refreshed on the safe status cycle.",
   "components": {
     "desktopRelay": "reachable through private Brain relay",
     "brainSync": "private review feed reachable",
     "researchBot": "enabled",
     "knowledgeLoop": "enabled",
-    "reviewer": "enabled",
-    "updater": "developer channel v0.15.33 reachable",
-    "lastScan": "not exposed unless a privacy-safe scan heartbeat is available"
+    "reviewer": "enabled through the active research-review path",
+    "updater": "developer channel v0.15.35 reachable",
+    "lastScan": "a privacy-safe discovery scan signal is present in the private review feed"
   }
 }
