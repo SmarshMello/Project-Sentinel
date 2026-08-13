@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-08-13T05:00:11Z",
+  "generatedAt": "2026-08-13T07:10:30Z",
   "monitorOnline": true,
-  "reviewQueue": 78,
+  "reviewQueue": 16,
   "researchBotEnabled": true,
-  "chatgptReviewerEnabled": false,
+  "chatgptReviewerEnabled": true,
   "knowledgeLoopEnabled": true,
-  "lastPrivateRelaySync": "Private review feed is reachable; the latest visible relay heartbeat is older than this refresh, so relay freshness is reported as delayed rather than fully current.",
-  "latestVersion": "0.15.50",
-  "latestUpdateName": "Audited Infinite Lab + Unattended Overnight Mode",
-  "latestUpdateNotes": "Adds audited synthetic training evidence and an opt-in unattended updater with verification, Windows preflight, safe checkpointing, automatic restart and health checks, rollback on failure, and preserved human control over real submissions and verification steps.",
+  "lastPrivateRelaySync": "Private review feed is reachable and contains recent Application Training Lab audit activity; freshness is slightly delayed relative to this refresh.",
+  "latestVersion": "0.15.53",
+  "latestUpdateName": "Progressive Adaptive Application Lab",
+  "latestUpdateNotes": "Adds quality-gated progressive synthetic difficulty, weakness-targeted mutations, novelty fingerprints, harder role/study-level/conditional/consent/state traps, varied essay prompts and limits, and richer PASS/FAIL audit metadata while preserving unattended rollback and human control over real submissions and verification.",
   "components": {
-    "desktopRelay": "private relay source reachable; heartbeat freshness delayed",
-    "brainSync": "private review feed reachable; 78 review-feed items currently exposed to the safe monitor",
+    "desktopRelay": "private relay source reachable; recent synthetic audit events are visible",
+    "brainSync": "private routed review feed reachable; 16 actionable discovery-review items are currently exposed to the safe monitor",
     "researchBot": "enabled and recently active",
     "knowledgeLoop": "enabled and recently active",
-    "reviewer": "dedicated ChatGPT reviewer task is not enabled; review coverage remains available through active research and knowledge workflows",
-    "updater": "developer channel v0.15.50 manifest reachable; latest publish activity succeeded",
+    "reviewer": "overnight external Lab supervisor is enabled; PASS and FAIL audit coverage is active",
+    "updater": "developer channel v0.15.53 manifest reachable; v0.15.54 remains a non-published diagnostic candidate under Windows preflight",
     "lastScan": "recent private operational activity is present; no direct current discovery-scan heartbeat is safely exposed"
   }
 }
