@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-08-14T02:01:10Z",
+  "generatedAt": "2026-08-14T03:00:31Z",
   "monitorOnline": false,
-  "reviewQueue": null,
-  "researchBotEnabled": false,
-  "chatgptReviewerEnabled": false,
-  "knowledgeLoopEnabled": false,
-  "lastPrivateRelaySync": "Private operational freshness could not be safely published during this refresh; status is delayed/unverified.",
+  "reviewQueue": 98,
+  "researchBotEnabled": true,
+  "chatgptReviewerEnabled": true,
+  "knowledgeLoopEnabled": true,
+  "lastPrivateRelaySync": "Private review data is reachable, but no current relay heartbeat was safely inferable; relay freshness is delayed/unverified.",
   "latestVersion": "0.15.64",
   "latestUpdateName": "Autonomous Evidence-First Lab",
-  "latestUpdateNotes": "Improves autonomous synthetic application training with evidence-first grading, automatic Lab startup/resume, recovery supervision, and broader regression checks while preserving human control for real submissions and verification.",
+  "latestUpdateNotes": "Improves autonomous synthetic application training with evidence-first case validation, automatic Lab startup/resume, recovery supervision, and broader regression checks while preserving human control for real submissions and verification.",
   "components": {
     "desktopRelay": "delayed/unverified",
-    "brainSync": "delayed/unverified",
-    "researchBot": "delayed/unverified",
-    "knowledgeLoop": "delayed/unverified",
-    "reviewer": "delayed/unverified",
-    "updater": "latest public status preserved",
+    "brainSync": "private review feed reachable; live sync heartbeat unverified",
+    "researchBot": "enabled",
+    "knowledgeLoop": "enabled",
+    "reviewer": "enabled",
+    "updater": "enabled; latest release metadata refreshed",
     "lastScan": "no current scan heartbeat safely inferable"
   }
 }
