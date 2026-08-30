@@ -3,6 +3,34 @@
   "watcherVersion": "0.7.0",
   "scans": [
     {
+      "checkedAt": "2026-08-30T14:27:17.766Z",
+      "durationSeconds": 8,
+      "averageHealth": 86,
+      "counts": {
+        "tracked": 126,
+        "healthy": 65,
+        "possibleUpdates": 0,
+        "metadataChanged": 0,
+        "timedOut": 8,
+        "blocked": 1,
+        "redirected": 1,
+        "notFound": 0,
+        "rateLimited": 49,
+        "serverErrors": 1,
+        "archived": 1,
+        "failed": 0,
+        "needsReview": 8,
+        "highPriority": 1
+      },
+      "changeCounts": {
+        "total": 0,
+        "releases": 0,
+        "statuses": 0,
+        "moved": 0,
+        "newSources": 0
+      }
+    },
+    {
       "checkedAt": "2026-08-29T14:34:25.011Z",
       "durationSeconds": 14,
       "averageHealth": 86,
@@ -642,34 +670,6 @@
         "total": 35,
         "releases": 0,
         "statuses": 34,
-        "moved": 1,
-        "newSources": 0
-      }
-    },
-    {
-      "checkedAt": "2026-08-05T16:13:55.684Z",
-      "durationSeconds": 18,
-      "averageHealth": 87,
-      "counts": {
-        "tracked": 126,
-        "healthy": 67,
-        "possibleUpdates": 0,
-        "metadataChanged": 0,
-        "timedOut": 10,
-        "blocked": 1,
-        "redirected": 0,
-        "notFound": 0,
-        "rateLimited": 47,
-        "serverErrors": 0,
-        "archived": 1,
-        "failed": 0,
-        "needsReview": 3,
-        "highPriority": 1
-      },
-      "changeCounts": {
-        "total": 1,
-        "releases": 0,
-        "statuses": 0,
         "moved": 1,
         "newSources": 0
       }
