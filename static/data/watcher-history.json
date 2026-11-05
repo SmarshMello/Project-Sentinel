@@ -3,6 +3,34 @@
   "watcherVersion": "0.7.0",
   "scans": [
     {
+      "checkedAt": "2026-11-05T17:29:12.948Z",
+      "durationSeconds": 35,
+      "averageHealth": 84,
+      "counts": {
+        "tracked": 126,
+        "healthy": 63,
+        "possibleUpdates": 3,
+        "metadataChanged": 4,
+        "timedOut": 50,
+        "blocked": 1,
+        "redirected": 1,
+        "notFound": 0,
+        "rateLimited": 1,
+        "serverErrors": 1,
+        "archived": 1,
+        "failed": 1,
+        "needsReview": 9,
+        "highPriority": 4
+      },
+      "changeCounts": {
+        "total": 17,
+        "releases": 7,
+        "statuses": 10,
+        "moved": 0,
+        "newSources": 0
+      }
+    },
+    {
       "checkedAt": "2026-11-04T17:22:39.319Z",
       "durationSeconds": 18,
       "averageHealth": 86,
@@ -636,34 +664,6 @@
         "archived": 1,
         "failed": 1,
         "needsReview": 5,
-        "highPriority": 1
-      },
-      "changeCounts": {
-        "total": 0,
-        "releases": 0,
-        "statuses": 0,
-        "moved": 0,
-        "newSources": 0
-      }
-    },
-    {
-      "checkedAt": "2026-10-12T19:09:38.686Z",
-      "durationSeconds": 17,
-      "averageHealth": 86,
-      "counts": {
-        "tracked": 126,
-        "healthy": 64,
-        "possibleUpdates": 0,
-        "metadataChanged": 0,
-        "timedOut": 9,
-        "blocked": 1,
-        "redirected": 1,
-        "notFound": 0,
-        "rateLimited": 48,
-        "serverErrors": 1,
-        "archived": 1,
-        "failed": 1,
-        "needsReview": 4,
         "highPriority": 1
       },
       "changeCounts": {
