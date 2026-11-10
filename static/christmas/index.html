@@ -23,14 +23,14 @@
 .poster-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;opacity:.94}
 .card-poster:has(.poster-photo) .poster-emoji{display:none}
 .card-poster:has(.poster-photo):after{z-index:1;background:linear-gradient(0deg,rgba(6,19,15,.3),rgba(6,19,15,.05) 70%,rgba(6,19,15,.22))}
-.feature-photo{display:none;position:absolute;top:14%;left:50%;transform:translateX(-50%);height:68%;max-width:73%;width:auto;object-fit:contain;border-radius:4px;box-shadow:0 20px 35px #0008;z-index:1}
+.feature-photo{display:none;position:absolute;top:18%;left:50%;transform:translateX(-50%);height:59%;max-width:73%;width:auto;object-fit:contain;border-radius:4px;box-shadow:0 20px 35px #0008;z-index:1}
 .feature-art.photo-mode .feature-photo{display:block}
 .feature-art.photo-mode .art-glyph,.feature-art.photo-mode .art-orbit{display:none}
 .feature-art.photo-mode .art-top,.feature-art.photo-mode .art-bottom{z-index:2}
 .modal-photo{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1}
 .modal-art.photo-mode .modal-photo{display:block}
 .modal-art.photo-mode .modal-emoji{display:none}
-@media(max-width:720px){.feature-photo{top:12%;height:67%}.modal-photo{object-position:center 25%}}
+@media(max-width:720px){.feature-photo{top:18%;height:54%}.modal-photo{object-position:center 25%}}
 </style>
 </head>
 <body>
@@ -107,11 +107,14 @@ function openMovie(m){
  if(m.providers.length){
   reported.innerHTML='<p class="provider-hint" style="margin-top:0">Reported included with a subscription (US, early November 2026):</p><div class="provider-list">'+m.providers.map(function(p){return '<a class="provider-link" target="_blank" rel="noopener noreferrer" href="'+serviceUrl(p,m.title)+'">'+escapeHtml(p)+' ↗</a>';}).join('')+'</div><p class="provider-hint">Service buttons open a title search. Verify that it says “included,” not rent or buy.</p>';
  }else{reported.innerHTML='<p class="provider-hint" style="margin-top:0">No subscription service has been confidently verified for this film. Use the live guide below before deciding where to watch.</p>';}
+ if(m.free&&m.free.length){
+  reported.innerHTML+='<div class="watch-label" style="margin-top:16px">Free or library-card options</div><div class="provider-list">'+m.free.map(function(p){return '<a class="provider-link" href="'+jd(m)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(p)+' ↗</a>';}).join('')+'</div><p class="provider-hint">These are reported free options, not guaranteed. Confirm the current listing before you watch.</p>';
+ }
  byId('liveLink').href=jd(m);
  var services=['Netflix','Prime Video','Disney+','Hulu','HBO Max','Peacock','Paramount+','Apple TV'];
  byId('serviceSearch').innerHTML=services.map(function(p){return '<a href="'+serviceUrl(p,m.title)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(p)+' ↗</a>';}).join('');
  byId('modalWatched').textContent=watched[m.date]?'✓ Watched — undo':'✓ Mark as watched';
- byId('overlay').classList.add('open');document.body.classList.add('body-lock');byId('closeModal').focus();
+ byId('overlay').classList.add('open');byId('overlay').querySelector('.modal').scrollTop=0;document.body.classList.add('body-lock');byId('closeModal').focus();
 }
 function serviceUrl(p,title){
  var q=encodeURIComponent(title);
@@ -144,7 +147,9 @@ function renderCards(){
    card.className='movie-card'+(m.date===today?' current':'')+(watched[m.date]?' seen':'');
    card.style.setProperty('--c1',m.colors[0]);card.style.setProperty('--c2',m.colors[1]);
    card.setAttribute('aria-label',longDate(m.date)+': '+m.title+'. Open movie details');
-   card.innerHTML='<div class="card-poster">'+(m.poster?'<img class="poster-photo" loading="lazy" decoding="async" alt="" src="'+escapeHtml(m.poster)+'">':'')+'<span class="poster-number">NIGHT '+pos(i+1)+'</span><span class="poster-badge'+(isSpecial?' special':'')+'">'+(isSpecial?'THANKSGIVING':m.date===today?'TONIGHT':watched[m.date]?'WATCHED':'HOLIDAY CUT')+'</span><span class="poster-emoji" aria-hidden="true">'+m.emoji+'</span></div><div class="card-body"><div class="card-date">'+monthDay(m.date).toUpperCase()+'</div><h4>'+escapeHtml(m.title)+'</h4><div class="card-foot"><span>'+(m.providers.length?escapeHtml(m.providers.slice(0,2).join(' · ')):'Find where to watch')+'</span><span class="arrow">↗</span></div></div>';
+   card.innerHTML='<div class="card-poster">'+(m.poster?'<img class="poster-photo" loading="lazy" decoding="async" alt="" src="'+escapeHtml(m.poster)+'">':'')+'<span class="poster-number">NIGHT '+pos(i+1)+'</span><span class="poster-badge'+(isSpecial?' special':'')+'">'+(isSpecial?'THANKSGIVING':m.date===today?'TONIGHT':watched[m.date]?'WATCHED':m.free&&m.free.length?'FREE OPTION':'HOLIDAY CUT')+'</span><span class="poster-emoji" aria-hidden="true">'+m.emoji+'</span></div><div class="card-body"><div class="card-date">'+monthDay(m.date).toUpperCase()+'</div><h4>'+escapeHtml(m.title)+'</h4><div class="card-foot"><span>'+(m.providers.length?escapeHtml(m.providers.slice(0,2).join(' · ')):'Find where to watch')+'</span><span class="arrow">↗</span></div></div>';
+   var image=card.querySelector('.poster-photo');
+   if(image)image.addEventListener('error',function(){image.remove();},{once:true});
    card.addEventListener('click',function(){openMovie(m);});
    grid.appendChild(card);
   });
